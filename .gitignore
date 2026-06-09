@@ -125,4 +125,14 @@ target/
 # Mypy cache
 .mypy_cache/
 
+# Large local data / knowledge base (too big for GitHub)
+rein-datasets/
+knowledge-base/
+
+# Claude Code local config
+.claude/
+
+# Local run logs
+logs_*.txt
+
 

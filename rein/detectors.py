@@ -35,20 +35,54 @@ from cleanlab.latent_estimation import estimate_latent, estimate_confident_joint
 # Add the cleaners directory to the system path
 sys.path.append(os.path.abspath("cleaners"))
 
-# Import cleaners-related methods
-import holoclean.holoclean
-from holoclean.repair.featurize import *
-from holoclean.dataset.table import Table, Source
-from holoclean.detect import NullDetector, ViolationDetector
-from raha.detection import Detection as Raha_Detection
-from FAHES.fahes_caller import *
-from dBoost.dboost.imported_dboost import *
-from katara.katara import *
-from zeroer.zeroer import *
-from Picket.picket.prepare.dataPrepare import TrainTestSplit
-from picket.transformer.PicketNet import PicketNetModel
-from picket.filter.filtersTrain import Attribute
-from ed2.model.ml.experiments.caller import run_ed2
+# Import cleaners-related methods.
+# Each cleaner is wrapped in try/except so that a missing or broken cleaner
+# prints a warning but does not prevent other detectors from loading.
+import logging as _log
+try:
+    import holoclean.holoclean
+    from holoclean.repair.featurize import *
+    from holoclean.dataset.table import Table, Source
+    from holoclean.detect import NullDetector, ViolationDetector
+except Exception as e:
+    _log.warning("holoclean not available: %s", e)
+
+try:
+    from raha.detection import Detection as Raha_Detection
+except Exception as e:
+    _log.warning("raha not available: %s", e)
+
+try:
+    from FAHES.fahes_caller import *
+except Exception as e:
+    _log.warning("FAHES not available: %s", e)
+
+try:
+    from dBoost.dboost.imported_dboost import *
+except Exception as e:
+    _log.warning("dBoost not available: %s", e)
+
+try:
+    from katara.katara import *
+except Exception as e:
+    _log.warning("katara not available: %s", e)
+
+try:
+    from zeroer.zeroer import *
+except Exception as e:
+    _log.warning("zeroer not available: %s", e)
+
+try:
+    from Picket.picket.prepare.dataPrepare import TrainTestSplit
+    from picket.transformer.PicketNet import PicketNetModel
+    from picket.filter.filtersTrain import Attribute
+except Exception as e:
+    _log.warning("Picket not available: %s", e)
+
+try:
+    from ed2.model.ml.experiments.caller import run_ed2
+except Exception as e:
+    _log.warning("ed2 not available: %s", e)
 
 ###################################################
 

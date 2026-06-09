@@ -1,0 +1,66 @@
+# Two services:
+#   db   – PostgreSQL 14 (official image, Linux, works identically on macOS via Docker)
+#   rein – the benchmark app built from the local Dockerfile
+#
+# Quick-start:
+#   docker compose build          # build the rein image (first time ~15-20 min)
+#   docker compose up -d db       # start PostgreSQL in the background
+#   docker compose run --rm rein bash   # open an interactive shell in the app
+#
+# Run a single script:
+#   docker compose run --rm rein python3 scripts/detect_errors.py \
+#       --dataset_name nursery --detect_method mvdetector
+
+services:
+
+  db:
+    image: postgres:14-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: reinuser
+      POSTGRES_PASSWORD: abcd1234
+      POSTGRES_DB: rein
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      # Creates the extra "holo" database for HoloClean on first startup
+      - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U reinuser -d rein"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+
+  rein:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      PGHOST: db
+      PGPORT: "5432"
+      PGUSER: reinuser
+      PGPASSWORD: abcd1234
+      PGDATABASE: rein
+      DB_URL: "postgresql://reinuser:abcd1234@db:5432/rein"
+    volumes:
+      # Mount the source so edits are reflected without a full rebuild.
+      # The FAHES compiled binary is protected in a named volume so the
+      # Linux .so built inside the container is never overwritten by the
+      # (empty) macOS host path.
+      - .:/rein
+      - fahes_compiled:/rein/cleaners/FAHES/src
+      # The code always looks for datasets/ (hardcoded in datasets_dictionary.py).
+      # rein-datasets/ on the host is mounted to that expected path in the container.
+      - ./rein-datasets:/rein/datasets
+    working_dir: /rein
+    stdin_open: true
+    tty: true
+    command: bash
+
+volumes:
+  postgres_data:
+  fahes_compiled:

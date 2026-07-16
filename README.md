@@ -27,6 +27,11 @@ Please, cite our paper if you use the code.
 
 ## Setup
 
+> **Prefer Docker?** You can build and run the whole benchmark (PostgreSQL, Python 3.8,
+> PyTorch, FAHES, and all pinned dependencies) in containers without any native setup.
+> See [DOCKER.md](DOCKER.md) for the containerized workflow. The instructions below
+> cover the native installation.
+
 Clone with submodules
 ```shell script
 git clone https://github.com/mohamedyd/rein-benchmark.git --recurse-submodules

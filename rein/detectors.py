@@ -1243,8 +1243,11 @@ class Detectors:
         detection_dictionary = {}
 
         # fill detection_dictionary with detections based on different relations of knowledge-base
+        # KATARA compares cell values against string relations (.lower()), so numeric
+        # columns (e.g. ounces, abv) must be cast to string first or it raises AttributeError.
+        stringified_df = dirtydf.astype(str)
         for config in configuration_list:
-            outputted_cells = run_KATARA(dirtydf, config)
+            outputted_cells = run_KATARA(stringified_df, config)
             detection_dictionary.update({cell: "JUST A DUMMY VALUE" for cell in outputted_cells})
         
         error_detect_runtime = time.time()-start_time

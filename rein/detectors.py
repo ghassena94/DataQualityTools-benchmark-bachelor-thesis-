@@ -986,8 +986,12 @@ class Detectors:
         
         # Concatinate all txt files in dataset/constraints into _all_constraints.txt
         dataset_dir = self.__get_detector_directory(dataset)
+        # Datasets without a denial-constraints signal (no cleaners/*/constraints dir yet)
+        # still need an (empty) _all_constraints.txt below, or hc.load_dcs() crashes
+        # with FileNotFoundError instead of running with zero constraints.
+        dir = os.path.join(datasets_dictionary[dataset]["dataset_path"], "constraints")
+        os.makedirs(dir, exist_ok=True)
         try:
-            dir = os.path.join(datasets_dictionary[dataset]["dataset_path"], "constraints")
             all_constraints_file  = open(os.path.join(dir, "_all_constraints.txt"), 'w+')
             all_constraints_file.truncate()
             for filename in os.listdir(dir):
@@ -996,8 +1000,8 @@ class Detectors:
                         for line in infile:
                             all_constraints_file.write(line)
             all_constraints_file.close()
-        except:
-            logging.info("No constraints exist for the {} dataset".format(dataset))
+        except Exception as e:
+            logging.info("No constraints exist for the {} dataset: {}".format(dataset, e))
 
         # 2. Load training data and denial constraints. Pass copy of dirtydf as load_data alters the parameter df
         copy_dirtydf = dirtydf.copy()

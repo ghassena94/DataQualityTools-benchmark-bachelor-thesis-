@@ -48,6 +48,10 @@ class ViolationDetector(Detector):
             attr_list = attrs[i]
             tmp_df = self.gen_tid_attr_output(res, attr_list)
             errors.append(tmp_df)
+        if not errors:
+            # No denial constraints defined for this dataset: nothing to concatenate,
+            # so report zero violations instead of letting pd.concat([]) raise.
+            return pd.DataFrame(columns=['_tid_', 'attribute'])
         errors_df = pd.concat(errors, ignore_index=True).drop_duplicates().reset_index(drop=True)
         return errors_df
 

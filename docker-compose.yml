@@ -53,6 +53,10 @@ services:
       PGPASSWORD: abcd1234
       PGDATABASE: rein
       DB_URL: "postgresql://reinuser:abcd1234@db:5432/rein"
+      # HoloClean (cleaners/holoclean/holoclean.py) reads its own DB_HOST env var
+      # and otherwise defaults to "localhost", which doesn't resolve to the "db"
+      # service from inside the "rein" container.
+      DB_HOST: db
     volumes:
       # Mount the source so edits are reflected without a full rebuild.
       # The FAHES compiled binary is protected in a named volume so the

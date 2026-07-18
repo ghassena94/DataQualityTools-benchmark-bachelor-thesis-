@@ -27,8 +27,11 @@ dependencies on your host machine. It works on both x86_64 and Apple Silicon
 - **Docker Compose v2** (`docker compose`, the plugin — not the legacy
   `docker-compose` binary)
 - Roughly **8 GB** of free disk space for the image and its dependencies
-- The first build takes **~15–20 minutes** (it compiles native extensions such
-  as `scikit-sparse` and the FAHES C++ library).
+- The first build takes **~15–20 minutes** on an x86_64 host (it compiles native
+  extensions such as `scikit-sparse` and the FAHES C++ library), and
+  **considerably longer on Apple Silicon**, where the app image is built as
+  x86_64 under emulation — see
+  [Apple Silicon (arm64) notes](#troubleshooting).
 
 No local PostgreSQL, Python, or CUDA installation is required — everything runs
 inside containers, and the build installs **CPU-only** PyTorch wheels.
@@ -183,6 +186,24 @@ docker compose up -d db
 Change the host port mapping in `docker-compose.yml` (e.g. `"5433:5432"`).
 
 **Apple Silicon (arm64) notes.**
-The `Dockerfile` detects the architecture and installs `torch 1.13.1` from PyPI
-on arm64 (the `1.10.2+cpu` wheels are Linux x86 only). No action is needed on
-your part.
+The `rein` service is pinned to `platform: linux/amd64` in `docker-compose.yml`,
+so it builds and runs as x86_64 under emulation on Apple Silicon. This is
+deliberate: several pinned dependencies publish no Linux arm64 wheels, most
+notably `tensorflow==2.5.0` (arm64 wheels only exist from 2.10.0 onwards) and
+`torch==1.10.2+cpu` (the `+cpu` wheels are Linux x86 only). Building natively on
+arm64 fails with:
+
+```
+ERROR: Could not find a version that satisfies the requirement tensorflow==2.5.0
+       (from versions: 2.10.0rc0, ..., 2.13.1)
+```
+
+Forcing amd64 keeps every dependency pin identical to the reference benchmark, so
+results stay comparable to the published REIN numbers. The trade-off is speed:
+the emulated build takes considerably longer than the ~15–20 min native figure,
+and benchmark runtimes are slower. Absolute timings measured under emulation are
+therefore not comparable to native ones — relative comparisons between methods
+remain meaningful.
+
+The `db` service is left native (the `postgres:14-alpine` image has arm64
+support), so only the application container pays the emulation cost.

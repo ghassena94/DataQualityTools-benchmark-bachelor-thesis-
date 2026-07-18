@@ -33,6 +33,13 @@ services:
       retries: 12
 
   rein:
+    # Build and run as x86_64, even on Apple Silicon (arm64) hosts.
+    # Several pinned dependencies publish no Linux arm64 wheels:
+    #   tensorflow==2.5.0  -> arm64 wheels only exist from 2.10.0 onwards
+    #   torch==1.10.2+cpu  -> the +cpu wheels are Linux x86 only
+    # Forcing amd64 keeps every pin identical to the reference benchmark,
+    # at the cost of running under emulation on Apple Silicon.
+    platform: linux/amd64
     build:
       context: .
       dockerfile: Dockerfile

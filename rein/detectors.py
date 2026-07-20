@@ -588,6 +588,7 @@ class Detectors:
         ]["patterns"]:
             j = dirtyDF.columns.get_loc(attribute)
             for i, value in dirtyDF[attribute].iteritems():
+                value = str(value)
                 if opcode == "OM":
                     if len(re.findall(pattern, value, re.UNICODE)) > 0:
                         detection_dictionary[(i, j)] = "JUST A DUUMY VALUE"

@@ -468,7 +468,9 @@ class Benchmark:
                                 # Add the error rate to the results dictionary
                                 detection_results_dict["error_rate"] = error_rate
                                 # Store results from error detection
+                                logging.info("--------------------------------------------------")
                                 logging.info("Iteration {}: Storing detection results".format(index))
+                                #logging.info("--------------------------------------------------")
                                 for key, value in detection_results_dict.items():
                                     logging.info('{}: {}'.format(key, value))
                                 self.__store_detection_results(detection_results_dict, dataset, dir_name, exp_id)

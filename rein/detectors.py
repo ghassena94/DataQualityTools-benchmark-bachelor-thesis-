@@ -588,6 +588,7 @@ class Detectors:
         ]["patterns"]:
             j = dirtyDF.columns.get_loc(attribute)
             for i, value in dirtyDF[attribute].iteritems():
+                value = str(value)
                 if opcode == "OM":
                     if len(re.findall(pattern, value, re.UNICODE)) > 0:
                         detection_dictionary[(i, j)] = "JUST A DUUMY VALUE"
@@ -986,8 +987,12 @@ class Detectors:
         
         # Concatinate all txt files in dataset/constraints into _all_constraints.txt
         dataset_dir = self.__get_detector_directory(dataset)
+        # Datasets without a denial-constraints signal (no cleaners/*/constraints dir yet)
+        # still need an (empty) _all_constraints.txt below, or hc.load_dcs() crashes
+        # with FileNotFoundError instead of running with zero constraints.
+        dir = os.path.join(datasets_dictionary[dataset]["dataset_path"], "constraints")
+        os.makedirs(dir, exist_ok=True)
         try:
-            dir = os.path.join(datasets_dictionary[dataset]["dataset_path"], "constraints")
             all_constraints_file  = open(os.path.join(dir, "_all_constraints.txt"), 'w+')
             all_constraints_file.truncate()
             for filename in os.listdir(dir):
@@ -996,8 +1001,8 @@ class Detectors:
                         for line in infile:
                             all_constraints_file.write(line)
             all_constraints_file.close()
-        except:
-            logging.info("No constraints exist for the {} dataset".format(dataset))
+        except Exception as e:
+            logging.info("No constraints exist for the {} dataset: {}".format(dataset, e))
 
         # 2. Load training data and denial constraints. Pass copy of dirtydf as load_data alters the parameter df
         copy_dirtydf = dirtydf.copy()
@@ -1243,8 +1248,11 @@ class Detectors:
         detection_dictionary = {}
 
         # fill detection_dictionary with detections based on different relations of knowledge-base
+        # KATARA compares cell values against string relations (.lower()), so numeric
+        # columns (e.g. ounces, abv) must be cast to string first or it raises AttributeError.
+        stringified_df = dirtydf.astype(str)
         for config in configuration_list:
-            outputted_cells = run_KATARA(dirtydf, config)
+            outputted_cells = run_KATARA(stringified_df, config)
             detection_dictionary.update({cell: "JUST A DUMMY VALUE" for cell in outputted_cells})
         
         error_detect_runtime = time.time()-start_time

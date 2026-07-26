@@ -8,7 +8,12 @@ utils/
 cleaners/CleanML/
 cleaners/activeclean
 RAHA/
-datasets/
+
+# NOTE: must stay anchored with a leading slash. An unanchored "datasets/"
+# matches at every depth and silently excluded ED2's Python package
+# cleaners/ed2/model/ml/datasets/, which is why it was never committed.
+/datasets/
+
 cleaners/openrefine-3.4.1/
 cleaners/raha/supplementaries/
 utils/adults

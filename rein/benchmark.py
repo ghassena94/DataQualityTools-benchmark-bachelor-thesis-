@@ -840,7 +840,12 @@ class Benchmark:
                                 if function in cleaner.model_oriented_cleaners_list:
                                     app, results = function(dirtyDF, detection_dict, config["configs"], **config["kwargs"])
                                     results["model"] = detector_name + "-" + results["model"] + save_extension
-                                    app.store_results(results)
+                                    # store_results needs the ml_task to pick its metric names. It was
+                                    # omitted here, so every model-oriented cleaner (cleanlab, boostClean,
+                                    # CPClean, activecleanCleaner) died with "missing 1 required positional
+                                    # argument" *after* finishing its work, and silently wrote no results.
+                                    # They all report classification metrics and bail out on any other task.
+                                    app.store_results(results, classification)
                                 #elif config['configs']['method'] != 'delete':
                                 else:
                                     _, results = function(dirtyDF, detection_dict, config["configs"], **config["kwargs"])

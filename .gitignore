@@ -2,7 +2,11 @@
 __pycache__/
 *.py[cod]
 
-utils/
+# NOTE: must stay anchored, exactly like /datasets/ below. The unanchored
+# "utils/" matched at every depth and silently excluded dBoost's
+# cleaners/dBoost/dboost/utils/ package, which is why it was never committed
+# and why dboost/metadata_driven could never import.
+/utils/
 
 # folders
 cleaners/CleanML/

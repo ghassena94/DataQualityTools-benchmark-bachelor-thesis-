@@ -33,7 +33,13 @@ class DetectEngine:
 
         # Get unique errors only that might have been detected from multiple detectors.
         errors_df = pd.concat(errors, ignore_index=True).drop_duplicates().reset_index(drop=True)
-        errors_df['_cid_'] = errors_df.apply(lambda x: self.ds.get_cell_id(x['_tid_'], x['attribute']), axis=1)
+        if errors_df.empty:
+            # apply(axis=1) on an empty frame yields 0 items, and assigning that to a new
+            # column raises "Wrong number of items passed 0, placement implies 1". A run
+            # whose constraints simply never fire is a legitimate result, not an error.
+            errors_df['_cid_'] = pd.Series(dtype='int64')
+        else:
+            errors_df['_cid_'] = errors_df.apply(lambda x: self.ds.get_cell_id(x['_tid_'], x['attribute']), axis=1)
         logging.info("detected %d potentially erroneous cells", errors_df.shape[0])
 
         # Store errors to db.
@@ -46,7 +52,10 @@ class DetectEngine:
  
     def store_detected_errors(self, errors_df):
         if errors_df.empty:
-            raise Exception("ERROR: Detected errors dataframe is empty.")
+            # Zero violations is a valid outcome (e.g. every DC holds on the data). Warn
+            # and skip the aux table rather than aborting the whole detection run.
+            logging.warning("Detected errors dataframe is empty - no cells flagged by any detector.")
+            return
         self.ds.generate_aux_table(AuxTables.dk_cells, errors_df, store=True)
         self.ds.aux_table[AuxTables.dk_cells].create_db_index(self.ds.engine, ['_cid_'])
 

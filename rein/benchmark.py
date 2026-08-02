@@ -407,8 +407,14 @@ class Benchmark:
             keys = [] if "keys" not in datasets_dictionary[dataset] else \
                 datasets_dictionary[dataset]["keys"]
 
-            # Define correct labels, which is necessary for mislable detector
-            correct_labels = []
+            # Define correct labels, which is necessary for mislable detector.
+            # It compares the label columns of the dirty data against their ground truth
+            # values, so it needs those columns as a dataframe. This used to be a bare []
+            # that was never populated, which crashed the detector on .columns.
+            label_columns = []
+            for labels_key in ("labels_clf", "labels_reg"):
+                label_columns.extend(datasets_dictionary[dataset].get(labels_key, []))
+            correct_labels = groundtruthDF[label_columns] if label_columns else pd.DataFrame()
 
             # Retrieve detectors list
             relevant_detectors, _ = self.__get_detectors_list(dataset)

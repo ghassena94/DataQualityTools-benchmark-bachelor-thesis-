@@ -1521,34 +1521,41 @@ class Detectors:
         """
         
         start_time = time.time()
-        dataset_dir = self.__get_detector_directory(dataset)
-        
+
         # check if path to clusters folder exist
-        try:
-            dir = os.path.join(datasets_dictionary[dataset]["dataset_path"], "clusters")
-        except:
-            logging.info("No clusters exist for the {} dataset".format(dataset))
-            sys.exit(1)
-        
+        dir = os.path.join(datasets_dictionary[dataset]["dataset_path"], "clusters")
+
         detection_dictionary = {}
-        
-        # iterate over each json in /clusters and extract row, col for each value
-        # that doe not equal the proposed_value by openrefine
-        for filename in os.listdir(dir):
-            if filename.endswith(".json"):
-                with open(os.path.join(dir, filename)) as file:
-                    clusters_dict = json.load(file)
-        
-                col_name = clusters_dict["columnName"]
-                if col_name in dirtydf.columns:
-                    col = dirtydf.columns.get_loc(col_name)
-                    for cluster in clusters_dict["clusters"]:
-                        correct_value = cluster["value"]
-                        for choise in cluster["choices"]:
-                            if choise["v"] != correct_value:
-                                row_list = dirtydf.index[dirtydf[col_name]== choise["v"]]
-                                for row in row_list:
-                                    detection_dictionary[(row, col)] = "JUST A DUMMY"
+
+        if not os.path.isdir(dir):
+            # skip the method instead of terminating the process, so that the remaining
+            # detectors of the run still get executed
+            logging.info(
+                "No clusters exist for the {} dataset. Run scripts/generate_openrefine_clusters.py "
+                "to create {}".format(dataset, dir)
+            )
+        else:
+            # OpenRefine clusters the cells as strings, while the dataframe holds numeric
+            # dtypes whenever it was loaded from the REIN database, so compare as strings
+            stringified_df = dirtydf.astype(str)
+
+            # iterate over each json in /clusters and extract row, col for each value
+            # that doe not equal the proposed_value by openrefine
+            for filename in sorted(os.listdir(dir)):
+                if filename.endswith(".json"):
+                    with open(os.path.join(dir, filename)) as file:
+                        clusters_dict = json.load(file)
+
+                    col_name = clusters_dict["columnName"]
+                    if col_name in dirtydf.columns:
+                        col = dirtydf.columns.get_loc(col_name)
+                        for cluster in clusters_dict["clusters"]:
+                            correct_value = cluster["value"]
+                            for choise in cluster["choices"]:
+                                if choise["v"] != correct_value:
+                                    row_list = dirtydf.index[stringified_df[col_name] == choise["v"]]
+                                    for row in row_list:
+                                        detection_dictionary[(row, col)] = "JUST A DUMMY"
 
         error_detect_runtime = time.time()-start_time
 

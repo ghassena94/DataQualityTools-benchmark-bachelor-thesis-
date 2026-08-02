@@ -37,7 +37,7 @@ if __name__ == '__main__':
         raise ValueError(f"Dataset {dataset_name} is not known.")
     
     # Instantiate a benchmark object
-    app = Benchmark(False, args.no_ground_truth)
+    app = Benchmark(False, args.no_ground_truth, log_label=logging_label(detectors_list, 'alldetectors'))
 
     # ======================= Define Experimental settings ==============================
 

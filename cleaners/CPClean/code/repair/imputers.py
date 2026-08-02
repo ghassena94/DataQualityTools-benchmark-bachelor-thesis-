@@ -8,7 +8,9 @@ from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import ExtraTreesRegressor
 from sklearn.neighbors import KNeighborsRegressor
 # from fancyimpute import SoftImpute as fancySoftImpute, BiScaler as fancyBiScaler, IterativeSVD as fancyIterativeSVD
+import os
 import sys
+import tempfile
 import sklearn.neighbors._base
 sys.modules['sklearn.neighbors.base'] = sklearn.neighbors._base
 
@@ -129,7 +131,15 @@ class DataWigImputer(object):
         pass
 
     def fit_transform(self, X):
-        return datawig.SimpleImputer.complete(X)
+        # datawig.SimpleImputer.complete() trains one model per imputed column and
+        # writes its checkpoints and imputer.log into a directory *named after that
+        # column*, relative to the working directory. Left at the default that litters
+        # the repository root with one directory per column ("abv/", "ounces/",
+        # "Bland Chromatin/", ...). Keep those artifacts in one temporary place
+        # instead; they are training scratch, not results.
+        output_path = os.path.join(tempfile.gettempdir(), "datawig")
+        os.makedirs(output_path, exist_ok=True)
+        return datawig.SimpleImputer.complete(X, output_path=output_path)
 
 class MissForestImputer(object):
     def __init__(self):

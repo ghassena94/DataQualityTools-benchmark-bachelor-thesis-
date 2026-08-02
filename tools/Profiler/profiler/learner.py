@@ -209,7 +209,7 @@ class StructureLearner(object):
                     parent_sets[attr] = parents
                 if len(parents) > 0:
                     s, _ = s_func((parents, attr))
-                    fd_file.write("{} -> {}\n".format(",".join(parents), attr))
+                    fd_file.write("{} -> {}\t# score={}\n".format(",".join(parents), attr, s))
                     # attr_file.write(attr + "\n")
                     print("{} -> {} ({})".format(",".join(parents), attr, s))
             fd_file.close()

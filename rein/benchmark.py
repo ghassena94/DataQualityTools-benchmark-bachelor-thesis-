@@ -26,21 +26,32 @@ class Benchmark:
     Class encapsulates all required methods to run the different experiments
     """
 
-    def __init__(self, store_postgres=False, no_ground_truth=False):
+    def __init__(self, store_postgres=False, no_ground_truth=False, log_label=None):
         """
         Constructor defining default variables
+
+        Arguments:
+        log_label (String) -- name of the executed tool(s), used in the name of the log file
         """
-        self.__logging_setup(logging_configs_console())
+        self.__logging_setup(logging_configs_console(), log_label)
         self.store_postgres = store_postgres
         self.no_ground_truth = no_ground_truth
 
-    def __logging_setup(self, root_logger):
+    def __logging_setup(self, root_logger, log_label=None):
         """This method setup necessary configurations for logging"""
         # Remove possible already-existent handlers
         while root_logger.handlers:
               root_logger.handlers.clear()
         # Define the new configurations
-        logging_configs_file()
+        logging_configs_file(log_label)
+        # logging_configs_file() installs a FileHandler only, so warnings and detector
+        # failures never reached the console - a crashed detector looked like a clean run
+        # that exited 0. Mirror everything to stderr as well.
+        console_handler = logging.StreamHandler()
+        console_handler.setFormatter(
+            logging.Formatter("%(asctime)s - [%(levelname)5s] - %(message)s", datefmt='%H:%M:%S')
+        )
+        logging.getLogger().addHandler(console_handler)
 
     def __get_dataset_dictionary(self, dataset_name):
         """
@@ -475,12 +486,13 @@ class Benchmark:
                                     logging.info('{}: {}'.format(key, value))
                                 self.__store_detection_results(detection_results_dict, dataset, dir_name, exp_id)
                             except Exception as e:
-                                logging.info("Exception: {}".format(e.args[0]))
-                                logging.info("Exception: {}".format(sys.exc_info()))
+                                # e.args[0] itself raises IndexError for argless exceptions,
+                                # which replaced the real cause with a bogus one. Log at
+                                # ERROR with the traceback so the failure is visible.
+                                logging.exception("Detector %s failed: %s", dir_name, e)
                                 break
             except Exception as e:
-                logging.info("Exception: {}".format(e.args[0]))
-                logging.info("Exception: {}".format(sys.exc_info()))
+                logging.exception("Error detection failed for dataset %s: %s", dataset, e)
                 continue
 
             # Remove intermediate files and data

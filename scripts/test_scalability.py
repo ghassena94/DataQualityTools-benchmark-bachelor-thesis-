@@ -37,7 +37,7 @@ if __name__ == '__main__':
         raise ValueError(f"Dataset {dataset_name} is not known.")
 
     # Instantiate a benchmark object
-    app = Benchmark(args.store_postgres)
+    app = Benchmark(args.store_postgres, log_label='scalability-' + logging_label(detectors_list, 'alldetectors'))
 
     # ======================= Define Experimental settings ==============================
 

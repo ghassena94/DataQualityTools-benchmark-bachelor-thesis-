@@ -1226,6 +1226,15 @@ class Cleaners:
         X_train_dirty, y_train_dirty, X_test_dirty, y_test_dirty = app.preprocess(dirtyDF, classification)
         X_train_gt, y_train_gt, X_test_gt, y_test_gt = app.preprocess(self.groundTruthDF, classification)
 
+        # preprocess() one-hot encodes the categorical attributes, so the feature
+        # matrices come back sparse. np.concatenate cannot stack a sparse matrix - it
+        # sees it as a 0-d object and raises "zero-dimensional arrays cannot be
+        # concatenated" - so densify before combining.
+        X_train_dirty, X_test_dirty, X_train_gt, X_test_gt = (
+            matrix if isinstance(matrix, np.ndarray) else matrix.toarray()
+            for matrix in (X_train_dirty, X_test_dirty, X_train_gt, X_test_gt)
+        )
+
         # concatinate to get same format as activeclean
         X_dirty = np.concatenate((X_train_dirty, X_test_dirty), axis=0)
         y_dirty = np.concatenate((y_train_dirty, y_test_dirty), axis=0)

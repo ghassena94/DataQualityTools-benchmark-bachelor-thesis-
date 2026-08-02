@@ -1876,10 +1876,18 @@ class Detectors:
         # instantiate  model class
         app = Models(dataset)
 
-        x_train, y_train, x_test, y_test = app.preprocess(dirtydf, ml_task)
+        # the row labels are needed because preprocess() shuffles when it splits: the
+        # indices cleanlab returns address the concatenated train+test arrays, not the
+        # rows of dirtydf
+        x_train, y_train, x_test, y_test, row_index = app.preprocess(dirtydf, ml_task, return_index=True)
 
+        # preprocess() one-hot encodes the categorical attributes, so both feature
+        # matrices come back sparse. np.concatenate treats a sparse matrix as a 0-d
+        # object array, so x_test has to be densified as well, not just x_train.
         if not isinstance(x_train, np.ndarray):
             x_train = x_train.toarray()
+        if not isinstance(x_test, np.ndarray):
+            x_test = x_test.toarray()
 
         # Use the ML model with default parameters (i.e., not optimized)
         estimator = model["fn"](**model["fixed_params"])
@@ -1914,7 +1922,7 @@ class Detectors:
         detection_dictionary={}
         col_i = dirtydf.columns.get_loc(datasets_dictionary[dataset]["labels_clf"][0])
         for x in ordered_label_errors:
-            detection_dictionary[(x,col_i)] = "JUST A DUMMY VARIABLE"
+            detection_dictionary[(row_index[x], col_i)] = "JUST A DUMMY VARIABLE"
         
         error_detect_runtime = time.time()-start_time
 

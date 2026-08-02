@@ -1982,7 +1982,18 @@ class Detectors:
         
         # transform dirtdf which has dtype string to numeric type if possible
         dirtydf = dirtydf.apply(pd.to_numeric, errors="ignore")
-        
+
+        # REIN loads every dataset with keep_default_na=False, so missing values
+        # arrive here as empty strings. Picket embeds text cells by averaging the
+        # embeddings of their whitespace-separated tokens; an empty cell has no
+        # tokens, which yields a NaN embedding and poisons the whole model. Give
+        # those cells an explicit token instead so they get a real (learnable)
+        # embedding that the model can flag as anomalous.
+        for col in dirtydf.columns:
+            if dirtydf[col].dtype == object:
+                dirtydf[col] = dirtydf[col].astype(str).replace(
+                    r"^\s*$", "_empty_", regex=True)
+
         feature_dtypes = []
         # infere dtypes for features (NOT LABEL). possible options are "numeric", "categorical", "text"
         for col_i, t in enumerate(dirtydf.dtypes):
@@ -2026,8 +2037,18 @@ class Detectors:
         # calculates a loss for each row indexes and then rows with outlier losses
         # are saved in PicketN.indices_to_remove
         PicketN.loss_based_train()
+
+        # topk() over a NaN loss vector returns an arbitrary index block, so a
+        # NaN score silently produces meaningless "detections". Fail loudly.
+        if np.isnan(PicketN.outlierScore).any():
+            raise ValueError(
+                "picket: {}/{} outlier scores are NaN - the PicketNet loss "
+                "diverged, detections would be meaningless".format(
+                    int(np.isnan(PicketN.outlierScore).sum()),
+                    PicketN.outlierScore.size))
+
         detected_rows = PicketN.indices_to_remove
-        
+
         detection_dictionary={}
         for row_index in detected_rows:
             for col_j, col in enumerate(dirtydf.columns):

@@ -89,6 +89,12 @@ class AvgModel(object):
         def get_cell_vector(cell):
             if self.config['SIF'] is True:
                 cell = self.config['tokenizer'](cell)
+                # A cell that tokenizes to nothing (empty or whitespace-only)
+                # has no word weights, so the SIF average below would be 0/0 =
+                # NaN. That NaN then propagates through the whole PicketNet
+                # loss and makes every outlier score NaN.
+                if len(cell) == 0:
+                    return list(np.zeros(self.config['dim']))
                 idx = word_vocab.loc[cell, 'idx'].values
                 v = vec[idx]
                 if len(cell) == 1:
@@ -98,6 +104,8 @@ class AvgModel(object):
 
             elif self.config['SIF'] is False:
                 cell = self.config['tokenizer'](cell)
+                if len(cell) == 0:
+                    return list(np.zeros(self.config['dim']))
                 idx = word_vocab.loc[cell, 'idx'].values
                 v = vec[idx]
                 if len(cell) == 1:

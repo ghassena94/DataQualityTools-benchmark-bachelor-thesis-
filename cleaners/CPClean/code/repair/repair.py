@@ -54,6 +54,20 @@ mix_imputers = {
 #takes dataframe with true where cell is errror
 #viele imputer machen repairs, diese werden dann spater zum stacken verwendet
 def repair(X_train_mv, save_dir=None):
+    # A column in which every single value was flagged as an error arrives here fully
+    # NaN. There is nothing left to impute from, and scikit-learn's imputers silently
+    # drop such a column instead of filling it, so the transformed array comes back
+    # narrower than the column list the imputers rebuild the dataframe with
+    # ("ValueError: Shape of passed values is (n, 6), indices imply (n, 7)"). Fill
+    # those columns with a constant up front so every imputer keeps the full column
+    # set. Reachable whenever an aggressive detector flags a whole column.
+    all_missing = X_train_mv.columns[X_train_mv.isnull().all()]
+    if len(all_missing) > 0:
+        X_train_mv = X_train_mv.copy()
+        numeric_columns = set(X_train_mv.select_dtypes(include='number').columns)
+        for column in all_missing:
+            X_train_mv[column] = 0 if column in numeric_columns else "missing"
+
     num_X = X_train_mv.select_dtypes(include='number')
     cat_X = X_train_mv.select_dtypes(exclude='number')
 

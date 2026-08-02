@@ -18,6 +18,7 @@ import numbers
 import time
 from sklearn import preprocessing
 import datawig
+import tempfile
 import os
 import pandas as pd
 from missingpy import MissForest
@@ -63,6 +64,21 @@ from CPClean.code.training.preprocess import preprocess
 from CPClean.code.cleaner.CPClean.clean import CPClean
 
 ################################################
+
+
+def _datawig_output_path():
+    """Where DataWig may leave its training scratch.
+
+    datawig.SimpleImputer.complete() trains one model per imputed column and writes that
+    model's checkpoints and imputer.log into a directory *named after the column*,
+    relative to the working directory (its output_path defaults to "."). Left at the
+    default it scatters one directory per column across the repository root -- "abv/",
+    "ounces/", "beer_name/", "Bland Chromatin/" and so on, tens of MB per run. None of it
+    is a result; it is training scratch, so keep it in one temporary place.
+    """
+    output_path = os.path.join(tempfile.gettempdir(), "datawig")
+    os.makedirs(output_path, exist_ok=True)
+    return output_path
 
 
 class Cleaners:
@@ -599,7 +615,7 @@ class Cleaners:
 
         if num_method == "datawig":
 
-            num_repaired = datawig.SimpleImputer.complete(num_df)
+            num_repaired = datawig.SimpleImputer.complete(num_df, output_path=_datawig_output_path())
 
         if cat_method == "missForest":
             # decodes categorical variables and runs missingpy's MissForest on 
@@ -634,7 +650,7 @@ class Cleaners:
 
         if cat_method == "datawig":
 
-            cat_repaired = datawig.SimpleImputer.complete(cat_df)
+            cat_repaired = datawig.SimpleImputer.complete(cat_df, output_path=_datawig_output_path())
 
         if mix_method == "missForest":
             # decodes categorical variables and runs missingpy's MissForest on 
@@ -678,7 +694,7 @@ class Cleaners:
         if mix_method == "datawig":
 
             X  = pd.concat([num_df, cat_df], axis=1)
-            repaired = datawig.SimpleImputer.complete(X)
+            repaired = datawig.SimpleImputer.complete(X, output_path=_datawig_output_path())
 
         repairedDF = dirtyDF.copy()
         if  configs["method"] == "mix":

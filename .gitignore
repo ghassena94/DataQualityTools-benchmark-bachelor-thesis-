@@ -154,3 +154,11 @@ logs_*.txt
 detection_logs/
 
 
+# REIN research paper 
+REIN.pdf
+
+# GX demo code 
+gx-beers-demo
+
+# Ignore the Known issue 
+KNOWN_ISSUES.md

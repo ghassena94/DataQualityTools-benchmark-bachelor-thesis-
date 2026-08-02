@@ -736,16 +736,24 @@ class Detectors:
 
         """
 
+        # A numeric column may hold NaN, because pd.to_numeric below turns unparsable
+        # cells into NaN. Those are missing values, which are mvdetector's job, not an
+        # outlier detector's: the statistics have to be computed while ignoring them,
+        # and a NaN cell must never be reported as an outlier. Left unhandled, np.mean /
+        # np.percentile return NaN and every comparison below is silently False (the
+        # detector reports zero detections), while IsolationForest raises outright.
+
         def SD(x, nstd=3.0):
             # Standard Deviaiton Method (Univariate)
-            mean, std = np.mean(x), np.std(x)
+            mean, std = np.nanmean(x), np.nanstd(x)
             cut_off = std * nstd
             lower, upper = mean - cut_off, mean + cut_off
+            # NaN compares False against both bounds, so missing cells drop out
             return lambda y: (y > upper) | (y < lower)
 
         def IQR(x, k=1.5):
             # Interquartile Range (Univariate)
-            q25, q75 = np.percentile(x, 25), np.percentile(x, 75)
+            q25, q75 = np.nanpercentile(x, 25), np.nanpercentile(x, 75)
             iqr = q75 - q25
             cut_off = iqr * k
             lower, upper = q25 - cut_off, q75 + cut_off
@@ -754,9 +762,20 @@ class Detectors:
         def IF(x, contamination=0.01):
             # Isolation Forest (Univariate)
             #IF = IsolationForest(contamination='auto')
+            known = ~np.isnan(x)
+            if not known.any():
+                return lambda y: np.zeros(len(y), dtype=bool)
             IF = IsolationForest(contamination=contamination)
-            IF.fit(x.reshape(-1, 1))
-            return lambda y: (IF.predict(y.reshape(-1, 1)) == -1)
+            IF.fit(x[known].reshape(-1, 1))
+
+            def predict(y):
+                flags = np.zeros(len(y), dtype=bool)
+                y_known = ~np.isnan(y)
+                if y_known.any():
+                    flags[y_known] = IF.predict(y[y_known].reshape(-1, 1)) == -1
+                return flags
+
+            return predict
 
         start_time = time.time()
 

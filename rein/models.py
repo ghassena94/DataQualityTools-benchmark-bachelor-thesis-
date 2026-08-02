@@ -531,7 +531,7 @@ class Models:
 
         return prepared_data
 
-    def preprocess(self, dataset, ml_task):
+    def preprocess(self, dataset, ml_task, return_index=False):
         """
           This method prepares a dataset via data separation, scaling, encoding
 
@@ -579,6 +579,14 @@ class Models:
             ts_labels = encoder.fit_transform(test_labels.values.flatten())
             train_labels = tr_labels.copy()
             test_labels = ts_labels.copy()
+
+        if return_index:
+            # __split_train_test shuffles, so the concatenation of the train and test
+            # arrays is in no relation to the row order of the input dataframe. Callers
+            # that map a result back onto a row of that dataframe (e.g. the cleanlab
+            # detector) need these labels to undo the shuffle.
+            return (train_features_prepared, train_labels, test_features_prepared,
+                    test_labels, np.concatenate((train_set.index.values, test_set.index.values)))
 
         return train_features_prepared, train_labels, test_features_prepared, test_labels
 

@@ -18,6 +18,7 @@ import numbers
 import time
 from sklearn import preprocessing
 import datawig
+import tempfile
 import os
 import pandas as pd
 from missingpy import MissForest
@@ -63,6 +64,21 @@ from CPClean.code.training.preprocess import preprocess
 from CPClean.code.cleaner.CPClean.clean import CPClean
 
 ################################################
+
+
+def _datawig_output_path():
+    """Where DataWig may leave its training scratch.
+
+    datawig.SimpleImputer.complete() trains one model per imputed column and writes that
+    model's checkpoints and imputer.log into a directory *named after the column*,
+    relative to the working directory (its output_path defaults to "."). Left at the
+    default it scatters one directory per column across the repository root -- "abv/",
+    "ounces/", "beer_name/", "Bland Chromatin/" and so on, tens of MB per run. None of it
+    is a result; it is training scratch, so keep it in one temporary place.
+    """
+    output_path = os.path.join(tempfile.gettempdir(), "datawig")
+    os.makedirs(output_path, exist_ok=True)
+    return output_path
 
 
 class Cleaners:
@@ -599,7 +615,7 @@ class Cleaners:
 
         if num_method == "datawig":
 
-            num_repaired = datawig.SimpleImputer.complete(num_df)
+            num_repaired = datawig.SimpleImputer.complete(num_df, output_path=_datawig_output_path())
 
         if cat_method == "missForest":
             # decodes categorical variables and runs missingpy's MissForest on 
@@ -634,7 +650,7 @@ class Cleaners:
 
         if cat_method == "datawig":
 
-            cat_repaired = datawig.SimpleImputer.complete(cat_df)
+            cat_repaired = datawig.SimpleImputer.complete(cat_df, output_path=_datawig_output_path())
 
         if mix_method == "missForest":
             # decodes categorical variables and runs missingpy's MissForest on 
@@ -678,7 +694,7 @@ class Cleaners:
         if mix_method == "datawig":
 
             X  = pd.concat([num_df, cat_df], axis=1)
-            repaired = datawig.SimpleImputer.complete(X)
+            repaired = datawig.SimpleImputer.complete(X, output_path=_datawig_output_path())
 
         repairedDF = dirtyDF.copy()
         if  configs["method"] == "mix":
@@ -989,29 +1005,44 @@ class Cleaners:
         """
 
         start_time = time.time()
-        try:
-            dir = os.path.join(datasets_dictionary[self.__dataset_name]["dataset_path"], "clusters")
-        except:
-            logging.info("No clusters exist for the {} dataset".format(dataset))
-            sys.exit(1)
+        dir = os.path.join(datasets_dictionary[self.__dataset_name]["dataset_path"], "clusters")
 
-        # extracts row and col from json file and edits the cells with 
-        # the proposed value 
+        # extracts row and col from json file and edits the cells with
+        # the proposed value
         repairedDF = dirtyDF.copy()
-        for filename in os.listdir(dir):
-            if filename.endswith(".json"):
-                with open(os.path.join(dir, filename)) as file:
-                    clusters_dict = json.load(file)
 
-                col_name = clusters_dict["columnName"]
-                col = dirtyDF.columns.get_loc(col_name)
-                for cluster in clusters_dict["clusters"]:
-                    correct_value = cluster["value"]
-                    for choise in cluster["choices"]:
-                        if choise["v"] != correct_value:
-                            row_list = dirtyDF.index[dirtyDF[col_name]== choise["v"]]
-                            for row in row_list:
-                                repairedDF.iat[row, col] = correct_value
+        if not os.path.isdir(dir):
+            # skip the method instead of terminating the process, so that the remaining
+            # repair methods of the run still get executed
+            logging.info(
+                "No clusters exist for the {} dataset. Run scripts/generate_openrefine_clusters.py "
+                "to create {}".format(self.__dataset_name, dir)
+            )
+        else:
+            # OpenRefine clusters the cells as strings, while the dataframe holds numeric
+            # dtypes whenever it was loaded from the REIN database, so compare as strings
+            stringified_df = dirtyDF.astype(str)
+
+            for filename in sorted(os.listdir(dir)):
+                if filename.endswith(".json"):
+                    with open(os.path.join(dir, filename)) as file:
+                        clusters_dict = json.load(file)
+
+                    col_name = clusters_dict["columnName"]
+                    if col_name not in dirtyDF.columns:
+                        continue
+                    col = dirtyDF.columns.get_loc(col_name)
+                    # the proposed values are strings, which cannot be written into a
+                    # numeric column
+                    if repairedDF[col_name].dtype != object:
+                        repairedDF[col_name] = repairedDF[col_name].astype(object)
+                    for cluster in clusters_dict["clusters"]:
+                        correct_value = cluster["value"]
+                        for choise in cluster["choices"]:
+                            if choise["v"] != correct_value:
+                                row_list = dirtyDF.index[stringified_df[col_name] == choise["v"]]
+                                for row in row_list:
+                                    repairedDF.iat[row, col] = correct_value
 
         cleaning_runtime = time.time() - start_time
 
@@ -1210,6 +1241,15 @@ class Cleaners:
         # preprocess data, especially featurization
         X_train_dirty, y_train_dirty, X_test_dirty, y_test_dirty = app.preprocess(dirtyDF, classification)
         X_train_gt, y_train_gt, X_test_gt, y_test_gt = app.preprocess(self.groundTruthDF, classification)
+
+        # preprocess() one-hot encodes the categorical attributes, so the feature
+        # matrices come back sparse. np.concatenate cannot stack a sparse matrix - it
+        # sees it as a 0-d object and raises "zero-dimensional arrays cannot be
+        # concatenated" - so densify before combining.
+        X_train_dirty, X_test_dirty, X_train_gt, X_test_gt = (
+            matrix if isinstance(matrix, np.ndarray) else matrix.toarray()
+            for matrix in (X_train_dirty, X_test_dirty, X_train_gt, X_test_gt)
+        )
 
         # concatinate to get same format as activeclean
         X_dirty = np.concatenate((X_train_dirty, X_test_dirty), axis=0)

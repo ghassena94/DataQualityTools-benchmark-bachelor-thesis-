@@ -2,13 +2,22 @@
 __pycache__/
 *.py[cod]
 
-utils/
+# NOTE: must stay anchored, exactly like /datasets/ below. The unanchored
+# "utils/" matched at every depth and silently excluded dBoost's
+# cleaners/dBoost/dboost/utils/ package, which is why it was never committed
+# and why dboost/metadata_driven could never import.
+/utils/
 
 # folders
 cleaners/CleanML/
 cleaners/activeclean
 RAHA/
-datasets/
+
+# NOTE: must stay anchored with a leading slash. An unanchored "datasets/"
+# matches at every depth and silently excluded ED2's Python package
+# cleaners/ed2/model/ml/datasets/, which is why it was never committed.
+/datasets/
+
 cleaners/openrefine-3.4.1/
 cleaners/raha/supplementaries/
 utils/adults
@@ -35,6 +44,14 @@ MANIFEST.in
 input/
 test_beers.py
 backup/
+
+# Run artifacts dropped in the working directory by vendored libraries whose output
+# path is not configurable: DataWig (used by CPClean's imputers) writes model
+# checkpoints to ./index/, and Picket saves its text embeddings to ./vec.npy and
+# ./vocab.npy because embed_config[TEXT]['path'] is commented out.
+/index/
+/vec.npy
+/vocab.npy
 # extensions
 *.pkl
 *.json
@@ -134,5 +151,14 @@ knowledge-base/
 
 # Local run logs
 logs_*.txt
+detection_logs/
 
 
+# REIN research paper 
+REIN.pdf
+
+# GX demo code 
+gx-beers-demo
+
+# Ignore the Known issue 
+KNOWN_ISSUES.md

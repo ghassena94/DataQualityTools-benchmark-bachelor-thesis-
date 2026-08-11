@@ -49,6 +49,9 @@ os.environ['OMP_NUM_THREADS'] = '1'
 #                                   Logging Configurations
 #==============================================================================================
 
+# Directory which collects the log files of all runs, instead of scattering them in the root directory
+logs_dir = 'detection_logs'
+
 # Two logging configs methods are needed to avoid generating two log files in each run. Knowing that we execute this
 # method three times to properly confugre the logging process
 def logging_configs_console():
@@ -58,10 +61,20 @@ def logging_configs_console():
     root_logger.setLevel(logging.INFO)
     return root_logger
 
-def logging_configs_file():
-    """This methods defines the configurations for logging in a file whose name includes the currrent date and time"""
-    logging.basicConfig(filename='logs_{}.txt'.format(time.strftime("%Y%m%d-%H%M%S")),
-                            filemode='w', format="%(asctime)s - [%(levelname)5s] - %(message)s", datefmt='%H:%M:%S')
+def logging_label(tools_list, default='all'):
+    """This method builds the tool part of the log file name out of a list of detectors, cleaners, or models"""
+    if not tools_list:
+        return default
+    return '-'.join(str(tool) for tool in tools_list)
+
+def logging_configs_file(label=None):
+    """This methods defines the configurations for logging in a file whose name includes the name of the executed
+    tools and the currrent date and time, e.g., detection_logs/logs_raha_20260728-204458.txt"""
+    os.makedirs(logs_dir, exist_ok=True)
+    name_parts = ['logs'] + ([str(label)] if label else []) + [time.strftime("%Y%m%d-%H%M%S")]
+    log_file = os.path.join(logs_dir, '_'.join(name_parts) + '.txt')
+    logging.basicConfig(filename=log_file, filemode='w',
+                            format="%(asctime)s - [%(levelname)5s] - %(message)s", datefmt='%H:%M:%S')
     root_logger = logging.getLogger()
     root_logger.setLevel(logging.INFO)
     return root_logger

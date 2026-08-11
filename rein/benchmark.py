@@ -26,21 +26,32 @@ class Benchmark:
     Class encapsulates all required methods to run the different experiments
     """
 
-    def __init__(self, store_postgres=False, no_ground_truth=False):
+    def __init__(self, store_postgres=False, no_ground_truth=False, log_label=None):
         """
         Constructor defining default variables
+
+        Arguments:
+        log_label (String) -- name of the executed tool(s), used in the name of the log file
         """
-        self.__logging_setup(logging_configs_console())
+        self.__logging_setup(logging_configs_console(), log_label)
         self.store_postgres = store_postgres
         self.no_ground_truth = no_ground_truth
 
-    def __logging_setup(self, root_logger):
+    def __logging_setup(self, root_logger, log_label=None):
         """This method setup necessary configurations for logging"""
         # Remove possible already-existent handlers
         while root_logger.handlers:
               root_logger.handlers.clear()
         # Define the new configurations
-        logging_configs_file()
+        logging_configs_file(log_label)
+        # logging_configs_file() installs a FileHandler only, so warnings and detector
+        # failures never reached the console - a crashed detector looked like a clean run
+        # that exited 0. Mirror everything to stderr as well.
+        console_handler = logging.StreamHandler()
+        console_handler.setFormatter(
+            logging.Formatter("%(asctime)s - [%(levelname)5s] - %(message)s", datefmt='%H:%M:%S')
+        )
+        logging.getLogger().addHandler(console_handler)
 
     def __get_dataset_dictionary(self, dataset_name):
         """
@@ -396,8 +407,14 @@ class Benchmark:
             keys = [] if "keys" not in datasets_dictionary[dataset] else \
                 datasets_dictionary[dataset]["keys"]
 
-            # Define correct labels, which is necessary for mislable detector
-            correct_labels = []
+            # Define correct labels, which is necessary for mislable detector.
+            # It compares the label columns of the dirty data against their ground truth
+            # values, so it needs those columns as a dataframe. This used to be a bare []
+            # that was never populated, which crashed the detector on .columns.
+            label_columns = []
+            for labels_key in ("labels_clf", "labels_reg"):
+                label_columns.extend(datasets_dictionary[dataset].get(labels_key, []))
+            correct_labels = groundtruthDF[label_columns] if label_columns else pd.DataFrame()
 
             # Retrieve detectors list
             relevant_detectors, _ = self.__get_detectors_list(dataset)
@@ -468,17 +485,20 @@ class Benchmark:
                                 # Add the error rate to the results dictionary
                                 detection_results_dict["error_rate"] = error_rate
                                 # Store results from error detection
+                                logging.info("--------------------------------------------------")
                                 logging.info("Iteration {}: Storing detection results".format(index))
+                                #logging.info("--------------------------------------------------")
                                 for key, value in detection_results_dict.items():
                                     logging.info('{}: {}'.format(key, value))
                                 self.__store_detection_results(detection_results_dict, dataset, dir_name, exp_id)
                             except Exception as e:
-                                logging.info("Exception: {}".format(e.args[0]))
-                                logging.info("Exception: {}".format(sys.exc_info()))
+                                # e.args[0] itself raises IndexError for argless exceptions,
+                                # which replaced the real cause with a bogus one. Log at
+                                # ERROR with the traceback so the failure is visible.
+                                logging.exception("Detector %s failed: %s", dir_name, e)
                                 break
             except Exception as e:
-                logging.info("Exception: {}".format(e.args[0]))
-                logging.info("Exception: {}".format(sys.exc_info()))
+                logging.exception("Error detection failed for dataset %s: %s", dataset, e)
                 continue
 
             # Remove intermediate files and data
@@ -820,7 +840,12 @@ class Benchmark:
                                 if function in cleaner.model_oriented_cleaners_list:
                                     app, results = function(dirtyDF, detection_dict, config["configs"], **config["kwargs"])
                                     results["model"] = detector_name + "-" + results["model"] + save_extension
-                                    app.store_results(results)
+                                    # store_results needs the ml_task to pick its metric names. It was
+                                    # omitted here, so every model-oriented cleaner (cleanlab, boostClean,
+                                    # CPClean, activecleanCleaner) died with "missing 1 required positional
+                                    # argument" *after* finishing its work, and silently wrote no results.
+                                    # They all report classification metrics and bail out on any other task.
+                                    app.store_results(results, classification)
                                 #elif config['configs']['method'] != 'delete':
                                 else:
                                     _, results = function(dirtyDF, detection_dict, config["configs"], **config["kwargs"])

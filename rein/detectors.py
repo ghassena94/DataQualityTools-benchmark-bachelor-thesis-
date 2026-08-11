@@ -816,16 +816,24 @@ class Detectors:
 
         """
 
+        # A numeric column may hold NaN, because pd.to_numeric below turns unparsable
+        # cells into NaN. Those are missing values, which are mvdetector's job, not an
+        # outlier detector's: the statistics have to be computed while ignoring them,
+        # and a NaN cell must never be reported as an outlier. Left unhandled, np.mean /
+        # np.percentile return NaN and every comparison below is silently False (the
+        # detector reports zero detections), while IsolationForest raises outright.
+
         def SD(x, nstd=3.0):
             # Standard Deviaiton Method (Univariate)
-            mean, std = np.mean(x), np.std(x)
+            mean, std = np.nanmean(x), np.nanstd(x)
             cut_off = std * nstd
             lower, upper = mean - cut_off, mean + cut_off
+            # NaN compares False against both bounds, so missing cells drop out
             return lambda y: (y > upper) | (y < lower)
 
         def IQR(x, k=1.5):
             # Interquartile Range (Univariate)
-            q25, q75 = np.percentile(x, 25), np.percentile(x, 75)
+            q25, q75 = np.nanpercentile(x, 25), np.nanpercentile(x, 75)
             iqr = q75 - q25
             cut_off = iqr * k
             lower, upper = q25 - cut_off, q75 + cut_off
@@ -834,9 +842,20 @@ class Detectors:
         def IF(x, contamination=0.01):
             # Isolation Forest (Univariate)
             #IF = IsolationForest(contamination='auto')
+            known = ~np.isnan(x)
+            if not known.any():
+                return lambda y: np.zeros(len(y), dtype=bool)
             IF = IsolationForest(contamination=contamination)
-            IF.fit(x.reshape(-1, 1))
-            return lambda y: (IF.predict(y.reshape(-1, 1)) == -1)
+            IF.fit(x[known].reshape(-1, 1))
+
+            def predict(y):
+                flags = np.zeros(len(y), dtype=bool)
+                y_known = ~np.isnan(y)
+                if y_known.any():
+                    flags[y_known] = IF.predict(y[y_known].reshape(-1, 1)) == -1
+                return flags
+
+            return predict
 
         start_time = time.time()
 
@@ -1582,34 +1601,41 @@ class Detectors:
         """
         
         start_time = time.time()
-        dataset_dir = self.__get_detector_directory(dataset)
-        
+
         # check if path to clusters folder exist
-        try:
-            dir = os.path.join(datasets_dictionary[dataset]["dataset_path"], "clusters")
-        except:
-            logging.info("No clusters exist for the {} dataset".format(dataset))
-            sys.exit(1)
-        
+        dir = os.path.join(datasets_dictionary[dataset]["dataset_path"], "clusters")
+
         detection_dictionary = {}
-        
-        # iterate over each json in /clusters and extract row, col for each value
-        # that doe not equal the proposed_value by openrefine
-        for filename in os.listdir(dir):
-            if filename.endswith(".json"):
-                with open(os.path.join(dir, filename)) as file:
-                    clusters_dict = json.load(file)
-        
-                col_name = clusters_dict["columnName"]
-                if col_name in dirtydf.columns:
-                    col = dirtydf.columns.get_loc(col_name)
-                    for cluster in clusters_dict["clusters"]:
-                        correct_value = cluster["value"]
-                        for choise in cluster["choices"]:
-                            if choise["v"] != correct_value:
-                                row_list = dirtydf.index[dirtydf[col_name]== choise["v"]]
-                                for row in row_list:
-                                    detection_dictionary[(row, col)] = "JUST A DUMMY"
+
+        if not os.path.isdir(dir):
+            # skip the method instead of terminating the process, so that the remaining
+            # detectors of the run still get executed
+            logging.info(
+                "No clusters exist for the {} dataset. Run scripts/generate_openrefine_clusters.py "
+                "to create {}".format(dataset, dir)
+            )
+        else:
+            # OpenRefine clusters the cells as strings, while the dataframe holds numeric
+            # dtypes whenever it was loaded from the REIN database, so compare as strings
+            stringified_df = dirtydf.astype(str)
+
+            # iterate over each json in /clusters and extract row, col for each value
+            # that doe not equal the proposed_value by openrefine
+            for filename in sorted(os.listdir(dir)):
+                if filename.endswith(".json"):
+                    with open(os.path.join(dir, filename)) as file:
+                        clusters_dict = json.load(file)
+
+                    col_name = clusters_dict["columnName"]
+                    if col_name in dirtydf.columns:
+                        col = dirtydf.columns.get_loc(col_name)
+                        for cluster in clusters_dict["clusters"]:
+                            correct_value = cluster["value"]
+                            for choise in cluster["choices"]:
+                                if choise["v"] != correct_value:
+                                    row_list = dirtydf.index[stringified_df[col_name] == choise["v"]]
+                                    for row in row_list:
+                                        detection_dictionary[(row, col)] = "JUST A DUMMY"
 
         error_detect_runtime = time.time()-start_time
 
@@ -1937,10 +1963,18 @@ class Detectors:
         # instantiate  model class
         app = Models(dataset)
 
-        x_train, y_train, x_test, y_test = app.preprocess(dirtydf, ml_task)
+        # the row labels are needed because preprocess() shuffles when it splits: the
+        # indices cleanlab returns address the concatenated train+test arrays, not the
+        # rows of dirtydf
+        x_train, y_train, x_test, y_test, row_index = app.preprocess(dirtydf, ml_task, return_index=True)
 
+        # preprocess() one-hot encodes the categorical attributes, so both feature
+        # matrices come back sparse. np.concatenate treats a sparse matrix as a 0-d
+        # object array, so x_test has to be densified as well, not just x_train.
         if not isinstance(x_train, np.ndarray):
             x_train = x_train.toarray()
+        if not isinstance(x_test, np.ndarray):
+            x_test = x_test.toarray()
 
         # Use the ML model with default parameters (i.e., not optimized)
         estimator = model["fn"](**model["fixed_params"])
@@ -1975,7 +2009,7 @@ class Detectors:
         detection_dictionary={}
         col_i = dirtydf.columns.get_loc(datasets_dictionary[dataset]["labels_clf"][0])
         for x in ordered_label_errors:
-            detection_dictionary[(x,col_i)] = "JUST A DUMMY VARIABLE"
+            detection_dictionary[(row_index[x], col_i)] = "JUST A DUMMY VARIABLE"
         
         error_detect_runtime = time.time()-start_time
 
@@ -2028,7 +2062,18 @@ class Detectors:
         
         # transform dirtdf which has dtype string to numeric type if possible
         dirtydf = dirtydf.apply(pd.to_numeric, errors="ignore")
-        
+
+        # REIN loads every dataset with keep_default_na=False, so missing values
+        # arrive here as empty strings. Picket embeds text cells by averaging the
+        # embeddings of their whitespace-separated tokens; an empty cell has no
+        # tokens, which yields a NaN embedding and poisons the whole model. Give
+        # those cells an explicit token instead so they get a real (learnable)
+        # embedding that the model can flag as anomalous.
+        for col in dirtydf.columns:
+            if dirtydf[col].dtype == object:
+                dirtydf[col] = dirtydf[col].astype(str).replace(
+                    r"^\s*$", "_empty_", regex=True)
+
         feature_dtypes = []
         # infere dtypes for features (NOT LABEL). possible options are "numeric", "categorical", "text"
         for col_i, t in enumerate(dirtydf.dtypes):
@@ -2072,8 +2117,18 @@ class Detectors:
         # calculates a loss for each row indexes and then rows with outlier losses
         # are saved in PicketN.indices_to_remove
         PicketN.loss_based_train()
+
+        # topk() over a NaN loss vector returns an arbitrary index block, so a
+        # NaN score silently produces meaningless "detections". Fail loudly.
+        if np.isnan(PicketN.outlierScore).any():
+            raise ValueError(
+                "picket: {}/{} outlier scores are NaN - the PicketNet loss "
+                "diverged, detections would be meaningless".format(
+                    int(np.isnan(PicketN.outlierScore).sum()),
+                    PicketN.outlierScore.size))
+
         detected_rows = PicketN.indices_to_remove
-        
+
         detection_dictionary={}
         for row_index in detected_rows:
             for col_j, col in enumerate(dirtydf.columns):

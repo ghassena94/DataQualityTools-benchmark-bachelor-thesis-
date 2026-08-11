@@ -473,7 +473,7 @@ class Datasets:
         pf = Profiler(workers=2, tol=0, eps=0.05, embedtxt=True)
 
         # Load data
-        pf.session.load_data(name='soccer', src=DF, df=self.groundTruthDF, check_param=True, na_values='empty')
+        pf.session.load_data(name=self.name, src=DF, df=self.groundTruthDF, check_param=True, na_values='empty')
 
         # Change data types of attributes
         """ 

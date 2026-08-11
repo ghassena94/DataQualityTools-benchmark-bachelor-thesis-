@@ -507,8 +507,12 @@ def run_epoch_with_loss(data_iter, model, loss_compute, device, bp=True):
         loss1, loss2, loss1_no_reduction, loss2_no_reduction = loss_compute(out, batch.samples, batch.target_class, batch.target_value, model.encoder.layers,
             batch.attribute_id_mask, bp=bp)
 
-        loss1_no_reduction = loss1_no_reduction.view(-1, 1)
-        loss2_no_reduction = loss2_no_reduction.view(-1, 1)
+        # detach before accumulating: these per-cell losses are only used as
+        # outlier scores, never backpropagated. Keeping them attached made every
+        # batch retain its full forward graph (6 transformer layers, float64)
+        # until the end of the epoch, which is what blew the process up to >20GB.
+        loss1_no_reduction = loss1_no_reduction.detach().view(-1, 1)
+        loss2_no_reduction = loss2_no_reduction.detach().view(-1, 1)
 
         #print(attr_list)
         #print(batch.attribute_id_mask)

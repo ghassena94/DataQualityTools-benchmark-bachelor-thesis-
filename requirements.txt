@@ -183,7 +183,10 @@ TPOT==0.11.7
 tqdm==4.63.0
 traitlets==5.1.1
 typing==3.6.6
-typing-extensions==4.1.1
+# Must match the typing-extensions pin in the Dockerfile's torch-install step -
+# a mismatch here silently overrides that one, since this file is installed
+# afterward.
+typing-extensions==4.9.0
 unicodecsv==0.14.1
 update-checker==0.18.0
 urllib3==1.26.8
@@ -196,3 +199,10 @@ xlrd==2.0.1
 zict==2.1.0
 zipfile-deflate64==0.2.0
 zipp==3.7.0
+great_expectations==0.18.19
+# great_expectations pins notebook>=6.4.10 with no upper bound. On Python 3.8,
+# pip's resolver can pick a recent notebook>=7 release whose own jupyterlab
+# requirement (>=4.4.9,<4.5) has no published stable version, making the
+# install unsatisfiable. Pin below 7 to stay on classic notebook, which has
+# no jupyterlab dependency at all.
+notebook<7,>=6.4.10

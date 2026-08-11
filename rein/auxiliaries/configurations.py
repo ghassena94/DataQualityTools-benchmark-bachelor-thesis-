@@ -158,6 +158,7 @@ class DetectMethod(Enum):
     cleanlab = 'cleanlab'
     picket = 'picket'
     ed2 = 'ed2'
+    greatExpectations = 'greatExpectations' # Great Expectation is rule base detection error tool, integrated by Ghassen while extending the REIN benchmark 
 
     def __str__(self):
         return self.value
@@ -267,7 +268,8 @@ detectors_mapper = {'min_k': ['Min', 'M'],
                     'cleanlab': ['Cleanlab', 'C'],
                     'cleanlab-forest_clf': ['Cleanlab', 'C'],
                     'outlierdetector_SD': ['SD', 'S'],
-                    'dirty': ['', 'R']}
+                    'dirty': ['', 'R'],
+                    'greatExpectations': ['GreatExpectations', 'G']}
 cleaners_mapper = {'cleanWithGroundTruth': ['GT', '1'],
                    'dirty': ['Dirty', ''],
                    'baran': ['BARAN', '15'],

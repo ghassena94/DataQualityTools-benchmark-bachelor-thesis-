@@ -13,6 +13,7 @@ from rein.auxiliaries.datasets_dictionary import datasets_dictionary
 from rein.auxiliaries.detectors_dictionary import detectors_dictionary
 from rein.auxiliaries.cleaners_configurations import cleaners_configurations
 from rein.auxiliaries.models_dictionary import *
+from rein.auxiliaries.dataset_metrics import compute_dataset_metrics, format_dataset_metrics
 from rein.datasets import Datasets, Database
 from rein.detectors import Detectors
 from rein.cleaners import Cleaners
@@ -31,7 +32,7 @@ class Benchmark:
         Constructor defining default variables
 
         Arguments:
-        log_label (String) -- name of the executed tool(s), used in the name of the log file
+        log_label (String); name of the executed tool(s), used in the name of the log file
         """
         self.__logging_setup(logging_configs_console(), log_label)
         self.store_postgres = store_postgres
@@ -80,7 +81,7 @@ class Benchmark:
           :param
             results-- a dictionary containing the quality scores
             detector_name -- string denoting the name of the detector
-            cleaner_name -- string denoting the name of the repairing method
+            exp_id -- identifier of the experiment run, written as the first column
           """
 
         # Create a list of keys in the dictionary
@@ -484,6 +485,52 @@ class Benchmark:
                                 detection_dictionary, detection_results_dict = function(dirtyDF, dataset, configs)
                                 # Add the error rate to the results dictionary
                                 detection_results_dict["error_rate"] = error_rate
+
+                                # R_true stores erroneous rows  
+                                R_true = set()
+                                R_pred = set()
+                                for (i,j) in detector.actual_errors: 
+                                    R_true.add(i)
+                                for (i,j) in detection_dictionary: 
+                                    R_pred.add(i)   
+                                
+                                row_TP = len(R_true & R_pred)
+                                row_FP = len(R_pred - R_true)
+                                row_FN = len(R_true - R_pred)
+                                row_TN = len(dirtyDF) - len(R_true | R_pred)
+
+                                if row_TP+row_FN+row_FP+row_TN != len(dirtyDF):
+                                    logging.info(f"asset that row-TP+FP+FN+TN:{row_TP+row_FN+row_FP+row_TN} are not equal to N: {len(dirtyDF)}")
+
+                                row_Precision=0
+                                row_Recall=0
+                                row_F1= 0.0
+                               
+                                if len(R_pred) == 0 : 
+                                    logging.warning(f"R_pred is empty, no predictions or preduction from the detector")
+                                else : 
+                                    row_Precision= row_TP/len(R_pred) # (row_TP+row_FP) = R_pred 
+
+                                if len(R_true) == 0 : 
+                                    logging.warning(f"R_true is empty, empty actuall errors!")
+                                else : 
+                                    row_Recall=  row_TP/len(R_true)
+                                if row_Precision + row_Recall ==0 : 
+                                    logging.warning(f"cannot compute Row-F1 because Row-P/R are both 0 :) ")
+                                else : row_F1= (2*row_Precision*row_Recall)/(row_Recall+row_Precision)
+
+                                detection_results_dict.update({
+                                    "row_precision": row_Precision ,
+                                    "row_recall" : row_Recall,
+                                    "row-F1": row_F1,
+                                    "row_TP": row_TP,
+                                    "row_FP": row_FP,
+                                    "row_FN": row_FN,
+                                    "row_TN": row_TN,
+                            
+                                })
+                            
+
                                 # Store results from error detection
                                 logging.info("--------------------------------------------------")
                                 logging.info("Iteration {}: Storing detection results".format(index))

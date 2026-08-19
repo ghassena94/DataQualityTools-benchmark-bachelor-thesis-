@@ -95,18 +95,43 @@ class Benchmark:
             os.mkdir(results_dir)
         results_path = os.path.join(results_dir, "detection_results.csv")
 
+        # The columns are derived from the keys of the results dictionary, so adding a
+        # metric changes the schema of this file
+        header = ["exp_id", "time", "detector"] + key_list
+
         #===================== Stroing results ============================
         write_header = False
         # Check if the file already exists
         if not os.path.exists(results_path):
             write_header = True
+        else:
+            # The header used to be written only at creation, so a file from an older
+            # schema kept silently accepting rows of a different width. Compare the stored
+            # header against the current one and start a new file when they diverge.
+            with open(results_path) as f_object:
+                stored_header = next(csv.reader(f_object), [])
+            if stored_header != header:
+                stamp = datetime.now().strftime("%Y%m%d-%H%M%S")
+                base_path = os.path.splitext(results_path)[0]
+                rotated_path = "{}_{}.csv".format(base_path, stamp)
+                # Two schema changes can land within the same second, and os.rename would
+                # silently overwrite the results rotated away by the first one
+                suffix = 1
+                while os.path.exists(rotated_path):
+                    rotated_path = "{}_{}-{}.csv".format(base_path, stamp, suffix)
+                    suffix += 1
+                os.rename(results_path, rotated_path)
+                logging.info("Columns of {} changed ({} -> {}), previous results moved to {}".format(
+                    os.path.basename(results_path), len(stored_header), len(header),
+                    os.path.basename(rotated_path)))
+                write_header = True
 
         # Open an CSV file in append mode. Create a file object for this file
         with open(results_path, 'a') as f_object:
             # Create a file object and prepare it for writing the results
             writefile = csv.writer(f_object)
             if write_header:
-                writefile.writerow(["exp_id", "time", "detector"] + key_list)  # write the header
+                writefile.writerow(header)  # write the header
             # Prepare the row which is to be written to the file
             row = [exp_id, datetime.now(), detector_name, [results[index] for index in key_list]]
             # Write the values after flattening the row list obtained in the above line
@@ -400,6 +425,9 @@ class Benchmark:
             else:
                 actual_errors_dictionary, error_rate = curr_dataset.get_actual_errors(
                     dirtyDF, groundtruthDF)
+
+            dataset_metrics= compute_dataset_metrics(actual_errors_dictionary,dirtyDF.shape[0],dirtyDF.shape[1], error_rate)
+            logging.info(format_dataset_metrics(dataset,dataset_metrics))
 
             # Instantiate a detector instance
             detector = Detectors(dataset, actual_errors_dictionary)

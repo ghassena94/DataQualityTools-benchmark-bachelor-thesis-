@@ -29,6 +29,8 @@ from rein.models import Models, models
 from sklearn.model_selection import StratifiedKFold     
 from sklearn.linear_model import LogisticRegression
 from cleanlab.latent_estimation import estimate_latent, estimate_confident_joint_and_cv_pred_proba
+from rein.auxiliaries.expectations_dictionary import DATASET_EXPECTATIONS
+from great_expectations.dataset import PandasDataset
 
 # Create a path to the cleaners directory
 #cleaners_path = os.path.join(os.path.dirname(__file__), os.pardir, "cleaners")
@@ -99,6 +101,7 @@ class Detectors:
         """
         self.actual_errors = actual_errors
         self.__dataset_name = dataset_name
+        self.__DATASET_EXPECTATIONS = DATASET_EXPECTATIONS
         self.__DATASET_CONSTRAINTS = {
             adult: {
                 'functions': [
@@ -441,15 +444,15 @@ class Detectors:
 
         # List all implemented detection methods
         self.detectors_list = [
-             self.nadeef,
-             self.outlierdetector,
-             self.mvdetector,
-             self.duplicatesdetector,
-             self.raha,
-             self.mislabeldetector,
-             self.holoclean,
-             self.fahes,
-             self.dboost,
+            self.nadeef,
+            self.outlierdetector,
+            self.mvdetector,
+            self.duplicatesdetector,
+            self.raha,
+            self.mislabeldetector,
+            self.holoclean,
+            self.fahes,
+            self.dboost,
             self.katara,
             self.activeclean,
             self.metadata_driven,
@@ -459,7 +462,8 @@ class Detectors:
             self.zeroer,
             self.cleanlab,
             self.picket,
-            self.ed2
+            self.ed2,
+            self.greatExpectations
         ]
 
     def __get_detector_directory(self, detector_name):
@@ -624,6 +628,81 @@ class Detectors:
 
         return detection_dictionary, evaluation_dict
 
+
+    def greatExpectations(self, dirtyDF, dataset, configs):
+        """
+        This methos is implemented by Ghassen extending the REIN framework.
+        This methods uses the gx framework.
+        It will return an empty detection_dictionary when no rules defined for the given dataset
+        
+        Arguments:
+        dirtyDF -- dataframe of shape n_R (# of records) x n_A (# of attributes) - containing a dirty version of a dataset
+
+        Returns:
+        detection_dictionary -- dictionary - keys represent i,j of dirty cells & values are constant string "JUST A DUUMY VALUE" 
+        """
+        start_time= time.time()
+
+        # define the dictionary to store the indices of the detected dirty cells 
+        detection_dictionary = {}
+
+        evaluation_dictionary = {}
+
+
+        pattern_violation_count = 0
+        fd_violation_count = 0
+        
+    
+        # return empty detection and results dict if dataset has no expectations
+        if self.__dataset_name not in self.__DATASET_EXPECTATIONS.keys():
+            return {},{}
+
+        # wrap the dirtyset in a great expectations PandasDataset 
+        ds=PandasDataset(dirtyDF)
+
+        #checks for dataset columns 
+        
+
+        for expectation in self.__DATASET_EXPECTATIONS[dataset] : 
+            column = expectation['column']
+            col_j = dirtyDF.columns.get_loc(column)
+            expectation_rule = expectation['expectation']
+            kwargs = expectation['kwargs']
+
+            method_name = getattr(ds, expectation_rule)
+            result = method_name(column, **kwargs, result_format="COMPLETE")
+            #logging.info(f"result of the column {column}: {result}")
+            for i in result.result['unexpected_index_list']:
+                detection_dictionary[(i,col_j)] = "JUST A DUUMY VALUE"
+        #logging.info(f"expectations checks for {dataset} completed successfully detection_dic:{detection_dictionary}")
+
+        error_detect_runtime = time.time() - start_time
+
+        #get detector path
+        detector_path = self.__get_detector_directory(str(DetectMethod.greatExpectations))
+
+        # store detections in detector directory
+        self.__store_detections(detection_dictionary, detector_path)
+
+        precision, recall , f1 = self.__evaluate(detection_dictionary)
+
+        evaluation_dict = {
+            "precision": precision,
+            "recall": recall,
+            "f1": f1,
+            "detection_runtime": error_detect_runtime,
+            "#detections": len(detection_dictionary),
+            "#pattern_violations": pattern_violation_count,
+            "#fd_violations": fd_violation_count,
+            "#detected_duplicates": None,
+            "detected_error_rate": len(detection_dictionary) / dirtyDF.size,
+        }
+        
+
+
+
+        return detection_dictionary , evaluation_dict
+
     def raha(self, dirtydf, dataset, configs):
         start_time = time.time()
         dataset_name = dataset
@@ -666,6 +745,7 @@ class Detectors:
         }
 
         return detection_dictionary, evaluation_dict
+
 
     def mvdetector(self, dirtydf, dataset, configs):
         """

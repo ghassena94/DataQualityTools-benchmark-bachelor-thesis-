@@ -66,7 +66,7 @@ def format_dataset_metrics(dataset_name, metrics):
         "   columns with errors (d_err)   {:>12}".format(metrics["error_columns"]),
         "   cell error rate (eps)         {:>12.4f}".format(metrics["cell_error_rate"]),
         "   observed dirty row fraction   {:>12.4f}".format(metrics["fraction_dirty_rows"]),
-        "   row_baseline                    {:>12.4f}".format(metrics["fraction_dirty_rows"]),
+        "   row_baseline                    {:>12.4f}".format(metrics["row_baseline"]),
         "   Rousseeuw prediction          {:>12.4f}".format(metrics["rousseeuw_prediction"]),
         "-" * 56,
     ])

@@ -412,6 +412,33 @@ class Datasets:
                 difference_dictionary[(i, j)] = dataframe_2.iloc[i, j]
         return difference_dictionary
 
+    @staticmethod
+    def __cells_differ(dirty_value, truth_value):
+        """
+        This method compares one dirty cell against its ground truth counterpart
+
+        Arguments:
+        dirty_value -- cell value taken from the dirty dataset
+        truth_value -- cell value taken from the ground truth
+
+        Returns:
+        Boolean -- True when the cell counts as an error
+        """
+
+        # load_data() reads with keep_default_na=False, so a blank cell arrives as "",
+        # but load_df_postgresql() hands back a real NaN and "NaN != NaN" is True, which
+        # marked every cell left blank in both frames as an error. A value missing on
+        # both sides is unchanged; missing on exactly one side is an error.
+        dirty_missing = pd.isna(dirty_value) or dirty_value == ""
+        truth_missing = pd.isna(truth_value) or truth_value == ""
+        if dirty_missing or truth_missing:
+            return dirty_missing != truth_missing
+
+        try:
+            return int(float(dirty_value)) != int(float(truth_value))
+        except (TypeError, ValueError, OverflowError):
+            return dirty_value != truth_value
+
     def get_actual_errors(self, dirtyDF, groundTruthDF):
         """
         This method estimates the actual errors in a dataset and the error rate
@@ -428,18 +455,32 @@ class Datasets:
         # Create dictionary for the output
         actual_errors_dictionary = {}
 
+        # The two frames are compared cell by cell via .iat, so their columns have to
+        # line up. smartfactory ships a dirty.csv whose "labels" column comes last while
+        # its clean.csv has it first, and comparing by position there marked 86.6% of the
+        # cells as errors instead of the true 1.6%. Reorder the ground truth to follow the
+        # dirty columns whenever both carry the same names.
+        if list(dirtyDF.columns) != list(groundTruthDF.columns):
+            if sorted(dirtyDF.columns) == sorted(groundTruthDF.columns):
+                logging.info(
+                    "Ground truth columns are ordered differently to the dirty data, reindexing onto {}".format(
+                        list(dirtyDF.columns)))
+                groundTruthDF = groundTruthDF[list(dirtyDF.columns)]
+            else:
+                # Nothing to align on, so position stays the only option. Say so loudly:
+                # a mismatch here silently inflates the error rate.
+                logging.warning(
+                    "Dirty and ground truth columns differ by name ({} vs {}), comparing by position".format(
+                        list(dirtyDF.columns), list(groundTruthDF.columns)))
+
         for col in dirtyDF.columns:
             # Get the location of the next column
            col_j = dirtyDF.columns.get_loc(col)
 
            for i, row in dirtyDF.iterrows():
 
-                try:
-                    if int(float(dirtyDF.iat[i, col_j])) != int(float(groundTruthDF.iat[i, col_j])):
-                        actual_errors_dictionary[(i, col_j)] = "DUMMY VALUE"
-                except ValueError:
-                    if dirtyDF.iat[i, col_j] != groundTruthDF.iat[i, col_j]:
-                        actual_errors_dictionary[(i, col_j)] = "DUMMY VALUE"
+                if self.__cells_differ(dirtyDF.iat[i, col_j], groundTruthDF.iat[i, col_j]):
+                    actual_errors_dictionary[(i, col_j)] = "DUMMY VALUE"
 
         #actual_errors_dictionary = self.get_dataframes_difference(dirtyDF, groundTruthDF)
         error_rate = len(actual_errors_dictionary) / groundTruthDF.size

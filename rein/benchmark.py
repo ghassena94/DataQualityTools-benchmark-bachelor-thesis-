@@ -105,25 +105,28 @@ class Benchmark:
         if not os.path.exists(results_path):
             write_header = True
         else:
-            # The header used to be written only at creation, so a file from an older
-            # schema kept silently accepting rows of a different width. Compare the stored
-            # header against the current one and start a new file when they diverge.
+            # The header used to be written only at creation, so a file from an older schema kept silently accepting rows of a different width. 
+            # Compare the stored header against the current one and start a new file when they diverge.
             with open(results_path) as f_object:
                 stored_header = next(csv.reader(f_object), [])
+
             if stored_header != header:
                 stamp = datetime.now().strftime("%Y%m%d-%H%M%S")
                 base_path = os.path.splitext(results_path)[0]
                 rotated_path = "{}_{}.csv".format(base_path, stamp)
-                # Two schema changes can land within the same second, and os.rename would
-                # silently overwrite the results rotated away by the first one
+
+                # Two schema changes can land within the same second, and os.rename would silently overwrite the results rotated away by the first one
                 suffix = 1
+
                 while os.path.exists(rotated_path):
                     rotated_path = "{}_{}-{}.csv".format(base_path, stamp, suffix)
                     suffix += 1
                 os.rename(results_path, rotated_path)
+
                 logging.info("Columns of {} changed ({} -> {}), previous results moved to {}".format(
                     os.path.basename(results_path), len(stored_header), len(header),
                     os.path.basename(rotated_path)))
+
                 write_header = True
 
         # Open an CSV file in append mode. Create a file object for this file

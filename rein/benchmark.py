@@ -547,6 +547,26 @@ class Benchmark:
                                     logging.warning(f"cannot compute Row-F1 because Row-P/R are both 0 :) ")
                                 else : row_F1= (2*row_Precision*row_Recall)/(row_Recall+row_Precision)
 
+                                
+                                cell_F1 = detection_results_dict["f1"]
+                                row_error_rate = dataset_metrics["fraction_dirty_rows"] 
+                                cell_F1 = detection_results_dict["f1"]
+
+                                if cell_F1 > 0 and error_rate < 1.0:
+                                    cell_FG1 = (cell_F1 - error_rate) / ((1 - error_rate) * cell_F1)
+                                else:
+                                    cell_FG1 = None
+                                    logging.warning("cannot compute cell_FG1 (cell_F1={}, error_rate={})".format(
+                                        cell_F1, error_rate))
+
+                                if row_F1 > 0 and row_error_rate < 1.0:
+                                    row_FG1 = (row_F1 - row_error_rate) / ((1 - row_error_rate) * row_F1)
+                                else:
+                                    row_FG1 = None
+                                    logging.warning("cannot compute row_FG1 (row_F1={}, fraction_dirty_rows={})".format(
+                                        row_F1, row_error_rate))
+
+
                                 detection_results_dict.update({
                                     "row_precision": row_Precision ,
                                     "row_recall" : row_Recall,
@@ -555,6 +575,8 @@ class Benchmark:
                                     "row_FP": row_FP,
                                     "row_FN": row_FN,
                                     "row_TN": row_TN,
+                                    "row_FG1": row_FG1,
+                                    "cell_FG1": cell_FG1
                             
                                 })
                             

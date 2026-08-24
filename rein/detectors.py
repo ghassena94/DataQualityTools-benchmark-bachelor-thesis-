@@ -31,6 +31,7 @@ from sklearn.linear_model import LogisticRegression
 from cleanlab.latent_estimation import estimate_latent, estimate_confident_joint_and_cv_pred_proba
 from rein.auxiliaries.expectations_dictionary import DATASET_EXPECTATIONS
 from great_expectations.dataset import PandasDataset
+from rein.auxiliaries.expectations_profiler import profile_expectations
 
 # Create a path to the cleaners directory
 #cleaners_path = os.path.join(os.path.dirname(__file__), os.pardir, "cleaners")
@@ -653,18 +654,35 @@ class Detectors:
         fd_violation_count = 0
         
     
-        # return empty detection and results dict if dataset has no expectations
-        if self.__dataset_name not in self.__DATASET_EXPECTATIONS.keys():
-            return {},{}
+        # pick which tier of expectations to check. 'generic' and 'oracle' are
+        # built by the profiler, only 'domain' is written by hand.
+        tier = configs["expectation_tier"] if "expectation_tier" in configs else "domain"
 
-        # wrap the dirtyset in a great expectations PandasDataset 
-        ds=PandasDataset(dirtyDF)
+        if tier == "generic":
+            expectations = profile_expectations(dirtyDF)
+        elif tier == "oracle":
+            expectations = profile_expectations(configs["groundtruthDF"])
+        elif dataset in self.__DATASET_EXPECTATIONS:
+            expectations = self.__DATASET_EXPECTATIONS[dataset]["domain"]
+        else:
+            # no hand written expectations for this dataset. carry on with an empty
+            # list so the run reports a score of zero, instead of returning an empty
+            # results dict which makes the caller raise a KeyError on "f1"
+            logging.warning("no domain expectations written for {}".format(dataset))
+            expectations = []
 
-        #checks for dataset columns 
-        
+        # wrap the dirtyset in a great expectations PandasDataset
+        ds = PandasDataset(dirtyDF)
 
-        for expectation in self.__DATASET_EXPECTATIONS[dataset] : 
+        for expectation in expectations:
             column = expectation['column']
+
+            # a profiled or hand written expectation can name a column this dataset
+            # does not have, and get_loc would raise on it
+            if column not in dirtyDF.columns:
+                logging.warning("skipping expectation on missing column {}".format(column))
+                continue
+
             col_j = dirtyDF.columns.get_loc(column)
             expectation_rule = expectation['expectation']
             kwargs = expectation['kwargs']
@@ -693,7 +711,7 @@ class Detectors:
             "detection_runtime": error_detect_runtime,
             "#detections": len(detection_dictionary),
             "#pattern_violations": pattern_violation_count,
-            "#fd_violations": fd_violation_count,
+            "#fd_violations": None,
             "#detected_duplicates": None,
             "detected_error_rate": len(detection_dictionary) / dirtyDF.size,
         }

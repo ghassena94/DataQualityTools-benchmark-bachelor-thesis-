@@ -506,6 +506,10 @@ class Benchmark:
                         # cleanlab
                         configs['model_name'] = "forest_clf"
 
+                        #greatExpectations
+                        configs["expectation_tier"] = "domain"
+                        configs["groundtruthDF"] = groundtruthDF
+
                         # Setting the directory name, where the detections will be stored
                         dir_name = '_'.join([method, detect_method]) if method in ["outlierdetector", "fahes"] else method
 

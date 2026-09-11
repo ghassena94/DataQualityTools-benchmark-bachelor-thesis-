@@ -507,7 +507,9 @@ class Benchmark:
                         configs['model_name'] = "forest_clf"
 
                         #greatExpectations
-                        configs["expectation_tier"] = "domain"
+                        # the tier stays "domain" unless EXPECTATION_TIER says otherwise,
+                        # so every existing invocation behaves exactly as before
+                        configs["expectation_tier"] = os.environ.get("EXPECTATION_TIER", "domain")
                         configs["groundtruthDF"] = groundtruthDF
 
                         # Setting the directory name, where the detections will be stored
@@ -554,37 +556,55 @@ class Benchmark:
                                     logging.warning(f"cannot compute Row-F1 because Row-P/R are both 0 :) ")
                                 else : row_F1= (2*row_Precision*row_Recall)/(row_Recall+row_Precision)
 
-                                
+                                cell_TP = len(set(detection_dictionary) & set(detector.actual_errors))
+                                cell_FP = len(detection_dictionary) - cell_TP
+                                cell_FN = len(detector.actual_errors) - cell_TP
+
                                 cell_F1 = detection_results_dict["f1"]
-                                row_error_rate = dataset_metrics["fraction_dirty_rows"] 
-                                cell_F1 = detection_results_dict["f1"]
+                                cell_precision = detection_results_dict["precision"]
+                                cell_recall = detection_results_dict["recall"]
+                                row_error_rate = dataset_metrics["fraction_dirty_rows"]
 
                                 if cell_F1 > 0 and error_rate < 1.0:
-                                    cell_FG1 = (cell_F1 - error_rate) / ((1 - error_rate) * cell_F1)
+                                    cell_precG = (cell_precision - error_rate) / ((1 - error_rate) * cell_precision)
+                                    cell_recG = (cell_recall - error_rate) / ((1 - error_rate) * cell_recall)
+                                    cell_FG1 = (cell_precG + cell_recG) / 2
                                 else:
+                                    cell_precG = None
+                                    cell_recG = None
                                     cell_FG1 = None
                                     logging.warning("cannot compute cell_FG1 (cell_F1={}, error_rate={})".format(
                                         cell_F1, error_rate))
 
                                 if row_F1 > 0 and row_error_rate < 1.0:
-                                    row_FG1 = (row_F1 - row_error_rate) / ((1 - row_error_rate) * row_F1)
+                                    row_precG = (row_Precision - row_error_rate) / ((1 - row_error_rate) * row_Precision)
+                                    row_recG = (row_Recall - row_error_rate) / ((1 - row_error_rate) * row_Recall)
+                                    row_FG1 = (row_precG + row_recG) / 2
                                 else:
+                                    row_precG = None
+                                    row_recG = None
                                     row_FG1 = None
                                     logging.warning("cannot compute row_FG1 (row_F1={}, fraction_dirty_rows={})".format(
                                         row_F1, row_error_rate))
 
 
                                 detection_results_dict.update({
+                                    "cell_TP": cell_TP,
+                                    "cell_FP": cell_FP,
+                                    "cell_FN": cell_FN,
+                                    "cell_precG": cell_precG,
+                                    "cell_recG": cell_recG,
+                                    "cell_FG1": cell_FG1,
                                     "row_precision": row_Precision ,
                                     "row_recall" : row_Recall,
-                                    "row-F1": row_F1,
+                                    "row_F1": row_F1,
                                     "row_TP": row_TP,
                                     "row_FP": row_FP,
                                     "row_FN": row_FN,
                                     "row_TN": row_TN,
+                                    "row_precG": row_precG,
+                                    "row_recG": row_recG,
                                     "row_FG1": row_FG1,
-                                    "cell_FG1": cell_FG1
-                            
                                 })
                             
 

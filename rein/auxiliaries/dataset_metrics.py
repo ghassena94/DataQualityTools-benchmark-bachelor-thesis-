@@ -27,6 +27,7 @@ def compute_dataset_metrics(actual_errors, N, d, error_rate):
 
     fraction_dirty_rows= len(R_True)/ N 
     error_colums = len(d_error)
+    cell_baseline= (2*error_rate)/(1+error_rate)
     row_baseline= (2*fraction_dirty_rows)/(1+fraction_dirty_rows)
     rousseeuw_prediction = 1-(1-error_rate)**d
 
@@ -37,6 +38,7 @@ def compute_dataset_metrics(actual_errors, N, d, error_rate):
         "rows_number": N,
         "error_columns": error_colums,
         "fraction_dirty_rows": fraction_dirty_rows, 
+        "cell_baseline": cell_baseline,
         "row_baseline": row_baseline,
         "rousseeuw_prediction": rousseeuw_prediction
 
@@ -66,6 +68,7 @@ def format_dataset_metrics(dataset_name, metrics):
         "   columns with errors (d_err)   {:>12}".format(metrics["error_columns"]),
         "   cell error rate (eps)         {:>12.4f}".format(metrics["cell_error_rate"]),
         "   observed dirty row fraction   {:>12.4f}".format(metrics["fraction_dirty_rows"]),
+        "   cell_baseline                  {:>12.4f}".format(metrics["cell_baseline"]),
         "   row_baseline                  {:>12.4f}".format(metrics["row_baseline"]),
         "   Rousseeuw prediction          {:>12.4f}".format(metrics["rousseeuw_prediction"]),
         "-" * 56,

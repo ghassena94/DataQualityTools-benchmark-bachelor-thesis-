@@ -23,7 +23,7 @@ from copy import deepcopy
 from sklearn.neighbors import NearestNeighbors
 from random import sample
 from numpy.random import uniform
-from math import isnan
+from math import isnan, isclose
 import tqdm
 from sklearn.cluster import KMeans, AgglomerativeClustering
 from sklearn.mixture import GaussianMixture
@@ -435,7 +435,7 @@ class Datasets:
             return dirty_missing != truth_missing
 
         try:
-            return int(float(dirty_value)) != int(float(truth_value))
+            return not isclose(float(dirty_value), float(truth_value), rel_tol=1e-6)
         except (TypeError, ValueError, OverflowError):
             return dirty_value != truth_value
 

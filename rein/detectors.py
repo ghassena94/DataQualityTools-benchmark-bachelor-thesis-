@@ -1291,8 +1291,13 @@ class Detectors:
         # Define the configuations JSON file
         configs_path = os.path.join(detector_path, 'dboost_configs.json')
 
-        # Use the predefined configs, if defined in the dataset dictionary or in the configurations JSON file
-        if 'dboost_configs' in datasets_dictionary[dataset]:
+        # Use the predefined configs, if defined in the dataset dictionary or in the configurations JSON file.
+        # Several datasets carry 'dboost_configs': [] as an empty placeholder. Testing
+        # for the key alone accepted that empty list as a configuration, and the strategy
+        # loop then read config[0] off it and raised IndexError, so dboost reported
+        # nothing at all on those datasets. An empty list means "not configured", so fall
+        # through to the grid below.
+        if datasets_dictionary[dataset].get('dboost_configs'):
             configuration_list = [datasets_dictionary[dataset]['dboost_configs']]
         elif os.path.exists(configs_path):
             with open(configs_path, 'r') as fp:

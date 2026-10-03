@@ -507,15 +507,24 @@ class Benchmark:
                         configs['model_name'] = "forest_clf"
 
                         #greatExpectations
-                        # the tier stays "domain" unless EXPECTATION_TIER says otherwise,
-                        # so every existing invocation behaves exactly as before
-                        configs["expectation_tier"] = os.environ.get("EXPECTATION_TIER", "domain")
+                        # the tier is "hand_written" unless EXPECTATION_TIER selects
+                        # "dirty_profiled" or "clean_profiled"
+                        configs["expectation_tier"] = os.environ.get("EXPECTATION_TIER", "hand_written")
                         configs["groundtruthDF"] = groundtruthDF
 
                         # Setting the directory name, where the detections will be stored
                         dir_name = '_'.join([method, detect_method]) if method in ["outlierdetector", "fahes"] else method
 
-                        logging.info("Detecting errors using ------------> ***********{}***********".format(dir_name))
+                        # greatExpectations runs a different expectation suite per tier, but all
+                        # three tiers were stored under the bare name "greatExpectations", so they
+                        # collapsed into one detector in detection_results.csv and could only be
+                        # told apart by the order of their timestamps. Qualify the name that is
+                        # logged and stored with the tier; every other detector keeps its plain name.
+                        detector_label = dir_name
+                        if method == "greatExpectations":
+                            detector_label = '{}:{}'.format(dir_name, configs["expectation_tier"])
+
+                        logging.info("Detecting errors using ------------> ***********{}***********".format(detector_label))
                         # Find the dirty cells and generate a detections.csv file
                         for index in range(iterations):
                             try:
@@ -614,12 +623,12 @@ class Benchmark:
                                 #logging.info("--------------------------------------------------")
                                 for key, value in detection_results_dict.items():
                                     logging.info('{}: {}'.format(key, value))
-                                self.__store_detection_results(detection_results_dict, dataset, dir_name, exp_id)
+                                self.__store_detection_results(detection_results_dict, dataset, detector_label, exp_id)
                             except Exception as e:
                                 # e.args[0] itself raises IndexError for argless exceptions,
                                 # which replaced the real cause with a bogus one. Log at
                                 # ERROR with the traceback so the failure is visible.
-                                logging.exception("Detector %s failed: %s", dir_name, e)
+                                logging.exception("Detector %s failed: %s", detector_label, e)
                                 break
             except Exception as e:
                 logging.exception("Error detection failed for dataset %s: %s", dataset, e)

@@ -1,7 +1,7 @@
 # generates expectations automatically from a dataframe, with no domain knowledge.
 # used for two tiers: 
-# 'generic' profiles the dirty data 
-# 'oracle' profiles the clean data (an upper bound thatis not reachable in practice).
+# 'dirty_profiled' profiles the dirty data 
+# 'clean_profiled' profiles the clean data (an upper bound thatis not reachable in practice).
 
 # values that stand for a missing entry
 MISSING_TOKENS = ['', 'N/A', 'n/a', 'NA', 'NULL', 'null', '-', '?']

@@ -32,6 +32,8 @@ from cleanlab.latent_estimation import estimate_latent, estimate_confident_joint
 from rein.auxiliaries.expectations_dictionary import DATASET_EXPECTATIONS
 from great_expectations.dataset import PandasDataset
 from rein.auxiliaries.expectations_profiler import profile_expectations
+from rein.auxiliaries.dataset_metrics import (format_expectation_breakdown,
+                                              format_constraint_breakdown)
 
 # Create a path to the cleaners directory
 #cleaners_path = os.path.join(os.path.dirname(__file__), os.pardir, "cleaners")
@@ -654,25 +656,37 @@ class Detectors:
         fd_violation_count = 0
         
     
-        # pick which tier of expectations to check. 'generic' and 'oracle' are
-        # built by the profiler, only 'domain' is written by hand.
-        tier = configs["expectation_tier"] if "expectation_tier" in configs else "domain"
+        # pick which tier of expectations to check. 'dirty_profiled' and 'clean_profiled' are
+        # built by the profiler, only 'hand_written' is written by hand.
+        tier = configs["expectation_tier"] if "expectation_tier" in configs else "hand_written"
 
-        if tier == "generic":
+        # any other name (a typo, or an old one like generic/oracle/domain) would fall
+        # through to the hand written suite and be stored under the wrong label
+        if tier not in ("dirty_profiled", "clean_profiled", "hand_written"):
+            raise ValueError("unknown expectation tier '{}', expected dirty_profiled, "
+                             "clean_profiled or hand_written".format(tier))
+
+        if tier == "dirty_profiled":
             expectations = profile_expectations(dirtyDF)
-        elif tier == "oracle":
+        elif tier == "clean_profiled":
             expectations = profile_expectations(configs["groundtruthDF"])
         elif dataset in self.__DATASET_EXPECTATIONS:
-            expectations = self.__DATASET_EXPECTATIONS[dataset]["domain"]
+            expectations = self.__DATASET_EXPECTATIONS[dataset]["hand_written"]
         else:
             # no hand written expectations for this dataset. carry on with an empty
             # list so the run reports a score of zero, instead of returning an empty
             # results dict which makes the caller raise a KeyError on "f1"
-            logging.warning("no domain expectations written for {}".format(dataset))
+            logging.warning("no hand written expectations for {}".format(dataset))
             expectations = []
 
         # wrap the dirtyset in a great expectations PandasDataset
         ds = PandasDataset(dirtyDF)
+
+        # One suite-level F1 says what the suite scored, not which rule earned it.
+        # Keep each expectation's own cells so the per-rule table below can say
+        # how much of the score any single rule is carrying, and which rules only
+        # restate cells a previous rule already flagged.
+        per_rule = []
 
         for expectation in expectations:
             column = expectation['column']
@@ -690,11 +704,19 @@ class Detectors:
             method_name = getattr(ds, expectation_rule)
             result = method_name(column, **kwargs, result_format="COMPLETE")
             #logging.info(f"result of the column {column}: {result}")
+            rule_cells = set()
             for i in result.result['unexpected_index_list']:
                 detection_dictionary[(i,col_j)] = "JUST A DUUMY VALUE"
+                rule_cells.add((i, col_j))
+            per_rule.append((column, expectation_rule, kwargs, rule_cells))
         #logging.info(f"expectations checks for {dataset} completed successfully detection_dic:{detection_dictionary}")
 
+        # stop the clock before the breakdown: it is reporting, not detection,
+        # and must not land in the runtime this detector is measured on
         error_detect_runtime = time.time() - start_time
+
+        logging.info(format_expectation_breakdown(
+            dataset, tier, per_rule, self.actual_errors, dirtyDF.shape[0]))
 
         #get detector path
         detector_path = self.__get_detector_directory(str(DetectMethod.greatExpectations))
@@ -1135,9 +1157,14 @@ class Detectors:
         detection_dictionary = {}
         for index, row in errors_df.iterrows():
             detection_dictionary[(row['_tid_'], dirtydf.columns.get_loc(row['attribute']))] = "JUST A DUMMY VALUE"
-        
-        # get runtime
+
+        # get runtime. Measured before the breakdown below, which re-derives each
+        # constraint's footprint with a group-by per constraint: that is reporting
+        # work, not detection work, and would otherwise inflate this number.
         error_detect_runtime = time.time() - start_time
+
+        logging.info(format_constraint_breakdown(
+            dataset, hc.get_dcs(), dirtydf, self.actual_errors))
 
         # get detector path
         detector_path = self.__get_detector_directory("holoclean")

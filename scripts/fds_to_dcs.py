@@ -1,24 +1,7 @@
-####################################################
-# Benchmark: convert learned FDs into HoloClean denial constraints (DCs)
-#
-# Reads  datasets/<name>/<name>_FDs_by_col.txt  (produced by
-# scripts/generate_fd_rules.py, each line "LHS -> RHS\t# score=...")
-# and writes datasets/<name>/constraints/<name>_dcs.txt in HoloClean's
-# DC syntax.
-#
+
+# convert learned FDs into HoloClean denial constraints (DCs)
 # An FD "A,B -> C" becomes the denial constraint
 #     t1&t2&EQ(t1.A,t2.A)&EQ(t1.B,t2.B)&IQ(t1.C,t2.C)
-# i.e. "no two distinct tuples may agree on A and B yet disagree on C".
-#
-# "Useful" filtering: any FD whose LHS contains a (near-)unique column
-# (uniqueness ratio >= --uniq_thresh on the ground-truth data -- this
-# catches index / Index / Unnamed: 0 / unique-id columns) is dropped.
-# EQ() on a near-unique column can only hold when t1 and t2 are the same
-# row, so such a DC can never detect a real violation. This reproduces
-# the hand-curated beers_dcs.txt exactly. Additionally, a column named
-# "index" is always dropped because dcHoloCleaner removes it before
-# loading, so a DC referencing it would fail schema validation.
-####################################################
 
 import argparse
 import os

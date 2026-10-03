@@ -20,7 +20,7 @@ detectors_dictionary = {
         "detectors_list": [DetectMethod.raha, DetectMethod.ed2, 
                            DetectMethod.picket, DetectMethod.metadata_driven, 
                            DetectMethod.max_entropy, DetectMethod.min_k, 
-                           DetectMethod.mvdetector, DetectMethod.fahes, DetectMethod.holoclean],
+                           DetectMethod.mvdetector, DetectMethod.fahes, DetectMethod.holoclean, DetectMethod.greatExpectations],
         "cleaners_list": [RepairMethod.cleanWithGroundTruth, RepairMethod.standardImputer,
                           RepairMethod.baran, RepairMethod.mlImputer, RepairMethod.dcHoloCleaner,
                           RepairMethod.boostClean, RepairMethod.cpClean, RepairMethod.activecleanCleaner]
@@ -30,7 +30,7 @@ detectors_dictionary = {
         "detectors_list": [DetectMethod.katara, DetectMethod.openrefine,
                            DetectMethod.raha, DetectMethod.ed2, DetectMethod.picket,
                            DetectMethod.min_k, DetectMethod.max_entropy, DetectMethod.metadata_driven,
-                           DetectMethod.nadeef, DetectMethod.holoclean],
+                           DetectMethod.nadeef, DetectMethod.holoclean, DetectMethod.greatExpectations],
         "cleaners_list": [RepairMethod.cleanWithGroundTruth, RepairMethod.dcHoloCleaner, RepairMethod.baran,
                           RepairMethod.mlImputer, RepairMethod.boostClean, RepairMethod.cpClean,
                           RepairMethod.activecleanCleaner]
@@ -39,7 +39,7 @@ detectors_dictionary = {
         "name": rule_violation,
         "detectors_list": [DetectMethod.nadeef, DetectMethod.ed2, DetectMethod.picket,
                            DetectMethod.min_k, DetectMethod.max_entropy, DetectMethod.metadata_driven,
-                           DetectMethod.holoclean, DetectMethod.raha],
+                           DetectMethod.holoclean, DetectMethod.raha, DetectMethod.greatExpectations],
         "cleaners_list": [RepairMethod.cleanWithGroundTruth, RepairMethod.dcHoloCleaner,
                           RepairMethod.baran, RepairMethod.mlImputer, RepairMethod.boostClean,
                           RepairMethod.cpClean, RepairMethod.activecleanCleaner]
@@ -48,7 +48,7 @@ detectors_dictionary = {
         "name": outliers,
         "detectors_list": [DetectMethod.raha, DetectMethod.dboost, DetectMethod.fahes,
                            DetectMethod.metadata_driven, DetectMethod.outlierdetector,
-                           DetectMethod.max_entropy, DetectMethod.min_k, DetectMethod.ed2],
+                           DetectMethod.max_entropy, DetectMethod.min_k, DetectMethod.ed2, DetectMethod.greatExpectations],
         "cleaners_list": [RepairMethod.cleanWithGroundTruth, RepairMethod.standardImputer,
                           RepairMethod.baran, RepairMethod.mlImputer, RepairMethod.boostClean,
                           RepairMethod.cpClean, RepairMethod.activecleanCleaner]
@@ -66,7 +66,7 @@ detectors_dictionary = {
         "name": duplicates,
         "detectors_list": [DetectMethod.duplicatesdetector, DetectMethod.zeroer,
                            DetectMethod.openrefine, DetectMethod.min_k, DetectMethod.max_entropy,
-                           DetectMethod.picket, DetectMethod.cleanlab],
+                           DetectMethod.picket, DetectMethod.cleanlab,DetectMethod.greatExpectations],
         "cleaners_list": [RepairMethod.duplicatesCleaner, RepairMethod.openrefine]
     },
     typos: {
@@ -83,7 +83,7 @@ detectors_dictionary = {
         "name": inconsistency,
         "detectors_list": [DetectMethod.katara, DetectMethod.raha, DetectMethod.openrefine,
                            DetectMethod.ed2, DetectMethod.picket, DetectMethod.min_k,
-                           DetectMethod.max_entropy, DetectMethod.metadata_driven],
+                           DetectMethod.max_entropy, DetectMethod.metadata_driven, DetectMethod.greatExpectations],
         "cleaners_list": [RepairMethod.cleanWithGroundTruth, RepairMethod.openrefine,
                           RepairMethod.baran, RepairMethod.mlImputer, RepairMethod.boostClean,
                           RepairMethod.cpClean, RepairMethod.activecleanCleaner]

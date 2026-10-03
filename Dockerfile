@@ -45,19 +45,25 @@ RUN pip3 install --no-build-isolation scikit-sparse==0.4.5
 #              are Linux x86 only and are NOT on PyPI).
 #   aarch64 → torch 1.13.1 from PyPI (1.10.2 has no Linux ARM64 wheels;
 #              1.13.1 is the last stable 1.x release and has full ARM64 support).
-# typing-extensions is pinned to 4.1.1 in both cases because PyTorch's index
-# serves 4.15.0 which requires Python >=3.9 and would break our Python 3.8 build.
+# typing-extensions is pinned to 4.9.0 in both cases: PyTorch's index serves
+# 4.15.0, which requires Python >=3.9 and would break our Python 3.8 build, so
+# we cap it below that. It must still be >=4.3.0, though: great_expectations
+# pulls in pydantic (unbounded upper version), which resolves to a modern
+# pydantic 2.x whose pydantic.v1 compatibility shim calls
+# typing_extensions.dataclass_transform(..., field_specifiers=...) - a
+# parameter only added in typing_extensions 4.3.0. 4.1.1 (the previous pin)
+# predates that and breaks the great_expectations import with a TypeError.
 RUN ARCH=$(uname -m) && \
     if [ "$ARCH" = "x86_64" ]; then \
         pip3 install \
-            "typing-extensions==4.1.1" \
+            "typing-extensions==4.9.0" \
             torch==1.10.2+cpu \
             torchvision==0.11.3+cpu \
             torchaudio==0.10.2+cpu \
             --extra-index-url https://download.pytorch.org/whl/cpu; \
     else \
         pip3 install \
-            "typing-extensions==4.1.1" \
+            "typing-extensions==4.9.0" \
             torch==1.13.1 \
             torchvision==0.14.1 \
             torchaudio==0.13.1; \

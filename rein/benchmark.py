@@ -13,6 +13,7 @@ from rein.auxiliaries.datasets_dictionary import datasets_dictionary
 from rein.auxiliaries.detectors_dictionary import detectors_dictionary
 from rein.auxiliaries.cleaners_configurations import cleaners_configurations
 from rein.auxiliaries.models_dictionary import *
+from rein.auxiliaries.dataset_metrics import compute_dataset_metrics, format_dataset_metrics
 from rein.datasets import Datasets, Database
 from rein.detectors import Detectors
 from rein.cleaners import Cleaners
@@ -31,7 +32,7 @@ class Benchmark:
         Constructor defining default variables
 
         Arguments:
-        log_label (String) -- name of the executed tool(s), used in the name of the log file
+        log_label (String); name of the executed tool(s), used in the name of the log file
         """
         self.__logging_setup(logging_configs_console(), log_label)
         self.store_postgres = store_postgres
@@ -80,7 +81,7 @@ class Benchmark:
           :param
             results-- a dictionary containing the quality scores
             detector_name -- string denoting the name of the detector
-            cleaner_name -- string denoting the name of the repairing method
+            exp_id -- identifier of the experiment run, written as the first column
           """
 
         # Create a list of keys in the dictionary
@@ -94,18 +95,46 @@ class Benchmark:
             os.mkdir(results_dir)
         results_path = os.path.join(results_dir, "detection_results.csv")
 
+        # The columns are derived from the keys of the results dictionary, so adding a
+        # metric changes the schema of this file
+        header = ["exp_id", "time", "detector"] + key_list
+
         #===================== Stroing results ============================
         write_header = False
         # Check if the file already exists
         if not os.path.exists(results_path):
             write_header = True
+        else:
+            # The header used to be written only at creation, so a file from an older schema kept silently accepting rows of a different width. 
+            # Compare the stored header against the current one and start a new file when they diverge.
+            with open(results_path) as f_object:
+                stored_header = next(csv.reader(f_object), [])
+
+            if stored_header != header:
+                stamp = datetime.now().strftime("%Y%m%d-%H%M%S")
+                base_path = os.path.splitext(results_path)[0]
+                rotated_path = "{}_{}.csv".format(base_path, stamp)
+
+                # Two schema changes can land within the same second, and os.rename would silently overwrite the results rotated away by the first one
+                suffix = 1
+
+                while os.path.exists(rotated_path):
+                    rotated_path = "{}_{}-{}.csv".format(base_path, stamp, suffix)
+                    suffix += 1
+                os.rename(results_path, rotated_path)
+
+                logging.info("Columns of {} changed ({} -> {}), previous results moved to {}".format(
+                    os.path.basename(results_path), len(stored_header), len(header),
+                    os.path.basename(rotated_path)))
+
+                write_header = True
 
         # Open an CSV file in append mode. Create a file object for this file
         with open(results_path, 'a') as f_object:
             # Create a file object and prepare it for writing the results
             writefile = csv.writer(f_object)
             if write_header:
-                writefile.writerow(["exp_id", "time", "detector"] + key_list)  # write the header
+                writefile.writerow(header)  # write the header
             # Prepare the row which is to be written to the file
             row = [exp_id, datetime.now(), detector_name, [results[index] for index in key_list]]
             # Write the values after flattening the row list obtained in the above line
@@ -400,6 +429,9 @@ class Benchmark:
                 actual_errors_dictionary, error_rate = curr_dataset.get_actual_errors(
                     dirtyDF, groundtruthDF)
 
+            dataset_metrics= compute_dataset_metrics(actual_errors_dictionary,dirtyDF.shape[0],dirtyDF.shape[1], error_rate)
+            logging.info(format_dataset_metrics(dataset,dataset_metrics))
+
             # Instantiate a detector instance
             detector = Detectors(dataset, actual_errors_dictionary)
 
@@ -474,28 +506,129 @@ class Benchmark:
                         # cleanlab
                         configs['model_name'] = "forest_clf"
 
+                        #greatExpectations
+                        # the tier is "hand_written" unless EXPECTATION_TIER selects
+                        # "dirty_profiled" or "clean_profiled"
+                        configs["expectation_tier"] = os.environ.get("EXPECTATION_TIER", "hand_written")
+                        configs["groundtruthDF"] = groundtruthDF
+
                         # Setting the directory name, where the detections will be stored
                         dir_name = '_'.join([method, detect_method]) if method in ["outlierdetector", "fahes"] else method
 
-                        logging.info("Detecting errors using ------------> ***********{}***********".format(dir_name))
+                        # greatExpectations runs a different expectation suite per tier, but all
+                        # three tiers were stored under the bare name "greatExpectations", so they
+                        # collapsed into one detector in detection_results.csv and could only be
+                        # told apart by the order of their timestamps. Qualify the name that is
+                        # logged and stored with the tier; every other detector keeps its plain name.
+                        detector_label = dir_name
+                        if method == "greatExpectations":
+                            detector_label = '{}:{}'.format(dir_name, configs["expectation_tier"])
+
+                        logging.info("Detecting errors using ------------> ***********{}***********".format(detector_label))
                         # Find the dirty cells and generate a detections.csv file
                         for index in range(iterations):
                             try:
                                 detection_dictionary, detection_results_dict = function(dirtyDF, dataset, configs)
                                 # Add the error rate to the results dictionary
                                 detection_results_dict["error_rate"] = error_rate
+
+                                # R_true stores erroneous rows  
+                                R_true = set()
+                                R_pred = set()
+                                for (i,j) in detector.actual_errors: 
+                                    R_true.add(i)
+                                for (i,j) in detection_dictionary: 
+                                    R_pred.add(i)   
+                                
+                                row_TP = len(R_true & R_pred)
+                                row_FP = len(R_pred - R_true)
+                                row_FN = len(R_true - R_pred)
+                                row_TN = len(dirtyDF) - len(R_true | R_pred)
+
+                                if row_TP+row_FN+row_FP+row_TN != len(dirtyDF):
+                                    logging.info(f"asset that row-TP+FP+FN+TN:{row_TP+row_FN+row_FP+row_TN} are not equal to N: {len(dirtyDF)}")
+
+                                row_Precision=0
+                                row_Recall=0
+                                row_F1= 0.0
+                               
+                                if len(R_pred) == 0 : 
+                                    logging.warning(f"R_pred is empty, no predictions or preduction from the detector")
+                                else : 
+                                    row_Precision= row_TP/len(R_pred) # (row_TP+row_FP) = R_pred 
+
+                                if len(R_true) == 0 : 
+                                    logging.warning(f"R_true is empty, empty actuall errors!")
+                                else : 
+                                    row_Recall=  row_TP/len(R_true)
+                                if row_Precision + row_Recall ==0 : 
+                                    logging.warning(f"cannot compute Row-F1 because Row-P/R are both 0 :) ")
+                                else : row_F1= (2*row_Precision*row_Recall)/(row_Recall+row_Precision)
+
+                                cell_TP = len(set(detection_dictionary) & set(detector.actual_errors))
+                                cell_FP = len(detection_dictionary) - cell_TP
+                                cell_FN = len(detector.actual_errors) - cell_TP
+
+                                cell_F1 = detection_results_dict["f1"]
+                                cell_precision = detection_results_dict["precision"]
+                                cell_recall = detection_results_dict["recall"]
+                                row_error_rate = dataset_metrics["fraction_dirty_rows"]
+
+                                if cell_F1 > 0 and error_rate < 1.0:
+                                    cell_precG = (cell_precision - error_rate) / ((1 - error_rate) * cell_precision)
+                                    cell_recG = (cell_recall - error_rate) / ((1 - error_rate) * cell_recall)
+                                    cell_FG1 = (cell_precG + cell_recG) / 2
+                                else:
+                                    cell_precG = None
+                                    cell_recG = None
+                                    cell_FG1 = None
+                                    logging.warning("cannot compute cell_FG1 (cell_F1={}, error_rate={})".format(
+                                        cell_F1, error_rate))
+
+                                if row_F1 > 0 and row_error_rate < 1.0:
+                                    row_precG = (row_Precision - row_error_rate) / ((1 - row_error_rate) * row_Precision)
+                                    row_recG = (row_Recall - row_error_rate) / ((1 - row_error_rate) * row_Recall)
+                                    row_FG1 = (row_precG + row_recG) / 2
+                                else:
+                                    row_precG = None
+                                    row_recG = None
+                                    row_FG1 = None
+                                    logging.warning("cannot compute row_FG1 (row_F1={}, fraction_dirty_rows={})".format(
+                                        row_F1, row_error_rate))
+
+
+                                detection_results_dict.update({
+                                    "cell_TP": cell_TP,
+                                    "cell_FP": cell_FP,
+                                    "cell_FN": cell_FN,
+                                    "cell_precG": cell_precG,
+                                    "cell_recG": cell_recG,
+                                    "cell_FG1": cell_FG1,
+                                    "row_precision": row_Precision ,
+                                    "row_recall" : row_Recall,
+                                    "row_F1": row_F1,
+                                    "row_TP": row_TP,
+                                    "row_FP": row_FP,
+                                    "row_FN": row_FN,
+                                    "row_TN": row_TN,
+                                    "row_precG": row_precG,
+                                    "row_recG": row_recG,
+                                    "row_FG1": row_FG1,
+                                })
+                            
+
                                 # Store results from error detection
                                 logging.info("--------------------------------------------------")
                                 logging.info("Iteration {}: Storing detection results".format(index))
                                 #logging.info("--------------------------------------------------")
                                 for key, value in detection_results_dict.items():
                                     logging.info('{}: {}'.format(key, value))
-                                self.__store_detection_results(detection_results_dict, dataset, dir_name, exp_id)
+                                self.__store_detection_results(detection_results_dict, dataset, detector_label, exp_id)
                             except Exception as e:
                                 # e.args[0] itself raises IndexError for argless exceptions,
                                 # which replaced the real cause with a bogus one. Log at
                                 # ERROR with the traceback so the failure is visible.
-                                logging.exception("Detector %s failed: %s", dir_name, e)
+                                logging.exception("Detector %s failed: %s", detector_label, e)
                                 break
             except Exception as e:
                 logging.exception("Error detection failed for dataset %s: %s", dataset, e)

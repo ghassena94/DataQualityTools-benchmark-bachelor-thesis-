@@ -29,6 +29,11 @@ from rein.models import Models, models
 from sklearn.model_selection import StratifiedKFold     
 from sklearn.linear_model import LogisticRegression
 from cleanlab.latent_estimation import estimate_latent, estimate_confident_joint_and_cv_pred_proba
+from rein.auxiliaries.expectations_dictionary import DATASET_EXPECTATIONS
+from great_expectations.dataset import PandasDataset
+from rein.auxiliaries.expectations_profiler import profile_expectations
+from rein.auxiliaries.dataset_metrics import (format_expectation_breakdown,
+                                              format_constraint_breakdown)
 
 # Create a path to the cleaners directory
 #cleaners_path = os.path.join(os.path.dirname(__file__), os.pardir, "cleaners")
@@ -99,6 +104,7 @@ class Detectors:
         """
         self.actual_errors = actual_errors
         self.__dataset_name = dataset_name
+        self.__DATASET_EXPECTATIONS = DATASET_EXPECTATIONS
         self.__DATASET_CONSTRAINTS = {
             adult: {
                 'functions': [
@@ -441,15 +447,15 @@ class Detectors:
 
         # List all implemented detection methods
         self.detectors_list = [
-             self.nadeef,
-             self.outlierdetector,
-             self.mvdetector,
-             self.duplicatesdetector,
-             self.raha,
-             self.mislabeldetector,
-             self.holoclean,
-             self.fahes,
-             self.dboost,
+            self.nadeef,
+            self.outlierdetector,
+            self.mvdetector,
+            self.duplicatesdetector,
+            self.raha,
+            self.mislabeldetector,
+            self.holoclean,
+            self.fahes,
+            self.dboost,
             self.katara,
             self.activeclean,
             self.metadata_driven,
@@ -459,7 +465,8 @@ class Detectors:
             self.zeroer,
             self.cleanlab,
             self.picket,
-            self.ed2
+            self.ed2,
+            self.greatExpectations
         ]
 
     def __get_detector_directory(self, detector_name):
@@ -624,6 +631,118 @@ class Detectors:
 
         return detection_dictionary, evaluation_dict
 
+
+    def greatExpectations(self, dirtyDF, dataset, configs):
+        """
+        This methos is implemented by Ghassen extending the REIN framework.
+        This methods uses the gx framework.
+        It will return an empty detection_dictionary when no rules defined for the given dataset
+        
+        Arguments:
+        dirtyDF -- dataframe of shape n_R (# of records) x n_A (# of attributes) - containing a dirty version of a dataset
+
+        Returns:
+        detection_dictionary -- dictionary - keys represent i,j of dirty cells & values are constant string "JUST A DUUMY VALUE" 
+        """
+        start_time= time.time()
+
+        # define the dictionary to store the indices of the detected dirty cells 
+        detection_dictionary = {}
+
+        evaluation_dictionary = {}
+
+
+        pattern_violation_count = 0
+        fd_violation_count = 0
+        
+    
+        # pick which tier of expectations to check. 'dirty_profiled' and 'clean_profiled' are
+        # built by the profiler, only 'hand_written' is written by hand.
+        tier = configs["expectation_tier"] if "expectation_tier" in configs else "hand_written"
+
+        # any other name (a typo, or an old one like generic/oracle/domain) would fall
+        # through to the hand written suite and be stored under the wrong label
+        if tier not in ("dirty_profiled", "clean_profiled", "hand_written"):
+            raise ValueError("unknown expectation tier '{}', expected dirty_profiled, "
+                             "clean_profiled or hand_written".format(tier))
+
+        if tier == "dirty_profiled":
+            expectations = profile_expectations(dirtyDF)
+        elif tier == "clean_profiled":
+            expectations = profile_expectations(configs["groundtruthDF"])
+        elif dataset in self.__DATASET_EXPECTATIONS:
+            expectations = self.__DATASET_EXPECTATIONS[dataset]["hand_written"]
+        else:
+            # no hand written expectations for this dataset. carry on with an empty
+            # list so the run reports a score of zero, instead of returning an empty
+            # results dict which makes the caller raise a KeyError on "f1"
+            logging.warning("no hand written expectations for {}".format(dataset))
+            expectations = []
+
+        # wrap the dirtyset in a great expectations PandasDataset
+        ds = PandasDataset(dirtyDF)
+
+        # One suite-level F1 says what the suite scored, not which rule earned it.
+        # Keep each expectation's own cells so the per-rule table below can say
+        # how much of the score any single rule is carrying, and which rules only
+        # restate cells a previous rule already flagged.
+        per_rule = []
+
+        for expectation in expectations:
+            column = expectation['column']
+
+            # a profiled or hand written expectation can name a column this dataset
+            # does not have, and get_loc would raise on it
+            if column not in dirtyDF.columns:
+                logging.warning("skipping expectation on missing column {}".format(column))
+                continue
+
+            col_j = dirtyDF.columns.get_loc(column)
+            expectation_rule = expectation['expectation']
+            kwargs = expectation['kwargs']
+
+            method_name = getattr(ds, expectation_rule)
+            result = method_name(column, **kwargs, result_format="COMPLETE")
+            #logging.info(f"result of the column {column}: {result}")
+            rule_cells = set()
+            for i in result.result['unexpected_index_list']:
+                detection_dictionary[(i,col_j)] = "JUST A DUUMY VALUE"
+                rule_cells.add((i, col_j))
+            per_rule.append((column, expectation_rule, kwargs, rule_cells))
+        #logging.info(f"expectations checks for {dataset} completed successfully detection_dic:{detection_dictionary}")
+
+        # stop the clock before the breakdown: it is reporting, not detection,
+        # and must not land in the runtime this detector is measured on
+        error_detect_runtime = time.time() - start_time
+
+        logging.info(format_expectation_breakdown(
+            dataset, tier, per_rule, self.actual_errors, dirtyDF.shape[0]))
+
+        #get detector path
+        detector_path = self.__get_detector_directory(str(DetectMethod.greatExpectations))
+
+        # store detections in detector directory
+        self.__store_detections(detection_dictionary, detector_path)
+
+        precision, recall , f1 = self.__evaluate(detection_dictionary)
+
+        evaluation_dict = {
+            "precision": precision,
+            "recall": recall,
+            "f1": f1,
+            "detection_runtime": error_detect_runtime,
+            "#detections": len(detection_dictionary),
+            "#pattern_violations": pattern_violation_count,
+            "#fd_violations": None,
+            "#detected_duplicates": None,
+            "detected_error_rate": len(detection_dictionary) / dirtyDF.size,
+        }
+        
+
+
+
+        return detection_dictionary , evaluation_dict
+
     def raha(self, dirtydf, dataset, configs):
         start_time = time.time()
         dataset_name = dataset
@@ -666,6 +785,7 @@ class Detectors:
         }
 
         return detection_dictionary, evaluation_dict
+
 
     def mvdetector(self, dirtydf, dataset, configs):
         """
@@ -1037,9 +1157,14 @@ class Detectors:
         detection_dictionary = {}
         for index, row in errors_df.iterrows():
             detection_dictionary[(row['_tid_'], dirtydf.columns.get_loc(row['attribute']))] = "JUST A DUMMY VALUE"
-        
-        # get runtime
+
+        # get runtime. Measured before the breakdown below, which re-derives each
+        # constraint's footprint with a group-by per constraint: that is reporting
+        # work, not detection work, and would otherwise inflate this number.
         error_detect_runtime = time.time() - start_time
+
+        logging.info(format_constraint_breakdown(
+            dataset, hc.get_dcs(), dirtydf, self.actual_errors))
 
         # get detector path
         detector_path = self.__get_detector_directory("holoclean")
@@ -1166,8 +1291,13 @@ class Detectors:
         # Define the configuations JSON file
         configs_path = os.path.join(detector_path, 'dboost_configs.json')
 
-        # Use the predefined configs, if defined in the dataset dictionary or in the configurations JSON file
-        if 'dboost_configs' in datasets_dictionary[dataset]:
+        # Use the predefined configs, if defined in the dataset dictionary or in the configurations JSON file.
+        # Several datasets carry 'dboost_configs': [] as an empty placeholder. Testing
+        # for the key alone accepted that empty list as a configuration, and the strategy
+        # loop then read config[0] off it and raised IndexError, so dboost reported
+        # nothing at all on those datasets. An empty list means "not configured", so fall
+        # through to the grid below.
+        if datasets_dictionary[dataset].get('dboost_configs'):
             configuration_list = [datasets_dictionary[dataset]['dboost_configs']]
         elif os.path.exists(configs_path):
             with open(configs_path, 'r') as fp:

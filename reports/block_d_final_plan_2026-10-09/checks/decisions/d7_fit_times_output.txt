@@ -1,0 +1,4 @@
+breast_cancer     559 x   9 features | prepare 0.0 s | linear 0.0 s | rf 0.1 s | xgb 0.1 s
+nasa             1202 x   5 features | prepare 0.0 s | linear 0.0 s | rf 0.1 s | xgb 0.1 s
+bike            13903 x  12 features | prepare 0.1 s | linear 0.0 s | rf 3.6 s | xgb 0.6 s
+adult           36177 x 104 features | prepare 0.2 s | linear 0.2 s | rf 2.7 s | xgb 8.2 s

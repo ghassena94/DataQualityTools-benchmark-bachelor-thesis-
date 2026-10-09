@@ -1,0 +1,9 @@
+(1) cells that strip+lower would change: {'workclass': 45222, 'education': 39633, 'marital_status': 45222, 'occupation': 45222, 'relationship': 45222, 'race': 45222, 'gender': 45222, 'native_country': 45222}
+    examples: {'workclass': 'Private', 'education': '11th', 'gender': 'Male', 'native_country': 'United-States'}
+(2) cells pandas reads as missing by default: 0
+    replay raw: 665207 cells, TP/FP/det (1677, 663530, 665207) | replay strip+lower identical: True
+    Table 3: (1677, 663530, 665207)
+(3) disk file 17 Sep 12:26, 341890 cells, TP/FP/det (1677, 340213, 341890)
+    disk == replay: False | only on disk 0 | only in replay 323317
+    by column, only on disk: {}
+    by column, only in replay: {'workclass': 45213, 'age': 45113, 'occupation': 45094, 'marital_status': 45076, 'fnlwgt': 44583, 'relationship': 43906, 'hours_per_week': 39199, 'capital_gain': 4943, 'gender': 4938, 'educational_num': 1420, 'education': 1420, 'native_country': 1379, 'race': 1033}

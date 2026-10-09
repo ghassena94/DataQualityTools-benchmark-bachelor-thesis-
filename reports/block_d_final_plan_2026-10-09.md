@@ -164,7 +164,7 @@ How to read the table:
 1. **Flags match Table 3:**
    - TP/FP/detections from the frozen files equal Table 3, with no duplicate or out-of-range cell.
    - On bc, nasa and bike the GE and HoloClean files must also be cell-identical to the replay (`checks/measure_fixes.py`).
-   - On adult, count identity suffices (D8): HoloClean lower-cases and strips strings before matching, which the replay does not. Any cell-level difference is reported, not fatal.
+   - On adult too (D8): the regenerated HoloClean file must be cell-identical to the replay. The benchmark passes HoloClean a DataFrame, so no string normalisation happens, and normalising would change no flag on adult anyway (`checks/decisions/d8_adult_holoclean.py`).
 2. **Perfect + ground-truth repair = S4:**
    - the same rounded `train_hash` and S2 = S4 for every seed and model;
    - the same for always-positive.
@@ -291,15 +291,15 @@ The prediction is stated against what §8 scores.
 - Training is skipped when the rounded hash repeats: GT-repair perfect/always-positive = S4; zero-flag items = floor; floor-equivalent impute versions.
 - The median sensitivity run (§8.8) doubles this; on bike only impute differs, since every dirty bike value parses.
 
-## 12. Schedule (re-dated; steps 0–4 have not started)
+## 12. Schedule (re-dated; steps 0 and 2–4 have not started; step 1 done 9 Oct)
 
 Gate 1 moves to **Mon 12 Oct, noon** (D7). Building the driver and the analysis script is about two days of work, not one (Fable S10).
 
 | Day | Steps | Output |
 |---|---|---|
-| Fri 9 Oct | this plan, the Fable check, user decisions D2–D8 | final plan |
-| Sat 10 Oct | 0 backups; 2 core flags (regenerate GE profiled and Raha run 1; cross-check with the replay); start 3: the driver | frozen core flags |
-| Sun 11 Oct | 3: finish the driver, and write the analysis script against a synthetic `results.csv`; `--dry_run`; 1 commit the prediction with `expected_pair_verdicts.csv` | scripts, committed prediction |
+| Fri 9 Oct | this plan, the Fable check, decisions D2–D8 (tested with `checks/decisions/mini_driver.py`); **1 prediction committed** (`c61ee72`) | final plan, frozen prediction |
+| Sat 10 Oct | 0 backups; 2 core flags (regenerate GE profiled and Raha run 1; cross-check with the replay); start 3: the driver, built on `mini_driver.py` | frozen core flags |
+| Sun 11 Oct | 3: finish the driver (incl. `--fill median`, D5, and the D6 run-1 check), and write the analysis script against a synthetic `results.csv`; `--dry_run`; recompute `expected_pair_verdicts.csv` for Raha run 1 (flags only, same script) and commit it **beside** the frozen file as an addendum | scripts, addendum |
 | Mon 12 Oct | 4 checks; 5 core runs (~3 min); 6 core analysis → **gate 1 at noon**; afternoon: 7 extension flags (adult Raha ~10 min, ~18 GB, run alone) | core answer |
 | Tue–Wed 13–14 Oct | 8 extension runs + analysis + verification | four-dataset result |
 | Thu 15 Oct | 9 freeze: restore backups, commit, tag | frozen results |
@@ -312,7 +312,7 @@ Gate 1 moves to **Mon 12 Oct, noon** (D7). Building the driver and the analysis 
 - core late at the gate → bike and adult dropped;
 - core not done by 15 Oct → data-only table, named as a deviation.
 
-## 13. Open decisions for the user
+## 13. Decisions (all made with the user on 9 Oct, each tested in `checks/decisions/`)
 
 | # | Decision | Proposal | Alternative | Why it matters |
 |---|---|---|---|---|
@@ -321,9 +321,9 @@ Gate 1 moves to **Mon 12 Oct, noon** (D7). Building the driver and the analysis 
 | D3 | Model seed | **decided 9 Oct: fixed `random_state=0`** | = split seed | Not "keeps model noise out": both items of a pair share the seed either way, and RF noise is in every score either way. Measured (`checks/decisions/d3_model_seed.py`): linear and XGB ignore `random_state`; RF noise alone is 0.05 RMSE on nasa and 0.02 F1 on bc (floor, split 0); 2 of 45 core RF pair verdicts change (bc delete GE-hand vs Raha, nasa delete GE-clean vs GE-hand), both near-ties going from tie to a direction. |
 | D4 | Numeric-column rule | **decided 9 Oct: ≥ 90 % of clean values parse** | every value parses | Only bc `Bare Nuclei` differs (a 1–10 count; 16 `?` = UCI's missing marker); any threshold in (0, 0.977] gives the same split on all four datasets. Strict makes it an 18-level one-hot. Measured (`checks/decisions/d4_numeric_rule.py`): 13 of 66 bc pair verdicts change, all from a direction to tie, 10 of them linear; floor XGB F1 0.938 → 0.923. |
 | D5 | Fill statistic (featurization and impute) | **decided 9 Oct: mean**, REIN's mean/mode; plus a median sensitivity run reported as verdict changes (§8.8) | median as primary, a stated deviation | The earlier reason ("the polluted mean is a real cost of missing typos") is wrong. Measured (`checks/decisions/d5_*`): the mean fills values that never occur, and trees split on them as a marker. nasa: the polluted mean (thickness 4·10⁸) marks unparsable cells, which *helps* trees (floor RF 2.26 vs median 2.40 RMSE; a fill of 10¹² does the same). bike: impute fills `holiday` (0/1, flagged in 43 % of rows) with 0.048; the injector chose those rows non-randomly (mean cnt 162 vs 210), so the marker misleads trees (perfect impute RF 70 vs 51 RMSE; `holiday` alone explains it). Verdicts that change mean → median: nasa 8 of 69, bc 11 of 66, bike 3 of 9 (impute; the other bike policies are identical by construction); concordance with Table 3 about the same either way. |
-| D6 | Format-only sensitivity version | **count only** (`format_only_fp`, `rows_touched_without_format_only`) | run "Raha minus format-only FPs" | On nasa that version is the perfect detector (disk) or 710/731 TPs with 0 FPs (run 1); on bike it changes 247 rows. The counts already say what it would show. |
-| D7 | Gate 1 | **Mon 12 Oct, noon** | Sun 11 Oct evening | steps 0–4 are two days behind; the scripts need two days |
-| D8 | Check 1 on adult HoloClean | count identity suffices; cell differences reported | cell identity required | HoloClean normalises strings; the replay does not |
+| D6 | Format-only sensitivity version | **decided 9 Oct: count only** (`format_only_fp`, `rows_touched_without_format_only`), with the run-1 safeguard | run "Raha minus format-only FPs" | Measured (`checks/decisions/d6_format_only.py`, Raha disk file): nasa Raha minus its 1,864 format-only FPs **is** the perfect detector, so the perfect row already shows it (delete: 0 rows vs 605–631; impute RF RMSE 6.55 vs 2.26; GT repair identical). bike: removing the 2,330 format-only FPs keeps ~190 more training rows under delete, but S2 does not move (RF/XGB tie under every policy; linear differs by ≤ 2 RMSE in either direction). bc, adult: none. After step 2, `--dry_run` checks whether Raha run 1 minus format-only FPs still equals perfect on nasa (run 1: 710 of 731 TPs); if not, add it as one unranked diagnostic version on nasa. |
+| D7 | Gate 1 | **decided 9 Oct: Mon 12 Oct, noon** | Sun 11 Oct evening (the 5 Oct date) | Compute is not the bottleneck (`checks/decisions/d7_fit_times.py`, one version × 3 models, n_jobs=1): bc and nasa 0.2 s, bike 4.2 s, adult 11 s. Whole runs including the median re-run: core under 2 min, bike ~15 min, adult ~20 min (+ adult Raha flags ~10 min, 18 GB, alone). The work is building and checking the driver and the analysis script. Already done on 9 Oct: the prediction commit (step 1, `c61ee72`) and a tested minimal driver (`checks/decisions/mini_driver.py`: versions, featurization, models, S2, pair rule) to build on. Mon noon still leaves 2.5 days for the extension, which needs under 1 h of compute. |
+| D8 | Check 1 on adult HoloClean | **decided 9 Oct: cell identity required, as on the other datasets** (the earlier proposal was count identity) | count identity suffices | The earlier reason is wrong. HoloClean strips and lower-cases only when it reads a file (`cleaners/holoclean/dataset/table.py:58`); the benchmark passes a DataFrame (`rein/detectors.py:1148`), which is used unchanged. Even with normalisation nothing changes on adult: strip + lower alters every text cell but merges no two values, so the replay is cell-identical (`checks/decisions/d8_adult_holoclean.py`). No missing values (no SQL NULLs). The replay equals Table 3 (1,677 / 663,530 / 665,207). The disk file (17 Sep) is a strict subset with 341,890 cells (0 cells only on disk), so it is stale and must be regenerated in step 7. |
 
 ## 14. Evidence
 

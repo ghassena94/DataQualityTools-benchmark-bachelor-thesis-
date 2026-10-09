@@ -1,0 +1,18 @@
+== bike | Raha flags 32488 (model columns): TP 28852, FP 3636, of which format-only 2330
+  examples (row, column, dirty text, clean text): [(0, 'windspeed', '0', '0.0'), (1, 'windspeed', '0', '0.0'), (2, 'windspeed', '0', '0.0')]
+  Raha minus format-only == perfect detector: False (TP 28852 of 30737, FP 1306)
+
+  mean S2 (-RMSE, higher better), 10 seeds; rows kept min-max
+          floor                                 linear -148.028   rf  -74.090   xgb  -71.200
+  gt      Raha                 rows 13903-13903  linear -141.994   rf  -44.596   xgb  -42.555
+  gt      Raha minus fmt-only  rows 13903-13903  linear -141.994   rf  -44.596   xgb  -42.555
+  gt      perfect              rows 13903-13903  linear -141.886   rf  -43.059   xgb  -41.102
+  gt      verdict Raha vs Raha-minus-fmt per model: linear tie, rf tie, xgb tie
+  delete  Raha                 rows   921-976    linear -155.151   rf -116.632   xgb -113.258
+  delete  Raha minus fmt-only  rows  1107-1175   linear -157.316   rf -118.109   xgb -113.638
+  delete  perfect              rows   915-983    linear -175.029   rf -128.330   xgb -138.994
+  delete  verdict Raha vs Raha-minus-fmt per model: linear >, rf tie, xgb tie
+  impute  Raha                 rows 13903-13903  linear -142.889   rf  -69.966   xgb  -72.877
+  impute  Raha minus fmt-only  rows 13903-13903  linear -142.817   rf  -69.948   xgb  -72.692
+  impute  perfect              rows 13903-13903  linear -143.531   rf  -68.321   xgb  -72.742
+  impute  verdict Raha vs Raha-minus-fmt per model: linear <, rf tie, xgb tie

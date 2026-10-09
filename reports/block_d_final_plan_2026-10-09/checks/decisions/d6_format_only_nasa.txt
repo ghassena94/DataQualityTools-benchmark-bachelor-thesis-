@@ -1,0 +1,17 @@
+== nasa | Raha flags 2595 (model columns): TP 731, FP 1864, of which format-only 1864
+  examples (row, column, dirty text, clean text): [(0, 'frequency', '800', '800.0'), (0, 'angle', '0', '0.0'), (1, 'frequency', '1000', '1000.0')]
+  Raha minus format-only == perfect detector: True (TP 731 of 731, FP 0)
+
+  mean S2 (-RMSE, higher better), 10 seeds; rows kept min-max
+          floor                                 linear   -6.889   rf   -2.260   xgb   -2.171
+  gt      Raha                 rows  1202-1202   linear   -4.799   rf   -1.781   xgb   -1.604
+  gt      Raha minus fmt-only  rows  1202-1202   linear   -4.799   rf   -1.781   xgb   -1.604
+  gt      perfect              rows  1202-1202   linear   -4.799   rf   -1.781   xgb   -1.604
+  gt      verdict Raha vs Raha-minus-fmt per model: linear tie, rf tie, xgb tie
+  delete  Raha                 rows     0-0      degenerate
+  delete  Raha minus fmt-only  rows   605-631    linear   -4.806   rf   -2.343   xgb   -2.168
+  delete  perfect              rows   605-631    linear   -4.806   rf   -2.343   xgb   -2.168
+  impute  Raha                 rows  1202-1202   linear   -6.093   rf   -6.553   xgb   -6.981
+  impute  Raha minus fmt-only  rows  1202-1202   linear   -4.828   rf   -2.262   xgb   -2.082
+  impute  perfect              rows  1202-1202   linear   -4.828   rf   -2.262   xgb   -2.082
+  impute  verdict Raha vs Raha-minus-fmt per model: linear <, rf <, xgb <

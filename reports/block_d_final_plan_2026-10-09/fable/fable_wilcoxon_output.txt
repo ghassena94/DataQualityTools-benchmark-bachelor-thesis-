@@ -1,0 +1,16 @@
+scipy 1.7.1
+d                                             p(d)      p(-d)     p(shuf)   signflip  sf(-d)   
+[4.0, 2.0, 4.0, 1.0, 3.0, 4.0, -3.0, 2.0, 1.0, -1.0] 0.0645    0.0488    0.0645    0.0586    0.0586   
+[2.0, 3.0, -1.0, 3.0, -2.0, 1.0, 1.0, 1.0, 2.0, 5.0] 0.0645    0.0488    0.0645    0.0625    0.0625   
+[5.0, -1.0, -1.0, 3.0, 3.0, 1.0, -2.0, 4.0, 2.0, 3.0] 0.0645    0.0488    0.0645    0.0488    0.0488   
+random integer d (n=10, ties common): p(d) != p(-d) in 649 of 1538; verdict flips in 34
+sign-flip p invariant under reversal and index permutation on 200 random vectors: True
+sign-flip p == SciPy exact p on untied data (100 random vectors): True
+smallest p by n: {4: 0.125, 5: 0.0625, 6: 0.03125, 7: 0.015625, 8: 0.0078125, 9: 0.00390625, 10: 0.001953125}
+wilcoxon src: # get frequencies cnt of the possible positive ranksums r_plus
+wilcoxon src: r_plus = int(r_plus)
+wilcoxon src: if r_plus == (len(cnt) - 1) // 2:
+wilcoxon src: p_less = np.sum(cnt[:r_plus + 1]) / 2**count
+wilcoxon src: p_greater = np.sum(cnt[r_plus:]) / 2**count
+wilcoxon src: prob = np.sum(cnt[r_plus:]) / 2**count
+wilcoxon src: prob = np.sum(cnt[:r_plus + 1]) / 2**count

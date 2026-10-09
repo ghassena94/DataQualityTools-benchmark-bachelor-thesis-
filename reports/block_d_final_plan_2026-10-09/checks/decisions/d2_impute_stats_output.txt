@@ -1,0 +1,53 @@
+
+==== nasa holoclean | seed 0: 1202 training rows, 451 kept (label flagged on the rest)
+  seed 0 fill values for flagged feature cells:
+  column            filled  kept rows (proposal)   all train rows (alt)   clean value (truth)   
+  angle                420  15117.3                15117.3                6.88211               
+  chord_length         420  0.0917677              0.0917677              0.135072              
+  velocity             291  51.0025                51.0025                51.1913               
+  thickness            126  0.0113716              0.0113716              0.011248              
+  seed 0 unflagged parsable values the mean is taken from (kept rows / all rows): [('angle', 10, 10), ('chord_length', 31, 31), ('velocity', 160, 160), ('thickness', 325, 325)]
+  S2 RMSE (lower better), mean over 10 seeds:
+    linear kept 5.3296   all 5.3296   diff +0.0000   seeds identical 10/10   max |diff| 0.0000
+    rf     kept 3.7917   all 3.7917   diff +0.0000   seeds identical 10/10   max |diff| 0.0000
+    xgb    kept 4.8365   all 4.8365   diff +0.0000   seeds identical 10/10   max |diff| 0.0000
+
+==== breast_cancer perfect | seed 0: 559 training rows, 548 kept (label flagged on the rest)
+  seed 0 fill values for flagged feature cells:
+  column            filled  kept rows (proposal)   all train rows (alt)   clean value (truth)   
+  Clump Thickness       52  4.36694                4.36166                4.3703                
+  Uniformity of Cell Size      44  3.0754                 3.08544                3.13417               
+  Uniformity of Cell Shape      42  3.12648                3.13926                3.1932                
+  Marginal Adhesion      45  2.87674                2.87938                2.85868               
+  Single Epithelial Cell Size      49  3.16032                3.15882                3.20394               
+  Bare Nuclei           38  3.48703                3.47656                3.58942               
+  Bland Chromatin       48  3.376                  3.40196                3.43828               
+  Normal Nucleoli       49  2.73547                2.76863                2.81932               
+  Mitoses               32  1.56008                1.56736                1.57603               
+  seed 0 unflagged parsable values the mean is taken from (kept rows / all rows): [('Clump Thickness', 496, 506), ('Uniformity of Cell Size', 504, 515), ('Uniformity of Cell Shape', 506, 517), ('Marginal Adhesion', 503, 514), ('Single Epithelial Cell Size', 499, 510), ('Bare Nuclei', 501, 512), ('Bland Chromatin', 500, 510), ('Normal Nucleoli', 499, 510), ('Mitoses', 516, 527)]
+  S2 minority F1 (higher better), mean over 10 seeds:
+    linear kept 0.9435   all 0.9435   diff +0.0000   seeds identical 10/10   max |diff| 0.0000
+    rf     kept 0.9445   all 0.9455   diff +0.0011   seeds identical 9/10   max |diff| 0.0107
+    xgb    kept 0.9335   all 0.9366   diff +0.0031   seeds identical 5/10   max |diff| 0.0110
+
+==== adult holoclean | seed 0: 36177 training rows, 1153 kept (label flagged on the rest)
+  seed 0 fill values for flagged feature cells:
+  column            filled  kept rows (proposal)   all train rows (alt)   clean value (truth)   
+  age                 1119  45.0882                51.9231                38.5187               
+  workclass           1147  Self-emp-inc           Self-emp-inc           Private               
+  fnlwgt               845  202188                 202558                 189707                
+  education           1153  (no unflagged value)   (no unflagged value)   HS-grad               
+  educational_num     1153  nan                    nan                    10.1159               
+  marital_status      1120  Married-civ-spouse     Married-civ-spouse     Married-civ-spouse    
+  occupation          1104  Exec-managerial        Prof-specialty         Craft-repair          
+  relationship        1096  Husband                Husband                Husband               
+  race                 833  White                  White                  White                 
+  gender              1149  Female                 Female                 Male                  
+  capital_gain        1153  nan                    nan                    1118.72               
+  hours_per_week        70  39.3444                39.7858                40.9534               
+  native_country      1121  El-Salvador            El-Salvador            United-States         
+  seed 0 unflagged parsable values the mean is taken from (kept rows / all rows): [('age', 34, 91), ('fnlwgt', 308, 503), ('educational_num', 0, 0), ('capital_gain', 0, 0), ('hours_per_week', 1083, 4761)]
+  S2 minority F1 (higher better), mean over 10 seeds:
+    linear kept 0.3440   all 0.3337   diff -0.0103   seeds identical 0/10   max |diff| 0.2462
+    rf     kept 0.3441   all 0.3548   diff +0.0106   seeds identical 0/10   max |diff| 0.0919
+    xgb    kept 0.3840   all 0.3830   diff -0.0010   seeds identical 0/10   max |diff| 0.0285

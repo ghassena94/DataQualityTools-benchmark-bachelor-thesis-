@@ -1,0 +1,8 @@
+holiday  flagged rows  7482: mean clean cnt 162.1 | unflagged rows  9897: mean clean cnt 210.2
+season   flagged rows  7470: mean clean cnt 164.2 | unflagged rows  9909: mean clean cnt 208.5
+mnth     flagged rows  7482: mean clean cnt 196.5 | unflagged rows  9897: mean clean cnt 184.2
+overlap holiday & season 4265, holiday & mnth 2473
+dirty holiday values of flagged cells: {'87': 84, '14': 81, '25': 81, '26': 80, '30': 79, '55': 79}
+clean hr of holiday-flagged rows (top): {'20': 322, '11': 322, '6': 320, '9': 319, '23': 316, '18': 316}
+clean hr of all rows (top): {'17': 730, '16': 730, '13': 729}
+clean holiday of flagged rows: {'0': 7460, '1': 22}

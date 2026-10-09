@@ -1,0 +1,16 @@
+breast_cancer GT repair -> recall order                                              C  6 D  4 T(undetermined)  0  discordant: [('ge_clean_profiled', 'holoclean'), ('ge_dirty_profiled', 'holoclean'), ('ge_hand_written', 'holoclean'), ('holoclean', 'raha')]
+breast_cancer delete -> row-precision order, degenerate last                         C  8 D  2 T(undetermined)  0  discordant: [('ge_clean_profiled', 'raha'), ('ge_dirty_profiled', 'raha')]
+breast_cancer impute -> parsable-feature-recall order (precision on parsable errors) C  5 D  4 T(undetermined)  1  discordant: [('ge_clean_profiled', 'holoclean'), ('ge_dirty_profiled', 'holoclean'), ('ge_hand_written', 'holoclean'), ('holoclean', 'raha')]
+nasa          GT repair -> recall order                                              C  7 D  3 T(undetermined)  0  discordant: [('ge_clean_profiled', 'holoclean'), ('ge_clean_profiled', 'raha'), ('ge_hand_written', 'raha')]
+nasa          delete -> row-precision order, degenerate last                         C  4 D  2 T(undetermined)  4  discordant: [('ge_dirty_profiled', 'holoclean'), ('ge_dirty_profiled', 'raha')]
+nasa          impute -> parsable-feature-recall order (precision on parsable errors) C  7 D  3 T(undetermined)  0  discordant: [('ge_clean_profiled', 'holoclean'), ('ge_clean_profiled', 'raha'), ('ge_hand_written', 'raha')]
+bike          GT repair -> recall order                                              C  4 D  2 T(undetermined)  0  discordant: [('ge_hand_written', 'holoclean'), ('ge_hand_written', 'raha')]
+bike          delete -> row-precision order, degenerate last                         C  5 D  1 T(undetermined)  0  discordant: [('ge_profiled(dirty=clean)', 'holoclean')]
+bike          impute -> parsable-feature-recall order (precision on parsable errors) C  4 D  2 T(undetermined)  0  discordant: [('ge_hand_written', 'holoclean'), ('ge_hand_written', 'raha')]
+adult         GT repair -> recall order                                              C  2 D  1 T(undetermined)  0  discordant: [('holoclean', 'raha')]
+adult         delete -> row-precision order, degenerate last                         C  2 D  1 T(undetermined)  0  discordant: [('ge(all three)', 'holoclean')]
+adult         impute -> parsable-feature-recall order (precision on parsable errors) C  0 D  0 T(undetermined)  3  discordant: []
+
+GT repair -> recall order                                              pooled C 19 D 10 T  0 of 29 pairs -> concordant share among determined 0.66
+delete -> row-precision order, degenerate last                         pooled C 19 D  6 T  4 of 29 pairs -> concordant share among determined 0.76
+impute -> parsable-feature-recall order (precision on parsable errors) pooled C 16 D  9 T  4 of 29 pairs -> concordant share among determined 0.64

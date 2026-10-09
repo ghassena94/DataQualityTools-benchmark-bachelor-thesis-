@@ -1,0 +1,80 @@
+
+==========================================================================================
+breast_cancer | items: ['GE-dirty', 'GE-clean', 'GE-hand', 'HoloClean', 'Raha']
+  1. floor, seed 0, linear random_state 0: 0.9362 | 1-4: 0.9362 0.9362 0.9362 0.9362
+  1. floor, seed 0, rf     random_state 0: 0.9505 | 1-4: 0.9293 0.9505 0.9505 0.9293
+  1. floor, seed 0, xgb    random_state 0: 0.9375 | 1-4: 0.9375 0.9375 0.9375 0.9375
+  3. gt, RF: pair verdicts (fixed seed | seed = split seed)
+     GE-dirty vs GE-clean             tie  | tie   mean diff fixed -0.0009 split +0.0022 
+     GE-dirty vs GE-hand              tie  | tie   mean diff fixed -0.0055 split -0.0022 
+     GE-dirty vs HoloClean            tie  | tie   mean diff fixed -0.0000 split -0.0005 
+     GE-dirty vs Raha                 tie  | tie   mean diff fixed -0.0053 split -0.0051 
+     GE-clean vs GE-hand              tie  | tie   mean diff fixed -0.0046 split -0.0044 
+     GE-clean vs HoloClean            tie  | tie   mean diff fixed +0.0009 split -0.0027 
+     GE-clean vs Raha                 tie  | tie   mean diff fixed -0.0045 split -0.0074 
+     GE-hand vs HoloClean             tie  | tie   mean diff fixed +0.0055 split +0.0017 
+     GE-hand vs Raha                  tie  | tie   mean diff fixed +0.0001 split -0.0030 
+     HoloClean vs Raha                tie  | tie   mean diff fixed -0.0053 split -0.0047 
+  3. delete, RF: pair verdicts (fixed seed | seed = split seed)
+     GE-dirty vs GE-clean             tie  | tie   mean diff fixed -0.0016 split +0.0003 
+     GE-dirty vs GE-hand              tie  | tie   mean diff fixed +0.0025 split -0.0053 
+     GE-dirty vs HoloClean            degenerate
+     GE-dirty vs Raha                 tie  | tie   mean diff fixed -0.0041 split +0.0034 
+     GE-clean vs GE-hand              tie  | tie   mean diff fixed +0.0041 split -0.0056 
+     GE-clean vs HoloClean            degenerate
+     GE-clean vs Raha                 tie  | tie   mean diff fixed -0.0024 split +0.0031 
+     GE-hand vs HoloClean             degenerate
+     GE-hand vs Raha                  tie  | >     mean diff fixed -0.0065 split +0.0087   <-- CHANGES
+     HoloClean vs Raha                degenerate
+  3. impute, RF: pair verdicts (fixed seed | seed = split seed)
+     GE-dirty vs GE-clean             tie  | tie   mean diff fixed +0.0000 split +0.0000 
+     GE-dirty vs GE-hand              tie  | tie   mean diff fixed +0.0012 split +0.0006 
+     GE-dirty vs HoloClean            degenerate
+     GE-dirty vs Raha                 tie  | tie   mean diff fixed +0.0019 split +0.0040 
+     GE-clean vs GE-hand              tie  | tie   mean diff fixed +0.0012 split +0.0006 
+     GE-clean vs HoloClean            degenerate
+     GE-clean vs Raha                 tie  | tie   mean diff fixed +0.0019 split +0.0040 
+     GE-hand vs HoloClean             degenerate
+     GE-hand vs Raha                  tie  | tie   mean diff fixed +0.0007 split +0.0033 
+     HoloClean vs Raha                degenerate
+  => breast_cancer: 1 of 22 RF pair verdicts change
+
+==========================================================================================
+nasa | items: ['GE-dirty', 'GE-clean', 'GE-hand', 'HoloClean', 'Raha']
+  1. floor, seed 0, linear random_state 0: -6.8585 | 1-4: -6.8585 -6.8585 -6.8585 -6.8585
+  1. floor, seed 0, rf     random_state 0: -2.2333 | 1-4: -2.2800 -2.2891 -2.2837 -2.2803
+  1. floor, seed 0, xgb    random_state 0: -2.2299 | 1-4: -2.2299 -2.2299 -2.2299 -2.2299
+  3. gt, RF: pair verdicts (fixed seed | seed = split seed)
+     GE-dirty vs GE-clean             <    | <     mean diff fixed -0.2101 split -0.2120 
+     GE-dirty vs GE-hand              <    | <     mean diff fixed -0.4079 split -0.4159 
+     GE-dirty vs HoloClean            <    | <     mean diff fixed -0.3095 split -0.3222 
+     GE-dirty vs Raha                 <    | <     mean diff fixed -0.4800 split -0.4904 
+     GE-clean vs GE-hand              <    | <     mean diff fixed -0.1978 split -0.2039 
+     GE-clean vs HoloClean            <    | <     mean diff fixed -0.0994 split -0.1102 
+     GE-clean vs Raha                 <    | <     mean diff fixed -0.2700 split -0.2783 
+     GE-hand vs HoloClean             >    | >     mean diff fixed +0.0984 split +0.0937 
+     GE-hand vs Raha                  <    | <     mean diff fixed -0.0722 split -0.0745 
+     HoloClean vs Raha                <    | <     mean diff fixed -0.1706 split -0.1682 
+  3. delete, RF: pair verdicts (fixed seed | seed = split seed)
+     GE-dirty vs GE-clean             >    | >     mean diff fixed +0.1359 split +0.1157 
+     GE-dirty vs GE-hand              >    | >     mean diff fixed +0.1630 split +0.1709 
+     GE-dirty vs HoloClean            degenerate
+     GE-dirty vs Raha                 degenerate
+     GE-clean vs GE-hand              tie  | >     mean diff fixed +0.0271 split +0.0552   <-- CHANGES
+     GE-clean vs HoloClean            degenerate
+     GE-clean vs Raha                 degenerate
+     GE-hand vs HoloClean             degenerate
+     GE-hand vs Raha                  degenerate
+     HoloClean vs Raha                degenerate
+  3. impute, RF: pair verdicts (fixed seed | seed = split seed)
+     GE-dirty vs GE-clean             tie  | tie   mean diff fixed -0.0006 split +0.0009 
+     GE-dirty vs GE-hand              tie  | tie   mean diff fixed +0.0482 split +0.0433 
+     GE-dirty vs HoloClean            >    | >     mean diff fixed +1.5319 split +1.5192 
+     GE-dirty vs Raha                 >    | >     mean diff fixed +4.2930 split +4.2732 
+     GE-clean vs GE-hand              tie  | tie   mean diff fixed +0.0488 split +0.0424 
+     GE-clean vs HoloClean            >    | >     mean diff fixed +1.5324 split +1.5183 
+     GE-clean vs Raha                 >    | >     mean diff fixed +4.2935 split +4.2722 
+     GE-hand vs HoloClean             >    | >     mean diff fixed +1.4836 split +1.4759 
+     GE-hand vs Raha                  >    | >     mean diff fixed +4.2447 split +4.2299 
+     HoloClean vs Raha                >    | >     mean diff fixed +2.7611 split +2.7540 
+  => nasa: 1 of 23 RF pair verdicts change

@@ -1,0 +1,41 @@
+Bare Nuclei under the 90 % rule: numeric | under the strict rule: categorical
+dirty Bare Nuclei, values that do not parse: {'': 23, '?': 13, '1a0': 2, '??': 1, 'a10': 1}
+distinct dirty values (= one-hot columns under the strict rule): 18
+
+mean S2 minority F1 over 10 seeds (90 %% rule -> strict rule)
+policy   item       linear              rf                  xgb              
+floor    floor      0.9196 -> 0.9193   0.9414 -> 0.9374   0.9384 -> 0.9227
+gt       GE-dirty   0.9183 -> 0.9190   0.9423 -> 0.9406   0.9413 -> 0.9345
+gt       GE-clean   0.9183 -> 0.9190   0.9431 -> 0.9435   0.9394 -> 0.9325
+gt       GE-hand    0.9405 -> 0.9281   0.9477 -> 0.9446   0.9345 -> 0.9292
+gt       HoloClean  0.9370 -> 0.9342   0.9423 -> 0.9412   0.9289 -> 0.9312
+gt       Raha       0.9280 -> 0.9304   0.9476 -> 0.9449   0.9303 -> 0.9304
+gt       perfect    0.9379 -> 0.9293   0.9431 -> 0.9434   0.9257 -> 0.9334
+delete   GE-dirty   0.8974 -> 0.9157   0.9343 -> 0.9406   0.9294 -> 0.9220
+delete   GE-clean   0.8974 -> 0.9157   0.9360 -> 0.9364   0.9359 -> 0.9268
+delete   GE-hand    0.9267 -> 0.9114   0.9319 -> 0.9325   0.9268 -> 0.9225
+delete   HoloClean  degenerate
+delete   Raha       0.9194 -> 0.9219   0.9384 -> 0.9362   0.9211 -> 0.9220
+delete   perfect    0.9332 -> 0.9212   0.9286 -> 0.9300   0.9268 -> 0.9271
+impute   GE-dirty   0.9196 -> 0.9217   0.9414 -> 0.9377   0.9384 -> 0.9250
+impute   GE-clean   0.9196 -> 0.9194   0.9414 -> 0.9376   0.9384 -> 0.9234
+impute   GE-hand    0.9432 -> 0.9307   0.9402 -> 0.9399   0.9354 -> 0.9259
+impute   HoloClean  degenerate
+impute   Raha       0.9283 -> 0.9253   0.9395 -> 0.9422   0.9371 -> 0.9274
+impute   perfect    0.9435 -> 0.9355   0.9445 -> 0.9406   0.9335 -> 0.9284
+
+pair verdicts that change (detector items only, as in the analysis):
+  gt      linear GE-dirty vs GE-hand    90 %: <    strict: tie
+  gt      xgb    GE-dirty vs HoloClean  90 %: >    strict: tie
+  gt      linear GE-clean vs GE-hand    90 %: <    strict: tie
+  gt      linear HoloClean vs Raha      90 %: >    strict: tie
+  delete  linear GE-dirty vs GE-hand    90 %: <    strict: tie
+  delete  linear GE-dirty vs Raha       90 %: <    strict: tie
+  delete  xgb    GE-dirty vs Raha       90 %: >    strict: tie
+  delete  linear GE-clean vs GE-hand    90 %: <    strict: tie
+  delete  linear GE-clean vs Raha       90 %: <    strict: tie
+  delete  xgb    GE-clean vs Raha       90 %: >    strict: tie
+  impute  linear GE-dirty vs GE-hand    90 %: <    strict: tie
+  impute  linear GE-clean vs GE-hand    90 %: <    strict: tie
+  impute  linear GE-hand vs Raha        90 %: >    strict: tie
+=> 13 of 66 pair verdicts change

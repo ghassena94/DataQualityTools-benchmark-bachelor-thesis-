@@ -1,0 +1,30 @@
+== bike | seed 0 training rows, numeric feature columns: dirty mean / dirty median / clean mean
+  season                       22.4379      4            2.49493       unparsable dirty cells 0
+  yr                           0.505583     0.646438     0.500971      unparsable dirty cells 0
+  mnth                         3.90102      2            6.52607       unparsable dirty cells 0
+  hr                           11.574       12           11.5325       unparsable dirty cells 0
+  holiday                      20.6701      0            0.0289146     unparsable dirty cells 0
+  weekday                      3.03376      3            3.00928       unparsable dirty cells 0
+  workingday                   0.713372     1            0.684744      unparsable dirty cells 0
+  weathersit                   1.42426      1            1.42056       unparsable dirty cells 0
+  temp                         0.496282     0.5          0.497985      unparsable dirty cells 0
+  atemp                        0.474268     0.4848       0.476793      unparsable dirty cells 0
+  hum                          0.625306     0.62         0.626279      unparsable dirty cells 0
+  windspeed                    0.189195     0.194        0.190419      unparsable dirty cells 0
+
+mean S2 (-RMSE, higher better) over 10 seeds: mean fill -> median fill
+  floor   floor                linear -148.0284 -> -148.0284   rf -74.0899 -> -74.0899   xgb -71.2001 -> -71.2001
+  impute  GE-dirty=GE-clean    linear -148.0284 -> -148.0284   rf -74.0899 -> -74.0899   xgb -71.2001 -> -71.2001
+  impute  GE-hand              linear -142.7150 -> -142.8781   rf -70.2510 -> -58.4572   xgb -71.2927 -> -60.1942
+  impute  HoloClean            degenerate
+  impute  Raha                 linear -142.8889 -> -142.9650   rf -69.9659 -> -57.4954   xgb -72.8767 -> -60.1243
+  impute  perfect              linear -143.5307 -> -143.5823   rf -68.3206 -> -57.3984   xgb -72.7423 -> -62.3599
+
+pair verdicts that change, and concordance with Table 3 (C/D/T = concordant/discordant/tie, degenerate pairs left out):
+  impute  linear GE-hand vs Raha          mean: >    median: tie  (Table 3: >)
+  -> impute  linear C/D/T mean 3/0/0 | median 2/0/1
+  -> impute  rf     C/D/T mean 2/0/1 | median 2/0/1
+  impute  xgb    GE-dirty=GE-clean vs GE-hand mean: tie  median: <    (Table 3: <)
+  impute  xgb    GE-dirty=GE-clean vs Raha mean: tie  median: <    (Table 3: <)
+  -> impute  xgb    C/D/T mean 0/0/3 | median 2/0/1
+=> bike: 3 of 9 pair verdicts change

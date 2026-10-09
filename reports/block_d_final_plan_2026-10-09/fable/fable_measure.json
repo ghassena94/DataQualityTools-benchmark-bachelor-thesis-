@@ -1,0 +1,5581 @@
+{
+ "breast_cancer": {
+  "n": 699,
+  "d": 12,
+  "errors": 631,
+  "configs": {
+   "ge_dirty_profiled": {
+    "tp_fp_det": [
+     247,
+     13,
+     260
+    ],
+    "table3": [
+     247,
+     13,
+     260
+    ],
+    "matches_table3": true,
+    "flags": 260,
+    "flags_model_cols": 223,
+    "excl_col_flags": 37,
+    "excl_col_fp_by_col": {
+     "Unnamed: 0": 0,
+     "Sample code number": 0
+    },
+    "fp_by_col": {
+     "Bare Nuclei": 13
+    },
+    "format_only_fp": 0,
+    "format_only_fp_parsed_equal": 0,
+    "format_only_fp_by_col": {},
+    "label_flags": 0,
+    "label_tp": 0,
+    "feature_tp": 210,
+    "feature_tp_parsable": 0,
+    "feature_fp": 13,
+    "feature_fp_parsable": 0,
+    "feature_fp_unparsable_values": [
+     "?"
+    ],
+    "rows_touched_all": 256,
+    "rows_touched_model": 219,
+    "rows_touched_model_without_format_only": 219
+   },
+   "ge_clean_profiled": {
+    "tp_fp_det": [
+     278,
+     13,
+     291
+    ],
+    "table3": [
+     278,
+     13,
+     291
+    ],
+    "matches_table3": true,
+    "flags": 291,
+    "flags_model_cols": 230,
+    "excl_col_flags": 61,
+    "excl_col_fp_by_col": {
+     "Unnamed: 0": 0,
+     "Sample code number": 0
+    },
+    "fp_by_col": {
+     "Bare Nuclei": 13
+    },
+    "format_only_fp": 0,
+    "format_only_fp_parsed_equal": 0,
+    "format_only_fp_by_col": {},
+    "label_flags": 0,
+    "label_tp": 0,
+    "feature_tp": 217,
+    "feature_tp_parsable": 0,
+    "feature_fp": 13,
+    "feature_fp_parsable": 0,
+    "feature_fp_unparsable_values": [
+     "?"
+    ],
+    "rows_touched_all": 272,
+    "rows_touched_model": 223,
+    "rows_touched_model_without_format_only": 223
+   },
+   "ge_hand_written": {
+    "tp_fp_det": [
+     438,
+     22,
+     460
+    ],
+    "table3": [
+     438,
+     22,
+     460
+    ],
+    "matches_table3": true,
+    "flags": 460,
+    "flags_model_cols": 355,
+    "excl_col_flags": 105,
+    "excl_col_fp_by_col": {
+     "Unnamed: 0": 22,
+     "Sample code number": 0
+    },
+    "fp_by_col": {
+     "Unnamed: 0": 22
+    },
+    "format_only_fp": 0,
+    "format_only_fp_parsed_equal": 0,
+    "format_only_fp_by_col": {},
+    "label_flags": 0,
+    "label_tp": 0,
+    "feature_tp": 355,
+    "feature_tp_parsable": 138,
+    "feature_fp": 0,
+    "feature_fp_parsable": 0,
+    "feature_fp_unparsable_values": [],
+    "rows_touched_all": 376,
+    "rows_touched_model": 308,
+    "rows_touched_model_without_format_only": 308
+   },
+   "holoclean": {
+    "tp_fp_det": [
+     416,
+     5275,
+     5691
+    ],
+    "table3": [
+     416,
+     5275,
+     5691
+    ],
+    "matches_table3": true,
+    "flags": 5691,
+    "flags_model_cols": 5691,
+    "excl_col_flags": 0,
+    "excl_col_fp_by_col": {
+     "Unnamed: 0": 0,
+     "Sample code number": 0
+    },
+    "fp_by_col": {
+     "Clump Thickness": 626,
+     "Uniformity of Cell Size": 642,
+     "Uniformity of Cell Shape": 578,
+     "Marginal Adhesion": 500,
+     "Single Epithelial Cell Size": 363,
+     "Bland Chromatin": 637,
+     "Normal Nucleoli": 588,
+     "Mitoses": 657,
+     "class": 684
+    },
+    "format_only_fp": 0,
+    "format_only_fp_parsed_equal": 0,
+    "format_only_fp_by_col": {},
+    "label_flags": 699,
+    "label_tp": 15,
+    "feature_tp": 401,
+    "feature_tp_parsable": 237,
+    "feature_fp": 4591,
+    "feature_fp_parsable": 4591,
+    "feature_fp_unparsable_values": [],
+    "rows_touched_all": 699,
+    "rows_touched_model": 699,
+    "rows_touched_model_without_format_only": 699
+   },
+   "raha": {
+    "tp_fp_det": [
+     318,
+     89,
+     407
+    ],
+    "table3": [
+     317,
+     78,
+     395
+    ],
+    "matches_table3": false,
+    "flags": 407,
+    "flags_model_cols": 364,
+    "excl_col_flags": 43,
+    "excl_col_fp_by_col": {
+     "Unnamed: 0": 14,
+     "Sample code number": 0
+    },
+    "fp_by_col": {
+     "Unnamed: 0": 14,
+     "Clump Thickness": 1,
+     "Uniformity of Cell Size": 38,
+     "Single Epithelial Cell Size": 25,
+     "Bland Chromatin": 11
+    },
+    "format_only_fp": 0,
+    "format_only_fp_parsed_equal": 0,
+    "format_only_fp_by_col": {},
+    "label_flags": 0,
+    "label_tp": 0,
+    "feature_tp": 289,
+    "feature_tp_parsable": 74,
+    "feature_fp": 75,
+    "feature_fp_parsable": 75,
+    "feature_fp_unparsable_values": [],
+    "rows_touched_all": 315,
+    "rows_touched_model": 285,
+    "rows_touched_model_without_format_only": 285
+   },
+   "perfect": {
+    "flags": 631,
+    "flags_model_cols": 524,
+    "excl_col_flags": 107,
+    "excl_col_fp_by_col": {
+     "Unnamed: 0": 0,
+     "Sample code number": 0
+    },
+    "fp_by_col": {},
+    "format_only_fp": 0,
+    "format_only_fp_parsed_equal": 0,
+    "format_only_fp_by_col": {},
+    "label_flags": 15,
+    "label_tp": 15,
+    "feature_tp": 509,
+    "feature_tp_parsable": 292,
+    "feature_fp": 0,
+    "feature_fp_parsable": 0,
+    "feature_fp_unparsable_values": [],
+    "rows_touched_all": 453,
+    "rows_touched_model": 399,
+    "rows_touched_model_without_format_only": 399
+   },
+   "always_positive": {
+    "flags": 8388,
+    "flags_model_cols": 6990,
+    "excl_col_flags": 1398,
+    "excl_col_fp_by_col": {
+     "Unnamed: 0": 652,
+     "Sample code number": 639
+    },
+    "fp_by_col": {
+     "Unnamed: 0": 652,
+     "Sample code number": 639,
+     "Clump Thickness": 626,
+     "Uniformity of Cell Size": 646,
+     "Uniformity of Cell Shape": 644,
+     "Marginal Adhesion": 648,
+     "Single Epithelial Cell Size": 638,
+     "Bare Nuclei": 649,
+     "Bland Chromatin": 638,
+     "Normal Nucleoli": 636,
+     "Mitoses": 657,
+     "class": 684
+    },
+    "format_only_fp": 0,
+    "format_only_fp_parsed_equal": 0,
+    "format_only_fp_by_col": {},
+    "label_flags": 699,
+    "label_tp": 15,
+    "feature_tp": 509,
+    "feature_tp_parsable": 292,
+    "feature_fp": 5782,
+    "feature_fp_parsable": 5769,
+    "feature_fp_unparsable_values": [
+     "?"
+    ],
+    "rows_touched_all": 699,
+    "rows_touched_model": 699,
+    "rows_touched_model_without_format_only": 699
+   }
+  },
+  "per_column_errors": {
+   "Unnamed: 0": 47,
+   "Sample code number": 60,
+   "Clump Thickness": 73,
+   "Uniformity of Cell Size": 53,
+   "Uniformity of Cell Shape": 55,
+   "Marginal Adhesion": 51,
+   "Single Epithelial Cell Size": 61,
+   "Bare Nuclei": 50,
+   "Bland Chromatin": 61,
+   "Normal Nucleoli": 63,
+   "Mitoses": 42,
+   "class": 15
+  },
+  "errors_with_dirty_eq_clean": 0,
+  "diff_not_error_cells": 0,
+  "diff_not_error_parsed_equal": 0,
+  "diff_not_error_by_col": {},
+  "ge_real_vs_own_identical": {
+   "ge_dirty_profiled": true,
+   "ge_clean_profiled": true,
+   "ge_hand_written": true
+  },
+  "holoclean_per_dc_cells": [
+   [
+    "t1&t2&EQ(t1.Mitoses,t2.Mitoses)&IQ(t1.Bland Chromatin,t2.Bland Chromatin)",
+    1394
+   ],
+   [
+    "t1&t2&EQ(t1.Mitoses,t2.Mitoses)&EQ(t1.Bland Chromatin,t2.Bland Chromatin)&IQ(t1.Uniformity of Cell Size,t2.Uniformity of Cell Size)",
+    1938
+   ],
+   [
+    "t1&t2&EQ(t1.Mitoses,t2.Mitoses)&EQ(t1.Bland Chromatin,t2.Bland Chromatin)&EQ(t1.Uniformity of Cell Size,t2.Uniformity of Cell Size)&IQ(t1.Marginal Adhesion,t2.Marginal Adhesion)",
+    2056
+   ],
+   [
+    "t1&t2&EQ(t1.Mitoses,t2.Mitoses)&EQ(t1.Bland Chromatin,t2.Bland Chromatin)&EQ(t1.Uniformity of Cell Size,t2.Uniformity of Cell Size)&EQ(t1.Marginal Adhesion,t2.Marginal Adhesion)&IQ(t1.Single Epithelial Cell Size,t2.Single Epithelial Cell Size)",
+    1940
+   ],
+   [
+    "t1&t2&EQ(t1.Mitoses,t2.Mitoses)&EQ(t1.Bland Chromatin,t2.Bland Chromatin)&EQ(t1.Uniformity of Cell Size,t2.Uniformity of Cell Size)&EQ(t1.Marginal Adhesion,t2.Marginal Adhesion)&EQ(t1.Single Epithelial Cell Size,t2.Single Epithelial Cell Size)&IQ(t1.Normal Nucleoli,t2.Normal Nucleoli)",
+    1626
+   ],
+   [
+    "t1&t2&EQ(t1.Bland Chromatin,t2.Bland Chromatin)&EQ(t1.Uniformity of Cell Size,t2.Uniformity of Cell Size)&EQ(t1.Normal Nucleoli,t2.Normal Nucleoli)&IQ(t1.class,t2.class)",
+    1352
+   ],
+   [
+    "t1&t2&EQ(t1.Uniformity of Cell Size,t2.Uniformity of Cell Size)&EQ(t1.Normal Nucleoli,t2.Normal Nucleoli)&EQ(t1.class,t2.class)&IQ(t1.Uniformity of Cell Shape,t2.Uniformity of Cell Shape)",
+    2504
+   ],
+   [
+    "t1&t2&EQ(t1.class,t2.class)&IQ(t1.Clump Thickness,t2.Clump Thickness)",
+    1398
+   ]
+  ],
+  "disk": {
+   "ge_hand_written": {
+    "cells": 460,
+    "identical_to_replay": true
+   },
+   "holoclean": {
+    "cells": 5691,
+    "identical_to_replay": true
+   }
+  },
+  "feature_errors": 509,
+  "feature_errors_unparsable": 217,
+  "label_errors": 15,
+  "excl_col_errors": {
+   "Unnamed: 0": 47,
+   "Sample code number": 60
+  },
+  "identical_model_col_sets": [],
+  "categorical_model_cols": [],
+  "clean_unparsable_by_col": {
+   "Bare Nuclei": 16
+  },
+  "references": {
+   "a_cell_all": {
+    "ge_dirty_profiled": 0.5544332210998877,
+    "ge_clean_profiled": 0.6030368763557484,
+    "ge_hand_written": 0.8029330889092576,
+    "holoclean": 0.1316039228092376,
+    "raha": 0.6127167630057804
+   },
+   "a_published": {
+    "ge_dirty_profiled": 0.5544,
+    "ge_clean_profiled": 0.603,
+    "ge_hand_written": 0.8029,
+    "holoclean": 0.1316,
+    "raha": 0.6179
+   },
+   "b_row_all": {
+    "ge_dirty_profiled": 0.7193229901269392,
+    "ge_clean_profiled": 0.7475862068965516,
+    "ge_hand_written": 0.8902291917973462,
+    "holoclean": 0.7864583333333334,
+    "raha": 0.7734374999999999
+   },
+   "b_row_model": {
+    "ge_dirty_profiled": 0.6990291262135923,
+    "ge_clean_profiled": 0.707395498392283,
+    "ge_hand_written": 0.8712871287128713,
+    "holoclean": 0.726775956284153,
+    "raha": 0.7777777777777778
+   },
+   "c_model_visible": {
+    "ge_dirty_profiled": 0.5622489959839359,
+    "ge_clean_profiled": 0.5755968169761273,
+    "ge_hand_written": 0.8077360637087599,
+    "holoclean": 0.133869670152856,
+    "raha": 0.6509009009009009
+   },
+   "cell_model": {
+    "ge_dirty_profiled": 0.5622489959839359,
+    "ge_clean_profiled": 0.5755968169761273,
+    "ge_hand_written": 0.8077360637087599,
+    "holoclean": 0.133869670152856,
+    "raha": 0.6509009009009009
+   },
+   "recall_model": {
+    "ge_dirty_profiled": 0.40076335877862596,
+    "ge_clean_profiled": 0.41412213740458015,
+    "ge_hand_written": 0.6774809160305344,
+    "holoclean": 0.7938931297709924,
+    "raha": 0.5515267175572519
+   },
+   "recall_all": {
+    "ge_dirty_profiled": 0.39144215530903326,
+    "ge_clean_profiled": 0.4405705229793978,
+    "ge_hand_written": 0.694136291600634,
+    "holoclean": 0.659270998415214,
+    "raha": 0.5039619651347068
+   },
+   "cell_precision_model": {
+    "ge_dirty_profiled": 0.9417040358744395,
+    "ge_clean_profiled": 0.9434782608695652,
+    "ge_hand_written": 1.0,
+    "holoclean": 0.07309787383588122,
+    "raha": 0.7939560439560439
+   },
+   "row_precision_all": {
+    "ge_dirty_profiled": 0.99609375,
+    "ge_clean_profiled": 0.9963235294117647,
+    "ge_hand_written": 0.9813829787234043,
+    "holoclean": 0.648068669527897,
+    "raha": 0.9428571428571428
+   },
+   "row_precision_model": {
+    "ge_dirty_profiled": 0.9863013698630136,
+    "ge_clean_profiled": 0.9865470852017937,
+    "ge_hand_written": 1.0,
+    "holoclean": 0.5708154506437768,
+    "raha": 0.9333333333333333
+   },
+   "parsable_feature_recall": {
+    "ge_dirty_profiled": 0.0,
+    "ge_clean_profiled": 0.0,
+    "ge_hand_written": 0.4726027397260274,
+    "holoclean": 0.8116438356164384,
+    "raha": 0.2534246575342466
+   },
+   "rows_kept_model": {
+    "ge_dirty_profiled": 480,
+    "ge_clean_profiled": 476,
+    "ge_hand_written": 391,
+    "holoclean": 0,
+    "raha": 414
+   }
+  },
+  "A_model_visible": 524,
+  "n_train": 559,
+  "per_seed": {
+   "ge_dirty_profiled": {
+    "delete_all": [
+     366,
+     344,
+     353,
+     359,
+     349,
+     362,
+     349,
+     353,
+     353,
+     352
+    ],
+    "delete_all_minority": [
+     117,
+     110,
+     117,
+     119,
+     114,
+     119,
+     114,
+     115,
+     111,
+     118
+    ],
+    "delete_all_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "delete_model": [
+     392,
+     376,
+     381,
+     391,
+     383,
+     392,
+     379,
+     381,
+     383,
+     382
+    ],
+    "delete_model_minority": [
+     128,
+     122,
+     129,
+     131,
+     126,
+     130,
+     128,
+     125,
+     124,
+     129
+    ],
+    "delete_model_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "impute": [
+     559,
+     559,
+     559,
+     559,
+     559,
+     559,
+     559,
+     559,
+     559,
+     559
+    ],
+    "impute_minority": [
+     193,
+     193,
+     193,
+     193,
+     193,
+     193,
+     193,
+     193,
+     193,
+     193
+    ],
+    "impute_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "label_errors_left_impute": [
+     11,
+     10,
+     11,
+     11,
+     15,
+     11,
+     10,
+     13,
+     11,
+     12
+    ],
+    "label_errors_left_delete": [
+     10,
+     8,
+     9,
+     10,
+     13,
+     10,
+     9,
+     11,
+     9,
+     10
+    ],
+    "rows_with_model_error_in_train": [
+     309,
+     323,
+     325,
+     312,
+     317,
+     311,
+     321,
+     320,
+     315,
+     317
+    ]
+   },
+   "ge_clean_profiled": {
+    "delete_all": [
+     353,
+     335,
+     341,
+     347,
+     336,
+     349,
+     335,
+     343,
+     341,
+     341
+    ],
+    "delete_all_minority": [
+     111,
+     106,
+     111,
+     113,
+     108,
+     113,
+     109,
+     112,
+     105,
+     112
+    ],
+    "delete_all_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "delete_model": [
+     390,
+     372,
+     378,
+     388,
+     379,
+     388,
+     376,
+     380,
+     380,
+     378
+    ],
+    "delete_model_minority": [
+     126,
+     119,
+     127,
+     128,
+     123,
+     127,
+     126,
+     125,
+     122,
+     126
+    ],
+    "delete_model_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "impute": [
+     559,
+     559,
+     559,
+     559,
+     559,
+     559,
+     559,
+     559,
+     559,
+     559
+    ],
+    "impute_minority": [
+     193,
+     193,
+     193,
+     193,
+     193,
+     193,
+     193,
+     193,
+     193,
+     193
+    ],
+    "impute_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "label_errors_left_impute": [
+     11,
+     10,
+     11,
+     11,
+     15,
+     11,
+     10,
+     13,
+     11,
+     12
+    ],
+    "label_errors_left_delete": [
+     10,
+     8,
+     9,
+     10,
+     13,
+     10,
+     9,
+     11,
+     9,
+     10
+    ],
+    "rows_with_model_error_in_train": [
+     309,
+     323,
+     325,
+     312,
+     317,
+     311,
+     321,
+     320,
+     315,
+     317
+    ]
+   },
+   "ge_hand_written": {
+    "delete_all": [
+     270,
+     257,
+     258,
+     267,
+     256,
+     264,
+     253,
+     256,
+     261,
+     262
+    ],
+    "delete_all_minority": [
+     88,
+     83,
+     86,
+     87,
+     87,
+     87,
+     86,
+     85,
+     78,
+     87
+    ],
+    "delete_all_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "delete_model": [
+     322,
+     307,
+     310,
+     319,
+     315,
+     318,
+     309,
+     311,
+     317,
+     316
+    ],
+    "delete_model_minority": [
+     107,
+     101,
+     108,
+     109,
+     108,
+     106,
+     108,
+     104,
+     102,
+     106
+    ],
+    "delete_model_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "impute": [
+     559,
+     559,
+     559,
+     559,
+     559,
+     559,
+     559,
+     559,
+     559,
+     559
+    ],
+    "impute_minority": [
+     193,
+     193,
+     193,
+     193,
+     193,
+     193,
+     193,
+     193,
+     193,
+     193
+    ],
+    "impute_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "label_errors_left_impute": [
+     11,
+     10,
+     11,
+     11,
+     15,
+     11,
+     10,
+     13,
+     11,
+     12
+    ],
+    "label_errors_left_delete": [
+     9,
+     8,
+     8,
+     10,
+     12,
+     9,
+     8,
+     10,
+     8,
+     10
+    ],
+    "rows_with_model_error_in_train": [
+     309,
+     323,
+     325,
+     312,
+     317,
+     311,
+     321,
+     320,
+     315,
+     317
+    ]
+   },
+   "holoclean": {
+    "delete_all": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "delete_all_minority": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "delete_all_degenerate": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "delete_model": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "delete_model_minority": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "delete_model_degenerate": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "impute": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "impute_minority": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "impute_degenerate": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "label_errors_left_impute": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "label_errors_left_delete": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "rows_with_model_error_in_train": [
+     309,
+     323,
+     325,
+     312,
+     317,
+     311,
+     321,
+     320,
+     315,
+     317
+    ]
+   },
+   "raha": {
+    "delete_all": [
+     318,
+     302,
+     308,
+     313,
+     307,
+     315,
+     306,
+     308,
+     312,
+     311
+    ],
+    "delete_all_minority": [
+     89,
+     85,
+     92,
+     90,
+     87,
+     92,
+     89,
+     91,
+     88,
+     92
+    ],
+    "delete_all_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "delete_model": [
+     342,
+     325,
+     332,
+     337,
+     333,
+     337,
+     333,
+     332,
+     335,
+     338
+    ],
+    "delete_model_minority": [
+     98,
+     93,
+     102,
+     99,
+     97,
+     100,
+     99,
+     99,
+     98,
+     102
+    ],
+    "delete_model_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "impute": [
+     559,
+     559,
+     559,
+     559,
+     559,
+     559,
+     559,
+     559,
+     559,
+     559
+    ],
+    "impute_minority": [
+     193,
+     193,
+     193,
+     193,
+     193,
+     193,
+     193,
+     193,
+     193,
+     193
+    ],
+    "impute_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "label_errors_left_impute": [
+     11,
+     10,
+     11,
+     11,
+     15,
+     11,
+     10,
+     13,
+     11,
+     12
+    ],
+    "label_errors_left_delete": [
+     9,
+     9,
+     9,
+     11,
+     13,
+     10,
+     9,
+     11,
+     9,
+     11
+    ],
+    "rows_with_model_error_in_train": [
+     309,
+     323,
+     325,
+     312,
+     317,
+     311,
+     321,
+     320,
+     315,
+     317
+    ]
+   },
+   "perfect": {
+    "delete_all": [
+     208,
+     197,
+     195,
+     204,
+     196,
+     203,
+     197,
+     196,
+     198,
+     198
+    ],
+    "delete_all_minority": [
+     57,
+     53,
+     57,
+     55,
+     58,
+     56,
+     56,
+     56,
+     50,
+     60
+    ],
+    "delete_all_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "delete_model": [
+     250,
+     236,
+     234,
+     247,
+     242,
+     248,
+     238,
+     239,
+     244,
+     242
+    ],
+    "delete_model_minority": [
+     72,
+     66,
+     73,
+     72,
+     75,
+     72,
+     70,
+     70,
+     68,
+     76
+    ],
+    "delete_model_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "impute": [
+     548,
+     549,
+     548,
+     548,
+     544,
+     548,
+     549,
+     546,
+     548,
+     547
+    ],
+    "impute_minority": [
+     189,
+     189,
+     189,
+     187,
+     187,
+     189,
+     188,
+     189,
+     189,
+     189
+    ],
+    "impute_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "label_errors_left_impute": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "label_errors_left_delete": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "rows_with_model_error_in_train": [
+     309,
+     323,
+     325,
+     312,
+     317,
+     311,
+     321,
+     320,
+     315,
+     317
+    ]
+   },
+   "always_positive": {
+    "delete_all": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "delete_all_minority": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "delete_all_degenerate": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "delete_model": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "delete_model_minority": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "delete_model_degenerate": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "impute": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "impute_minority": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "impute_degenerate": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "label_errors_left_impute": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "label_errors_left_delete": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "rows_with_model_error_in_train": [
+     309,
+     323,
+     325,
+     312,
+     317,
+     311,
+     321,
+     320,
+     315,
+     317
+    ]
+   }
+  },
+  "impute_vs_floor": {
+   "ge_dirty_profiled": {
+    "cells_differing_from_floor_per_seed": [
+     2,
+     2,
+     4,
+     3,
+     4,
+     1,
+     5,
+     1,
+     4,
+     4
+    ],
+    "same_rows": true
+   },
+   "ge_clean_profiled": {
+    "cells_differing_from_floor_per_seed": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "same_rows": true
+   },
+   "ge_hand_written": {
+    "cells_differing_from_floor_per_seed": [
+     282,
+     302,
+     301,
+     291,
+     295,
+     289,
+     298,
+     295,
+     294,
+     292
+    ],
+    "same_rows": true
+   },
+   "raha": {
+    "cells_differing_from_floor_per_seed": [
+     263,
+     293,
+     287,
+     274,
+     281,
+     273,
+     274,
+     278,
+     282,
+     278
+    ],
+    "same_rows": true
+   },
+   "perfect": {
+    "cells_differing_from_floor_per_seed": [
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1
+    ],
+    "same_rows": false
+   }
+  }
+ },
+ "nasa": {
+  "n": 1503,
+  "d": 6,
+  "errors": 731,
+  "configs": {
+   "ge_dirty_profiled": {
+    "tp_fp_det": [
+     30,
+     0,
+     30
+    ],
+    "table3": [
+     30,
+     0,
+     30
+    ],
+    "matches_table3": true,
+    "flags": 30,
+    "flags_model_cols": 30,
+    "excl_col_flags": 0,
+    "excl_col_fp_by_col": {},
+    "fp_by_col": {},
+    "format_only_fp": 0,
+    "format_only_fp_parsed_equal": 0,
+    "format_only_fp_by_col": {},
+    "label_flags": 0,
+    "label_tp": 0,
+    "feature_tp": 30,
+    "feature_tp_parsable": 0,
+    "feature_fp": 0,
+    "feature_fp_parsable": 0,
+    "feature_fp_unparsable_values": [],
+    "rows_touched_all": 30,
+    "rows_touched_model": 30,
+    "rows_touched_model_without_format_only": 30
+   },
+   "ge_clean_profiled": {
+    "tp_fp_det": [
+     384,
+     0,
+     384
+    ],
+    "table3": [
+     384,
+     0,
+     384
+    ],
+    "matches_table3": true,
+    "flags": 384,
+    "flags_model_cols": 384,
+    "excl_col_flags": 0,
+    "excl_col_fp_by_col": {},
+    "fp_by_col": {},
+    "format_only_fp": 0,
+    "format_only_fp_parsed_equal": 0,
+    "format_only_fp_by_col": {},
+    "label_flags": 0,
+    "label_tp": 0,
+    "feature_tp": 384,
+    "feature_tp_parsable": 2,
+    "feature_fp": 0,
+    "feature_fp_parsable": 0,
+    "feature_fp_unparsable_values": [],
+    "rows_touched_all": 384,
+    "rows_touched_model": 384,
+    "rows_touched_model_without_format_only": 384
+   },
+   "ge_hand_written": {
+    "tp_fp_det": [
+     680,
+     0,
+     680
+    ],
+    "table3": [
+     680,
+     0,
+     680
+    ],
+    "matches_table3": true,
+    "flags": 680,
+    "flags_model_cols": 680,
+    "excl_col_flags": 0,
+    "excl_col_fp_by_col": {},
+    "fp_by_col": {},
+    "format_only_fp": 0,
+    "format_only_fp_parsed_equal": 0,
+    "format_only_fp_by_col": {},
+    "label_flags": 0,
+    "label_tp": 0,
+    "feature_tp": 680,
+    "feature_tp_parsable": 298,
+    "feature_fp": 0,
+    "feature_fp_parsable": 0,
+    "feature_fp_unparsable_values": [],
+    "rows_touched_all": 680,
+    "rows_touched_model": 680,
+    "rows_touched_model_without_format_only": 680
+   },
+   "holoclean": {
+    "tp_fp_det": [
+     556,
+     5709,
+     6265
+    ],
+    "table3": [
+     556,
+     5709,
+     6265
+    ],
+    "matches_table3": true,
+    "flags": 6265,
+    "flags_model_cols": 6265,
+    "excl_col_flags": 0,
+    "excl_col_fp_by_col": {},
+    "fp_by_col": {
+     "angle": 1353,
+     "chord_length": 1318,
+     "velocity": 1150,
+     "thickness": 954,
+     "sound_pressure_level": 934
+    },
+    "format_only_fp": 500,
+    "format_only_fp_parsed_equal": 500,
+    "format_only_fp_by_col": {
+     "angle": 499,
+     "sound_pressure_level": 1
+    },
+    "label_flags": 934,
+    "label_tp": 0,
+    "feature_tp": 556,
+    "feature_tp_parsable": 268,
+    "feature_fp": 4775,
+    "feature_fp_parsable": 4775,
+    "feature_fp_unparsable_values": [],
+    "rows_touched_all": 1466,
+    "rows_touched_model": 1466,
+    "rows_touched_model_without_format_only": 1466
+   },
+   "raha": {
+    "tp_fp_det": [
+     731,
+     1864,
+     2595
+    ],
+    "table3": [
+     710,
+     1864,
+     2574
+    ],
+    "matches_table3": false,
+    "flags": 2595,
+    "flags_model_cols": 2595,
+    "excl_col_flags": 0,
+    "excl_col_fp_by_col": {},
+    "fp_by_col": {
+     "frequency": 1365,
+     "angle": 499
+    },
+    "format_only_fp": 1864,
+    "format_only_fp_parsed_equal": 1864,
+    "format_only_fp_by_col": {
+     "frequency": 1365,
+     "angle": 499
+    },
+    "label_flags": 0,
+    "label_tp": 0,
+    "feature_tp": 731,
+    "feature_tp_parsable": 349,
+    "feature_fp": 1864,
+    "feature_fp_parsable": 1864,
+    "feature_fp_unparsable_values": [],
+    "rows_touched_all": 1503,
+    "rows_touched_model": 1503,
+    "rows_touched_model_without_format_only": 731
+   },
+   "perfect": {
+    "flags": 731,
+    "flags_model_cols": 731,
+    "excl_col_flags": 0,
+    "excl_col_fp_by_col": {},
+    "fp_by_col": {},
+    "format_only_fp": 0,
+    "format_only_fp_parsed_equal": 0,
+    "format_only_fp_by_col": {},
+    "label_flags": 0,
+    "label_tp": 0,
+    "feature_tp": 731,
+    "feature_tp_parsable": 349,
+    "feature_fp": 0,
+    "feature_fp_parsable": 0,
+    "feature_fp_unparsable_values": [],
+    "rows_touched_all": 731,
+    "rows_touched_model": 731,
+    "rows_touched_model_without_format_only": 731
+   },
+   "always_positive": {
+    "flags": 9018,
+    "flags_model_cols": 9018,
+    "excl_col_flags": 0,
+    "excl_col_fp_by_col": {},
+    "fp_by_col": {
+     "frequency": 1365,
+     "angle": 1353,
+     "chord_length": 1355,
+     "velocity": 1346,
+     "thickness": 1365,
+     "sound_pressure_level": 1503
+    },
+    "format_only_fp": 1866,
+    "format_only_fp_parsed_equal": 1866,
+    "format_only_fp_by_col": {
+     "frequency": 1365,
+     "angle": 499,
+     "sound_pressure_level": 2
+    },
+    "label_flags": 1503,
+    "label_tp": 0,
+    "feature_tp": 731,
+    "feature_tp_parsable": 349,
+    "feature_fp": 6784,
+    "feature_fp_parsable": 6784,
+    "feature_fp_unparsable_values": [],
+    "rows_touched_all": 1503,
+    "rows_touched_model": 1503,
+    "rows_touched_model_without_format_only": 1503
+   }
+  },
+  "per_column_errors": {
+   "frequency": 138,
+   "angle": 150,
+   "chord_length": 148,
+   "velocity": 157,
+   "thickness": 138,
+   "sound_pressure_level": 0
+  },
+  "errors_with_dirty_eq_clean": 0,
+  "diff_not_error_cells": 1866,
+  "diff_not_error_parsed_equal": 1866,
+  "diff_not_error_by_col": {
+   "frequency": 1365,
+   "angle": 499,
+   "sound_pressure_level": 2
+  },
+  "ge_real_vs_own_identical": {
+   "ge_dirty_profiled": true,
+   "ge_clean_profiled": true,
+   "ge_hand_written": true
+  },
+  "holoclean_per_dc_cells": [
+   [
+    "t1&t2&EQ(t1.angle,t2.angle)&IQ(t1.chord_length,t2.chord_length)",
+    2844
+   ],
+   [
+    "t1&t2&EQ(t1.angle,t2.angle)&EQ(t1.chord_length,t2.chord_length)&IQ(t1.velocity,t2.velocity)",
+    3891
+   ],
+   [
+    "t1&t2&EQ(t1.angle,t2.angle)&EQ(t1.chord_length,t2.chord_length)&EQ(t1.velocity,t2.velocity)&IQ(t1.thickness,t2.thickness)",
+    3292
+   ],
+   [
+    "t1&t2&EQ(t1.angle,t2.angle)&EQ(t1.chord_length,t2.chord_length)&EQ(t1.velocity,t2.velocity)&EQ(t1.thickness,t2.thickness)&IQ(t1.sound_pressure_level,t2.sound_pressure_level)",
+    4670
+   ]
+  ],
+  "disk": {
+   "ge_hand_written": {
+    "cells": 680,
+    "identical_to_replay": true
+   },
+   "holoclean": {
+    "cells": 6265,
+    "identical_to_replay": true
+   }
+  },
+  "feature_errors": 731,
+  "feature_errors_unparsable": 382,
+  "label_errors": 0,
+  "excl_col_errors": {},
+  "identical_model_col_sets": [],
+  "categorical_model_cols": [],
+  "clean_unparsable_by_col": {},
+  "references": {
+   "a_cell_all": {
+    "ge_dirty_profiled": 0.07884362680683311,
+    "ge_clean_profiled": 0.6887892376681615,
+    "ge_hand_written": 0.963855421686747,
+    "holoclean": 0.158947970268725,
+    "raha": 0.4395670475045099
+   },
+   "a_published": {
+    "ge_dirty_profiled": 0.0788,
+    "ge_clean_profiled": 0.6888,
+    "ge_hand_written": 0.9639,
+    "holoclean": 0.1589,
+    "raha": 0.4297
+   },
+   "b_row_all": {
+    "ge_dirty_profiled": 0.07884362680683311,
+    "ge_clean_profiled": 0.6887892376681615,
+    "ge_hand_written": 0.963855421686747,
+    "holoclean": 0.6317705962676377,
+    "raha": 0.6544315129811996
+   },
+   "b_row_model": {
+    "ge_dirty_profiled": 0.07884362680683311,
+    "ge_clean_profiled": 0.6887892376681615,
+    "ge_hand_written": 0.963855421686747,
+    "holoclean": 0.6317705962676377,
+    "raha": 0.6544315129811996
+   },
+   "c_model_visible": {
+    "ge_dirty_profiled": 0.07884362680683311,
+    "ge_clean_profiled": 0.6887892376681615,
+    "ge_hand_written": 0.963855421686747,
+    "holoclean": 0.158947970268725,
+    "raha": 0.4395670475045099
+   },
+   "cell_model": {
+    "ge_dirty_profiled": 0.07884362680683311,
+    "ge_clean_profiled": 0.6887892376681615,
+    "ge_hand_written": 0.963855421686747,
+    "holoclean": 0.158947970268725,
+    "raha": 0.4395670475045099
+   },
+   "recall_model": {
+    "ge_dirty_profiled": 0.04103967168262654,
+    "ge_clean_profiled": 0.5253077975376197,
+    "ge_hand_written": 0.9302325581395349,
+    "holoclean": 0.7606019151846786,
+    "raha": 1.0
+   },
+   "recall_all": {
+    "ge_dirty_profiled": 0.04103967168262654,
+    "ge_clean_profiled": 0.5253077975376197,
+    "ge_hand_written": 0.9302325581395349,
+    "holoclean": 0.7606019151846786,
+    "raha": 1.0
+   },
+   "cell_precision_model": {
+    "ge_dirty_profiled": 1.0,
+    "ge_clean_profiled": 1.0,
+    "ge_hand_written": 1.0,
+    "holoclean": 0.08874700718276138,
+    "raha": 0.2816955684007707
+   },
+   "row_precision_all": {
+    "ge_dirty_profiled": 1.0,
+    "ge_clean_profiled": 1.0,
+    "ge_hand_written": 1.0,
+    "holoclean": 0.4733969986357435,
+    "raha": 0.4863606121091151
+   },
+   "row_precision_model": {
+    "ge_dirty_profiled": 1.0,
+    "ge_clean_profiled": 1.0,
+    "ge_hand_written": 1.0,
+    "holoclean": 0.4733969986357435,
+    "raha": 0.4863606121091151
+   },
+   "parsable_feature_recall": {
+    "ge_dirty_profiled": 0.0,
+    "ge_clean_profiled": 0.0057306590257879654,
+    "ge_hand_written": 0.8538681948424068,
+    "holoclean": 0.7679083094555874,
+    "raha": 1.0
+   },
+   "rows_kept_model": {
+    "ge_dirty_profiled": 1473,
+    "ge_clean_profiled": 1119,
+    "ge_hand_written": 823,
+    "holoclean": 37,
+    "raha": 0
+   }
+  },
+  "A_model_visible": 731,
+  "n_train": 1202,
+  "per_seed": {
+   "ge_dirty_profiled": {
+    "delete_all": [
+     1178,
+     1178,
+     1179,
+     1177,
+     1174,
+     1183,
+     1176,
+     1177,
+     1179,
+     1181
+    ],
+    "delete_all_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "delete_model": [
+     1178,
+     1178,
+     1179,
+     1177,
+     1174,
+     1183,
+     1176,
+     1177,
+     1179,
+     1181
+    ],
+    "delete_model_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "impute": [
+     1202,
+     1202,
+     1202,
+     1202,
+     1202,
+     1202,
+     1202,
+     1202,
+     1202,
+     1202
+    ],
+    "impute_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "label_errors_left_impute": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "label_errors_left_delete": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "rows_with_model_error_in_train": [
+     572,
+     587,
+     594,
+     588,
+     580,
+     586,
+     571,
+     582,
+     577,
+     597
+    ]
+   },
+   "ge_clean_profiled": {
+    "delete_all": [
+     894,
+     894,
+     893,
+     884,
+     895,
+     893,
+     900,
+     890,
+     896,
+     891
+    ],
+    "delete_all_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "delete_model": [
+     894,
+     894,
+     893,
+     884,
+     895,
+     893,
+     900,
+     890,
+     896,
+     891
+    ],
+    "delete_model_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "impute": [
+     1202,
+     1202,
+     1202,
+     1202,
+     1202,
+     1202,
+     1202,
+     1202,
+     1202,
+     1202
+    ],
+    "impute_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "label_errors_left_impute": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "label_errors_left_delete": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "rows_with_model_error_in_train": [
+     572,
+     587,
+     594,
+     588,
+     580,
+     586,
+     571,
+     582,
+     577,
+     597
+    ]
+   },
+   "ge_hand_written": {
+    "delete_all": [
+     669,
+     661,
+     651,
+     653,
+     662,
+     658,
+     672,
+     661,
+     664,
+     647
+    ],
+    "delete_all_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "delete_model": [
+     669,
+     661,
+     651,
+     653,
+     662,
+     658,
+     672,
+     661,
+     664,
+     647
+    ],
+    "delete_model_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "impute": [
+     1202,
+     1202,
+     1202,
+     1202,
+     1202,
+     1202,
+     1202,
+     1202,
+     1202,
+     1202
+    ],
+    "impute_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "label_errors_left_impute": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "label_errors_left_delete": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "rows_with_model_error_in_train": [
+     572,
+     587,
+     594,
+     588,
+     580,
+     586,
+     571,
+     582,
+     577,
+     597
+    ]
+   },
+   "holoclean": {
+    "delete_all": [
+     31,
+     28,
+     34,
+     28,
+     32,
+     29,
+     32,
+     26,
+     30,
+     34
+    ],
+    "delete_all_degenerate": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "delete_model": [
+     31,
+     28,
+     34,
+     28,
+     32,
+     29,
+     32,
+     26,
+     30,
+     34
+    ],
+    "delete_model_degenerate": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "impute": [
+     451,
+     455,
+     462,
+     465,
+     444,
+     452,
+     450,
+     451,
+     450,
+     465
+    ],
+    "impute_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "label_errors_left_impute": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "label_errors_left_delete": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "rows_with_model_error_in_train": [
+     572,
+     587,
+     594,
+     588,
+     580,
+     586,
+     571,
+     582,
+     577,
+     597
+    ]
+   },
+   "raha": {
+    "delete_all": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "delete_all_degenerate": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "delete_model": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "delete_model_degenerate": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "impute": [
+     1202,
+     1202,
+     1202,
+     1202,
+     1202,
+     1202,
+     1202,
+     1202,
+     1202,
+     1202
+    ],
+    "impute_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "label_errors_left_impute": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "label_errors_left_delete": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "rows_with_model_error_in_train": [
+     572,
+     587,
+     594,
+     588,
+     580,
+     586,
+     571,
+     582,
+     577,
+     597
+    ]
+   },
+   "perfect": {
+    "delete_all": [
+     630,
+     615,
+     608,
+     614,
+     622,
+     616,
+     631,
+     620,
+     625,
+     605
+    ],
+    "delete_all_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "delete_model": [
+     630,
+     615,
+     608,
+     614,
+     622,
+     616,
+     631,
+     620,
+     625,
+     605
+    ],
+    "delete_model_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "impute": [
+     1202,
+     1202,
+     1202,
+     1202,
+     1202,
+     1202,
+     1202,
+     1202,
+     1202,
+     1202
+    ],
+    "impute_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "label_errors_left_impute": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "label_errors_left_delete": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "rows_with_model_error_in_train": [
+     572,
+     587,
+     594,
+     588,
+     580,
+     586,
+     571,
+     582,
+     577,
+     597
+    ]
+   },
+   "always_positive": {
+    "delete_all": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "delete_all_degenerate": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "delete_model": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "delete_model_degenerate": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "impute": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "impute_degenerate": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "label_errors_left_impute": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "label_errors_left_delete": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "rows_with_model_error_in_train": [
+     572,
+     587,
+     594,
+     588,
+     580,
+     586,
+     571,
+     582,
+     577,
+     597
+    ]
+   }
+  },
+  "impute_vs_floor": {
+   "ge_dirty_profiled": {
+    "cells_differing_from_floor_per_seed": [
+     107,
+     125,
+     56,
+     83,
+     83,
+     120,
+     0,
+     118,
+     119,
+     74
+    ],
+    "same_rows": true
+   },
+   "ge_clean_profiled": {
+    "cells_differing_from_floor_per_seed": [
+     55,
+     175,
+     107,
+     268,
+     149,
+     114,
+     53,
+     116,
+     50,
+     134
+    ],
+    "same_rows": true
+   },
+   "ge_hand_written": {
+    "cells_differing_from_floor_per_seed": [
+     533,
+     541,
+     551,
+     549,
+     540,
+     544,
+     530,
+     541,
+     538,
+     555
+    ],
+    "same_rows": true
+   },
+   "raha": {
+    "cells_differing_from_floor_per_seed": [
+     2053,
+     2073,
+     2063,
+     2063,
+     2056,
+     2077,
+     2050,
+     2044,
+     2051,
+     2061
+    ],
+    "same_rows": true
+   },
+   "perfect": {
+    "cells_differing_from_floor_per_seed": [
+     572,
+     587,
+     594,
+     588,
+     580,
+     586,
+     571,
+     582,
+     577,
+     597
+    ],
+    "same_rows": true
+   }
+  }
+ },
+ "bike": {
+  "n": 17379,
+  "d": 17,
+  "errors": 34274,
+  "configs": {
+   "ge_dirty_profiled": {
+    "tp_fp_det": [
+     0,
+     0,
+     0
+    ],
+    "table3": [
+     0,
+     0,
+     0
+    ],
+    "matches_table3": true,
+    "flags": 0,
+    "flags_model_cols": 0,
+    "excl_col_flags": 0,
+    "excl_col_fp_by_col": {
+     "instant": 0,
+     "dteday": 0,
+     "casual": 0,
+     "registered": 0
+    },
+    "fp_by_col": {},
+    "format_only_fp": 0,
+    "format_only_fp_parsed_equal": 0,
+    "format_only_fp_by_col": {},
+    "label_flags": 0,
+    "label_tp": 0,
+    "feature_tp": 0,
+    "feature_tp_parsable": 0,
+    "feature_fp": 0,
+    "feature_fp_parsable": 0,
+    "feature_fp_unparsable_values": [],
+    "rows_touched_all": 0,
+    "rows_touched_model": 0,
+    "rows_touched_model_without_format_only": 0
+   },
+   "ge_clean_profiled": {
+    "tp_fp_det": [
+     0,
+     0,
+     0
+    ],
+    "table3": [
+     0,
+     0,
+     0
+    ],
+    "matches_table3": true,
+    "flags": 0,
+    "flags_model_cols": 0,
+    "excl_col_flags": 0,
+    "excl_col_fp_by_col": {
+     "instant": 0,
+     "dteday": 0,
+     "casual": 0,
+     "registered": 0
+    },
+    "fp_by_col": {},
+    "format_only_fp": 0,
+    "format_only_fp_parsed_equal": 0,
+    "format_only_fp_by_col": {},
+    "label_flags": 0,
+    "label_tp": 0,
+    "feature_tp": 0,
+    "feature_tp_parsable": 0,
+    "feature_fp": 0,
+    "feature_fp_parsable": 0,
+    "feature_fp_unparsable_values": [],
+    "rows_touched_all": 0,
+    "rows_touched_model": 0,
+    "rows_touched_model_without_format_only": 0
+   },
+   "ge_hand_written": {
+    "tp_fp_det": [
+     24247,
+     0,
+     24247
+    ],
+    "table3": [
+     24247,
+     0,
+     24247
+    ],
+    "matches_table3": true,
+    "flags": 24247,
+    "flags_model_cols": 21599,
+    "excl_col_flags": 2648,
+    "excl_col_fp_by_col": {
+     "instant": 0,
+     "dteday": 0,
+     "casual": 0,
+     "registered": 0
+    },
+    "fp_by_col": {},
+    "format_only_fp": 0,
+    "format_only_fp_parsed_equal": 0,
+    "format_only_fp_by_col": {},
+    "label_flags": 0,
+    "label_tp": 0,
+    "feature_tp": 21599,
+    "feature_tp_parsable": 21599,
+    "feature_fp": 0,
+    "feature_fp_parsable": 0,
+    "feature_fp_unparsable_values": [],
+    "rows_touched_all": 13529,
+    "rows_touched_model": 12847,
+    "rows_touched_model_without_format_only": 12847
+   },
+   "holoclean": {
+    "tp_fp_det": [
+     25134,
+     173845,
+     198979
+    ],
+    "table3": [
+     25134,
+     173845,
+     198979
+    ],
+    "matches_table3": true,
+    "flags": 198979,
+    "flags_model_cols": 153342,
+    "excl_col_flags": 45637,
+    "excl_col_fp_by_col": {
+     "instant": 12424,
+     "dteday": 0,
+     "casual": 15142,
+     "registered": 16403
+    },
+    "fp_by_col": {
+     "instant": 12424,
+     "season": 9887,
+     "mnth": 7355,
+     "hr": 16196,
+     "holiday": 9400,
+     "weekday": 14126,
+     "workingday": 16012,
+     "weathersit": 2683,
+     "temp": 8769,
+     "atemp": 10114,
+     "hum": 16543,
+     "windspeed": 1425,
+     "casual": 15142,
+     "registered": 16403,
+     "cnt": 17366
+    },
+    "format_only_fp": 509,
+    "format_only_fp_parsed_equal": 509,
+    "format_only_fp_by_col": {
+     "atemp": 1,
+     "hum": 279,
+     "windspeed": 229
+    },
+    "label_flags": 17366,
+    "label_tp": 0,
+    "feature_tp": 23466,
+    "feature_tp_parsable": 23466,
+    "feature_fp": 112510,
+    "feature_fp_parsable": 112510,
+    "feature_fp_unparsable_values": [],
+    "rows_touched_all": 17379,
+    "rows_touched_model": 17379,
+    "rows_touched_model_without_format_only": 17379
+   },
+   "raha": {
+    "tp_fp_det": [
+     31434,
+     14567,
+     46001
+    ],
+    "table3": [
+     30861,
+     15138,
+     45999
+    ],
+    "matches_table3": false,
+    "flags": 46001,
+    "flags_model_cols": 32488,
+    "excl_col_flags": 13513,
+    "excl_col_fp_by_col": {
+     "instant": 0,
+     "dteday": 10931,
+     "casual": 0,
+     "registered": 0
+    },
+    "fp_by_col": {
+     "dteday": 10931,
+     "mnth": 1305,
+     "temp": 1,
+     "atemp": 2,
+     "hum": 279,
+     "windspeed": 2049
+    },
+    "format_only_fp": 13261,
+    "format_only_fp_parsed_equal": 2330,
+    "format_only_fp_by_col": {
+     "dteday": 10931,
+     "temp": 1,
+     "atemp": 1,
+     "hum": 279,
+     "windspeed": 2049
+    },
+    "label_flags": 0,
+    "label_tp": 0,
+    "feature_tp": 28852,
+    "feature_tp_parsable": 28852,
+    "feature_fp": 3636,
+    "feature_fp_parsable": 3636,
+    "feature_fp_unparsable_values": [],
+    "rows_touched_all": 16894,
+    "rows_touched_model": 16198,
+    "rows_touched_model_without_format_only": 15951
+   },
+   "perfect": {
+    "flags": 34274,
+    "flags_model_cols": 30737,
+    "excl_col_flags": 3537,
+    "excl_col_fp_by_col": {
+     "instant": 0,
+     "dteday": 0,
+     "casual": 0,
+     "registered": 0
+    },
+    "fp_by_col": {},
+    "format_only_fp": 0,
+    "format_only_fp_parsed_equal": 0,
+    "format_only_fp_by_col": {},
+    "label_flags": 0,
+    "label_tp": 0,
+    "feature_tp": 30737,
+    "feature_tp_parsable": 30737,
+    "feature_fp": 0,
+    "feature_fp_parsable": 0,
+    "feature_fp_unparsable_values": [],
+    "rows_touched_all": 16401,
+    "rows_touched_model": 16183,
+    "rows_touched_model_without_format_only": 16183
+   },
+   "always_positive": {
+    "flags": 295443,
+    "flags_model_cols": 225927,
+    "excl_col_flags": 69516,
+    "excl_col_fp_by_col": {
+     "instant": 16498,
+     "dteday": 16490,
+     "casual": 16494,
+     "registered": 16497
+    },
+    "fp_by_col": {
+     "instant": 16498,
+     "dteday": 16490,
+     "season": 9909,
+     "yr": 16518,
+     "mnth": 9897,
+     "hr": 16523,
+     "holiday": 9897,
+     "weekday": 16520,
+     "workingday": 16012,
+     "weathersit": 16506,
+     "temp": 16493,
+     "atemp": 16495,
+     "hum": 16548,
+     "windspeed": 16493,
+     "casual": 16494,
+     "registered": 16497,
+     "cnt": 17379
+    },
+    "format_only_fp": 13263,
+    "format_only_fp_parsed_equal": 2332,
+    "format_only_fp_by_col": {
+     "dteday": 10931,
+     "temp": 1,
+     "atemp": 3,
+     "hum": 279,
+     "windspeed": 2049
+    },
+    "label_flags": 17379,
+    "label_tp": 0,
+    "feature_tp": 30737,
+    "feature_tp_parsable": 30737,
+    "feature_fp": 177811,
+    "feature_fp_parsable": 177811,
+    "feature_fp_unparsable_values": [],
+    "rows_touched_all": 17379,
+    "rows_touched_model": 17379,
+    "rows_touched_model_without_format_only": 17379
+   }
+  },
+  "per_column_errors": {
+   "instant": 881,
+   "dteday": 889,
+   "season": 7470,
+   "yr": 861,
+   "mnth": 7482,
+   "hr": 856,
+   "holiday": 7482,
+   "weekday": 859,
+   "workingday": 1367,
+   "weathersit": 873,
+   "temp": 886,
+   "atemp": 884,
+   "hum": 831,
+   "windspeed": 886,
+   "casual": 885,
+   "registered": 882,
+   "cnt": 0
+  },
+  "errors_with_dirty_eq_clean": 0,
+  "diff_not_error_cells": 13263,
+  "diff_not_error_parsed_equal": 2332,
+  "diff_not_error_by_col": {
+   "dteday": 10931,
+   "temp": 1,
+   "atemp": 3,
+   "hum": 279,
+   "windspeed": 2049
+  },
+  "ge_real_vs_own_identical": {
+   "ge_dirty_profiled": true,
+   "ge_clean_profiled": true,
+   "ge_hand_written": true
+  },
+  "holoclean_per_dc_cells": [
+   [
+    "t1&t2&EQ(t1.hum,t2.hum)&IQ(t1.season,t2.season)",
+    33086
+   ],
+   [
+    "t1&t2&EQ(t1.hum,t2.hum)&EQ(t1.season,t2.season)&IQ(t1.hr,t2.hr)",
+    39870
+   ],
+   [
+    "t1&t2&EQ(t1.hum,t2.hum)&EQ(t1.season,t2.season)&EQ(t1.hr,t2.hr)&IQ(t1.weekday,t2.weekday)",
+    31372
+   ],
+   [
+    "t1&t2&EQ(t1.hum,t2.hum)&EQ(t1.season,t2.season)&EQ(t1.hr,t2.hr)&EQ(t1.weekday,t2.weekday)&IQ(t1.weathersit,t2.weathersit)",
+    8300
+   ],
+   [
+    "t1&t2&EQ(t1.hum,t2.hum)&EQ(t1.season,t2.season)&EQ(t1.hr,t2.hr)&EQ(t1.weekday,t2.weekday)&EQ(t1.weathersit,t2.weathersit)&IQ(t1.windspeed,t2.windspeed)",
+    9210
+   ],
+   [
+    "t1&t2&EQ(t1.hum,t2.hum)&EQ(t1.season,t2.season)&EQ(t1.hr,t2.hr)&EQ(t1.weekday,t2.weekday)&IQ(t1.casual,t2.casual)",
+    13925
+   ],
+   [
+    "t1&t2&EQ(t1.hum,t2.hum)&EQ(t1.season,t2.season)&EQ(t1.weekday,t2.weekday)&EQ(t1.casual,t2.casual)&IQ(t1.temp,t2.temp)",
+    8000
+   ],
+   [
+    "t1&t2&EQ(t1.season,t2.season)&EQ(t1.weekday,t2.weekday)&EQ(t1.temp,t2.temp)&IQ(t1.atemp,t2.atemp)",
+    34216
+   ],
+   [
+    "t1&t2&EQ(t1.season,t2.season)&EQ(t1.weekday,t2.weekday)&EQ(t1.atemp,t2.atemp)&IQ(t1.mnth,t2.mnth)",
+    32840
+   ],
+   [
+    "t1&t2&EQ(t1.season,t2.season)&EQ(t1.weekday,t2.weekday)&EQ(t1.mnth,t2.mnth)&IQ(t1.instant,t2.instant)",
+    52324
+   ],
+   [
+    "t1&t2&EQ(t1.season,t2.season)&EQ(t1.hr,t2.hr)&EQ(t1.weekday,t2.weekday)&EQ(t1.casual,t2.casual)&IQ(t1.workingday,t2.workingday)",
+    2825
+   ],
+   [
+    "t1&t2&EQ(t1.workingday,t2.workingday)&IQ(t1.holiday,t2.holiday)",
+    32976
+   ],
+   [
+    "t1&t2&EQ(t1.hr,t2.hr)&EQ(t1.casual,t2.casual)&IQ(t1.cnt,t2.cnt)",
+    44802
+   ],
+   [
+    "t1&t2&EQ(t1.cnt,t2.cnt)&IQ(t1.registered,t2.registered)",
+    34554
+   ]
+  ],
+  "disk": {
+   "ge_hand_written": {
+    "cells": 24247,
+    "identical_to_replay": true
+   },
+   "holoclean": {
+    "cells": 198979,
+    "identical_to_replay": true
+   }
+  },
+  "feature_errors": 30737,
+  "feature_errors_unparsable": 0,
+  "label_errors": 0,
+  "excl_col_errors": {
+   "instant": 881,
+   "dteday": 889,
+   "casual": 885,
+   "registered": 882
+  },
+  "identical_model_col_sets": [
+   [
+    "ge_dirty_profiled",
+    "ge_clean_profiled"
+   ]
+  ],
+  "categorical_model_cols": [],
+  "clean_unparsable_by_col": {},
+  "references": {
+   "a_cell_all": {
+    "ge_dirty_profiled": 0.0,
+    "ge_clean_profiled": 0.0,
+    "ge_hand_written": 0.8286597973377078,
+    "holoclean": 0.21550848220601662,
+    "raha": 0.7831578947368422
+   },
+   "a_published": {
+    "ge_dirty_profiled": 0.0,
+    "ge_clean_profiled": 0.0,
+    "ge_hand_written": 0.8287,
+    "holoclean": 0.2155,
+    "raha": 0.7689
+   },
+   "b_row_all": {
+    "ge_dirty_profiled": 0.0,
+    "ge_clean_profiled": 0.0,
+    "ge_hand_written": 0.9040427664550618,
+    "holoclean": 0.9710479573712256,
+    "raha": 0.9793662712118937
+   },
+   "b_row_model": {
+    "ge_dirty_profiled": 0.0,
+    "ge_clean_profiled": 0.0,
+    "ge_hand_written": 0.8850843954529796,
+    "holoclean": 0.9643644598057327,
+    "raha": 0.9878014885272227
+   },
+   "c_model_visible": {
+    "ge_dirty_profiled": 0.0,
+    "ge_clean_profiled": 0.0,
+    "ge_hand_written": 0.8253974319779883,
+    "holoclean": 0.2549557526931372,
+    "raha": 0.9126769474100436
+   },
+   "cell_model": {
+    "ge_dirty_profiled": 0.0,
+    "ge_clean_profiled": 0.0,
+    "ge_hand_written": 0.8253974319779883,
+    "holoclean": 0.2549557526931372,
+    "raha": 0.9126769474100436
+   },
+   "recall_model": {
+    "ge_dirty_profiled": 0.0,
+    "ge_clean_profiled": 0.0,
+    "ge_hand_written": 0.7027035820021472,
+    "holoclean": 0.7634447083319778,
+    "raha": 0.9386732602401016
+   },
+   "recall_all": {
+    "ge_dirty_profiled": 0.0,
+    "ge_clean_profiled": 0.0,
+    "ge_hand_written": 0.707445877341425,
+    "holoclean": 0.7333255528972399,
+    "raha": 0.9171383556048317
+   },
+   "cell_precision_model": {
+    "ge_dirty_profiled": 0.0,
+    "ge_clean_profiled": 0.0,
+    "ge_hand_written": 1.0,
+    "holoclean": 0.15303048088586296,
+    "raha": 0.8880817532627432
+   },
+   "row_precision_all": {
+    "ge_dirty_profiled": 0.0,
+    "ge_clean_profiled": 0.0,
+    "ge_hand_written": 1.0,
+    "holoclean": 0.9437251855687899,
+    "raha": 0.9650763584704629
+   },
+   "row_precision_model": {
+    "ge_dirty_profiled": 0.0,
+    "ge_clean_profiled": 0.0,
+    "ge_hand_written": 1.0,
+    "holoclean": 0.931181310777375,
+    "raha": 0.9873441165575997
+   },
+   "parsable_feature_recall": {
+    "ge_dirty_profiled": 0.0,
+    "ge_clean_profiled": 0.0,
+    "ge_hand_written": 0.7027035820021472,
+    "holoclean": 0.7634447083319778,
+    "raha": 0.9386732602401016
+   },
+   "rows_kept_model": {
+    "ge_dirty_profiled": 17379,
+    "ge_clean_profiled": 17379,
+    "ge_hand_written": 4532,
+    "holoclean": 0,
+    "raha": 1181
+   }
+  },
+  "A_model_visible": 30737,
+  "n_train": 13903,
+  "per_seed": {
+   "ge_dirty_profiled": {
+    "delete_all": [
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903
+    ],
+    "delete_all_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "delete_model": [
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903
+    ],
+    "delete_model_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "impute": [
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903
+    ],
+    "impute_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "label_errors_left_impute": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "label_errors_left_delete": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "rows_with_model_error_in_train": [
+     12957,
+     12943,
+     12938,
+     12988,
+     12949,
+     12942,
+     12947,
+     12920,
+     12941,
+     12938
+    ]
+   },
+   "ge_clean_profiled": {
+    "delete_all": [
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903
+    ],
+    "delete_all_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "delete_model": [
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903
+    ],
+    "delete_model_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "impute": [
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903
+    ],
+    "impute_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "label_errors_left_impute": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "label_errors_left_delete": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "rows_with_model_error_in_train": [
+     12957,
+     12943,
+     12938,
+     12988,
+     12949,
+     12942,
+     12947,
+     12920,
+     12941,
+     12938
+    ]
+   },
+   "ge_hand_written": {
+    "delete_all": [
+     3064,
+     3092,
+     3104,
+     3044,
+     3095,
+     3065,
+     3106,
+     3069,
+     3101,
+     3088
+    ],
+    "delete_all_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "delete_model": [
+     3627,
+     3622,
+     3646,
+     3574,
+     3649,
+     3628,
+     3643,
+     3639,
+     3648,
+     3637
+    ],
+    "delete_model_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "impute": [
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903
+    ],
+    "impute_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "label_errors_left_impute": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "label_errors_left_delete": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "rows_with_model_error_in_train": [
+     12957,
+     12943,
+     12938,
+     12988,
+     12949,
+     12942,
+     12947,
+     12920,
+     12941,
+     12938
+    ]
+   },
+   "holoclean": {
+    "delete_all": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "delete_all_degenerate": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "delete_model": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "delete_model_degenerate": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "impute": [
+     10,
+     12,
+     7,
+     12,
+     12,
+     10,
+     9,
+     13,
+     11,
+     8
+    ],
+    "impute_degenerate": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "label_errors_left_impute": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "label_errors_left_delete": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "rows_with_model_error_in_train": [
+     12957,
+     12943,
+     12938,
+     12988,
+     12949,
+     12942,
+     12947,
+     12920,
+     12941,
+     12938
+    ]
+   },
+   "raha": {
+    "delete_all": [
+     388,
+     395,
+     391,
+     374,
+     388,
+     391,
+     398,
+     401,
+     394,
+     397
+    ],
+    "delete_all_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "delete_model": [
+     937,
+     950,
+     951,
+     921,
+     945,
+     951,
+     953,
+     976,
+     950,
+     963
+    ],
+    "delete_model_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "impute": [
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903
+    ],
+    "impute_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "label_errors_left_impute": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "label_errors_left_delete": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "rows_with_model_error_in_train": [
+     12957,
+     12943,
+     12938,
+     12988,
+     12949,
+     12942,
+     12947,
+     12920,
+     12941,
+     12938
+    ]
+   },
+   "perfect": {
+    "delete_all": [
+     778,
+     785,
+     795,
+     753,
+     779,
+     780,
+     791,
+     796,
+     788,
+     790
+    ],
+    "delete_all_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "delete_model": [
+     946,
+     960,
+     965,
+     915,
+     954,
+     961,
+     956,
+     983,
+     962,
+     965
+    ],
+    "delete_model_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "impute": [
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903,
+     13903
+    ],
+    "impute_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "label_errors_left_impute": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "label_errors_left_delete": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "rows_with_model_error_in_train": [
+     12957,
+     12943,
+     12938,
+     12988,
+     12949,
+     12942,
+     12947,
+     12920,
+     12941,
+     12938
+    ]
+   },
+   "always_positive": {
+    "delete_all": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "delete_all_degenerate": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "delete_model": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "delete_model_degenerate": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "impute": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "impute_degenerate": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "label_errors_left_impute": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "label_errors_left_delete": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "rows_with_model_error_in_train": [
+     12957,
+     12943,
+     12938,
+     12988,
+     12949,
+     12942,
+     12947,
+     12920,
+     12941,
+     12938
+    ]
+   }
+  }
+ },
+ "adult": {
+  "n": 45222,
+  "d": 15,
+  "errors": 1701,
+  "configs": {
+   "ge_dirty_profiled": {
+    "tp_fp_det": [
+     0,
+     0,
+     0
+    ],
+    "table3": [
+     0,
+     0,
+     0
+    ],
+    "matches_table3": true,
+    "flags": 0,
+    "flags_model_cols": 0,
+    "excl_col_flags": 0,
+    "excl_col_fp_by_col": {},
+    "fp_by_col": {},
+    "format_only_fp": 0,
+    "format_only_fp_parsed_equal": 0,
+    "format_only_fp_by_col": {},
+    "label_flags": 0,
+    "label_tp": 0,
+    "feature_tp": 0,
+    "feature_tp_parsable": 0,
+    "feature_fp": 0,
+    "feature_fp_parsable": 0,
+    "feature_fp_unparsable_values": [],
+    "rows_touched_all": 0,
+    "rows_touched_model": 0,
+    "rows_touched_model_without_format_only": 0
+   },
+   "ge_clean_profiled": {
+    "tp_fp_det": [
+     0,
+     0,
+     0
+    ],
+    "table3": [
+     0,
+     0,
+     0
+    ],
+    "matches_table3": true,
+    "flags": 0,
+    "flags_model_cols": 0,
+    "excl_col_flags": 0,
+    "excl_col_fp_by_col": {},
+    "fp_by_col": {},
+    "format_only_fp": 0,
+    "format_only_fp_parsed_equal": 0,
+    "format_only_fp_by_col": {},
+    "label_flags": 0,
+    "label_tp": 0,
+    "feature_tp": 0,
+    "feature_tp_parsable": 0,
+    "feature_fp": 0,
+    "feature_fp_parsable": 0,
+    "feature_fp_unparsable_values": [],
+    "rows_touched_all": 0,
+    "rows_touched_model": 0,
+    "rows_touched_model_without_format_only": 0
+   },
+   "ge_hand_written": {
+    "tp_fp_det": [
+     0,
+     0,
+     0
+    ],
+    "table3": [
+     0,
+     0,
+     0
+    ],
+    "matches_table3": true,
+    "flags": 0,
+    "flags_model_cols": 0,
+    "excl_col_flags": 0,
+    "excl_col_fp_by_col": {},
+    "fp_by_col": {},
+    "format_only_fp": 0,
+    "format_only_fp_parsed_equal": 0,
+    "format_only_fp_by_col": {},
+    "label_flags": 0,
+    "label_tp": 0,
+    "feature_tp": 0,
+    "feature_tp_parsable": 0,
+    "feature_fp": 0,
+    "feature_fp_parsable": 0,
+    "feature_fp_unparsable_values": [],
+    "rows_touched_all": 0,
+    "rows_touched_model": 0,
+    "rows_touched_model_without_format_only": 0
+   },
+   "holoclean": {
+    "tp_fp_det": [
+     1677,
+     663530,
+     665207
+    ],
+    "table3": [
+     1677,
+     663530,
+     665207
+    ],
+    "matches_table3": true,
+    "flags": 665207,
+    "flags_model_cols": 665207,
+    "excl_col_flags": 0,
+    "excl_col_fp_by_col": {},
+    "fp_by_col": {
+     "age": 45113,
+     "workclass": 45213,
+     "fnlwgt": 44583,
+     "education": 45222,
+     "educational_num": 45222,
+     "marital_status": 45076,
+     "occupation": 45094,
+     "relationship": 43906,
+     "race": 44835,
+     "gender": 45217,
+     "capital_gain": 45222,
+     "capital_loss": 42322,
+     "hours_per_week": 39199,
+     "native_country": 45181,
+     "income": 42125
+    },
+    "format_only_fp": 0,
+    "format_only_fp_parsed_equal": 0,
+    "format_only_fp_by_col": {},
+    "label_flags": 43802,
+    "label_tp": 1677,
+    "feature_tp": 0,
+    "feature_tp_parsable": 0,
+    "feature_fp": 621405,
+    "feature_fp_parsable": 261661,
+    "feature_fp_unparsable_values": [
+     "10th",
+     "11th",
+     "12th",
+     "1st-4th",
+     "5th-6th",
+     "7th-8th",
+     "9th",
+     "Adm-clerical",
+     "Amer-Indian-Eskimo",
+     "Armed-Forces"
+    ],
+    "rows_touched_all": 45222,
+    "rows_touched_model": 45222,
+    "rows_touched_model_without_format_only": 45222
+   },
+   "raha": {
+    "tp_fp_det": [
+     865,
+     4649,
+     5514
+    ],
+    "table3": [
+     865,
+     5081,
+     5946
+    ],
+    "matches_table3": false,
+    "flags": 5514,
+    "flags_model_cols": 5514,
+    "excl_col_flags": 0,
+    "excl_col_fp_by_col": {},
+    "fp_by_col": {
+     "income": 4649
+    },
+    "format_only_fp": 0,
+    "format_only_fp_parsed_equal": 0,
+    "format_only_fp_by_col": {},
+    "label_flags": 5514,
+    "label_tp": 865,
+    "feature_tp": 0,
+    "feature_tp_parsable": 0,
+    "feature_fp": 0,
+    "feature_fp_parsable": 0,
+    "feature_fp_unparsable_values": [],
+    "rows_touched_all": 5514,
+    "rows_touched_model": 5514,
+    "rows_touched_model_without_format_only": 5514
+   },
+   "perfect": {
+    "flags": 1701,
+    "flags_model_cols": 1701,
+    "excl_col_flags": 0,
+    "excl_col_fp_by_col": {},
+    "fp_by_col": {},
+    "format_only_fp": 0,
+    "format_only_fp_parsed_equal": 0,
+    "format_only_fp_by_col": {},
+    "label_flags": 1701,
+    "label_tp": 1701,
+    "feature_tp": 0,
+    "feature_tp_parsable": 0,
+    "feature_fp": 0,
+    "feature_fp_parsable": 0,
+    "feature_fp_unparsable_values": [],
+    "rows_touched_all": 1701,
+    "rows_touched_model": 1701,
+    "rows_touched_model_without_format_only": 1701
+   },
+   "always_positive": {
+    "flags": 678330,
+    "flags_model_cols": 678330,
+    "excl_col_flags": 0,
+    "excl_col_fp_by_col": {},
+    "fp_by_col": {
+     "age": 45222,
+     "workclass": 45222,
+     "fnlwgt": 45222,
+     "education": 45222,
+     "educational_num": 45222,
+     "marital_status": 45222,
+     "occupation": 45222,
+     "relationship": 45222,
+     "race": 45222,
+     "gender": 45222,
+     "capital_gain": 45222,
+     "capital_loss": 45222,
+     "hours_per_week": 45222,
+     "native_country": 45222,
+     "income": 43521
+    },
+    "format_only_fp": 0,
+    "format_only_fp_parsed_equal": 0,
+    "format_only_fp_by_col": {},
+    "label_flags": 45222,
+    "label_tp": 1701,
+    "feature_tp": 0,
+    "feature_tp_parsable": 0,
+    "feature_fp": 633108,
+    "feature_fp_parsable": 271332,
+    "feature_fp_unparsable_values": [
+     "10th",
+     "11th",
+     "12th",
+     "1st-4th",
+     "5th-6th",
+     "7th-8th",
+     "9th",
+     "Adm-clerical",
+     "Amer-Indian-Eskimo",
+     "Armed-Forces"
+    ],
+    "rows_touched_all": 45222,
+    "rows_touched_model": 45222,
+    "rows_touched_model_without_format_only": 45222
+   }
+  },
+  "per_column_errors": {
+   "age": 0,
+   "workclass": 0,
+   "fnlwgt": 0,
+   "education": 0,
+   "educational_num": 0,
+   "marital_status": 0,
+   "occupation": 0,
+   "relationship": 0,
+   "race": 0,
+   "gender": 0,
+   "capital_gain": 0,
+   "capital_loss": 0,
+   "hours_per_week": 0,
+   "native_country": 0,
+   "income": 1701
+  },
+  "errors_with_dirty_eq_clean": 0,
+  "diff_not_error_cells": 0,
+  "diff_not_error_parsed_equal": 0,
+  "diff_not_error_by_col": {},
+  "ge_real_vs_own_identical": {
+   "ge_dirty_profiled": true,
+   "ge_clean_profiled": true,
+   "ge_hand_written": true
+  },
+  "holoclean_per_dc_cells": [
+   [
+    "t1&t2&EQ(t1.education,t2.education)&IQ(t1.capital_gain,t2.capital_gain)",
+    90444
+   ],
+   [
+    "t1&t2&EQ(t1.capital_gain,t2.capital_gain)&IQ(t1.educational_num,t2.educational_num)",
+    90422
+   ],
+   [
+    "t1&t2&EQ(t1.education,t2.education)&EQ(t1.capital_gain,t2.capital_gain)&EQ(t1.educational_num,t2.educational_num)&IQ(t1.age,t2.age)",
+    179656
+   ],
+   [
+    "t1&t2&EQ(t1.education,t2.education)&EQ(t1.capital_gain,t2.capital_gain)&EQ(t1.educational_num,t2.educational_num)&EQ(t1.age,t2.age)&IQ(t1.workclass,t2.workclass)",
+    208585
+   ],
+   [
+    "t1&t2&EQ(t1.education,t2.education)&EQ(t1.capital_gain,t2.capital_gain)&EQ(t1.educational_num,t2.educational_num)&EQ(t1.workclass,t2.workclass)&IQ(t1.marital_status,t2.marital_status)",
+    211715
+   ],
+   [
+    "t1&t2&EQ(t1.education,t2.education)&EQ(t1.capital_gain,t2.capital_gain)&EQ(t1.educational_num,t2.educational_num)&EQ(t1.age,t2.age)&EQ(t1.workclass,t2.workclass)&EQ(t1.marital_status,t2.marital_status)&IQ(t1.race,t2.race)",
+    219863
+   ],
+   [
+    "t1&t2&EQ(t1.education,t2.education)&EQ(t1.capital_gain,t2.capital_gain)&EQ(t1.educational_num,t2.educational_num)&EQ(t1.age,t2.age)&EQ(t1.workclass,t2.workclass)&EQ(t1.marital_status,t2.marital_status)&EQ(t1.race,t2.race)&IQ(t1.gender,t2.gender)",
+    238640
+   ],
+   [
+    "t1&t2&EQ(t1.education,t2.education)&EQ(t1.capital_gain,t2.capital_gain)&EQ(t1.educational_num,t2.educational_num)&EQ(t1.age,t2.age)&EQ(t1.workclass,t2.workclass)&EQ(t1.marital_status,t2.marital_status)&EQ(t1.race,t2.race)&EQ(t1.gender,t2.gender)&IQ(t1.native_country,t2.native_country)",
+    180387
+   ],
+   [
+    "t1&t2&EQ(t1.education,t2.education)&EQ(t1.capital_gain,t2.capital_gain)&EQ(t1.educational_num,t2.educational_num)&EQ(t1.race,t2.race)&EQ(t1.gender,t2.gender)&EQ(t1.native_country,t2.native_country)&IQ(t1.income,t2.income)",
+    281953
+   ],
+   [
+    "t1&t2&EQ(t1.education,t2.education)&EQ(t1.educational_num,t2.educational_num)&EQ(t1.race,t2.race)&EQ(t1.native_country,t2.native_country)&EQ(t1.income,t2.income)&IQ(t1.capital_loss,t2.capital_loss)",
+    253932
+   ],
+   [
+    "t1&t2&EQ(t1.education,t2.education)&EQ(t1.educational_num,t2.educational_num)&EQ(t1.age,t2.age)&EQ(t1.marital_status,t2.marital_status)&EQ(t1.race,t2.race)&EQ(t1.native_country,t2.native_country)&IQ(t1.hours_per_week,t2.hours_per_week)",
+    274393
+   ],
+   [
+    "t1&t2&EQ(t1.education,t2.education)&EQ(t1.educational_num,t2.educational_num)&EQ(t1.workclass,t2.workclass)&EQ(t1.gender,t2.gender)&EQ(t1.native_country,t2.native_country)&IQ(t1.fnlwgt,t2.fnlwgt)",
+    267498
+   ],
+   [
+    "t1&t2&EQ(t1.workclass,t2.workclass)&EQ(t1.gender,t2.gender)&EQ(t1.native_country,t2.native_country)&IQ(t1.occupation,t2.occupation)",
+    180376
+   ],
+   [
+    "t1&t2&EQ(t1.capital_gain,t2.capital_gain)&EQ(t1.marital_status,t2.marital_status)&EQ(t1.gender,t2.gender)&IQ(t1.relationship,t2.relationship)",
+    175624
+   ]
+  ],
+  "disk": {
+   "ge_hand_written": {
+    "cells": 0,
+    "identical_to_replay": true
+   },
+   "holoclean": {
+    "cells": 341890,
+    "identical_to_replay": false
+   }
+  },
+  "feature_errors": 0,
+  "feature_errors_unparsable": 0,
+  "label_errors": 1701,
+  "excl_col_errors": {},
+  "identical_model_col_sets": [
+   [
+    "ge_dirty_profiled",
+    "ge_clean_profiled",
+    "ge_hand_written"
+   ]
+  ],
+  "categorical_model_cols": [
+   "workclass",
+   "education",
+   "marital_status",
+   "occupation",
+   "relationship",
+   "race",
+   "gender",
+   "native_country"
+  ],
+  "clean_unparsable_by_col": {
+   "workclass": 45222,
+   "education": 45222,
+   "marital_status": 45222,
+   "occupation": 45222,
+   "relationship": 45222,
+   "race": 45222,
+   "gender": 45222,
+   "native_country": 45222
+  },
+  "references": {
+   "a_cell_all": {
+    "ge_dirty_profiled": 0.0,
+    "ge_clean_profiled": 0.0,
+    "ge_hand_written": 0.0,
+    "holoclean": 0.005029179437043791,
+    "raha": 0.23977823977823978
+   },
+   "a_published": {
+    "ge_dirty_profiled": 0.0,
+    "ge_clean_profiled": 0.0,
+    "ge_hand_written": 0.0,
+    "holoclean": 0.005,
+    "raha": 0.2262
+   },
+   "b_row_all": {
+    "ge_dirty_profiled": 0.0,
+    "ge_clean_profiled": 0.0,
+    "ge_hand_written": 0.0,
+    "holoclean": 0.0725017581996036,
+    "raha": 0.23977823977823978
+   },
+   "b_row_model": {
+    "ge_dirty_profiled": 0.0,
+    "ge_clean_profiled": 0.0,
+    "ge_hand_written": 0.0,
+    "holoclean": 0.0725017581996036,
+    "raha": 0.23977823977823978
+   },
+   "c_model_visible": {
+    "ge_dirty_profiled": 0.0,
+    "ge_clean_profiled": 0.0,
+    "ge_hand_written": 0.0,
+    "holoclean": 0.005029179437043791,
+    "raha": 0.23977823977823978
+   },
+   "cell_model": {
+    "ge_dirty_profiled": 0.0,
+    "ge_clean_profiled": 0.0,
+    "ge_hand_written": 0.0,
+    "holoclean": 0.005029179437043791,
+    "raha": 0.23977823977823978
+   },
+   "recall_model": {
+    "ge_dirty_profiled": 0.0,
+    "ge_clean_profiled": 0.0,
+    "ge_hand_written": 0.0,
+    "holoclean": 0.9858906525573192,
+    "raha": 0.5085243974132863
+   },
+   "recall_all": {
+    "ge_dirty_profiled": 0.0,
+    "ge_clean_profiled": 0.0,
+    "ge_hand_written": 0.0,
+    "holoclean": 0.9858906525573192,
+    "raha": 0.5085243974132863
+   },
+   "cell_precision_model": {
+    "ge_dirty_profiled": 0.0,
+    "ge_clean_profiled": 0.0,
+    "ge_hand_written": 0.0,
+    "holoclean": 0.0025210197727925294,
+    "raha": 0.156873413130214
+   },
+   "row_precision_all": {
+    "ge_dirty_profiled": 0.0,
+    "ge_clean_profiled": 0.0,
+    "ge_hand_written": 0.0,
+    "holoclean": 0.03761443545177126,
+    "raha": 0.156873413130214
+   },
+   "row_precision_model": {
+    "ge_dirty_profiled": 0.0,
+    "ge_clean_profiled": 0.0,
+    "ge_hand_written": 0.0,
+    "holoclean": 0.03761443545177126,
+    "raha": 0.156873413130214
+   },
+   "parsable_feature_recall": {
+    "ge_dirty_profiled": 0.0,
+    "ge_clean_profiled": 0.0,
+    "ge_hand_written": 0.0,
+    "holoclean": 0.0,
+    "raha": 0.0
+   },
+   "rows_kept_model": {
+    "ge_dirty_profiled": 45222,
+    "ge_clean_profiled": 45222,
+    "ge_hand_written": 45222,
+    "holoclean": 0,
+    "raha": 39708
+   }
+  },
+  "A_model_visible": 1701,
+  "n_train": 36177,
+  "per_seed": {
+   "ge_dirty_profiled": {
+    "delete_all": [
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177
+    ],
+    "delete_all_minority": [
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966
+    ],
+    "delete_all_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "delete_model": [
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177
+    ],
+    "delete_model_minority": [
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966
+    ],
+    "delete_model_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "impute": [
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177
+    ],
+    "impute_minority": [
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966
+    ],
+    "impute_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "label_errors_left_impute": [
+     1371,
+     1363,
+     1339,
+     1360,
+     1361,
+     1353,
+     1351,
+     1365,
+     1353,
+     1371
+    ],
+    "label_errors_left_delete": [
+     1371,
+     1363,
+     1339,
+     1360,
+     1361,
+     1353,
+     1351,
+     1365,
+     1353,
+     1371
+    ],
+    "rows_with_model_error_in_train": [
+     1371,
+     1363,
+     1339,
+     1360,
+     1361,
+     1353,
+     1351,
+     1365,
+     1353,
+     1371
+    ]
+   },
+   "ge_clean_profiled": {
+    "delete_all": [
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177
+    ],
+    "delete_all_minority": [
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966
+    ],
+    "delete_all_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "delete_model": [
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177
+    ],
+    "delete_model_minority": [
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966
+    ],
+    "delete_model_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "impute": [
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177
+    ],
+    "impute_minority": [
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966
+    ],
+    "impute_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "label_errors_left_impute": [
+     1371,
+     1363,
+     1339,
+     1360,
+     1361,
+     1353,
+     1351,
+     1365,
+     1353,
+     1371
+    ],
+    "label_errors_left_delete": [
+     1371,
+     1363,
+     1339,
+     1360,
+     1361,
+     1353,
+     1351,
+     1365,
+     1353,
+     1371
+    ],
+    "rows_with_model_error_in_train": [
+     1371,
+     1363,
+     1339,
+     1360,
+     1361,
+     1353,
+     1351,
+     1365,
+     1353,
+     1371
+    ]
+   },
+   "ge_hand_written": {
+    "delete_all": [
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177
+    ],
+    "delete_all_minority": [
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966
+    ],
+    "delete_all_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "delete_model": [
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177
+    ],
+    "delete_model_minority": [
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966
+    ],
+    "delete_model_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "impute": [
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177,
+     36177
+    ],
+    "impute_minority": [
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966
+    ],
+    "impute_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "label_errors_left_impute": [
+     1371,
+     1363,
+     1339,
+     1360,
+     1361,
+     1353,
+     1351,
+     1365,
+     1353,
+     1371
+    ],
+    "label_errors_left_delete": [
+     1371,
+     1363,
+     1339,
+     1360,
+     1361,
+     1353,
+     1351,
+     1365,
+     1353,
+     1371
+    ],
+    "rows_with_model_error_in_train": [
+     1371,
+     1363,
+     1339,
+     1360,
+     1361,
+     1353,
+     1351,
+     1365,
+     1353,
+     1371
+    ]
+   },
+   "holoclean": {
+    "delete_all": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "delete_all_minority": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "delete_all_degenerate": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "delete_model": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "delete_model_minority": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "delete_model_degenerate": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "impute": [
+     1153,
+     1102,
+     1135,
+     1144,
+     1140,
+     1147,
+     1143,
+     1140,
+     1131,
+     1123
+    ],
+    "impute_minority": [
+     164,
+     152,
+     158,
+     144,
+     158,
+     154,
+     164,
+     159,
+     160,
+     148
+    ],
+    "impute_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "label_errors_left_impute": [
+     20,
+     19,
+     18,
+     18,
+     17,
+     20,
+     18,
+     18,
+     16,
+     21
+    ],
+    "label_errors_left_delete": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "rows_with_model_error_in_train": [
+     1371,
+     1363,
+     1339,
+     1360,
+     1361,
+     1353,
+     1351,
+     1365,
+     1353,
+     1371
+    ],
+    "impute_kept_feature_cells_flagged_frac": [
+     0.8092553586916119,
+     0.8111874513870884,
+     0.8091881686595342,
+     0.8094405594405595,
+     0.8095238095238095,
+     0.8113712791132146,
+     0.8107111611048619,
+     0.8085839598997494,
+     0.810723758999621,
+     0.8126192596361786
+    ]
+   },
+   "raha": {
+    "delete_all": [
+     31777,
+     31733,
+     31793,
+     31763,
+     31774,
+     31770,
+     31759,
+     31796,
+     31750,
+     31735
+    ],
+    "delete_all_minority": [
+     5252,
+     5227,
+     5262,
+     5246,
+     5244,
+     5233,
+     5242,
+     5270,
+     5227,
+     5227
+    ],
+    "delete_all_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "delete_model": [
+     31777,
+     31733,
+     31793,
+     31763,
+     31774,
+     31770,
+     31759,
+     31796,
+     31750,
+     31735
+    ],
+    "delete_model_minority": [
+     5252,
+     5227,
+     5262,
+     5246,
+     5244,
+     5233,
+     5242,
+     5270,
+     5227,
+     5227
+    ],
+    "delete_model_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "impute": [
+     31777,
+     31733,
+     31793,
+     31763,
+     31774,
+     31770,
+     31759,
+     31796,
+     31750,
+     31735
+    ],
+    "impute_minority": [
+     5252,
+     5227,
+     5262,
+     5246,
+     5244,
+     5233,
+     5242,
+     5270,
+     5227,
+     5227
+    ],
+    "impute_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "label_errors_left_impute": [
+     685,
+     658,
+     659,
+     666,
+     680,
+     679,
+     657,
+     680,
+     665,
+     668
+    ],
+    "label_errors_left_delete": [
+     685,
+     658,
+     659,
+     666,
+     680,
+     679,
+     657,
+     680,
+     665,
+     668
+    ],
+    "rows_with_model_error_in_train": [
+     1371,
+     1363,
+     1339,
+     1360,
+     1361,
+     1353,
+     1351,
+     1365,
+     1353,
+     1371
+    ]
+   },
+   "perfect": {
+    "delete_all": [
+     34806,
+     34814,
+     34838,
+     34817,
+     34816,
+     34824,
+     34826,
+     34812,
+     34824,
+     34806
+    ],
+    "delete_all_minority": [
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966
+    ],
+    "delete_all_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "delete_model": [
+     34806,
+     34814,
+     34838,
+     34817,
+     34816,
+     34824,
+     34826,
+     34812,
+     34824,
+     34806
+    ],
+    "delete_model_minority": [
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966
+    ],
+    "delete_model_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "impute": [
+     34806,
+     34814,
+     34838,
+     34817,
+     34816,
+     34824,
+     34826,
+     34812,
+     34824,
+     34806
+    ],
+    "impute_minority": [
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966,
+     8966
+    ],
+    "impute_degenerate": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "label_errors_left_impute": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "label_errors_left_delete": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "rows_with_model_error_in_train": [
+     1371,
+     1363,
+     1339,
+     1360,
+     1361,
+     1353,
+     1351,
+     1365,
+     1353,
+     1371
+    ]
+   },
+   "always_positive": {
+    "delete_all": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "delete_all_minority": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "delete_all_degenerate": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "delete_model": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "delete_model_minority": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "delete_model_degenerate": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "impute": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "impute_minority": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "impute_degenerate": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "label_errors_left_impute": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "label_errors_left_delete": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "rows_with_model_error_in_train": [
+     1371,
+     1363,
+     1339,
+     1360,
+     1361,
+     1353,
+     1351,
+     1365,
+     1353,
+     1371
+    ]
+   }
+  }
+ },
+ "nasa_thickness": {
+  "dirty_mean": 317328447.1964626,
+  "clean_mean": 0.011139880391217565,
+  "dirty_median": 0.0051942,
+  "clean_median": 0.00495741,
+  "dirty_max": 225511000000.0,
+  "n_unparsable_dirty": 61
+ },
+ "rein_dropna_rows_kept": {
+  "breast_cancer": 452,
+  "nasa": 1473,
+  "bike": 17379,
+  "adult": 45222
+ },
+ "adult_income_counts": {
+  "1": 34014,
+  "0": 11208
+ }
+}

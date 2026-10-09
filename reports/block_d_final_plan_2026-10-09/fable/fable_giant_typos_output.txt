@@ -1,0 +1,74 @@
+
+== nasa
+  frequency                    clean range [200, 2e+04]  errors 138 parsable 69  >10 ranges outside 27
+      row  1146 dirty=1100000000         clean=10000.0        flagged by: ['hand', 'raha']
+      row   749 dirty=1100000000         clean=10000.0        flagged by: ['hand', 'raha']
+      row  1353 dirty=66330000           clean=630.0          flagged by: ['hand', 'raha']
+      row   595 dirty=66330000           clean=6300.0         flagged by: ['hand', 'raha']
+      dirty column mean 1.873e+06; without the 27 far cells 3003; clean mean 2886; how many far cells each config flags: {'dirty_prof': 0, 'clean_prof': 0, 'hand': 27, 'holo': 0, 'raha': 27}
+  angle                        clean range [0, 22.2]  errors 150 parsable 51  >10 ranges outside 19
+      row   885 dirty=115544             clean=15.4           flagged by: ['hand', 'raha']
+      row  1400 dirty=8899               clean=8.9            flagged by: ['hand', 'holo', 'raha']
+      row  1395 dirty=8899               clean=8.9            flagged by: ['hand', 'holo', 'raha']
+      row   820 dirty=8844               clean=8.4            flagged by: ['hand', 'raha']
+      dirty column mean 154; without the 19 far cells 7.707; clean mean 6.782; how many far cells each config flags: {'dirty_prof': 0, 'clean_prof': 0, 'hand': 19, 'holo': 8, 'raha': 19}
+  chord_length                 clean range [0.0254, 0.3048]  errors 148 parsable 73  >10 ranges outside 68
+      row   100 dirty=33004488           clean=0.3048         flagged by: ['hand', 'holo', 'raha']
+      row    62 dirty=33004488           clean=0.3048         flagged by: ['hand', 'holo', 'raha']
+      row   280 dirty=22228866           clean=0.2286         flagged by: ['hand', 'holo', 'raha']
+      row   624 dirty=11552244           clean=0.1524         flagged by: ['hand', 'holo', 'raha']
+      dirty column mean 8.775e+04; without the 68 far cells 0.1362; clean mean 0.1365; how many far cells each config flags: {'dirty_prof': 0, 'clean_prof': 0, 'hand': 68, 'holo': 68, 'raha': 68}
+  velocity                     clean range [31.7, 71.3]  errors 157 parsable 79  >10 ranges outside 36
+      row  1384 dirty=771133             clean=71.3           flagged by: ['hand', 'holo', 'raha']
+      row   212 dirty=555555             clean=55.5           flagged by: ['hand', 'holo', 'raha']
+      row  1404 dirty=339966             clean=39.6           flagged by: ['hand', 'holo', 'raha']
+      row   385 dirty=339966             clean=39.6           flagged by: ['hand', 'holo', 'raha']
+      dirty column mean 2253; without the 36 far cells 50.95; clean mean 50.86; how many far cells each config flags: {'dirty_prof': 0, 'clean_prof': 0, 'hand': 36, 'holo': 36, 'raha': 36}
+  thickness                    clean range [0.0004007, 0.05841]  errors 138 parsable 77  >10 ranges outside 73
+      row  1334 dirty=2.25511E+11        clean=0.00251435     flagged by: ['clean_prof', 'hand', 'holo', 'raha']
+      row  1215 dirty=2.21144E+11        clean=0.0214178      flagged by: ['clean_prof', 'hand', 'holo', 'raha']
+      row   534 dirty=2299448844         clean=0.00294804     flagged by: ['hand', 'holo', 'raha']
+      row    13 dirty=2266663377         clean=0.00266337     flagged by: ['hand', 'holo', 'raha']
+      dirty column mean 3.173e+08; without the 73 far cells 0.01118; clean mean 0.01114; how many far cells each config flags: {'dirty_prof': 0, 'clean_prof': 2, 'hand': 73, 'holo': 73, 'raha': 73}
+
+== breast_cancer
+  Unnamed: 0                   clean range [0, 698]  errors 47 parsable 23  >10 ranges outside 0
+  Sample code number           clean range [6.163e+04, 1.345e+07]  errors 60 parsable 23  >10 ranges outside 0
+  Clump Thickness              clean range [1, 10]  errors 73 parsable 47  >10 ranges outside 0
+  Uniformity of Cell Size      clean range [1, 10]  errors 53 parsable 30  >10 ranges outside 0
+  Uniformity of Cell Shape     clean range [1, 10]  errors 55 parsable 31  >10 ranges outside 0
+  Marginal Adhesion            clean range [1, 10]  errors 51 parsable 27  >10 ranges outside 0
+  Single Epithelial Cell Size  clean range [1, 10]  errors 61 parsable 35  >10 ranges outside 0
+  Bare Nuclei                  clean range [1, 10]  errors 50 parsable 23  >10 ranges outside 0
+  Bland Chromatin              clean range [1, 10]  errors 61 parsable 40  >10 ranges outside 0
+  Normal Nucleoli              clean range [1, 10]  errors 63 parsable 37  >10 ranges outside 0
+  Mitoses                      clean range [1, 10]  errors 42 parsable 22  >10 ranges outside 0
+  class                        clean range [2, 4]  errors 15 parsable 15  >10 ranges outside 0
+
+== bike
+  instant                      clean range [1, 1.738e+04]  errors 881 parsable 881  >10 ranges outside 0
+  dteday                       clean range [3.594e+05, 3.689e+05]  errors 889 parsable 889  >10 ranges outside 0
+  season                       clean range [1, 4]  errors 7470 parsable 7470  >10 ranges outside 5186
+      row  5381 dirty=465.2822152        clean=3              flagged by: ['hand', 'holo', 'raha']
+      row    60 dirty=427.5585974        clean=1              flagged by: ['hand', 'holo', 'raha']
+      row  1002 dirty=413.9002579        clean=1              flagged by: ['hand', 'holo', 'raha']
+      row  1380 dirty=390.8724598        clean=1              flagged by: ['hand', 'holo', 'raha']
+      dirty column mean 22.46; without the 5186 far cells 5.693; clean mean 2.502; how many far cells each config flags: {'dirty_prof': 0, 'clean_prof': 0, 'hand': 5186, 'holo': 5083, 'raha': 5186}
+  yr                           clean range [0, 1]  errors 861 parsable 861  >10 ranges outside 0
+  mnth                         clean range [1, 12]  errors 7482 parsable 7482  >10 ranges outside 0
+  hr                           clean range [0, 23]  errors 856 parsable 856  >10 ranges outside 0
+  holiday                      clean range [0, 1]  errors 7482 parsable 7482  >10 ranges outside 6712
+      row  3148 dirty=-438.0330938       clean=0              flagged by: ['hand', 'holo', 'raha']
+      row  6830 dirty=399.6922677        clean=0              flagged by: ['hand', 'holo', 'raha']
+      row  9527 dirty=-361.5164074       clean=0              flagged by: ['hand', 'holo', 'raha']
+      row 15816 dirty=-347.4093142       clean=0              flagged by: ['hand', 'holo', 'raha']
+      dirty column mean 20.44; without the 6712 far cells 0.4466; clean mean 0.02877; how many far cells each config flags: {'dirty_prof': 0, 'clean_prof': 0, 'hand': 6712, 'holo': 6361, 'raha': 6712}
+  weekday                      clean range [0, 6]  errors 859 parsable 859  >10 ranges outside 0
+  workingday                   clean range [0, 1]  errors 1367 parsable 1367  >10 ranges outside 0
+  weathersit                   clean range [1, 4]  errors 873 parsable 873  >10 ranges outside 0
+  temp                         clean range [0.02, 1]  errors 886 parsable 886  >10 ranges outside 0
+  atemp                        clean range [0, 1]  errors 884 parsable 884  >10 ranges outside 0
+  hum                          clean range [0, 1]  errors 831 parsable 831  >10 ranges outside 0
+  windspeed                    clean range [0, 0.8507]  errors 886 parsable 886  >10 ranges outside 0
+  casual                       clean range [0, 367]  errors 885 parsable 885  >10 ranges outside 0
+  registered                   clean range [0, 886]  errors 882 parsable 882  >10 ranges outside 0

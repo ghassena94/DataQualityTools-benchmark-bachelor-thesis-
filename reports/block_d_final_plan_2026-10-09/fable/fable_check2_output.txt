@@ -1,0 +1,50 @@
+adult holoclean: mine 665207 cells, plan replay 665207 cells, identical: True, sym-diff 0
+breast_cancer holoclean: mine 5691 cells, plan replay 5691 cells, identical: True, sym-diff 0
+
+nasa ge_dirty_profiled: 30 flags, 0 FP; FP cells by column {}; FP values []
+  seed 0: cells differing 199, max|diff| 2.619e-10 | S2 score(impute) - S2 score(floor): linear d=0.000e+00  rf d=0.000e+00  xgb d=0.000e+00
+  seed 1: cells differing 142, max|diff| 2.910e-10 | S2 score(impute) - S2 score(floor): linear d=0.000e+00  rf d=0.000e+00  xgb d=0.000e+00
+  seed 2: cells differing 143, max|diff| 2.956e-12 | S2 score(impute) - S2 score(floor): linear d=0.000e+00  rf d=0.000e+00  xgb d=0.000e+00
+  seed 3: cells differing 151, max|diff| 9.095e-13 | S2 score(impute) - S2 score(floor): linear d=0.000e+00  rf d=0.000e+00  xgb d=0.000e+00
+  seed 4: cells differing 201, max|diff| 5.966e-10 | S2 score(impute) - S2 score(floor): linear d=0.000e+00  rf d=0.000e+00  xgb d=0.000e+00
+  seed 5: cells differing 141, max|diff| 3.056e-10 | S2 score(impute) - S2 score(floor): linear d=0.000e+00  rf d=0.000e+00  xgb d=0.000e+00
+  seed 6: cells differing 201, max|diff| 2.619e-10 | S2 score(impute) - S2 score(floor): linear d=0.000e+00  rf d=0.000e+00  xgb d=0.000e+00
+  seed 7: cells differing 202, max|diff| 3.056e-10 | S2 score(impute) - S2 score(floor): linear d=0.000e+00  rf d=0.000e+00  xgb d=0.000e+00
+  seed 8: cells differing 199, max|diff| 4.948e-10 | S2 score(impute) - S2 score(floor): linear d=0.000e+00  rf d=0.000e+00  xgb d=0.000e+00
+  seed 9: cells differing  71, max|diff| 3.201e-10 | S2 score(impute) - S2 score(floor): linear d=0.000e+00  rf d=0.000e+00  xgb d=0.000e+00
+
+nasa ge_clean_profiled: 384 flags, 0 FP; FP cells by column {}; FP values []
+  seed 0: cells differing 254, max|diff| 2.255e+11 | S2 score(impute) - S2 score(floor): linear d=-3.886e-04  rf d=2.515e-04  xgb d=4.425e-02
+  seed 1: cells differing 252, max|diff| 2.255e+11 | S2 score(impute) - S2 score(floor): linear d=-5.544e-04  rf d=-7.842e-03  xgb d=6.365e-02
+  seed 2: cells differing 250, max|diff| 2.255e+11 | S2 score(impute) - S2 score(floor): linear d=-8.834e-04  rf d=5.438e-03  xgb d=-1.435e-01
+  seed 3: cells differing 268, max|diff| 2.255e+11 | S2 score(impute) - S2 score(floor): linear d=6.474e-03  rf d=1.284e-02  xgb d=-1.413e-02
+  seed 4: cells differing 249, max|diff| 6.519e-09 | S2 score(impute) - S2 score(floor): linear d=0.000e+00  rf d=0.000e+00  xgb d=0.000e+00
+  seed 5: cells differing 249, max|diff| 2.211e+11 | S2 score(impute) - S2 score(floor): linear d=-9.576e-04  rf d=-6.713e-04  xgb d=-1.408e-02
+  seed 6: cells differing 254, max|diff| 2.255e+11 | S2 score(impute) - S2 score(floor): linear d=1.017e-03  rf d=-2.486e-03  xgb d=2.147e-02
+  seed 7: cells differing 255, max|diff| 2.255e+11 | S2 score(impute) - S2 score(floor): linear d=-3.962e-04  rf d=-2.980e-03  xgb d=-2.415e-03
+  seed 8: cells differing 251, max|diff| 2.255e+11 | S2 score(impute) - S2 score(floor): linear d=2.612e-04  rf d=-4.908e-03  xgb d=1.130e-03
+  seed 9: cells differing 191, max|diff| 2.211e+11 | S2 score(impute) - S2 score(floor): linear d=1.276e-03  rf d=6.009e-03  xgb d=-4.397e-02
+
+breast_cancer ge_dirty_profiled: 260 flags, 13 FP; FP cells by column {'Bare Nuclei': 13}; FP values ['?']
+  seed 0: cells differing   3, max|diff| 1.332e-15 | S2 score(impute) - S2 score(floor): linear d=0.000e+00  rf d=0.000e+00  xgb d=0.000e+00
+  seed 1: cells differing   7, max|diff| 1.776e-15 | S2 score(impute) - S2 score(floor): linear d=0.000e+00  rf d=0.000e+00  xgb d=0.000e+00
+  seed 2: cells differing   5, max|diff| 3.109e-15 | S2 score(impute) - S2 score(floor): linear d=0.000e+00  rf d=0.000e+00  xgb d=0.000e+00
+  seed 3: cells differing   5, max|diff| 2.220e-15 | S2 score(impute) - S2 score(floor): linear d=0.000e+00  rf d=0.000e+00  xgb d=0.000e+00
+  seed 4: cells differing   7, max|diff| 1.776e-15 | S2 score(impute) - S2 score(floor): linear d=0.000e+00  rf d=0.000e+00  xgb d=0.000e+00
+  seed 5: cells differing   7, max|diff| 2.665e-15 | S2 score(impute) - S2 score(floor): linear d=0.000e+00  rf d=0.000e+00  xgb d=0.000e+00
+  seed 6: cells differing   5, max|diff| 8.882e-16 | S2 score(impute) - S2 score(floor): linear d=0.000e+00  rf d=0.000e+00  xgb d=0.000e+00
+  seed 7: cells differing   2, max|diff| 2.220e-15 | S2 score(impute) - S2 score(floor): linear d=0.000e+00  rf d=0.000e+00  xgb d=0.000e+00
+  seed 8: cells differing   6, max|diff| 2.665e-15 | S2 score(impute) - S2 score(floor): linear d=0.000e+00  rf d=0.000e+00  xgb d=0.000e+00
+  seed 9: cells differing   6, max|diff| 1.776e-15 | S2 score(impute) - S2 score(floor): linear d=0.000e+00  rf d=0.000e+00  xgb d=0.000e+00
+
+breast_cancer ge_clean_profiled: 291 flags, 13 FP; FP cells by column {'Bare Nuclei': 13}; FP values ['?']
+  seed 0: cells differing   0, max|diff| 0.000e+00 | S2 score(impute) - S2 score(floor): linear d=0.000e+00  rf d=0.000e+00  xgb d=0.000e+00
+  seed 1: cells differing   0, max|diff| 0.000e+00 | S2 score(impute) - S2 score(floor): linear d=0.000e+00  rf d=0.000e+00  xgb d=0.000e+00
+  seed 2: cells differing   0, max|diff| 0.000e+00 | S2 score(impute) - S2 score(floor): linear d=0.000e+00  rf d=0.000e+00  xgb d=0.000e+00
+  seed 3: cells differing   0, max|diff| 0.000e+00 | S2 score(impute) - S2 score(floor): linear d=0.000e+00  rf d=0.000e+00  xgb d=0.000e+00
+  seed 4: cells differing   0, max|diff| 0.000e+00 | S2 score(impute) - S2 score(floor): linear d=0.000e+00  rf d=0.000e+00  xgb d=0.000e+00
+  seed 5: cells differing   0, max|diff| 0.000e+00 | S2 score(impute) - S2 score(floor): linear d=0.000e+00  rf d=0.000e+00  xgb d=0.000e+00
+  seed 6: cells differing   0, max|diff| 0.000e+00 | S2 score(impute) - S2 score(floor): linear d=0.000e+00  rf d=0.000e+00  xgb d=0.000e+00
+  seed 7: cells differing   0, max|diff| 0.000e+00 | S2 score(impute) - S2 score(floor): linear d=0.000e+00  rf d=0.000e+00  xgb d=0.000e+00
+  seed 8: cells differing   0, max|diff| 0.000e+00 | S2 score(impute) - S2 score(floor): linear d=0.000e+00  rf d=0.000e+00  xgb d=0.000e+00
+  seed 9: cells differing   0, max|diff| 0.000e+00 | S2 score(impute) - S2 score(floor): linear d=0.000e+00  rf d=0.000e+00  xgb d=0.000e+00

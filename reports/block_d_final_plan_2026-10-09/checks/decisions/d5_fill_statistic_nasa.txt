@@ -1,0 +1,47 @@
+== nasa | seed 0 training rows, numeric feature columns: dirty mean / dirty median / clean mean
+  frequency                    1.25414e+06  2000         2898.27       unparsable dirty cells 54
+  angle                        162.961      5.4          6.88211       unparsable dirty cells 80
+  chord_length                 108846       0.1016       0.135072      unparsable dirty cells 59
+  velocity                     2177.11      55.5         51.1913       unparsable dirty cells 60
+  thickness                    3.95985e+08  0.0051942    0.011248      unparsable dirty cells 53
+
+mean S2 (-RMSE, higher better) over 10 seeds: mean fill -> median fill
+  floor   floor                linear  -6.8894 ->  -6.8895   rf  -2.2598 ->  -2.3967   xgb  -2.1714 ->  -2.3335
+  gt      GE-dirty             linear  -6.8895 ->  -6.8895   rf  -2.2612 ->  -2.3937   xgb  -2.1660 ->  -2.3145
+  gt      GE-clean             linear  -6.8889 ->  -6.8889   rf  -2.0512 ->  -2.0512   xgb  -1.9401 ->  -1.9401
+  gt      GE-hand              linear  -4.8010 ->  -4.8010   rf  -1.8534 ->  -1.8534   xgb  -1.6643 ->  -1.6643
+  gt      HoloClean            linear  -6.1010 ->  -6.1010   rf  -1.9518 ->  -2.1022   xgb  -1.8171 ->  -1.9953
+  gt      Raha                 linear  -4.7993 ->  -4.7993   rf  -1.7812 ->  -1.7812   xgb  -1.6035 ->  -1.6035
+  gt      perfect              linear  -4.7993 ->  -4.7993   rf  -1.7812 ->  -1.7812   xgb  -1.6035 ->  -1.6035
+  delete  GE-dirty             linear  -6.8894 ->  -6.8895   rf  -2.2905 ->  -2.4195   xgb  -2.2060 ->  -2.3489
+  delete  GE-clean             linear  -6.8912 ->  -6.8912   rf  -2.4264 ->  -2.4264   xgb  -2.2197 ->  -2.2197
+  delete  GE-hand              linear  -4.8174 ->  -4.8174   rf  -2.4535 ->  -2.4535   xgb  -2.2085 ->  -2.2085
+  delete  HoloClean            degenerate
+  delete  Raha                 degenerate
+  delete  perfect              linear  -4.8062 ->  -4.8062   rf  -2.3431 ->  -2.3431   xgb  -2.1678 ->  -2.1678
+  impute  GE-dirty             linear  -6.8894 ->  -6.8895   rf  -2.2598 ->  -2.3967   xgb  -2.1714 ->  -2.3335
+  impute  GE-clean             linear  -6.8889 ->  -6.8889   rf  -2.2592 ->  -2.3974   xgb  -2.1801 ->  -2.3276
+  impute  GE-hand              linear  -4.8346 ->  -4.8487   rf  -2.3080 ->  -2.5018   xgb  -2.2111 ->  -2.4189
+  impute  HoloClean            linear  -5.3296 ->  -5.3423   rf  -3.7917 ->  -3.7338   xgb  -4.8365 ->  -4.6443
+  impute  Raha                 linear  -6.0932 ->  -6.0912   rf  -6.5528 ->  -6.4995   xgb  -6.9812 ->  -7.1301
+  impute  perfect              linear  -4.8284 ->  -4.8446   rf  -2.2618 ->  -2.4632   xgb  -2.0821 ->  -2.3600
+
+pair verdicts that change, and concordance with Table 3 (C/D/T = concordant/discordant/tie, degenerate pairs left out):
+  -> gt      linear C/D/T mean 6/2/2 | median 6/2/2
+  gt      rf     GE-clean vs HoloClean    mean: <    median: tie  (Table 3: >)
+  -> gt      rf     C/D/T mean 7/3/0 | median 7/2/1
+  gt      xgb    GE-clean vs HoloClean    mean: <    median: tie  (Table 3: >)
+  -> gt      xgb    C/D/T mean 7/3/0 | median 7/2/1
+  -> delete  linear C/D/T mean 2/0/1 | median 2/0/1
+  delete  rf     GE-dirty vs GE-clean     mean: >    median: tie  (Table 3: <)
+  delete  rf     GE-dirty vs GE-hand      mean: >    median: tie  (Table 3: <)
+  -> delete  rf     C/D/T mean 0/2/1 | median 0/0/3
+  delete  xgb    GE-dirty vs GE-clean     mean: tie  median: <    (Table 3: <)
+  delete  xgb    GE-dirty vs GE-hand      mean: tie  median: <    (Table 3: <)
+  -> delete  xgb    C/D/T mean 0/0/3 | median 2/0/1
+  -> impute  linear C/D/T mean 6/3/1 | median 6/3/1
+  impute  rf     GE-dirty vs GE-hand      mean: tie  median: >    (Table 3: <)
+  impute  rf     GE-clean vs GE-hand      mean: tie  median: >    (Table 3: <)
+  -> impute  rf     C/D/T mean 4/3/3 | median 4/5/1
+  -> impute  xgb    C/D/T mean 4/3/3 | median 4/3/3
+=> nasa: 8 of 69 pair verdicts change

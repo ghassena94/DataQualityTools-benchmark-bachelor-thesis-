@@ -1,0 +1,52 @@
+
+== breast_cancer | errors all 631 schema 524 model-visible 524
+                   cell_all(T3)  cell_schema  row(T7)  model_visible
+config                                                              
+ge_dirty_profiled        0.5544       0.5622   0.7193         0.5622
+ge_clean_profiled        0.6030       0.5756   0.7476         0.5756
+ge_hand_written          0.8029       0.8077   0.8902         0.8077
+holoclean                0.1316       0.1339   0.7865         0.1339
+raha                     0.6127       0.6509   0.7734         0.6509
+  cell_all(T3)   hand(0.803) > raha(0.613) > clean(0.603) > dirty(0.554) > holoclean(0.132)
+  cell_schema    hand(0.808) > raha(0.651) > clean(0.576) > dirty(0.562) > holoclean(0.134)
+  row(T7)        hand(0.890) > holoclean(0.786) > raha(0.773) > clean(0.748) > dirty(0.719)
+  model_visible  hand(0.808) > raha(0.651) > clean(0.576) > dirty(0.562) > holoclean(0.134)
+
+== nasa | errors all 731 schema 731 model-visible 731
+                   cell_all(T3)  cell_schema  row(T7)  model_visible
+config                                                              
+ge_dirty_profiled        0.0788       0.0788   0.0788         0.0788
+ge_clean_profiled        0.6888       0.6888   0.6888         0.6888
+ge_hand_written          0.9639       0.9639   0.9639         0.9639
+holoclean                0.1589       0.1589   0.6318         0.1589
+raha                     0.4396       0.4396   0.6544         0.4396
+  cell_all(T3)   hand(0.964) > clean(0.689) > raha(0.440) > holoclean(0.159) > dirty(0.079)
+  cell_schema    hand(0.964) > clean(0.689) > raha(0.440) > holoclean(0.159) > dirty(0.079)
+  row(T7)        hand(0.964) > clean(0.689) > raha(0.654) > holoclean(0.632) > dirty(0.079)
+  model_visible  hand(0.964) > clean(0.689) > raha(0.440) > holoclean(0.159) > dirty(0.079)
+
+== bike | errors all 34274 schema 30737 model-visible 30737
+                   cell_all(T3)  cell_schema  row(T7)  model_visible
+config                                                              
+ge_dirty_profiled        0.0000       0.0000   0.0000         0.0000
+ge_clean_profiled        0.0000       0.0000   0.0000         0.0000
+ge_hand_written          0.8287       0.8254   0.9040         0.8254
+holoclean                0.2155       0.2550   0.9710         0.2550
+raha                     0.7832       0.9127   0.9794         0.9127
+  cell_all(T3)   hand(0.829) > raha(0.783) > holoclean(0.216) > dirty(0.000) > clean(0.000)
+  cell_schema    raha(0.913) > hand(0.825) > holoclean(0.255) > dirty(0.000) > clean(0.000)
+  row(T7)        raha(0.979) > holoclean(0.971) > hand(0.904) > dirty(0.000) > clean(0.000)
+  model_visible  raha(0.913) > hand(0.825) > holoclean(0.255) > dirty(0.000) > clean(0.000)
+
+== adult | errors all 1701 schema 1701 model-visible 1701
+                   cell_all(T3)  cell_schema  row(T7)  model_visible
+config                                                              
+ge_dirty_profiled        0.0000       0.0000   0.0000         0.0000
+ge_clean_profiled        0.0000       0.0000   0.0000         0.0000
+ge_hand_written          0.0000       0.0000   0.0000         0.0000
+holoclean                0.0050       0.0050   0.0725         0.0050
+raha                     0.2398       0.2398   0.2398         0.2398
+  cell_all(T3)   raha(0.240) > holoclean(0.005) > dirty(0.000) > clean(0.000) > hand(0.000)
+  cell_schema    raha(0.240) > holoclean(0.005) > dirty(0.000) > clean(0.000) > hand(0.000)
+  row(T7)        raha(0.240) > holoclean(0.073) > dirty(0.000) > clean(0.000) > hand(0.000)
+  model_visible  raha(0.240) > holoclean(0.005) > dirty(0.000) > clean(0.000) > hand(0.000)

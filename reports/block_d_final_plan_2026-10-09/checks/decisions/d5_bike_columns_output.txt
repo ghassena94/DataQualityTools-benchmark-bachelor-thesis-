@@ -1,0 +1,31 @@
+column      flagged  fill mean   fill med  clean values of flagged cells distinct clean values
+season         5981      3.053          3  mean 1.756    sd 0.8717          4
+yr              692     0.5001          1  mean 0.5173   sd 0.5001          2
+mnth           5967      5.865          5  mean 7.405    sd 2.718           12
+hr              678      11.52         12  mean 11.84    sd 6.816           24
+holiday        5978    0.04845          0  mean 0.003011 sd 0.05479         2
+weekday         653      3.006          3  mean 3.067    sd 1.986           7
+workingday     1110     0.7049          1  mean 0.4523   sd 0.4979          2
+weathersit      706       1.42          1  mean 1.432    sd 0.6471          4
+temp            707     0.4977        0.5  mean 0.5037   sd 0.1894          50
+atemp           727     0.4762     0.4848  mean 0.4868   sd 0.1695          65
+hum             654      0.626       0.62  mean 0.632    sd 0.1984          89
+windspeed       733     0.1908      0.194  mean 0.1837   sd 0.1251          30
+
+example flagged hr cells (dirty -> clean): [('12.56705226', '2'), ('16.45978367', '14'), ('43.07237736', '17')]
+
+RF S2 RMSE, perfect detector under impute, seeds 0-2:
+  all mean   70.27
+  all median 51.31
+  median only on season      70.18
+  median only on yr          69.61
+  median only on mnth        70.32
+  median only on hr          71.24
+  median only on holiday     50.04
+  median only on weekday     70.27
+  median only on workingday  69.87
+  median only on weathersit  70.45
+  median only on temp        70.76
+  median only on atemp       70.39
+  median only on hum         70.26
+  median only on windspeed   70.31

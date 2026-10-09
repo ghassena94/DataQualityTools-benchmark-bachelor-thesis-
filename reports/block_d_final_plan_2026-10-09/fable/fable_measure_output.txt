@@ -1,0 +1,169 @@
+
+==============================================================================================================
+breast_cancer  699 x 12, 631 errors; label=class excl=['Unnamed: 0', 'Sample code number']
+  ge_dirty_profiled  replay TP/FP/det (247, 13, 260)           Table 3 (247, 13, 260)           OK
+  ge_clean_profiled  replay TP/FP/det (278, 13, 291)           Table 3 (278, 13, 291)           OK
+  ge_hand_written    replay TP/FP/det (438, 22, 460)           Table 3 (438, 22, 460)           OK
+  holoclean          replay TP/FP/det (416, 5275, 5691)        Table 3 (416, 5275, 5691)        OK
+  raha               replay TP/FP/det (318, 89, 407)           Table 3 (317, 78, 395)           DIFFERS
+  GE real library == own evaluation: {'ge_dirty_profiled': True, 'ge_clean_profiled': True, 'ge_hand_written': True}
+  disk files: {'ge_hand_written': {'cells': 460, 'identical_to_replay': True}, 'holoclean': {'cells': 5691, 'identical_to_replay': True}}
+  feature errors 509 (unparsable 217) | label errors 15 | excluded-col errors {'Unnamed: 0': 47, 'Sample code number': 60} | model-visible truth 524 of 524 model-col errors
+  diff-but-not-error cells 0 (parsed equal 0) by col {}
+  identical model-column flag sets: [] | categorical model cols: []
+  ref a_cell_all               ge_hand_written(0.8029) > raha(0.6127) > ge_clean_profiled(0.6030) > ge_dirty_profiled(0.5544) > holoclean(0.1316)
+  ref a_published              ge_hand_written(0.8029) > raha(0.6179) > ge_clean_profiled(0.6030) > ge_dirty_profiled(0.5544) > holoclean(0.1316)
+  ref b_row_all                ge_hand_written(0.8902) > holoclean(0.7865) > raha(0.7734) > ge_clean_profiled(0.7476) > ge_dirty_profiled(0.7193)
+  ref b_row_model              ge_hand_written(0.8713) > raha(0.7778) > holoclean(0.7268) > ge_clean_profiled(0.7074) > ge_dirty_profiled(0.6990)
+  ref c_model_visible          ge_hand_written(0.8077) > raha(0.6509) > ge_clean_profiled(0.5756) > ge_dirty_profiled(0.5622) > holoclean(0.1339)
+  ref cell_model               ge_hand_written(0.8077) > raha(0.6509) > ge_clean_profiled(0.5756) > ge_dirty_profiled(0.5622) > holoclean(0.1339)
+  ref recall_model             holoclean(0.7939) > ge_hand_written(0.6775) > raha(0.5515) > ge_clean_profiled(0.4141) > ge_dirty_profiled(0.4008)
+  ref recall_all               ge_hand_written(0.6941) > holoclean(0.6593) > raha(0.5040) > ge_clean_profiled(0.4406) > ge_dirty_profiled(0.3914)
+  ref cell_precision_model     ge_hand_written(1.0000) > ge_clean_profiled(0.9435) > ge_dirty_profiled(0.9417) > raha(0.7940) > holoclean(0.0731)
+  ref row_precision_all        ge_clean_profiled(0.9963) > ge_dirty_profiled(0.9961) > ge_hand_written(0.9814) > raha(0.9429) > holoclean(0.6481)
+  ref row_precision_model      ge_hand_written(1.0000) > ge_clean_profiled(0.9865) > ge_dirty_profiled(0.9863) > raha(0.9333) > holoclean(0.5708)
+  ref parsable_feature_recall  holoclean(0.8116) > ge_hand_written(0.4726) > raha(0.2534) > ge_dirty_profiled(0.0000) > ge_clean_profiled(0.0000)
+  ref rows_kept_model          ge_dirty_profiled(480.0000) > ge_clean_profiled(476.0000) > raha(414.0000) > ge_hand_written(391.0000) > holoclean(0.0000)
+  n_train 559
+  config            | del all-cols  del model     impute        | minority(impute) | degenerate
+  ge_dirty_profiled | 344-366       376-392       559-559       | 193-193          | -
+  ge_clean_profiled | 335-353       372-390       559-559       | 193-193          | -
+  ge_hand_written   | 253-270       307-322       559-559       | 193-193          | -
+  holoclean         | 0-0           0-0           0-0           | 0-0              | delete_all,delete_model,impute
+  raha              | 302-318       325-342       559-559       | 193-193          | -
+  perfect           | 195-208       234-250       544-549       | 187-189          | -
+  always_positive   | 0-0           0-0           0-0           | 0-0              | delete_all,delete_model,impute
+  label errors left (impute, train) raha       10-15
+  label errors left (impute, train) holoclean  0-0
+  label errors left (impute, train) perfect    0-0
+  impute vs floor  ge_dirty_profiled  cells differing per seed [2, 2, 4, 3, 4, 1, 5, 1, 4, 4]
+  impute vs floor  ge_clean_profiled  cells differing per seed [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  impute vs floor  ge_hand_written    cells differing per seed [282, 302, 301, 291, 295, 289, 298, 295, 294, 292]
+  impute vs floor  raha               cells differing per seed [263, 293, 287, 274, 281, 273, 274, 278, 282, 278]
+  impute vs floor  perfect            cells differing per seed [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+
+==============================================================================================================
+nasa  1503 x 6, 731 errors; label=sound_pressure_level excl=[]
+  ge_dirty_profiled  replay TP/FP/det (30, 0, 30)              Table 3 (30, 0, 30)              OK
+  ge_clean_profiled  replay TP/FP/det (384, 0, 384)            Table 3 (384, 0, 384)            OK
+  ge_hand_written    replay TP/FP/det (680, 0, 680)            Table 3 (680, 0, 680)            OK
+  holoclean          replay TP/FP/det (556, 5709, 6265)        Table 3 (556, 5709, 6265)        OK
+  raha               replay TP/FP/det (731, 1864, 2595)        Table 3 (710, 1864, 2574)        DIFFERS
+  GE real library == own evaluation: {'ge_dirty_profiled': True, 'ge_clean_profiled': True, 'ge_hand_written': True}
+  disk files: {'ge_hand_written': {'cells': 680, 'identical_to_replay': True}, 'holoclean': {'cells': 6265, 'identical_to_replay': True}}
+  feature errors 731 (unparsable 382) | label errors 0 | excluded-col errors {} | model-visible truth 731 of 731 model-col errors
+  diff-but-not-error cells 1866 (parsed equal 1866) by col {'frequency': 1365, 'angle': 499, 'sound_pressure_level': 2}
+  identical model-column flag sets: [] | categorical model cols: []
+  ref a_cell_all               ge_hand_written(0.9639) > ge_clean_profiled(0.6888) > raha(0.4396) > holoclean(0.1589) > ge_dirty_profiled(0.0788)
+  ref a_published              ge_hand_written(0.9639) > ge_clean_profiled(0.6888) > raha(0.4297) > holoclean(0.1589) > ge_dirty_profiled(0.0788)
+  ref b_row_all                ge_hand_written(0.9639) > ge_clean_profiled(0.6888) > raha(0.6544) > holoclean(0.6318) > ge_dirty_profiled(0.0788)
+  ref b_row_model              ge_hand_written(0.9639) > ge_clean_profiled(0.6888) > raha(0.6544) > holoclean(0.6318) > ge_dirty_profiled(0.0788)
+  ref c_model_visible          ge_hand_written(0.9639) > ge_clean_profiled(0.6888) > raha(0.4396) > holoclean(0.1589) > ge_dirty_profiled(0.0788)
+  ref cell_model               ge_hand_written(0.9639) > ge_clean_profiled(0.6888) > raha(0.4396) > holoclean(0.1589) > ge_dirty_profiled(0.0788)
+  ref recall_model             raha(1.0000) > ge_hand_written(0.9302) > holoclean(0.7606) > ge_clean_profiled(0.5253) > ge_dirty_profiled(0.0410)
+  ref recall_all               raha(1.0000) > ge_hand_written(0.9302) > holoclean(0.7606) > ge_clean_profiled(0.5253) > ge_dirty_profiled(0.0410)
+  ref cell_precision_model     ge_dirty_profiled(1.0000) > ge_clean_profiled(1.0000) > ge_hand_written(1.0000) > raha(0.2817) > holoclean(0.0887)
+  ref row_precision_all        ge_dirty_profiled(1.0000) > ge_clean_profiled(1.0000) > ge_hand_written(1.0000) > raha(0.4864) > holoclean(0.4734)
+  ref row_precision_model      ge_dirty_profiled(1.0000) > ge_clean_profiled(1.0000) > ge_hand_written(1.0000) > raha(0.4864) > holoclean(0.4734)
+  ref parsable_feature_recall  raha(1.0000) > ge_hand_written(0.8539) > holoclean(0.7679) > ge_clean_profiled(0.0057) > ge_dirty_profiled(0.0000)
+  ref rows_kept_model          ge_dirty_profiled(1473.0000) > ge_clean_profiled(1119.0000) > ge_hand_written(823.0000) > holoclean(37.0000) > raha(0.0000)
+  n_train 1202
+  config            | del all-cols  del model     impute        | minority(impute) | degenerate
+  ge_dirty_profiled | 1174-1183     1174-1183     1202-1202     | -                | -
+  ge_clean_profiled | 884-900       884-900       1202-1202     | -                | -
+  ge_hand_written   | 647-672       647-672       1202-1202     | -                | -
+  holoclean         | 26-34         26-34         444-465       | -                | delete_all,delete_model
+  raha              | 0-0           0-0           1202-1202     | -                | delete_all,delete_model
+  perfect           | 605-631       605-631       1202-1202     | -                | -
+  always_positive   | 0-0           0-0           0-0           | -                | delete_all,delete_model,impute
+  label errors left (impute, train) raha       0-0
+  label errors left (impute, train) holoclean  0-0
+  label errors left (impute, train) perfect    0-0
+  impute vs floor  ge_dirty_profiled  cells differing per seed [107, 125, 56, 83, 83, 120, 0, 118, 119, 74]
+  impute vs floor  ge_clean_profiled  cells differing per seed [55, 175, 107, 268, 149, 114, 53, 116, 50, 134]
+  impute vs floor  ge_hand_written    cells differing per seed [533, 541, 551, 549, 540, 544, 530, 541, 538, 555]
+  impute vs floor  raha               cells differing per seed [2053, 2073, 2063, 2063, 2056, 2077, 2050, 2044, 2051, 2061]
+  impute vs floor  perfect            cells differing per seed [572, 587, 594, 588, 580, 586, 571, 582, 577, 597]
+
+==============================================================================================================
+bike  17379 x 17, 34274 errors; label=cnt excl=['instant', 'dteday', 'casual', 'registered']
+  ge_dirty_profiled  replay TP/FP/det (0, 0, 0)                Table 3 (0, 0, 0)                OK
+  ge_clean_profiled  replay TP/FP/det (0, 0, 0)                Table 3 (0, 0, 0)                OK
+  ge_hand_written    replay TP/FP/det (24247, 0, 24247)        Table 3 (24247, 0, 24247)        OK
+  holoclean          replay TP/FP/det (25134, 173845, 198979)  Table 3 (25134, 173845, 198979)  OK
+  raha               replay TP/FP/det (31434, 14567, 46001)    Table 3 (30861, 15138, 45999)    DIFFERS
+  GE real library == own evaluation: {'ge_dirty_profiled': True, 'ge_clean_profiled': True, 'ge_hand_written': True}
+  disk files: {'ge_hand_written': {'cells': 24247, 'identical_to_replay': True}, 'holoclean': {'cells': 198979, 'identical_to_replay': True}}
+  feature errors 30737 (unparsable 0) | label errors 0 | excluded-col errors {'instant': 881, 'dteday': 889, 'casual': 885, 'registered': 882} | model-visible truth 30737 of 30737 model-col errors
+  diff-but-not-error cells 13263 (parsed equal 2332) by col {'dteday': 10931, 'temp': 1, 'atemp': 3, 'hum': 279, 'windspeed': 2049}
+  identical model-column flag sets: [['ge_dirty_profiled', 'ge_clean_profiled']] | categorical model cols: []
+  ref a_cell_all               ge_hand_written(0.8287) > raha(0.7832) > holoclean(0.2155) > ge_dirty_profiled(0.0000) > ge_clean_profiled(0.0000)
+  ref a_published              ge_hand_written(0.8287) > raha(0.7689) > holoclean(0.2155) > ge_dirty_profiled(0.0000) > ge_clean_profiled(0.0000)
+  ref b_row_all                raha(0.9794) > holoclean(0.9710) > ge_hand_written(0.9040) > ge_dirty_profiled(0.0000) > ge_clean_profiled(0.0000)
+  ref b_row_model              raha(0.9878) > holoclean(0.9644) > ge_hand_written(0.8851) > ge_dirty_profiled(0.0000) > ge_clean_profiled(0.0000)
+  ref c_model_visible          raha(0.9127) > ge_hand_written(0.8254) > holoclean(0.2550) > ge_dirty_profiled(0.0000) > ge_clean_profiled(0.0000)
+  ref cell_model               raha(0.9127) > ge_hand_written(0.8254) > holoclean(0.2550) > ge_dirty_profiled(0.0000) > ge_clean_profiled(0.0000)
+  ref recall_model             raha(0.9387) > holoclean(0.7634) > ge_hand_written(0.7027) > ge_dirty_profiled(0.0000) > ge_clean_profiled(0.0000)
+  ref recall_all               raha(0.9171) > holoclean(0.7333) > ge_hand_written(0.7074) > ge_dirty_profiled(0.0000) > ge_clean_profiled(0.0000)
+  ref cell_precision_model     ge_hand_written(1.0000) > raha(0.8881) > holoclean(0.1530) > ge_dirty_profiled(0.0000) > ge_clean_profiled(0.0000)
+  ref row_precision_all        ge_hand_written(1.0000) > raha(0.9651) > holoclean(0.9437) > ge_dirty_profiled(0.0000) > ge_clean_profiled(0.0000)
+  ref row_precision_model      ge_hand_written(1.0000) > raha(0.9873) > holoclean(0.9312) > ge_dirty_profiled(0.0000) > ge_clean_profiled(0.0000)
+  ref parsable_feature_recall  raha(0.9387) > holoclean(0.7634) > ge_hand_written(0.7027) > ge_dirty_profiled(0.0000) > ge_clean_profiled(0.0000)
+  ref rows_kept_model          ge_dirty_profiled(17379.0000) > ge_clean_profiled(17379.0000) > ge_hand_written(4532.0000) > raha(1181.0000) > holoclean(0.0000)
+  n_train 13903
+  config            | del all-cols  del model     impute        | minority(impute) | degenerate
+  ge_dirty_profiled | 13903-13903   13903-13903   13903-13903   | -                | -
+  ge_clean_profiled | 13903-13903   13903-13903   13903-13903   | -                | -
+  ge_hand_written   | 3044-3106     3574-3649     13903-13903   | -                | -
+  holoclean         | 0-0           0-0           7-13          | -                | delete_all,delete_model,impute
+  raha              | 374-401       921-976       13903-13903   | -                | -
+  perfect           | 753-796       915-983       13903-13903   | -                | -
+  always_positive   | 0-0           0-0           0-0           | -                | delete_all,delete_model,impute
+  label errors left (impute, train) raha       0-0
+  label errors left (impute, train) holoclean  0-0
+  label errors left (impute, train) perfect    0-0
+
+==============================================================================================================
+adult  45222 x 15, 1701 errors; label=income excl=[]
+  ge_dirty_profiled  replay TP/FP/det (0, 0, 0)                Table 3 (0, 0, 0)                OK
+  ge_clean_profiled  replay TP/FP/det (0, 0, 0)                Table 3 (0, 0, 0)                OK
+  ge_hand_written    replay TP/FP/det (0, 0, 0)                Table 3 (0, 0, 0)                OK
+  holoclean          replay TP/FP/det (1677, 663530, 665207)   Table 3 (1677, 663530, 665207)   OK
+  raha               replay TP/FP/det (865, 4649, 5514)        Table 3 (865, 5081, 5946)        DIFFERS
+  GE real library == own evaluation: {'ge_dirty_profiled': True, 'ge_clean_profiled': True, 'ge_hand_written': True}
+  disk files: {'ge_hand_written': {'cells': 0, 'identical_to_replay': True}, 'holoclean': {'cells': 341890, 'identical_to_replay': False}}
+  feature errors 0 (unparsable 0) | label errors 1701 | excluded-col errors {} | model-visible truth 1701 of 1701 model-col errors
+  diff-but-not-error cells 0 (parsed equal 0) by col {}
+  identical model-column flag sets: [['ge_dirty_profiled', 'ge_clean_profiled', 'ge_hand_written']] | categorical model cols: ['workclass', 'education', 'marital_status', 'occupation', 'relationship', 'race', 'gender', 'native_country']
+  ref a_cell_all               raha(0.2398) > holoclean(0.0050) > ge_dirty_profiled(0.0000) > ge_clean_profiled(0.0000) > ge_hand_written(0.0000)
+  ref a_published              raha(0.2262) > holoclean(0.0050) > ge_dirty_profiled(0.0000) > ge_clean_profiled(0.0000) > ge_hand_written(0.0000)
+  ref b_row_all                raha(0.2398) > holoclean(0.0725) > ge_dirty_profiled(0.0000) > ge_clean_profiled(0.0000) > ge_hand_written(0.0000)
+  ref b_row_model              raha(0.2398) > holoclean(0.0725) > ge_dirty_profiled(0.0000) > ge_clean_profiled(0.0000) > ge_hand_written(0.0000)
+  ref c_model_visible          raha(0.2398) > holoclean(0.0050) > ge_dirty_profiled(0.0000) > ge_clean_profiled(0.0000) > ge_hand_written(0.0000)
+  ref cell_model               raha(0.2398) > holoclean(0.0050) > ge_dirty_profiled(0.0000) > ge_clean_profiled(0.0000) > ge_hand_written(0.0000)
+  ref recall_model             holoclean(0.9859) > raha(0.5085) > ge_dirty_profiled(0.0000) > ge_clean_profiled(0.0000) > ge_hand_written(0.0000)
+  ref recall_all               holoclean(0.9859) > raha(0.5085) > ge_dirty_profiled(0.0000) > ge_clean_profiled(0.0000) > ge_hand_written(0.0000)
+  ref cell_precision_model     raha(0.1569) > holoclean(0.0025) > ge_dirty_profiled(0.0000) > ge_clean_profiled(0.0000) > ge_hand_written(0.0000)
+  ref row_precision_all        raha(0.1569) > holoclean(0.0376) > ge_dirty_profiled(0.0000) > ge_clean_profiled(0.0000) > ge_hand_written(0.0000)
+  ref row_precision_model      raha(0.1569) > holoclean(0.0376) > ge_dirty_profiled(0.0000) > ge_clean_profiled(0.0000) > ge_hand_written(0.0000)
+  ref parsable_feature_recall  ge_dirty_profiled(0.0000) > ge_clean_profiled(0.0000) > ge_hand_written(0.0000) > holoclean(0.0000) > raha(0.0000)
+  ref rows_kept_model          ge_dirty_profiled(45222.0000) > ge_clean_profiled(45222.0000) > ge_hand_written(45222.0000) > raha(39708.0000) > holoclean(0.0000)
+  n_train 36177
+  config            | del all-cols  del model     impute        | minority(impute) | degenerate
+  ge_dirty_profiled | 36177-36177   36177-36177   36177-36177   | 8966-8966        | -
+  ge_clean_profiled | 36177-36177   36177-36177   36177-36177   | 8966-8966        | -
+  ge_hand_written   | 36177-36177   36177-36177   36177-36177   | 8966-8966        | -
+  holoclean         | 0-0           0-0           1102-1153     | 144-164          | delete_all,delete_model
+  raha              | 31733-31796   31733-31796   31733-31796   | 5227-5270        | -
+  perfect           | 34806-34838   34806-34838   34806-34838   | 8966-8966        | -
+  always_positive   | 0-0           0-0           0-0           | 0-0              | delete_all,delete_model,impute
+  label errors left (impute, train) raha       657-685
+  label errors left (impute, train) holoclean  16-21
+  label errors left (impute, train) perfect    0-0
+  adult holoclean: fraction of feature cells flagged among impute-kept rows: 0.809-0.813
+
+nasa thickness: dirty mean 3.173e+08 clean mean 0.01114 | medians 0.005194 / 0.004957 | dirty max 2.255e+11 | unparsable 61
+REIN dropna rows kept: {'breast_cancer': 452, 'nasa': 1473, 'bike': 17379, 'adult': 45222}
+adult clean income counts: {'1': 34014, '0': 11208}
+
+written /rein/reports/block_d_final_plan_2026-10-09/fable/fable_measure.json

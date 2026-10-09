@@ -1,0 +1,9 @@
+example training row 50 (split 0), dirty text: {'frequency': '315', 'angle': '0', 'chord_length': '0.3048', 'velocity': '31.7', 'thickness': '00..33116666'}
+   clean: {'frequency': '315.0', 'angle': '0.0', 'chord_length': '0.3048', 'velocity': '31.7', 'thickness': '0.00331266'}
+   thickness filled with mean 3.96e+08 | median 0.005194 | clean value 0.00331266
+
+nasa floor (dirty as shipped), S2 RMSE over 10 seeds (lower better):
+  fill mean              rf 2.2598   xgb 2.1714
+  fill median            rf 2.3967   xgb 2.3335
+  fill 1e12              rf 2.2549   xgb 2.1552
+  fill median+indicator  rf 2.2731   xgb 2.1719

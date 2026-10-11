@@ -85,6 +85,8 @@ The four datasets and the four selection criteria are unchanged.
 
 **Restriction:** each set is restricted to the model columns before any use. Excluded-column flags are counted, not applied.
 
+**Diagnostic version (D6 safeguard, triggered 11 Oct):** nasa `raha_minus_format_only` = Raha run 1 without its 1,864 format-only FPs (710 of 731 TPs, 0 FPs; the 21 misses are `thickness` typos). Trained under all three policies, reported beside the ranking, never ranked or counted in a pair.
+
 **Items:**
 - Configurations with identical restricted sets form one item (e.g. `GE profiled (dirty = clean)`), computed from the frozen files.
 - Measured today: bike {dirty, clean}, adult {dirty, clean, hand-written}.
@@ -355,3 +357,12 @@ Gate 1 moves to **Mon 12 Oct, noon** (D7). Building the driver and the analysis 
 | S9 left-out permutation counts | **Accepted.** §8.4. |
 | S10 schedule | **Accepted.** Gate 1 moved to Mon noon (D7); analysis script against synthetic data. |
 | Minor (full-column mean, check-2 not a prediction, denominator, adult not cell-verified, beers figure source) | **Accepted.** |
+
+## 16. Execution log
+
+| Date | Step | Outcome |
+|---|---|---|
+| 11 Oct | 0 backup | `reports/block_d/backup_20261011/`: the GE, HoloClean and Raha flag files, `detection_results.csv`, `iou.csv`, `_all_constraints.txt` and the Raha caches of all four datasets, plus `results/runs_log.csv`: 1,480 files, 1.7 GB, checksums in `MANIFEST.sha256`; `INPUTS.sha256` fingerprints `dirty.csv`, `clean.csv`, `actual_errors.csv`. `reports/block_d/step9_restore.sh` checks (dry run) and restores (`--apply`). |
+| 11 Oct | 2 core flags | All 10 core flag sets frozen read-only in `reports/block_d/flags/` (`MANIFEST.csv`) by `scripts/blockd_freeze_flags.py`. Every set equals Table 3; GE and HoloClean are also cell-identical to the replay. GE hand-written and HoloClean: the 18 Sep files. GE dirty- and clean-profiled: regenerated. Raha run 1: regenerated warm (bc 1.44 s, 317/78/395; nasa 1.74 s, 710/1,864/2,574). Afterwards the inputs were unchanged; the only cache files changed were Raha's `error-detection/detection.dataset`. |
+| 11 Oct | D6 safeguard | `scripts/blockd_check_format_only.py nasa`: Raha run 1 minus its format-only FPs is not the perfect detector (710 of 731 TPs, 0 FPs), so the diagnostic version of §3 is added. |
+| 11 Oct | addendum | `checks/addendum_raha_run1/run_addendum.py`: the flag-only checks repeated with Raha run 1 on bc and nasa (bike and adult keep the disk file until step 7). 16 mechanism scores change and **0 expected verdicts change**; the pooled expectations equal §9 (19/10/0, 16/4/9, 12/1/16). The frozen `checks/expected_pair_verdicts.csv` is untouched. |

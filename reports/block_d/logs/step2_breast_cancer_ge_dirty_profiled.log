@@ -1,0 +1,217 @@
+ Container rein-benchmark-db-1 Running 
+ Container rein-benchmark-db-1 Waiting 
+ Container rein-benchmark-db-1 Healthy 
+ Container rein-benchmark-rein-run-c2bf79c3d10b Creating 
+ Container rein-benchmark-rein-run-c2bf79c3d10b Created 
+Waiting for PostgreSQL at db:5432...
+PostgreSQL is ready.
+15:22:43 - [ INFO] - generated new fontManager
+/opt/venv/lib/python3.8/site-packages/sqlalchemy_utils/types/encrypted/encrypted_type.py:16: CryptographyDeprecationWarning: Python 3.8 is no longer supported by the Python core team and support for it is deprecated in cryptography. The next release of cryptography will remove support for Python 3.8.
+  import cryptography
+15:22:44 - [WARNING] - /opt/venv/lib/python3.8/site-packages/py_stringmatching/similarity_measure/levenshtein.py:4: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  from py_stringmatching.similarity_measure.cython.cython_levenshtein import levenshtein
+
+15:22:44 - [WARNING] - /opt/venv/lib/python3.8/site-packages/jinja2/environment.py:362: DeprecationWarning: The 'with' extension is deprecated and will be removed in Jinja 3.1. This is built in now.
+  self.extensions = load_extensions(self, extensions)
+
+2026-10-11 15:22:45.330367: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2026-10-11 15:22:45.330778: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+15:22:45 - [WARNING] - /opt/venv/lib/python3.8/site-packages/tensorflow/python/framework/dtypes.py:29: DeprecationWarning: `np.typeDict` is a deprecated alias for `np.sctypeDict`.
+  from tensorflow.python.lib.core import _pywrap_bfloat16
+
+15:22:45 - [WARNING] - /opt/venv/lib/python3.8/site-packages/tensorflow/python/framework/dtypes.py:511: DeprecationWarning: `np.object` is a deprecated alias for the builtin `object`. To silence this warning, use `object` by itself. Doing this will not modify any behavior and is safe. 
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  np.object,
+
+15:22:45 - [WARNING] - /opt/venv/lib/python3.8/site-packages/tensorflow/python/framework/dtypes.py:553: DeprecationWarning: `np.object` is a deprecated alias for the builtin `object`. To silence this warning, use `object` by itself. Doing this will not modify any behavior and is safe. 
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  np.object,
+
+15:22:45 - [WARNING] - /opt/venv/lib/python3.8/site-packages/tensorflow/python/framework/dtypes.py:563: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  np.bool,
+
+15:22:45 - [WARNING] - /opt/venv/lib/python3.8/site-packages/tensorflow/python/framework/tensor_util.py:108: DeprecationWarning: `np.object` is a deprecated alias for the builtin `object`. To silence this warning, use `object` by itself. Doing this will not modify any behavior and is safe. 
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  np.object:
+
+15:22:45 - [WARNING] - /opt/venv/lib/python3.8/site-packages/tensorflow/python/framework/tensor_util.py:110: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  np.bool:
+
+15:22:45 - [WARNING] - /opt/venv/lib/python3.8/site-packages/tensorflow/python/ops/numpy_ops/np_random.py:110: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  def randint(low, high=None, size=None, dtype=onp.int):  # pylint: disable=missing-function-docstring
+
+15:22:47 - [ INFO] - Loading the **breast_cancer** dataset from the CSV files
+15:22:47 - [ INFO] - Unable to insert the datasets into the REIN database
+15:22:47 - [ INFO] - Getting error rate and actual_error_dict
+15:22:47 - [ INFO] - 
+--- Dataset metrics: breast_cancer ---------------------
+   rows (N)                               699
+   dimension (d)                           12
+   columns with errors (d_err)             12
+   cell error rate (eps)               0.0752
+   observed dirty row fraction         0.6481
+   cell_baseline                        0.1399
+   row_baseline                        0.7865
+   Rousseeuw prediction                0.6088
+--------------------------------------------------------
+15:22:47 - [ INFO] - Relevant detectors: [<DetectMethod.greatExpectations: 'greatExpectations'>]
+15:22:47 - [ INFO] - ==========================================================================
+15:22:47 - [ INFO] - ========================  Error Detection Phase ==========================
+15:22:47 - [ INFO] - ==========================================================================
+
+  0%|          | 0/1 [00:00<?, ?it/s]15:22:47 - [ INFO] - Detecting errors using ------------> ***********greatExpectations:dirty_profiled***********
+15:22:47 - [ INFO] - 
+--- greatExpectations:dirty_profiled per-expectation breakdown: breast_cancer --------------------------
+   column                    expectation                             cells     TP     FP    new  newTP   %rows
+   Unnamed: 0                to_not_be_in_set                           19     19      0     19     19    2.7%
+   Sample code number        to_not_be_in_set                           18     18      0     18     18    2.6%
+   Clump Thickness           to_not_be_in_set                           25     25      0     25     25    3.6%
+   Clump Thickness           to_be_in_set                               25     25      0      0      0    3.6%
+   Uniformity of Cell Size   to_not_be_in_set                           23     23      0     23     23    3.3%
+   Uniformity of Cell Size   to_match_regex ^-?\d+(\.\d+)?$             23     23      0      0      0    3.3%
+   Uniformity of Cell Shape  to_not_be_in_set                           24     24      0     24     24    3.4%
+   Uniformity of Cell Shape  to_match_regex ^-?\d+(\.\d+)?$             24     24      0      0      0    3.4%
+   Marginal Adhesion         to_not_be_in_set                           23     23      0     23     23    3.3%
+   Marginal Adhesion         to_be_in_set                               23     23      0      0      0    3.3%
+   Single Epithelial Cell Si to_not_be_in_set                           26     26      0     26     26    3.7%
+   Single Epithelial Cell Si to_match_regex ^-?\d+(\.\d+)?$             26     26      0      0      0    3.7%
+   Bare Nuclei               to_not_be_in_set                           36     23     13     36     23    5.2%
+   Bare Nuclei               to_be_in_set                               36     23     13      0      0    5.2%
+   Bland Chromatin           to_not_be_in_set                           21     21      0     21     21    3.0%
+   Bland Chromatin           to_match_regex ^-?\d+(\.\d+)?$             21     21      0      0      0    3.0%
+   Normal Nucleoli           to_not_be_in_set                           25     25      0     25     25    3.6%
+   Normal Nucleoli           to_be_in_set                               25     25      0      0      0    3.6%
+   Mitoses                   to_not_be_in_set                           20     20      0     20     20    2.9%
+   Mitoses                   to_match_regex ^-?\d+(\.\d+)?$             20     20      0      0      0    2.9%
+   class                     to_not_be_in_set                            0      0      0      0      0    0.0%
+   class                     to_match_regex ^-?\d+(\.\d+)?$              0      0      0      0      0    0.0%
+--------------------------------------------------------------------------------------------------------
+   2 of 22 rule(s) flagged nothing: class
+
+15:22:47 - [ INFO] - --------------------------------------------------
+15:22:47 - [ INFO] - Iteration 0: Storing detection results
+15:22:47 - [ INFO] - precision: 0.95
+15:22:47 - [ INFO] - recall: 0.39144215530903326
+15:22:47 - [ INFO] - f1: 0.5544332210998877
+15:22:47 - [ INFO] - detection_runtime: 0.01850152015686035
+15:22:47 - [ INFO] - #detections: 260
+15:22:47 - [ INFO] - #pattern_violations: 0
+15:22:47 - [ INFO] - #fd_violations: None
+15:22:47 - [ INFO] - #detected_duplicates: None
+15:22:47 - [ INFO] - detected_error_rate: 0.030996661897949453
+15:22:47 - [ INFO] - error_rate: 0.07522651406771579
+15:22:47 - [ INFO] - cell_TP: 247
+15:22:47 - [ INFO] - cell_FP: 13
+15:22:47 - [ INFO] - cell_FN: 384
+15:22:47 - [ INFO] - cell_precG: 0.995718637834757
+15:22:47 - [ INFO] - cell_recG: 0.8735351483497469
+15:22:47 - [ INFO] - cell_FG1: 0.9346268930922519
+15:22:47 - [ INFO] - row_precision: 0.99609375
+15:22:47 - [ INFO] - row_recall: 0.5629139072847682
+15:22:47 - [ INFO] - row_F1: 0.7193229901269392
+15:22:47 - [ INFO] - row_TP: 255
+15:22:47 - [ INFO] - row_FP: 1
+15:22:47 - [ INFO] - row_FN: 198
+15:22:47 - [ INFO] - row_TN: 245
+15:22:47 - [ INFO] - row_precG: 0.9927785748445719
+15:22:47 - [ INFO] - row_recG: -0.42984218077474895
+15:22:47 - [ INFO] - row_FG1: 0.28146819703491144
+100%|██████████| 1/1 [00:00<00:00, 39.35it/s]
+15:22:47 - [ INFO] - ==========================================================================
+15:22:47 - [ INFO] - =========================  IoU Testing Phase =============================
+15:22:47 - [ INFO] - ==========================================================================
+
+15:22:47 - [ INFO] - Union & intersection: 266, 0
+15:22:47 - [ INFO] - IoU (based on True Positives) for greatExpectations outlierdetector_IF: 0.0
+15:22:47 - [ INFO] - Union & intersection: 315, 247
+15:22:47 - [ INFO] - IoU (based on True Positives) for greatExpectations dboost: 0.7841269841269841
+15:22:47 - [ INFO] - Union & intersection: 287, 0
+15:22:47 - [ INFO] - IoU (based on True Positives) for greatExpectations outlierdetector_SD: 0.0
+15:22:47 - [ INFO] - Union & intersection: 501, 162
+15:22:47 - [ INFO] - IoU (based on True Positives) for greatExpectations holoclean: 0.32335329341317365
+15:22:47 - [ INFO] - Union & intersection: 336, 229
+15:22:47 - [ INFO] - IoU (based on True Positives) for greatExpectations raha: 0.6815476190476191
+15:22:47 - [ INFO] - Union & intersection: 319, 0
+15:22:47 - [ INFO] - IoU (based on True Positives) for greatExpectations outlierdetector_IQR: 0.0
+15:22:47 - [ INFO] - Union & intersection: 583, 210
+15:22:47 - [ INFO] - IoU (based on True Positives) for greatExpectations katara: 0.3602058319039451
+15:22:47 - [ INFO] - Union & intersection: 247, 247
+15:22:47 - [ INFO] - IoU (based on True Positives) for greatExpectations mvdetector: 1.0
+15:22:47 - [ INFO] - Union & intersection: 334, 0
+15:22:47 - [ INFO] - IoU (based on True Positives) for greatExpectations fahes_ALL: 0.0
+15:22:47 - [ INFO] - Union & intersection: 326, 8
+15:22:47 - [ INFO] - IoU (based on True Positives) for outlierdetector_IF dboost: 0.024539877300613498
+15:22:47 - [ INFO] - Union & intersection: 40, 19
+15:22:47 - [ INFO] - IoU (based on True Positives) for outlierdetector_IF outlierdetector_SD: 0.475
+15:22:47 - [ INFO] - Union & intersection: 420, 15
+15:22:47 - [ INFO] - IoU (based on True Positives) for outlierdetector_IF holoclean: 0.03571428571428571
+15:22:47 - [ INFO] - Union & intersection: 324, 13
+15:22:47 - [ INFO] - IoU (based on True Positives) for outlierdetector_IF raha: 0.040123456790123455
+15:22:47 - [ INFO] - Union & intersection: 72, 19
+15:22:47 - [ INFO] - IoU (based on True Positives) for outlierdetector_IF outlierdetector_IQR: 0.2638888888888889
+15:22:47 - [ INFO] - Union & intersection: 546, 19
+15:22:47 - [ INFO] - IoU (based on True Positives) for outlierdetector_IF katara: 0.0347985347985348
+15:22:47 - [ INFO] - Union & intersection: 266, 0
+15:22:47 - [ INFO] - IoU (based on True Positives) for outlierdetector_IF mvdetector: 0.0
+15:22:47 - [ INFO] - Union & intersection: 106, 0
+15:22:47 - [ INFO] - IoU (based on True Positives) for outlierdetector_IF fahes_ALL: 0.0
+15:22:47 - [ INFO] - Union & intersection: 342, 13
+15:22:47 - [ INFO] - IoU (based on True Positives) for dboost outlierdetector_SD: 0.038011695906432746
+15:22:47 - [ INFO] - Union & intersection: 533, 198
+15:22:47 - [ INFO] - IoU (based on True Positives) for dboost holoclean: 0.3714821763602251
+15:22:47 - [ INFO] - Union & intersection: 375, 258
+15:22:47 - [ INFO] - IoU (based on True Positives) for dboost raha: 0.688
+15:22:47 - [ INFO] - Union & intersection: 351, 36
+15:22:47 - [ INFO] - IoU (based on True Positives) for dboost outlierdetector_IQR: 0.10256410256410256
+15:22:47 - [ INFO] - Union & intersection: 603, 258
+15:22:47 - [ INFO] - IoU (based on True Positives) for dboost katara: 0.42786069651741293
+15:22:47 - [ INFO] - Union & intersection: 315, 247
+15:22:47 - [ INFO] - IoU (based on True Positives) for dboost mvdetector: 0.7841269841269841
+15:22:47 - [ INFO] - Union & intersection: 385, 17
+15:22:47 - [ INFO] - IoU (based on True Positives) for dboost fahes_ALL: 0.04415584415584416
+15:22:47 - [ INFO] - Union & intersection: 421, 35
+15:22:47 - [ INFO] - IoU (based on True Positives) for outlierdetector_SD holoclean: 0.0831353919239905
+15:22:47 - [ INFO] - Union & intersection: 328, 30
+15:22:47 - [ INFO] - IoU (based on True Positives) for outlierdetector_SD raha: 0.09146341463414634
+15:22:47 - [ INFO] - Union & intersection: 72, 40
+15:22:47 - [ INFO] - IoU (based on True Positives) for outlierdetector_SD outlierdetector_IQR: 0.5555555555555556
+15:22:47 - [ INFO] - Union & intersection: 546, 40
+15:22:47 - [ INFO] - IoU (based on True Positives) for outlierdetector_SD katara: 0.07326007326007326
+15:22:47 - [ INFO] - Union & intersection: 287, 0
+15:22:47 - [ INFO] - IoU (based on True Positives) for outlierdetector_SD mvdetector: 0.0
+15:22:47 - [ INFO] - Union & intersection: 111, 16
+15:22:47 - [ INFO] - IoU (based on True Positives) for outlierdetector_SD fahes_ALL: 0.14414414414414414
+15:22:47 - [ INFO] - Union & intersection: 506, 228
+15:22:47 - [ INFO] - IoU (based on True Positives) for holoclean raha: 0.4505928853754941
+15:22:47 - [ INFO] - Union & intersection: 422, 66
+15:22:47 - [ INFO] - IoU (based on True Positives) for holoclean outlierdetector_IQR: 0.15639810426540285
+15:22:47 - [ INFO] - Union & intersection: 546, 416
+15:22:47 - [ INFO] - IoU (based on True Positives) for holoclean katara: 0.7619047619047619
+15:22:47 - [ INFO] - Union & intersection: 501, 162
+15:22:47 - [ INFO] - IoU (based on True Positives) for holoclean mvdetector: 0.32335329341317365
+15:22:47 - [ INFO] - Union & intersection: 423, 80
+15:22:47 - [ INFO] - IoU (based on True Positives) for holoclean fahes_ALL: 0.18912529550827423
+15:22:47 - [ INFO] - Union & intersection: 348, 42
+15:22:47 - [ INFO] - IoU (based on True Positives) for raha outlierdetector_IQR: 0.1206896551724138
+15:22:47 - [ INFO] - Union & intersection: 566, 298
+15:22:47 - [ INFO] - IoU (based on True Positives) for raha katara: 0.5265017667844523
+15:22:47 - [ INFO] - Union & intersection: 336, 229
+15:22:47 - [ INFO] - IoU (based on True Positives) for raha mvdetector: 0.6815476190476191
+15:22:47 - [ INFO] - Union & intersection: 386, 19
+15:22:47 - [ INFO] - IoU (based on True Positives) for raha fahes_ALL: 0.04922279792746114
+15:22:47 - [ INFO] - Union & intersection: 546, 72
+15:22:47 - [ INFO] - IoU (based on True Positives) for outlierdetector_IQR katara: 0.13186813186813187
+15:22:47 - [ INFO] - Union & intersection: 319, 0
+15:22:47 - [ INFO] - IoU (based on True Positives) for outlierdetector_IQR mvdetector: 0.0
+15:22:47 - [ INFO] - Union & intersection: 126, 33
+15:22:47 - [ INFO] - IoU (based on True Positives) for outlierdetector_IQR fahes_ALL: 0.2619047619047619
+15:22:47 - [ INFO] - Union & intersection: 583, 210
+15:22:47 - [ INFO] - IoU (based on True Positives) for katara mvdetector: 0.3602058319039451
+15:22:47 - [ INFO] - Union & intersection: 546, 87
+15:22:47 - [ INFO] - IoU (based on True Positives) for katara fahes_ALL: 0.15934065934065933
+15:22:47 - [ INFO] - Union & intersection: 334, 0
+15:22:47 - [ INFO] - IoU (based on True Positives) for mvdetector fahes_ALL: 0.0

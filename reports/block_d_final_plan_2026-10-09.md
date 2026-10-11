@@ -14,7 +14,7 @@
 - `reports/block_d_final_plan_2026-10-09/checks/`, run in the rein container (pandas 1.3.3, scikit-learn 0.24.2, SciPy 1.7.1), read-only on `rein-datasets/`.
 - Fable re-derived every table with its own code, including the real GE library and its own HoloClean violation rule.
 - The GE and HoloClean flag sets reproduce Table 3 exactly on all four datasets. On bc, nasa and bike they are also cell-identical to the files on disk. Nothing on adult is cell-verified: its GE file is empty and its HoloClean file is stale.
-- **Raha numbers come from the `detections.csv` on disk, not run 1.** The disk counts are 407 / 2,595 / 46,001 / 5,514 against Table 3's 395 / 2,574 / 45,999 / 5,946. Step 2 regenerates run 1, and `--dry_run` reprints every Raha figure, the degenerate list and the expected pair verdicts before the prediction is committed.
+- **Raha numbers come from the `detections.csv` on disk, not run 1.** The disk counts are 407 / 2,595 / 46,001 / 5,514 against Table 3's 395 / 2,574 / 45,999 / 5,946. Step 2 regenerates run 1, and `--dry_run` reprints every Raha figure, the degenerate list and the expected pair verdicts. The prediction itself was frozen on 9 Oct (`c61ee72`); the run-1 verdicts are committed beside it as an addendum (§12).
 
 ---
 
@@ -330,6 +330,7 @@ Gate 1 moves to **Mon 12 Oct, noon** (D7). Building the driver and the analysis 
 - `checks/measure_fixes.py`, `measure_fixes_output.txt` and `measure_fixes.json`: replay check, per-configuration counts, rows kept per seed, degenerate list, Wilcoxon examples.
 - `checks/reference_rankings.py` and `reference_rankings_output.txt`: reference orders (a)–(c).
 - `checks/implied_predictions.py`, `implied_predictions_output.txt` and `expected_pair_verdicts.csv`: mechanism (d) and the expected verdict of every pair.
+- `checks/decisions/`: the runs behind decisions D2–D8 (`mini_driver.py` plus one script and output per decision).
 - `fable/fable_review.md` and its scripts: independent recomputation, impute-vs-floor magnitudes, giant typos, type I error simulation, Wilcoxon order study.
 - `reports/block_d_plan_review_2026-10-09.md`: the review; gate 2 was measured there.
 - Superseded: `reports/block_d_driver_spec_2026-10-06.md` and the 5 Oct plan doc (https://claude.ai/code/artifact/9a435b72-1b69-4930-8af7-5a5865b86a8e).

@@ -61,10 +61,10 @@ breast_cancer impute                      HoloClean vs Raha                     
          nasa impute                      HoloClean vs Raha                      Raha > HoloClean       -5441       -1515   concordant
          bike     gt           GE-dirty=GE-clean vs GE-hand           GE-hand > GE-dirty=GE-clean         0.0       0.703   concordant
          bike     gt         GE-dirty=GE-clean vs HoloClean         HoloClean > GE-dirty=GE-clean         0.0       0.763   concordant
-         bike     gt              GE-dirty=GE-clean vs Raha              Raha > GE-dirty=GE-clean         0.0       0.939   concordant
+         bike     gt              GE-dirty=GE-clean vs Raha              Raha > GE-dirty=GE-clean         0.0       0.918   concordant
          bike     gt                   GE-hand vs HoloClean                   GE-hand > HoloClean       0.703       0.763   discordant
-         bike     gt                        GE-hand vs Raha                        GE-hand > Raha       0.703       0.939   discordant
-         bike     gt                      HoloClean vs Raha                      Raha > HoloClean       0.763       0.939   concordant
+         bike     gt                        GE-hand vs Raha                        GE-hand > Raha       0.703       0.918   discordant
+         bike     gt                      HoloClean vs Raha                      Raha > HoloClean       0.763       0.918   concordant
          bike delete           GE-dirty=GE-clean vs GE-hand           GE-hand > GE-dirty=GE-clean       floor         1.0 undetermined
          bike delete         GE-dirty=GE-clean vs HoloClean         HoloClean > GE-dirty=GE-clean       floor  degenerate undetermined
          bike delete              GE-dirty=GE-clean vs Raha              Raha > GE-dirty=GE-clean       floor       0.987 undetermined
@@ -73,19 +73,19 @@ breast_cancer impute                      HoloClean vs Raha                     
          bike delete                      HoloClean vs Raha                      Raha > HoloClean  degenerate       0.987   concordant
          bike impute           GE-dirty=GE-clean vs GE-hand           GE-hand > GE-dirty=GE-clean       floor       21599 undetermined
          bike impute         GE-dirty=GE-clean vs HoloClean         HoloClean > GE-dirty=GE-clean       floor  degenerate undetermined
-         bike impute              GE-dirty=GE-clean vs Raha              Raha > GE-dirty=GE-clean       floor       25216 undetermined
+         bike impute              GE-dirty=GE-clean vs Raha              Raha > GE-dirty=GE-clean       floor       23998 undetermined
          bike impute                   GE-hand vs HoloClean                   GE-hand > HoloClean       21599  degenerate   concordant
-         bike impute                        GE-hand vs Raha                        GE-hand > Raha       21599       25216   discordant
-         bike impute                      HoloClean vs Raha                      Raha > HoloClean  degenerate       25216   concordant
+         bike impute                        GE-hand vs Raha                        GE-hand > Raha       21599       23998   discordant
+         bike impute                      HoloClean vs Raha                      Raha > HoloClean  degenerate       23998   concordant
         adult     gt GE-dirty=GE-clean=GE-hand vs HoloClean HoloClean > GE-dirty=GE-clean=GE-hand         0.0       0.986   concordant
         adult     gt      GE-dirty=GE-clean=GE-hand vs Raha      Raha > GE-dirty=GE-clean=GE-hand         0.0       0.509   concordant
         adult     gt                      HoloClean vs Raha                      Raha > HoloClean       0.986       0.509   discordant
         adult delete GE-dirty=GE-clean=GE-hand vs HoloClean HoloClean > GE-dirty=GE-clean=GE-hand       floor  degenerate undetermined
-        adult delete      GE-dirty=GE-clean=GE-hand vs Raha      Raha > GE-dirty=GE-clean=GE-hand       floor       0.157 undetermined
-        adult delete                      HoloClean vs Raha                      Raha > HoloClean  degenerate       0.157   concordant
+        adult delete      GE-dirty=GE-clean=GE-hand vs Raha      Raha > GE-dirty=GE-clean=GE-hand       floor       0.145 undetermined
+        adult delete                      HoloClean vs Raha                      Raha > HoloClean  degenerate       0.145   concordant
         adult impute GE-dirty=GE-clean=GE-hand vs HoloClean HoloClean > GE-dirty=GE-clean=GE-hand       floor     -302109 undetermined
-        adult impute      GE-dirty=GE-clean=GE-hand vs Raha      Raha > GE-dirty=GE-clean=GE-hand       floor       -3784 undetermined
-        adult impute                      HoloClean vs Raha                      Raha > HoloClean     -302109       -3784   concordant
+        adult impute      GE-dirty=GE-clean=GE-hand vs Raha      Raha > GE-dirty=GE-clean=GE-hand       floor       -4216 undetermined
+        adult impute                      HoloClean vs Raha                      Raha > HoloClean     -302109       -4216   concordant
 
 gt      per dataset (C/D/U) {'breast_cancer': (6, 4, 0), 'nasa': (7, 3, 0), 'bike': (4, 2, 0), 'adult': (2, 1, 0)} | pooled C 19 D 10 U 0 of 29 -> concordant among determined 0.66, of all pairs 0.66
 delete  per dataset (C/D/U) {'breast_cancer': (8, 2, 0), 'nasa': (4, 2, 4), 'bike': (3, 0, 3), 'adult': (1, 0, 2)} | pooled C 16 D 4 U 9 of 29 -> concordant among determined 0.80, of all pairs 0.55

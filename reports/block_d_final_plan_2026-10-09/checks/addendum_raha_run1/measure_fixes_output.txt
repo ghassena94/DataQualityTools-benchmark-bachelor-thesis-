@@ -6,7 +6,7 @@ breast_cancer 699 x 12 errors 631
   ge_hand_written    replay/disk TP/FP/det (438, 22, 460)           Table 3 (438, 22, 460)           OK
   holoclean          replay/disk TP/FP/det (416, 5275, 5691)        Table 3 (416, 5275, 5691)        OK
   raha               replay/disk TP/FP/det (317, 78, 395)           Table 3 (317, 78, 395)           OK
-  ge_hand_written    replay == file on disk: False (disk 291 cells)
+  ge_hand_written    replay == file on disk: True (disk 460 cells)
   holoclean          replay == file on disk: True (disk 5691 cells)
   n_train 559 | feature errors 509 unparsable 217 | label errors 15 | errors in excluded cols 107
   identical flag sets (schema columns): []
@@ -26,7 +26,7 @@ nasa 1503 x 6 errors 731
   ge_hand_written    replay/disk TP/FP/det (680, 0, 680)            Table 3 (680, 0, 680)            OK
   holoclean          replay/disk TP/FP/det (556, 5709, 6265)        Table 3 (556, 5709, 6265)        OK
   raha               replay/disk TP/FP/det (710, 1864, 2574)        Table 3 (710, 1864, 2574)        OK
-  ge_hand_written    replay == file on disk: False (disk 384 cells)
+  ge_hand_written    replay == file on disk: True (disk 680 cells)
   holoclean          replay == file on disk: True (disk 6265 cells)
   n_train 1202 | feature errors 731 unparsable 382 | label errors 0 | errors in excluded cols 0
   identical flag sets (schema columns): []
@@ -45,7 +45,7 @@ bike 17379 x 17 errors 34274
   ge_clean_profiled  replay/disk TP/FP/det (0, 0, 0)                Table 3 (0, 0, 0)                OK
   ge_hand_written    replay/disk TP/FP/det (24247, 0, 24247)        Table 3 (24247, 0, 24247)        OK
   holoclean          replay/disk TP/FP/det (25134, 173845, 198979)  Table 3 (25134, 173845, 198979)  OK
-  raha               replay/disk TP/FP/det (31434, 14567, 46001)    Table 3 (30861, 15138, 45999)    DIFFERS
+  raha               replay/disk TP/FP/det (30861, 15138, 45999)    Table 3 (30861, 15138, 45999)    OK
   ge_hand_written    replay == file on disk: True (disk 24247 cells)
   holoclean          replay == file on disk: True (disk 198979 cells)
   n_train 13903 | feature errors 30737 unparsable 0 | label errors 0 | errors in excluded cols 3537
@@ -55,7 +55,7 @@ bike 17379 x 17 errors 34274
   ge_clean_profiled        0      0       0      0      0    0(   0) | 13903-13903   13903-13903   13903-13903   | -
   ge_hand_written      24247   2648       0      0      0 21599(21599) | 3044-3106     3574-3649     13903-13903   | -
   holoclean           198979  45637     509  17366      0 23466(23466) | 0-0           0-0           7-13          | delete_allcols,delete_schema,impute
-  raha                 46001  13513   13261      0      0 28852(28852) | 374-401       921-976       13903-13903   | -
+  raha                 45999  13587   13261      0      0 28205(28205) | 377-402       1051-1106     13903-13903   | -
   perfect              34274   3537       0      0      0 30737(30737) | 753-796       915-983       13903-13903   | -
   always_positive     295443  69516   13263  17379      0 30737(30737) | 0-0           0-0           0-0           | delete_allcols,delete_schema,impute
 
@@ -65,7 +65,7 @@ adult 45222 x 15 errors 1701
   ge_clean_profiled  replay/disk TP/FP/det (0, 0, 0)                Table 3 (0, 0, 0)                OK
   ge_hand_written    replay/disk TP/FP/det (0, 0, 0)                Table 3 (0, 0, 0)                OK
   holoclean          replay/disk TP/FP/det (1677, 663530, 665207)   Table 3 (1677, 663530, 665207)   OK
-  raha               replay/disk TP/FP/det (865, 4649, 5514)        Table 3 (865, 5081, 5946)        DIFFERS
+  raha               replay/disk TP/FP/det (865, 5081, 5946)        Table 3 (865, 5081, 5946)        OK
   holoclean          replay == file on disk: False (disk 341890 cells)
   n_train 36177 | feature errors 0 unparsable 0 | label errors 1701 | errors in excluded cols 0
   identical flag sets (schema columns): [['ge_dirty_profiled', 'ge_clean_profiled', 'ge_hand_written']]
@@ -74,7 +74,7 @@ adult 45222 x 15 errors 1701
   ge_clean_profiled        0      0       0      0      0    0(   0) | 36177-36177   36177-36177   36177-36177   | -
   ge_hand_written          0      0       0      0      0    0(   0) | 36177-36177   36177-36177   36177-36177   | -
   holoclean           665207      0       0  43802   1677    0(   0) | 0-0           0-0           1102-1153     | delete_allcols,delete_schema
-  raha                  5514      0       0   5514    865    0(   0) | 31733-31796   31733-31796   31733-31796   | -
+  raha                  5946      0       0   5946    865    0(   0) | 31383-31455   31383-31455   31383-31455   | -
   perfect               1701      0       0   1701   1701    0(   0) | 34806-34838   34806-34838   34806-34838   | -
   always_positive     678330      0       0  45222   1701    0(   0) | 0-0           0-0           0-0           | delete_allcols,delete_schema,impute
 

@@ -1473,17 +1473,17 @@
     "rows_touched_schema_without_format_only": 17379
    },
    "raha": {
-    "flags": 46001,
-    "excl_col_flags": 13513,
+    "flags": 45999,
+    "excl_col_flags": 13587,
     "format_only_fp": 13261,
     "format_only_fp_schema": 2330,
     "label_flags": 0,
     "label_tp": 0,
-    "feature_tp": 28852,
-    "feature_tp_parsable": 28852,
-    "rows_touched_all": 16894,
-    "rows_touched_schema": 16198,
-    "rows_touched_schema_without_format_only": 15951
+    "feature_tp": 28205,
+    "feature_tp_parsable": 28205,
+    "rows_touched_all": 16891,
+    "rows_touched_schema": 16032,
+    "rows_touched_schema_without_format_only": 15763
    },
    "perfect": {
     "flags": 34274,
@@ -1870,16 +1870,16 @@
    },
    "raha": {
     "delete_allcols": [
-     388,
-     395,
-     391,
-     374,
-     388,
-     391,
+     390,
      398,
-     401,
-     394,
-     397
+     393,
+     377,
+     390,
+     392,
+     400,
+     402,
+     397,
+     401
     ],
     "delete_allcols_degenerate": [
      false,
@@ -1894,16 +1894,16 @@
      false
     ],
     "delete_schema": [
-     937,
-     950,
-     951,
-     921,
-     945,
-     951,
-     953,
-     976,
-     950,
-     963
+     1067,
+     1073,
+     1082,
+     1051,
+     1088,
+     1091,
+     1082,
+     1106,
+     1083,
+     1097
     ],
     "delete_schema_degenerate": [
      false,
@@ -2186,17 +2186,17 @@
     "rows_touched_schema_without_format_only": 45222
    },
    "raha": {
-    "flags": 5514,
+    "flags": 5946,
     "excl_col_flags": 0,
     "format_only_fp": 0,
     "format_only_fp_schema": 0,
-    "label_flags": 5514,
+    "label_flags": 5946,
     "label_tp": 865,
     "feature_tp": 0,
     "feature_tp_parsable": 0,
-    "rows_touched_all": 5514,
-    "rows_touched_schema": 5514,
-    "rows_touched_schema_without_format_only": 5514
+    "rows_touched_all": 5946,
+    "rows_touched_schema": 5946,
+    "rows_touched_schema_without_format_only": 5946
    },
    "perfect": {
     "flags": 1701,
@@ -2584,16 +2584,16 @@
    },
    "raha": {
     "delete_allcols": [
-     31777,
-     31733,
-     31793,
-     31763,
-     31774,
-     31770,
-     31759,
-     31796,
-     31750,
-     31735
+     31431,
+     31395,
+     31433,
+     31417,
+     31427,
+     31424,
+     31415,
+     31455,
+     31415,
+     31383
     ],
     "delete_allcols_degenerate": [
      false,
@@ -2608,16 +2608,16 @@
      false
     ],
     "delete_schema": [
-     31777,
-     31733,
-     31793,
-     31763,
-     31774,
-     31770,
-     31759,
-     31796,
-     31750,
-     31735
+     31431,
+     31395,
+     31433,
+     31417,
+     31427,
+     31424,
+     31415,
+     31455,
+     31415,
+     31383
     ],
     "delete_schema_degenerate": [
      false,
@@ -2632,16 +2632,16 @@
      false
     ],
     "impute": [
-     31777,
-     31733,
-     31793,
-     31763,
-     31774,
-     31770,
-     31759,
-     31796,
-     31750,
-     31735
+     31431,
+     31395,
+     31433,
+     31417,
+     31427,
+     31424,
+     31415,
+     31455,
+     31415,
+     31383
     ],
     "impute_degenerate": [
      false,

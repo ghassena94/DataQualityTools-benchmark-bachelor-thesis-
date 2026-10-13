@@ -24,7 +24,10 @@ utils/adults
 cleaners/katara/knowledge-base
 strategy-profiling/
 raha-baran-results-adult
-reports
+/reports/*
+!/reports/block_d/
+!/reports/block_d_final_plan_2026-10-09/
+/reports/block_d/backup_*/
 
 datasets/airbnb/actual_errors.csv
 datasets/airbnb/data_augmentation_experiment/
@@ -162,3 +165,9 @@ gx-beers-demo
 
 # Ignore the Known issue 
 KNOWN_ISSUES.md
+
+# Block D outputs are tracked (logs and json included)
+!/reports/block_d/**/*.log
+!/reports/block_d/**/*.json
+!/reports/block_d_final_plan_2026-10-09/**/*.log
+!/reports/block_d_final_plan_2026-10-09/**/*.json

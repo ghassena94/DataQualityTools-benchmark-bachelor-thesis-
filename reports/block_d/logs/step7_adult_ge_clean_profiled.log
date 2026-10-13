@@ -1,0 +1,142 @@
+ Container rein-benchmark-db-1 Running 
+ Container rein-benchmark-db-1 Waiting 
+ Container rein-benchmark-db-1 Healthy 
+ Container rein-benchmark-rein-run-441144945bfd Creating 
+ Container rein-benchmark-rein-run-441144945bfd Created 
+Waiting for PostgreSQL at db:5432...
+PostgreSQL is ready.
+13:58:26 - [ INFO] - generated new fontManager
+/opt/venv/lib/python3.8/site-packages/sqlalchemy_utils/types/encrypted/encrypted_type.py:16: CryptographyDeprecationWarning: Python 3.8 is no longer supported by the Python core team and support for it is deprecated in cryptography. The next release of cryptography will remove support for Python 3.8.
+  import cryptography
+13:58:27 - [WARNING] - /opt/venv/lib/python3.8/site-packages/py_stringmatching/similarity_measure/levenshtein.py:4: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  from py_stringmatching.similarity_measure.cython.cython_levenshtein import levenshtein
+
+13:58:27 - [WARNING] - /opt/venv/lib/python3.8/site-packages/jinja2/environment.py:362: DeprecationWarning: The 'with' extension is deprecated and will be removed in Jinja 3.1. This is built in now.
+  self.extensions = load_extensions(self, extensions)
+
+2026-10-13 13:58:27.989658: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2026-10-13 13:58:27.990100: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+13:58:28 - [WARNING] - /opt/venv/lib/python3.8/site-packages/tensorflow/python/framework/dtypes.py:29: DeprecationWarning: `np.typeDict` is a deprecated alias for `np.sctypeDict`.
+  from tensorflow.python.lib.core import _pywrap_bfloat16
+
+13:58:28 - [WARNING] - /opt/venv/lib/python3.8/site-packages/tensorflow/python/framework/dtypes.py:511: DeprecationWarning: `np.object` is a deprecated alias for the builtin `object`. To silence this warning, use `object` by itself. Doing this will not modify any behavior and is safe. 
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  np.object,
+
+13:58:28 - [WARNING] - /opt/venv/lib/python3.8/site-packages/tensorflow/python/framework/dtypes.py:553: DeprecationWarning: `np.object` is a deprecated alias for the builtin `object`. To silence this warning, use `object` by itself. Doing this will not modify any behavior and is safe. 
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  np.object,
+
+13:58:28 - [WARNING] - /opt/venv/lib/python3.8/site-packages/tensorflow/python/framework/dtypes.py:563: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  np.bool,
+
+13:58:28 - [WARNING] - /opt/venv/lib/python3.8/site-packages/tensorflow/python/framework/tensor_util.py:108: DeprecationWarning: `np.object` is a deprecated alias for the builtin `object`. To silence this warning, use `object` by itself. Doing this will not modify any behavior and is safe. 
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  np.object:
+
+13:58:28 - [WARNING] - /opt/venv/lib/python3.8/site-packages/tensorflow/python/framework/tensor_util.py:110: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  np.bool:
+
+13:58:28 - [WARNING] - /opt/venv/lib/python3.8/site-packages/tensorflow/python/ops/numpy_ops/np_random.py:110: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  def randint(low, high=None, size=None, dtype=onp.int):  # pylint: disable=missing-function-docstring
+
+13:58:29 - [ INFO] - Loading the **adult** dataset from the CSV files
+13:58:29 - [ INFO] - Unable to insert the datasets into the REIN database
+13:58:29 - [ INFO] - Getting error rate and actual_error_dict
+13:58:29 - [ INFO] - 
+--- Dataset metrics: adult -----------------------------
+   rows (N)                             45222
+   dimension (d)                           15
+   columns with errors (d_err)              1
+   cell error rate (eps)               0.0025
+   observed dirty row fraction         0.0376
+   cell_baseline                        0.0050
+   row_baseline                        0.0725
+   Rousseeuw prediction                0.0370
+--------------------------------------------------------
+13:58:29 - [ INFO] - Relevant detectors: [<DetectMethod.greatExpectations: 'greatExpectations'>]
+13:58:29 - [ INFO] - ==========================================================================
+13:58:29 - [ INFO] - ========================  Error Detection Phase ==========================
+13:58:29 - [ INFO] - ==========================================================================
+
+  0%|          | 0/1 [00:00<?, ?it/s]13:58:29 - [ INFO] - Detecting errors using ------------> ***********greatExpectations:clean_profiled***********
+13:58:30 - [ INFO] - 
+--- greatExpectations:clean_profiled per-expectation breakdown: adult ----------------------------------
+   column                    expectation                             cells     TP     FP    new  newTP   %rows
+   age                       to_not_be_in_set                            0      0      0      0      0    0.0%
+   age                       to_match_regex ^-?\d+(\.\d+)?$              0      0      0      0      0    0.0%
+   workclass                 to_not_be_in_set                            0      0      0      0      0    0.0%
+   workclass                 to_be_in_set                                0      0      0      0      0    0.0%
+   fnlwgt                    to_not_be_in_set                            0      0      0      0      0    0.0%
+   fnlwgt                    to_match_regex ^-?\d+(\.\d+)?$              0      0      0      0      0    0.0%
+   education                 to_not_be_in_set                            0      0      0      0      0    0.0%
+   education                 to_be_in_set                                0      0      0      0      0    0.0%
+   educational_num           to_not_be_in_set                            0      0      0      0      0    0.0%
+   educational_num           to_match_regex ^-?\d+(\.\d+)?$              0      0      0      0      0    0.0%
+   marital_status            to_not_be_in_set                            0      0      0      0      0    0.0%
+   marital_status            to_be_in_set                                0      0      0      0      0    0.0%
+   occupation                to_not_be_in_set                            0      0      0      0      0    0.0%
+   occupation                to_be_in_set                                0      0      0      0      0    0.0%
+   relationship              to_not_be_in_set                            0      0      0      0      0    0.0%
+   relationship              to_be_in_set                                0      0      0      0      0    0.0%
+   race                      to_not_be_in_set                            0      0      0      0      0    0.0%
+   race                      to_be_in_set                                0      0      0      0      0    0.0%
+   gender                    to_not_be_in_set                            0      0      0      0      0    0.0%
+   gender                    to_be_in_set                                0      0      0      0      0    0.0%
+   capital_gain              to_not_be_in_set                            0      0      0      0      0    0.0%
+   capital_gain              to_match_regex ^-?\d+(\.\d+)?$              0      0      0      0      0    0.0%
+   capital_loss              to_not_be_in_set                            0      0      0      0      0    0.0%
+   capital_loss              to_match_regex ^-?\d+(\.\d+)?$              0      0      0      0      0    0.0%
+   hours_per_week            to_not_be_in_set                            0      0      0      0      0    0.0%
+   hours_per_week            to_match_regex ^-?\d+(\.\d+)?$              0      0      0      0      0    0.0%
+   native_country            to_not_be_in_set                            0      0      0      0      0    0.0%
+   income                    to_not_be_in_set                            0      0      0      0      0    0.0%
+   income                    to_match_regex ^-?\d+(\.\d+)?$              0      0      0      0      0    0.0%
+--------------------------------------------------------------------------------------------------------
+   29 of 29 rule(s) flagged nothing: age, capital_gain, capital_loss, education, educational_num, fnlwgt, gender, hours_per_week, income, marital_status, native_country, occupation ...
+
+13:58:30 - [WARNING] - R_pred is empty, no predictions or preduction from the detector
+13:58:30 - [WARNING] - cannot compute Row-F1 because Row-P/R are both 0 :) 
+13:58:30 - [WARNING] - cannot compute cell_FG1 (cell_F1=0.0, error_rate=0.002507629030118084)
+13:58:30 - [WARNING] - cannot compute row_FG1 (row_F1=0.0, fraction_dirty_rows=0.03761443545177126)
+13:58:30 - [ INFO] - --------------------------------------------------
+13:58:30 - [ INFO] - Iteration 0: Storing detection results
+13:58:30 - [ INFO] - precision: 0.0
+13:58:30 - [ INFO] - recall: 0.0
+13:58:30 - [ INFO] - f1: 0.0
+13:58:30 - [ INFO] - detection_runtime: 0.34151697158813477
+13:58:30 - [ INFO] - #detections: 0
+13:58:30 - [ INFO] - #pattern_violations: 0
+13:58:30 - [ INFO] - #fd_violations: None
+13:58:30 - [ INFO] - #detected_duplicates: None
+13:58:30 - [ INFO] - detected_error_rate: 0.0
+13:58:30 - [ INFO] - error_rate: 0.002507629030118084
+13:58:30 - [ INFO] - cell_TP: 0
+13:58:30 - [ INFO] - cell_FP: 0
+13:58:30 - [ INFO] - cell_FN: 1701
+13:58:30 - [ INFO] - cell_precG: None
+13:58:30 - [ INFO] - cell_recG: None
+13:58:30 - [ INFO] - cell_FG1: None
+13:58:30 - [ INFO] - row_precision: 0
+13:58:30 - [ INFO] - row_recall: 0.0
+13:58:30 - [ INFO] - row_F1: 0.0
+13:58:30 - [ INFO] - row_TP: 0
+13:58:30 - [ INFO] - row_FP: 0
+13:58:30 - [ INFO] - row_FN: 1701
+13:58:30 - [ INFO] - row_TN: 43521
+13:58:30 - [ INFO] - row_precG: None
+13:58:30 - [ INFO] - row_recG: None
+13:58:30 - [ INFO] - row_FG1: None
+100%|██████████| 1/1 [00:00<00:00,  2.88it/s]100%|██████████| 1/1 [00:00<00:00,  2.88it/s]
+13:58:30 - [ INFO] - ==========================================================================
+13:58:30 - [ INFO] - =========================  IoU Testing Phase =============================
+13:58:30 - [ INFO] - ==========================================================================
+
+13:58:30 - [ INFO] - One of the methods (or both) did not detect errors ..
+13:58:30 - [ INFO] - One of the methods (or both) did not detect errors ..
+13:58:30 - [ INFO] - Union & intersection: 1689, 853
+13:58:30 - [ INFO] - IoU (based on True Positives) for holoclean raha: 0.5050325636471285

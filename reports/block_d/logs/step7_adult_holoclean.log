@@ -1,0 +1,132 @@
+ Container rein-benchmark-db-1 Running 
+ Container rein-benchmark-db-1 Waiting 
+ Container rein-benchmark-db-1 Healthy 
+ Container rein-benchmark-rein-run-a3ef51831f1e Creating 
+ Container rein-benchmark-rein-run-a3ef51831f1e Created 
+Waiting for PostgreSQL at db:5432...
+PostgreSQL is ready.
+13:59:57 - [ INFO] - generated new fontManager
+/opt/venv/lib/python3.8/site-packages/sqlalchemy_utils/types/encrypted/encrypted_type.py:16: CryptographyDeprecationWarning: Python 3.8 is no longer supported by the Python core team and support for it is deprecated in cryptography. The next release of cryptography will remove support for Python 3.8.
+  import cryptography
+13:59:59 - [WARNING] - /opt/venv/lib/python3.8/site-packages/py_stringmatching/similarity_measure/levenshtein.py:4: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  from py_stringmatching.similarity_measure.cython.cython_levenshtein import levenshtein
+
+13:59:59 - [WARNING] - /opt/venv/lib/python3.8/site-packages/jinja2/environment.py:362: DeprecationWarning: The 'with' extension is deprecated and will be removed in Jinja 3.1. This is built in now.
+  self.extensions = load_extensions(self, extensions)
+
+2026-10-13 13:59:59.215481: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2026-10-13 13:59:59.215915: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+13:59:59 - [WARNING] - /opt/venv/lib/python3.8/site-packages/tensorflow/python/framework/dtypes.py:29: DeprecationWarning: `np.typeDict` is a deprecated alias for `np.sctypeDict`.
+  from tensorflow.python.lib.core import _pywrap_bfloat16
+
+13:59:59 - [WARNING] - /opt/venv/lib/python3.8/site-packages/tensorflow/python/framework/dtypes.py:511: DeprecationWarning: `np.object` is a deprecated alias for the builtin `object`. To silence this warning, use `object` by itself. Doing this will not modify any behavior and is safe. 
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  np.object,
+
+13:59:59 - [WARNING] - /opt/venv/lib/python3.8/site-packages/tensorflow/python/framework/dtypes.py:553: DeprecationWarning: `np.object` is a deprecated alias for the builtin `object`. To silence this warning, use `object` by itself. Doing this will not modify any behavior and is safe. 
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  np.object,
+
+13:59:59 - [WARNING] - /opt/venv/lib/python3.8/site-packages/tensorflow/python/framework/dtypes.py:563: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  np.bool,
+
+13:59:59 - [WARNING] - /opt/venv/lib/python3.8/site-packages/tensorflow/python/framework/tensor_util.py:108: DeprecationWarning: `np.object` is a deprecated alias for the builtin `object`. To silence this warning, use `object` by itself. Doing this will not modify any behavior and is safe. 
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  np.object:
+
+13:59:59 - [WARNING] - /opt/venv/lib/python3.8/site-packages/tensorflow/python/framework/tensor_util.py:110: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  np.bool:
+
+13:59:59 - [WARNING] - /opt/venv/lib/python3.8/site-packages/tensorflow/python/ops/numpy_ops/np_random.py:110: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  def randint(low, high=None, size=None, dtype=onp.int):  # pylint: disable=missing-function-docstring
+
+14:00:00 - [ INFO] - Loading the **adult** dataset from the CSV files
+14:00:01 - [ INFO] - Unable to insert the datasets into the REIN database
+14:00:01 - [ INFO] - Getting error rate and actual_error_dict
+14:00:01 - [ INFO] - 
+--- Dataset metrics: adult -----------------------------
+   rows (N)                             45222
+   dimension (d)                           15
+   columns with errors (d_err)              1
+   cell error rate (eps)               0.0025
+   observed dirty row fraction         0.0376
+   cell_baseline                        0.0050
+   row_baseline                        0.0725
+   Rousseeuw prediction                0.0370
+--------------------------------------------------------
+14:00:01 - [ INFO] - Relevant detectors: [<DetectMethod.holoclean: 'holoclean'>]
+14:00:01 - [ INFO] - ==========================================================================
+14:00:01 - [ INFO] - ========================  Error Detection Phase ==========================
+14:00:01 - [ INFO] - ==========================================================================
+
+  0%|          | 0/1 [00:00<?, ?it/s]14:00:01 - [ INFO] - Detecting errors using ------------> ***********holoclean***********
+14:00:01 - [ INFO] - Loaded 45222 rows with 723552 cells
+14:00:02 - [ INFO] - DONE Loading 
+14:00:02 - [ INFO] - DONE Loading DCs from _all_constraints.txt
+14:00:09 - [ INFO] - detected 665207 potentially erroneous cells
+14:00:14 - [ INFO] - DONE with error detection.
+14:00:31 - [ INFO] - 
+--- HoloClean per-constraint breakdown: adult ----------------------------------------------------------
+   k   constraint (EQ columns -> IQ column)             cells     TP     FP   %rows      dF1  uniqTP
+   1   education -> capital_gain                        90444      0  90444  100.0%  -0.0000       0
+   2   capital_gain -> educational_num                  90422      0  90422  100.0%  -0.0000       0
+   3   education,capital_gain,educational_num -> age   179656      0 179656   99.3%  -0.0000       0
+   4   education,capital_gain,educational_num,age ->   208585      0 208585   92.2%  -0.0000       0
+   5   education,capital_gain,educational_num,workcl   211715      0 211715   93.6%  -0.0000       0
+   6   education,capital_gain,educational_num,age,wo   219863      0 219863   69.5%  -0.0000       0
+   7   education,capital_gain,educational_num,age,wo   238640      0 238640   66.0%  -0.0000       0
+   8   education,capital_gain,educational_num,age,wo   180387      0 180387   44.3%  -0.0000       0
+   9   education,capital_gain,educational_num,race,g   281953   1660 280293   89.1%  +0.0003     111
+   10  education,educational_num,race,native_country   253932   1566 252366   93.6%  -0.0003      17
+   11  education,educational_num,age,marital_status,   274393      0 274393   86.7%  -0.0003       0
+   12  education,educational_num,workclass,gender,na   267498      0 267498   98.6%  -0.0004       0
+   13  workclass,gender,native_country -> occupation   180376      0 180376   99.7%  -0.0004       0
+   14  capital_gain,marital_status,gender -> relatio   175624      0 175624   97.1%  -0.0004       0
+--------------------------------------------------------------------------------------------------------
+   all 14 constraint(s): F1=0.0050, flagging 98.1% of the table. cell_baseline=0.0050 (+0.0000).
+   dF1 = F1(all) - F1(all except this one): how much of the score this one constraint carries.
+   uniqTP = true errors this constraint is the only one to flag. %rows = share of rows it flags,
+   and every attribute it names is flagged for each of them, so %rows near 100% means it is
+   rejecting whole columns rather than picking cells out of them.
+
+14:00:35 - [ INFO] - --------------------------------------------------
+14:00:35 - [ INFO] - Iteration 0: Storing detection results
+14:00:35 - [ INFO] - precision: 0.0025210197727925294
+14:00:35 - [ INFO] - recall: 0.9858906525573192
+14:00:35 - [ INFO] - f1: 0.005029179437043791
+14:00:35 - [ INFO] - detection_runtime: 25.918558359146118
+14:00:35 - [ INFO] - #detections: 665207
+14:00:35 - [ INFO] - #pattern_violations: None
+14:00:35 - [ INFO] - #fd_violations: None
+14:00:35 - [ INFO] - #detected_duplicates: None
+14:00:35 - [ INFO] - detected_error_rate: 0.9806539589875134
+14:00:35 - [ INFO] - error_rate: 0.002507629030118084
+14:00:35 - [ INFO] - cell_TP: 1677
+14:00:35 - [ INFO] - cell_FP: 663530
+14:00:35 - [ INFO] - cell_FN: 24
+14:00:35 - [ INFO] - cell_precG: 0.00532499040657495
+14:00:35 - [ INFO] - cell_recG: 0.999964022425165
+14:00:35 - [ INFO] - cell_FG1: 0.50264450641587
+14:00:35 - [ INFO] - row_precision: 0.03761443545177126
+14:00:35 - [ INFO] - row_recall: 1.0
+14:00:35 - [ INFO] - row_F1: 0.0725017581996036
+14:00:35 - [ INFO] - row_TP: 1701
+14:00:35 - [ INFO] - row_FP: 43521
+14:00:35 - [ INFO] - row_FN: 0
+14:00:35 - [ INFO] - row_TN: 0
+14:00:35 - [ INFO] - row_precG: 0.0
+14:00:35 - [ INFO] - row_recG: 1.0
+14:00:35 - [ INFO] - row_FG1: 0.5
+100%|██████████| 1/1 [00:34<00:00, 34.33s/it]100%|██████████| 1/1 [00:34<00:00, 34.33s/it]
+14:00:35 - [ INFO] - ==========================================================================
+14:00:35 - [ INFO] - =========================  IoU Testing Phase =============================
+14:00:35 - [ INFO] - ==========================================================================
+
+14:00:35 - [ INFO] - One of the methods (or both) did not detect errors ..
+14:00:35 - [ INFO] - One of the methods (or both) did not detect errors ..
+14:00:35 - [ INFO] - Union & intersection: 1689, 853
+14:00:35 - [ INFO] - IoU (based on True Positives) for holoclean raha: 0.5050325636471285

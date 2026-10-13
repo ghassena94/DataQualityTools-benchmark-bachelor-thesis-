@@ -1,0 +1,216 @@
+ Container rein-benchmark-db-1 Running 
+ Container rein-benchmark-db-1 Waiting 
+ Container rein-benchmark-db-1 Healthy 
+ Container rein-benchmark-rein-run-768b39a532b9 Creating 
+ Container rein-benchmark-rein-run-768b39a532b9 Created 
+Waiting for PostgreSQL at db:5432...
+PostgreSQL is ready.
+13:52:19 - [ INFO] - generated new fontManager
+/opt/venv/lib/python3.8/site-packages/sqlalchemy_utils/types/encrypted/encrypted_type.py:16: CryptographyDeprecationWarning: Python 3.8 is no longer supported by the Python core team and support for it is deprecated in cryptography. The next release of cryptography will remove support for Python 3.8.
+  import cryptography
+13:52:20 - [WARNING] - /opt/venv/lib/python3.8/site-packages/py_stringmatching/similarity_measure/levenshtein.py:4: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  from py_stringmatching.similarity_measure.cython.cython_levenshtein import levenshtein
+
+13:52:20 - [WARNING] - /opt/venv/lib/python3.8/site-packages/jinja2/environment.py:362: DeprecationWarning: The 'with' extension is deprecated and will be removed in Jinja 3.1. This is built in now.
+  self.extensions = load_extensions(self, extensions)
+
+2026-10-13 13:52:20.829002: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2026-10-13 13:52:20.829452: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+13:52:21 - [WARNING] - /opt/venv/lib/python3.8/site-packages/tensorflow/python/framework/dtypes.py:29: DeprecationWarning: `np.typeDict` is a deprecated alias for `np.sctypeDict`.
+  from tensorflow.python.lib.core import _pywrap_bfloat16
+
+13:52:21 - [WARNING] - /opt/venv/lib/python3.8/site-packages/tensorflow/python/framework/dtypes.py:511: DeprecationWarning: `np.object` is a deprecated alias for the builtin `object`. To silence this warning, use `object` by itself. Doing this will not modify any behavior and is safe. 
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  np.object,
+
+13:52:21 - [WARNING] - /opt/venv/lib/python3.8/site-packages/tensorflow/python/framework/dtypes.py:553: DeprecationWarning: `np.object` is a deprecated alias for the builtin `object`. To silence this warning, use `object` by itself. Doing this will not modify any behavior and is safe. 
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  np.object,
+
+13:52:21 - [WARNING] - /opt/venv/lib/python3.8/site-packages/tensorflow/python/framework/dtypes.py:563: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  np.bool,
+
+13:52:21 - [WARNING] - /opt/venv/lib/python3.8/site-packages/tensorflow/python/framework/tensor_util.py:108: DeprecationWarning: `np.object` is a deprecated alias for the builtin `object`. To silence this warning, use `object` by itself. Doing this will not modify any behavior and is safe. 
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  np.object:
+
+13:52:21 - [WARNING] - /opt/venv/lib/python3.8/site-packages/tensorflow/python/framework/tensor_util.py:110: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  np.bool:
+
+13:52:21 - [WARNING] - /opt/venv/lib/python3.8/site-packages/tensorflow/python/ops/numpy_ops/np_random.py:110: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  def randint(low, high=None, size=None, dtype=onp.int):  # pylint: disable=missing-function-docstring
+
+13:52:22 - [ INFO] - Loading the **bike** dataset from the CSV files
+13:52:22 - [ INFO] - Unable to insert the datasets into the REIN database
+13:52:22 - [ INFO] - Getting error rate and actual_error_dict
+13:52:23 - [ INFO] - 
+--- Dataset metrics: bike ------------------------------
+   rows (N)                             17379
+   dimension (d)                           17
+   columns with errors (d_err)             16
+   cell error rate (eps)               0.1160
+   observed dirty row fraction         0.9437
+   cell_baseline                        0.2079
+   row_baseline                        0.9710
+   Rousseeuw prediction                0.8771
+--------------------------------------------------------
+13:52:23 - [ INFO] - Relevant detectors: [<DetectMethod.greatExpectations: 'greatExpectations'>]
+13:52:23 - [ INFO] - ==========================================================================
+13:52:23 - [ INFO] - ========================  Error Detection Phase ==========================
+13:52:23 - [ INFO] - ==========================================================================
+
+  0%|          | 0/1 [00:00<?, ?it/s]13:52:23 - [ INFO] - Detecting errors using ------------> ***********greatExpectations:clean_profiled***********
+13:52:23 - [ INFO] - 
+--- greatExpectations:clean_profiled per-expectation breakdown: bike -----------------------------------
+   column                    expectation                             cells     TP     FP    new  newTP   %rows
+   instant                   to_not_be_in_set                            0      0      0      0      0    0.0%
+   instant                   to_match_regex ^-?\d+(\.\d+)?$              0      0      0      0      0    0.0%
+   dteday                    to_not_be_in_set                            0      0      0      0      0    0.0%
+   dteday                    to_match_regex ^-?\d+(\.\d+)?$              0      0      0      0      0    0.0%
+   season                    to_not_be_in_set                            0      0      0      0      0    0.0%
+   season                    to_match_regex ^-?\d+(\.\d+)?$              0      0      0      0      0    0.0%
+   yr                        to_not_be_in_set                            0      0      0      0      0    0.0%
+   yr                        to_match_regex ^-?\d+(\.\d+)?$              0      0      0      0      0    0.0%
+   mnth                      to_not_be_in_set                            0      0      0      0      0    0.0%
+   mnth                      to_match_regex ^-?\d+(\.\d+)?$              0      0      0      0      0    0.0%
+   hr                        to_not_be_in_set                            0      0      0      0      0    0.0%
+   hr                        to_match_regex ^-?\d+(\.\d+)?$              0      0      0      0      0    0.0%
+   holiday                   to_not_be_in_set                            0      0      0      0      0    0.0%
+   holiday                   to_match_regex ^-?\d+(\.\d+)?$              0      0      0      0      0    0.0%
+   weekday                   to_not_be_in_set                            0      0      0      0      0    0.0%
+   weekday                   to_match_regex ^-?\d+(\.\d+)?$              0      0      0      0      0    0.0%
+   workingday                to_not_be_in_set                            0      0      0      0      0    0.0%
+   workingday                to_match_regex ^-?\d+(\.\d+)?$              0      0      0      0      0    0.0%
+   weathersit                to_not_be_in_set                            0      0      0      0      0    0.0%
+   weathersit                to_match_regex ^-?\d+(\.\d+)?$              0      0      0      0      0    0.0%
+   temp                      to_not_be_in_set                            0      0      0      0      0    0.0%
+   temp                      to_match_regex ^-?\d+(\.\d+)?$              0      0      0      0      0    0.0%
+   atemp                     to_not_be_in_set                            0      0      0      0      0    0.0%
+   atemp                     to_match_regex ^-?\d+(\.\d+)?$              0      0      0      0      0    0.0%
+   hum                       to_not_be_in_set                            0      0      0      0      0    0.0%
+   hum                       to_match_regex ^-?\d+(\.\d+)?$              0      0      0      0      0    0.0%
+   windspeed                 to_not_be_in_set                            0      0      0      0      0    0.0%
+   windspeed                 to_match_regex ^-?\d+(\.\d+)?$              0      0      0      0      0    0.0%
+   casual                    to_not_be_in_set                            0      0      0      0      0    0.0%
+   casual                    to_match_regex ^-?\d+(\.\d+)?$              0      0      0      0      0    0.0%
+   registered                to_not_be_in_set                            0      0      0      0      0    0.0%
+   registered                to_match_regex ^-?\d+(\.\d+)?$              0      0      0      0      0    0.0%
+   cnt                       to_not_be_in_set                            0      0      0      0      0    0.0%
+   cnt                       to_match_regex ^-?\d+(\.\d+)?$              0      0      0      0      0    0.0%
+--------------------------------------------------------------------------------------------------------
+   34 of 34 rule(s) flagged nothing: atemp, casual, cnt, dteday, holiday, hr, hum, instant, mnth, registered, season, temp ...
+
+13:52:23 - [WARNING] - R_pred is empty, no predictions or preduction from the detector
+13:52:23 - [WARNING] - cannot compute Row-F1 because Row-P/R are both 0 :) 
+13:52:23 - [WARNING] - cannot compute cell_FG1 (cell_F1=0.0, error_rate=0.11600884096086217)
+13:52:23 - [WARNING] - cannot compute row_FG1 (row_F1=0.0, fraction_dirty_rows=0.9437251855687899)
+13:52:23 - [ INFO] - --------------------------------------------------
+13:52:23 - [ INFO] - Iteration 0: Storing detection results
+13:52:23 - [ INFO] - precision: 0.0
+13:52:23 - [ INFO] - recall: 0.0
+13:52:23 - [ INFO] - f1: 0.0
+13:52:23 - [ INFO] - detection_runtime: 0.24878263473510742
+13:52:23 - [ INFO] - #detections: 0
+13:52:23 - [ INFO] - #pattern_violations: 0
+13:52:23 - [ INFO] - #fd_violations: None
+13:52:23 - [ INFO] - #detected_duplicates: None
+13:52:23 - [ INFO] - detected_error_rate: 0.0
+13:52:23 - [ INFO] - error_rate: 0.11600884096086217
+13:52:23 - [ INFO] - cell_TP: 0
+13:52:23 - [ INFO] - cell_FP: 0
+13:52:23 - [ INFO] - cell_FN: 34274
+13:52:23 - [ INFO] - cell_precG: None
+13:52:23 - [ INFO] - cell_recG: None
+13:52:23 - [ INFO] - cell_FG1: None
+13:52:23 - [ INFO] - row_precision: 0
+13:52:23 - [ INFO] - row_recall: 0.0
+13:52:23 - [ INFO] - row_F1: 0.0
+13:52:23 - [ INFO] - row_TP: 0
+13:52:23 - [ INFO] - row_FP: 0
+13:52:23 - [ INFO] - row_FN: 16401
+13:52:23 - [ INFO] - row_TN: 978
+13:52:23 - [ INFO] - row_precG: None
+13:52:23 - [ INFO] - row_recG: None
+13:52:23 - [ INFO] - row_FG1: None
+100%|██████████| 1/1 [00:00<00:00,  3.81it/s]100%|██████████| 1/1 [00:00<00:00,  3.81it/s]
+13:52:23 - [ INFO] - ==========================================================================
+13:52:23 - [ INFO] - =========================  IoU Testing Phase =============================
+13:52:23 - [ INFO] - ==========================================================================
+
+13:52:23 - [ INFO] - One of the methods (or both) did not detect errors ..
+13:52:23 - [ INFO] - One of the methods (or both) did not detect errors ..
+13:52:23 - [ INFO] - One of the methods (or both) did not detect errors ..
+13:52:23 - [ INFO] - One of the methods (or both) did not detect errors ..
+13:52:23 - [ INFO] - One of the methods (or both) did not detect errors ..
+13:52:23 - [ INFO] - One of the methods (or both) did not detect errors ..
+13:52:23 - [ INFO] - One of the methods (or both) did not detect errors ..
+13:52:23 - [ INFO] - One of the methods (or both) did not detect errors ..
+13:52:23 - [ INFO] - One of the methods (or both) did not detect errors ..
+13:52:23 - [ INFO] - Union & intersection: 4650, 2769
+13:52:23 - [ INFO] - IoU (based on True Positives) for outlierdetector_IF outlierdetector_SD: 0.5954838709677419
+13:52:23 - [ INFO] - Union & intersection: 30251, 2088
+13:52:23 - [ INFO] - IoU (based on True Positives) for outlierdetector_IF nadeef: 0.06902251165250735
+13:52:23 - [ INFO] - Union & intersection: 26720, 1183
+13:52:23 - [ INFO] - IoU (based on True Positives) for outlierdetector_IF holoclean: 0.04427395209580838
+13:52:23 - [ INFO] - Union & intersection: 31620, 2583
+13:52:23 - [ INFO] - IoU (based on True Positives) for outlierdetector_IF raha: 0.0816888045540797
+13:52:23 - [ INFO] - Union & intersection: 6143, 2769
+13:52:23 - [ INFO] - IoU (based on True Positives) for outlierdetector_IF outlierdetector_IQR: 0.4507569591404851
+13:52:23 - [ INFO] - Union & intersection: 30557, 1900
+13:52:23 - [ INFO] - IoU (based on True Positives) for outlierdetector_IF katara: 0.06217887881663776
+13:52:23 - [ INFO] - One of the methods (or both) did not detect errors ..
+13:52:23 - [ INFO] - Union & intersection: 9908, 0
+13:52:23 - [ INFO] - IoU (based on True Positives) for outlierdetector_IF fahes_ALL: 0.0
+13:52:23 - [ INFO] - Union & intersection: 30709, 3511
+13:52:23 - [ INFO] - IoU (based on True Positives) for outlierdetector_SD nadeef: 0.11433130352665342
+13:52:24 - [ INFO] - Union & intersection: 27833, 1951
+13:52:24 - [ INFO] - IoU (based on True Positives) for outlierdetector_SD holoclean: 0.07009664786404628
+13:52:24 - [ INFO] - Union & intersection: 31728, 4356
+13:52:24 - [ INFO] - IoU (based on True Positives) for outlierdetector_SD raha: 0.13729198184568836
+13:52:24 - [ INFO] - Union & intersection: 6176, 4617
+13:52:24 - [ INFO] - IoU (based on True Positives) for outlierdetector_SD outlierdetector_IQR: 0.747571243523316
+13:52:24 - [ INFO] - Union & intersection: 31129, 3209
+13:52:24 - [ INFO] - IoU (based on True Positives) for outlierdetector_SD katara: 0.10308715345819011
+13:52:24 - [ INFO] - One of the methods (or both) did not detect errors ..
+13:52:24 - [ INFO] - Union & intersection: 11789, 0
+13:52:24 - [ INFO] - IoU (based on True Positives) for outlierdetector_SD fahes_ALL: 0.0
+13:52:24 - [ INFO] - Union & intersection: 30794, 23910
+13:52:24 - [ INFO] - IoU (based on True Positives) for nadeef holoclean: 0.7764499577839838
+13:52:24 - [ INFO] - Union & intersection: 33264, 27740
+13:52:24 - [ INFO] - IoU (based on True Positives) for nadeef raha: 0.833934583934584
+13:52:24 - [ INFO] - Union & intersection: 30929, 4784
+13:52:24 - [ INFO] - IoU (based on True Positives) for nadeef outlierdetector_IQR: 0.1546768405056743
+13:52:24 - [ INFO] - Union & intersection: 30861, 28397
+13:52:24 - [ INFO] - IoU (based on True Positives) for nadeef katara: 0.9201581283821004
+13:52:24 - [ INFO] - One of the methods (or both) did not detect errors ..
+13:52:24 - [ INFO] - Union & intersection: 29571, 7138
+13:52:24 - [ INFO] - IoU (based on True Positives) for nadeef fahes_ALL: 0.24138514084745188
+13:52:24 - [ INFO] - Union & intersection: 33915, 22653
+13:52:24 - [ INFO] - IoU (based on True Positives) for holoclean raha: 0.6679345422379478
+13:52:24 - [ INFO] - Union & intersection: 28503, 2774
+13:52:24 - [ INFO] - IoU (based on True Positives) for holoclean outlierdetector_IQR: 0.09732308879767042
+13:52:24 - [ INFO] - Union & intersection: 30632, 24190
+13:52:24 - [ INFO] - IoU (based on True Positives) for holoclean katara: 0.7896970488378167
+13:52:24 - [ INFO] - One of the methods (or both) did not detect errors ..
+13:52:25 - [ INFO] - Union & intersection: 25779, 6494
+13:52:25 - [ INFO] - IoU (based on True Positives) for holoclean fahes_ALL: 0.25191046976220954
+13:52:25 - [ INFO] - Union & intersection: 31785, 5792
+13:52:25 - [ INFO] - IoU (based on True Positives) for raha outlierdetector_IQR: 0.18222431964763253
+13:52:25 - [ INFO] - Union & intersection: 34057, 27065
+13:52:25 - [ INFO] - IoU (based on True Positives) for raha katara: 0.7946971254074052
+13:52:25 - [ INFO] - One of the methods (or both) did not detect errors ..
+13:52:25 - [ INFO] - Union & intersection: 32278, 6295
+13:52:25 - [ INFO] - IoU (based on True Positives) for raha fahes_ALL: 0.19502447487452754
+13:52:25 - [ INFO] - Union & intersection: 31458, 4373
+13:52:25 - [ INFO] - IoU (based on True Positives) for outlierdetector_IQR katara: 0.13901074448470976
+13:52:25 - [ INFO] - One of the methods (or both) did not detect errors ..
+13:52:25 - [ INFO] - Union & intersection: 13282, 0
+13:52:25 - [ INFO] - IoU (based on True Positives) for outlierdetector_IQR fahes_ALL: 0.0
+13:52:25 - [ INFO] - One of the methods (or both) did not detect errors ..
+13:52:25 - [ INFO] - Union & intersection: 29776, 7051
+13:52:25 - [ INFO] - IoU (based on True Positives) for katara fahes_ALL: 0.23680145083288553
+13:52:25 - [ INFO] - One of the methods (or both) did not detect errors ..

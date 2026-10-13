@@ -1,0 +1,37 @@
+run_id,source,dataset,n_rows,d,cells,injected_errors,d_err,dirty_row_fraction,eps,cell_baseline,n_dcs,tool,TP,FP,FN,detections,precision,recall,F1,F1_minus_baseline,runtime_s,TP_range
+2026-09-27 dc_ablation,dc_ablation (leave out DC1 ounces->beer_name),beers,2410,11,26510,4362,5,1.0,0.1645,0.2826,2,HoloClean (DC2+DC3),152,859,4210,1011,0.1503,0.0348,0.0566,-0.226,,exact
+2026-09-15 17:02,detection_results_GE_holoclean_raha.pdf,beers,2410,11,26510,4362,5,1.0,0.1645,0.2826,3,GreatExpectations (dirty profiled),1132,67,3230,1199,0.9441,0.2595,0.4071,0.1245,0.02,exact
+2026-09-15 17:02,detection_results_GE_holoclean_raha.pdf,beers,2410,11,26510,4362,5,1.0,0.1645,0.2826,3,GreatExpectations (clean profiled),4235,67,127,4302,0.9844,0.9709,0.9776,0.695,0.03,exact
+2026-09-15 17:02,detection_results_GE_holoclean_raha.pdf,beers,2410,11,26510,4362,5,1.0,0.1645,0.2826,3,GreatExpectations (hand written),4362,67,0,4429,0.9849,1.0,0.9924,0.7098,0.02,exact
+2026-09-15 17:02,detection_results_GE_holoclean_raha.pdf,beers,2410,11,26510,4362,5,1.0,0.1645,0.2826,3,HoloClean,2557,3264,1805,5821,0.4393,0.5862,0.5022,0.2196,0.7,exact
+2026-09-15 17:02,detection_results_GE_holoclean_raha.pdf,beers,2410,11,26510,4362,5,1.0,0.1645,0.2826,3,Raha,3972,0,390,3972,1.0,0.9106,0.9532,0.6706,5.15,exact
+2026-09-15 17:02,detection_results_GE_holoclean_raha.pdf,nasa,1503,6,9018,731,5,0.4864,0.0811,0.15,4,GreatExpectations (dirty profiled),30,0,701,30,1.0,0.041,0.0788,-0.0711,0.01,exact
+2026-09-15 17:02,detection_results_GE_holoclean_raha.pdf,nasa,1503,6,9018,731,5,0.4864,0.0811,0.15,4,GreatExpectations (clean profiled),384,0,347,384,1.0,0.5253,0.6888,0.5388,0.02,exact
+2026-09-15 17:02,detection_results_GE_holoclean_raha.pdf,nasa,1503,6,9018,731,5,0.4864,0.0811,0.15,4,GreatExpectations (hand written),680,0,51,680,1.0,0.9302,0.9639,0.8139,0.01,exact
+2026-09-15 17:02,detection_results_GE_holoclean_raha.pdf,nasa,1503,6,9018,731,5,0.4864,0.0811,0.15,4,HoloClean,556,5709,175,6265,0.0887,0.7606,0.1589,0.009,0.32,exact
+2026-09-15 17:02,detection_results_GE_holoclean_raha.pdf,nasa,1503,6,9018,731,5,0.4864,0.0811,0.15,4,Raha,710,1864,21,2574,0.2758,0.9713,0.4297,0.2797,1.79,exact
+2026-09-15 17:02,detection_results_GE_holoclean_raha.pdf,breast_cancer,699,12,8388,631,12,0.6481,0.0752,0.1399,8,GreatExpectations (dirty profiled),247,13,384,260,0.95,0.3914,0.5544,0.4145,0.02,exact
+2026-09-15 17:02,detection_results_GE_holoclean_raha.pdf,breast_cancer,699,12,8388,631,12,0.6481,0.0752,0.1399,8,GreatExpectations (clean profiled),278,13,353,291,0.9553,0.4406,0.603,0.4631,0.02,exact
+2026-09-15 17:02,detection_results_GE_holoclean_raha.pdf,breast_cancer,699,12,8388,631,12,0.6481,0.0752,0.1399,8,GreatExpectations (hand written),438,22,193,460,0.9522,0.6941,0.8029,0.663,0.01,exact
+2026-09-15 17:02,detection_results_GE_holoclean_raha.pdf,breast_cancer,699,12,8388,631,12,0.6481,0.0752,0.1399,8,HoloClean,416,5275,215,5691,0.0731,0.6593,0.1316,-0.0083,0.3,exact
+2026-09-15 17:02,detection_results_GE_holoclean_raha.pdf,breast_cancer,699,12,8388,631,12,0.6481,0.0752,0.1399,8,Raha,317,78,314,395,0.8025,0.5024,0.6179,0.478,2.01,exact
+2026-09-15 17:02,detection_results_GE_holoclean_raha.pdf,bike,17379,17,295443,34274,16,0.9437,0.116,0.2079,14,GreatExpectations (dirty profiled),0,0,34274,0,0.0,0.0,0.0,-0.2079,0.23,exact
+2026-09-15 17:02,detection_results_GE_holoclean_raha.pdf,bike,17379,17,295443,34274,16,0.9437,0.116,0.2079,14,GreatExpectations (clean profiled),0,0,34274,0,0.0,0.0,0.0,-0.2079,0.25,exact
+2026-09-15 17:02,detection_results_GE_holoclean_raha.pdf,bike,17379,17,295443,34274,16,0.9437,0.116,0.2079,14,GreatExpectations (hand written),24247,0,10027,24247,1.0,0.7074,0.8287,0.6208,0.14,exact
+2026-09-15 17:02,detection_results_GE_holoclean_raha.pdf,bike,17379,17,295443,34274,16,0.9437,0.116,0.2079,14,HoloClean,25134,173845,9140,198979,0.1263,0.7333,0.2155,0.0076,8.3,exact
+2026-09-15 17:02,detection_results_GE_holoclean_raha.pdf,bike,17379,17,295443,34274,16,0.9437,0.116,0.2079,14,Raha,30861,15138,3413,45999,0.6709,0.9004,0.7689,0.561,160.11,exact
+2026-09-15 17:02,detection_results_GE_holoclean_raha.pdf,smartfactory,23645,19,449255,7093,18,0.3,0.0158,0.0311,18,GreatExpectations (dirty profiled),7093,0,0,7093,1.0,1.0,1.0,0.9689,0.34,exact
+2026-09-15 17:02,detection_results_GE_holoclean_raha.pdf,smartfactory,23645,19,449255,7093,18,0.3,0.0158,0.0311,18,GreatExpectations (clean profiled),7093,0,0,7093,1.0,1.0,1.0,0.9689,0.33,exact
+2026-09-15 17:02,detection_results_GE_holoclean_raha.pdf,smartfactory,23645,19,449255,7093,18,0.3,0.0158,0.0311,18,GreatExpectations (hand written),7093,0,0,7093,1.0,1.0,1.0,0.9689,0.16,exact
+2026-09-15 17:02,detection_results_GE_holoclean_raha.pdf,smartfactory,23645,19,449255,7093,18,0.3,0.0158,0.0311,18,HoloClean,6995,246806,98,253801,0.0276,0.9862,0.0536,0.0225,9.7,exact
+2026-09-29 14:13,"smartfactory/results/detection_results.csv (Raha run 1, complete cache)",smartfactory,23645,19,449255,7093,18,0.3,0.0158,0.0311,18,Raha,7091,379839,2,386930,0.0183,0.9997,0.0360,0.0049,364.67,exact
+2026-09-15 17:02,detection_results_GE_holoclean_raha.pdf,soilmoisture,679,129,87591,26218,128,1.0,0.2993,0.4607,0,GreatExpectations (dirty profiled),213,0,26005,213,1.0,0.0081,0.0161,-0.4446,0.26,exact
+2026-09-15 17:02,detection_results_GE_holoclean_raha.pdf,soilmoisture,679,129,87591,26218,128,1.0,0.2993,0.4607,0,GreatExpectations (clean profiled),213,0,26005,213,1.0,0.0081,0.0161,-0.4446,0.26,exact
+2026-09-15 17:02,detection_results_GE_holoclean_raha.pdf,soilmoisture,679,129,87591,26218,128,1.0,0.2993,0.4607,0,GreatExpectations (hand written),5659,0,20559,5659,1.0,0.2158,0.3551,-0.1057,0.12,exact
+2026-09-15 17:02,detection_results_GE_holoclean_raha.pdf,soilmoisture,679,129,87591,26218,128,1.0,0.2993,0.4607,0,HoloClean,0,0,26218,0,0.0,0.0,0.0,-0.4607,0.4,exact
+2026-09-15 17:02,detection_results_GE_holoclean_raha.pdf,soilmoisture,679,129,87591,26218,128,1.0,0.2993,0.4607,0,Raha,8833,15222,17385,24055,0.3672,0.3369,0.3514,-0.1093,26.03,exact
+2026-09-15 17:02,detection_results_GE_holoclean_raha.pdf,adult,45222,15,678330,1701,1,0.0376,0.0025,0.005,14,GreatExpectations (dirty profiled),0,0,1701,0,0.0,0.0,0.0,-0.005,0.33,exact
+2026-09-15 17:02,detection_results_GE_holoclean_raha.pdf,adult,45222,15,678330,1701,1,0.0376,0.0025,0.005,14,GreatExpectations (clean profiled),0,0,1701,0,0.0,0.0,0.0,-0.005,0.33,exact
+2026-09-15 17:02,detection_results_GE_holoclean_raha.pdf,adult,45222,15,678330,1701,1,0.0376,0.0025,0.005,14,GreatExpectations (hand written),0,0,1701,0,0.0,0.0,0.0,-0.005,0.23,exact
+2026-09-15 17:02,detection_results_GE_holoclean_raha.pdf,adult,45222,15,678330,1701,1,0.0376,0.0025,0.005,14,HoloClean,1677,663530,24,665207,0.0025,0.9859,0.005,0.0,26.23,exact
+2026-09-28 17:53,"adult/results/detection_results.csv (Raha run 1, complete cache)",adult,45222,15,678330,1701,1,0.0376,0.0025,0.005,14,Raha,865,5081,836,5946,0.1455,0.5085,0.2262,0.2212,607.52,exact

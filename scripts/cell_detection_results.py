@@ -1,7 +1,7 @@
 """Parse REIN detection-result PDFs and log one row per (run, dataset, tool).
 
 Usage:
-    python log_detection_results.py report1.pdf [report2.pdf ...] --log results/runs_log.csv
+    python scripts/cell_detection_results.py report1.pdf [report2.pdf ...] --log results/runs_log.csv
 
 Each PDF is treated as one run (run_id = its 'generated' timestamp).
 TP/FP/FN are derived:  TP ~ recall * injected_errors

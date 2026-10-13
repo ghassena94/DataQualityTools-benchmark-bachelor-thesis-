@@ -7,6 +7,10 @@
 # Read-only: reads results/detection_results.csv, dirty.csv and actual_errors.csv
 # and writes a single HTML file. Print it to PDF with headless Chrome.
 #
+# It takes the LATEST row per detector of detection_results.csv. After a Raha
+# batch of ten iterations that is iteration 10, not run 1; the thesis tables
+# use run 1 from results/runs_log.csv.
+#
 #   docker compose run --rm rein python3 scripts/build_detection_report.py \
 #       --dataset_name nasa bike --out_dir reports
 ####################################################

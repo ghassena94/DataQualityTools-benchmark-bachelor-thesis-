@@ -10,7 +10,10 @@ container's memory is sampled for HoloClean runs. Results accumulate in
 reports/scalability/results.csv (written by scripts/scalability_driver.py);
 failed runs get a status row from here. Re-runnable: finished runs are skipped.
 
-    python3 reports/scalability/run_all.py [detector ...] [--dataset DS] [--fraction F] [--dry-run]
+    python3 reports/scalability/run_all.py [detector ...] [--dataset DS] [--fraction F] [--out CSV] [--dry-run]
+
+--out (default reports/scalability/results.csv) is the CSV the driver appends to
+and the one read to skip finished runs; use a new file for a new campaign.
 """
 import argparse
 import csv
@@ -97,12 +100,18 @@ def sample_db(stop, holder):
 
 
 def main():
+    global OUT
     p = argparse.ArgumentParser()
     p.add_argument('detectors', nargs='*', help='optional detector filter, e.g. greatExpectations holoclean')
     p.add_argument('--dataset', help='run only this dataset')
     p.add_argument('--fraction', type=float, help='run only this fraction, e.g. 0.4')
+    p.add_argument('--out', default=OUT, help='results CSV inside the repo (default: %(default)s)')
     p.add_argument('--dry-run', action='store_true', help='print what would run, change nothing')
     a = p.parse_args()
+    OUT = os.path.abspath(a.out)
+    if not OUT.startswith(ROOT + os.sep):
+        p.error('--out must be inside the repository, which the container mounts at /rein')
+    out_rel = os.path.relpath(OUT, ROOT)
     for ds, axis, frac, det, tier in PLAN:
         if (a.detectors and det not in a.detectors) or (a.dataset and ds != a.dataset) \
                 or (a.fraction is not None and frac != a.fraction):
@@ -128,7 +137,8 @@ def main():
         if TIMEOUT_S:
             cmd += ['timeout', str(TIMEOUT_S)]
         cmd += ['python3', 'scripts/scalability_driver.py',
-                '--dataset', ds, '--axis', axis, '--fraction', str(frac), '--detector', det]
+                '--dataset', ds, '--axis', axis, '--fraction', str(frac), '--detector', det,
+                '--out', out_rel]
         if tier:
             cmd += ['--tier', tier]
         if a.dry_run:

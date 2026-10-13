@@ -45,9 +45,10 @@ DATASET_EXPECTATIONS = {
 }
 
 
-# Suites kept outside the repository: if rein/auxiliaries/expectations_dictionary_local.py
-# exists and defines its own DATASET_EXPECTATIONS, its datasets are added here and
-# override any entry of the same name above.
+# The hand-written suites live in rein/auxiliaries/expectations_dictionary_local.py
+# (tracked since 13 Oct 2026). Its DATASET_EXPECTATIONS are added here and override
+# any entry of the same name above. If that file is missing, the hand_written tier
+# silently runs empty suites on the datasets it covers.
 try:
     from rein.auxiliaries.expectations_dictionary_local import DATASET_EXPECTATIONS as _local_expectations
     DATASET_EXPECTATIONS.update(_local_expectations)

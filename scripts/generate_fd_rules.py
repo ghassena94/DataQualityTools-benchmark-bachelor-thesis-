@@ -23,8 +23,10 @@ if __name__ == '__main__':
     # columns (bike has cnt = casual + registered, for instance). The profiler's
     # own default is 0.01; raise this off 0 for those frames.
     parser.add_argument('--sparsity', type=float, default=0.0)
-    # multiplier is how many row pairs per row the profiler draws to build the
-    # training data. Left as None it picks the value that bounds the covariance
+    # multiplier sets the size of the pair training data. create_pair_data
+    # (tools/Profiler/profiler/data/transformer.py:293) divides it by the number
+    # of columns, so each column contributes ceil(multiplier / columns) shifted
+    # copies of the frame. Left as None it picks the value that bounds the covariance
     # estimation error at eps, which on a very wide frame (mercedes: 378
     # columns) means a pair matrix large enough to exhaust memory. Pass a
     # smaller value there, at the cost of a looser bound.

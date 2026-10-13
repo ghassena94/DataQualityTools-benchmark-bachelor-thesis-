@@ -3,3 +3,7 @@ results
 .git
 venv
 __pycache__
+knowledge-base
+reports/block_d/backup_*
+detection_logs
+.claude

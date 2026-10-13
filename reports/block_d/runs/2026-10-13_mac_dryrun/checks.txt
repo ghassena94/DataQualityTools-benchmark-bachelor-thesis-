@@ -1,0 +1,129 @@
+check 1 breast_cancer PASS (MANIFEST, sha256, Table 3, no duplicate or outside cell, replay identity)
+check 2(hash) breast_cancer seed 0 PASS
+check 3 breast_cancer seed 0 PASS (3 versions = floor)
+check 4 breast_cancer seed 0 PASS (delete keeps 250, impute keeps 548, cells written 399, parsable 234)
+check 2(hash) breast_cancer seed 1 PASS
+check 3 breast_cancer seed 1 PASS (3 versions = floor)
+check 4 breast_cancer seed 1 PASS (delete keeps 236, impute keeps 549, cells written 417, parsable 234)
+check 2(hash) breast_cancer seed 2 PASS
+check 3 breast_cancer seed 2 PASS (3 versions = floor)
+check 4 breast_cancer seed 2 PASS (delete keeps 234, impute keeps 548, cells written 413, parsable 239)
+check 2(hash) breast_cancer seed 3 PASS
+check 3 breast_cancer seed 3 PASS (3 versions = floor)
+check 4 breast_cancer seed 3 PASS (delete keeps 247, impute keeps 548, cells written 396, parsable 229)
+check 2(hash) breast_cancer seed 4 PASS
+check 3 breast_cancer seed 4 PASS (3 versions = floor)
+check 4 breast_cancer seed 4 PASS (delete keeps 242, impute keeps 544, cells written 401, parsable 228)
+check 2(hash) breast_cancer seed 5 PASS
+check 3 breast_cancer seed 5 PASS (3 versions = floor)
+check 4 breast_cancer seed 5 PASS (delete keeps 248, impute keeps 548, cells written 394, parsable 227)
+check 2(hash) breast_cancer seed 6 PASS
+check 3 breast_cancer seed 6 PASS (3 versions = floor)
+check 4 breast_cancer seed 6 PASS (delete keeps 238, impute keeps 549, cells written 412, parsable 235)
+check 2(hash) breast_cancer seed 7 PASS
+check 3 breast_cancer seed 7 PASS (3 versions = floor)
+check 4 breast_cancer seed 7 PASS (delete keeps 239, impute keeps 546, cells written 404, parsable 231)
+check 2(hash) breast_cancer seed 8 PASS
+check 3 breast_cancer seed 8 PASS (3 versions = floor)
+check 4 breast_cancer seed 8 PASS (delete keeps 244, impute keeps 548, cells written 399, parsable 227)
+check 2(hash) breast_cancer seed 9 PASS
+check 3 breast_cancer seed 9 PASS (3 versions = floor)
+check 4 breast_cancer seed 9 PASS (delete keeps 242, impute keeps 547, cells written 401, parsable 227)
+R62 breast_cancer PASS (rows kept under delete/impute, label errors left, flag statistics = addendum)
+check 1 nasa PASS (MANIFEST, sha256, Table 3, no duplicate or outside cell, replay identity)
+D6 nasa PASS (raha_minus_format_only = Raha minus 1864 format-only FPs: TP 710 FP 0, not perfect)
+check 2(hash) nasa seed 0 PASS
+check 3 nasa seed 0 PASS (3 versions = floor)
+check 4 nasa seed 0 PASS (delete keeps 630, impute keeps 1202, cells written 572, parsable 266)
+check 2(hash) nasa seed 1 PASS
+check 3 nasa seed 1 PASS (3 versions = floor)
+check 4 nasa seed 1 PASS (delete keeps 615, impute keeps 1202, cells written 587, parsable 281)
+check 2(hash) nasa seed 2 PASS
+check 3 nasa seed 2 PASS (3 versions = floor)
+check 4 nasa seed 2 PASS (delete keeps 608, impute keeps 1202, cells written 594, parsable 286)
+check 2(hash) nasa seed 3 PASS
+check 3 nasa seed 3 PASS (3 versions = floor)
+check 4 nasa seed 3 PASS (delete keeps 614, impute keeps 1202, cells written 588, parsable 272)
+check 2(hash) nasa seed 4 PASS
+check 3 nasa seed 4 PASS (3 versions = floor)
+check 4 nasa seed 4 PASS (delete keeps 622, impute keeps 1202, cells written 580, parsable 273)
+check 2(hash) nasa seed 5 PASS
+check 3 nasa seed 5 PASS (3 versions = floor)
+check 4 nasa seed 5 PASS (delete keeps 616, impute keeps 1202, cells written 586, parsable 278)
+check 2(hash) nasa seed 6 PASS
+check 3 nasa seed 6 PASS (3 versions = floor)
+check 4 nasa seed 6 PASS (delete keeps 631, impute keeps 1202, cells written 571, parsable 271)
+check 2(hash) nasa seed 7 PASS
+check 3 nasa seed 7 PASS (3 versions = floor)
+check 4 nasa seed 7 PASS (delete keeps 620, impute keeps 1202, cells written 582, parsable 271)
+check 2(hash) nasa seed 8 PASS
+check 3 nasa seed 8 PASS (3 versions = floor)
+check 4 nasa seed 8 PASS (delete keeps 625, impute keeps 1202, cells written 577, parsable 273)
+check 2(hash) nasa seed 9 PASS
+check 3 nasa seed 9 PASS (3 versions = floor)
+check 4 nasa seed 9 PASS (delete keeps 605, impute keeps 1202, cells written 597, parsable 287)
+R62 nasa PASS (rows kept under delete/impute, label errors left, flag statistics = addendum)
+check 1 bike PASS (MANIFEST, sha256, Table 3, no duplicate or outside cell, replay identity)
+check 2(hash) bike seed 0 PASS
+check 3 bike seed 0 PASS (11 versions = floor)
+check 4 bike seed 0 PASS (delete keeps 946, impute keeps 13903, cells written 24586, parsable 24586)
+check 2(hash) bike seed 1 PASS
+check 3 bike seed 1 PASS (11 versions = floor)
+check 4 bike seed 1 PASS (delete keeps 960, impute keeps 13903, cells written 24673, parsable 24673)
+check 2(hash) bike seed 2 PASS
+check 3 bike seed 2 PASS (11 versions = floor)
+check 4 bike seed 2 PASS (delete keeps 965, impute keeps 13903, cells written 24562, parsable 24562)
+check 2(hash) bike seed 3 PASS
+check 3 bike seed 3 PASS (11 versions = floor)
+check 4 bike seed 3 PASS (delete keeps 915, impute keeps 13903, cells written 24678, parsable 24678)
+check 2(hash) bike seed 4 PASS
+check 3 bike seed 4 PASS (11 versions = floor)
+check 4 bike seed 4 PASS (delete keeps 954, impute keeps 13903, cells written 24615, parsable 24615)
+check 2(hash) bike seed 5 PASS
+check 3 bike seed 5 PASS (11 versions = floor)
+check 4 bike seed 5 PASS (delete keeps 961, impute keeps 13903, cells written 24542, parsable 24542)
+check 2(hash) bike seed 6 PASS
+check 3 bike seed 6 PASS (11 versions = floor)
+check 4 bike seed 6 PASS (delete keeps 956, impute keeps 13903, cells written 24522, parsable 24522)
+check 2(hash) bike seed 7 PASS
+check 3 bike seed 7 PASS (11 versions = floor)
+check 4 bike seed 7 PASS (delete keeps 983, impute keeps 13903, cells written 24586, parsable 24586)
+check 2(hash) bike seed 8 PASS
+check 3 bike seed 8 PASS (11 versions = floor)
+check 4 bike seed 8 PASS (delete keeps 962, impute keeps 13903, cells written 24576, parsable 24576)
+check 2(hash) bike seed 9 PASS
+check 3 bike seed 9 PASS (11 versions = floor)
+check 4 bike seed 9 PASS (delete keeps 965, impute keeps 13903, cells written 24596, parsable 24596)
+R62 bike PASS (rows kept under delete/impute, label errors left, flag statistics = addendum)
+check 1 adult PASS (MANIFEST, sha256, Table 3, no duplicate or outside cell, replay identity)
+check 2(hash) adult seed 0 PASS
+check 3 adult seed 0 PASS (15 versions = floor)
+check 4 adult seed 0 PASS (delete keeps 34806, impute keeps 34806, cells written 0, parsable 0)
+check 2(hash) adult seed 1 PASS
+check 3 adult seed 1 PASS (15 versions = floor)
+check 4 adult seed 1 PASS (delete keeps 34814, impute keeps 34814, cells written 0, parsable 0)
+check 2(hash) adult seed 2 PASS
+check 3 adult seed 2 PASS (15 versions = floor)
+check 4 adult seed 2 PASS (delete keeps 34838, impute keeps 34838, cells written 0, parsable 0)
+check 2(hash) adult seed 3 PASS
+check 3 adult seed 3 PASS (15 versions = floor)
+check 4 adult seed 3 PASS (delete keeps 34817, impute keeps 34817, cells written 0, parsable 0)
+check 2(hash) adult seed 4 PASS
+check 3 adult seed 4 PASS (15 versions = floor)
+check 4 adult seed 4 PASS (delete keeps 34816, impute keeps 34816, cells written 0, parsable 0)
+check 2(hash) adult seed 5 PASS
+check 3 adult seed 5 PASS (15 versions = floor)
+check 4 adult seed 5 PASS (delete keeps 34824, impute keeps 34824, cells written 0, parsable 0)
+check 2(hash) adult seed 6 PASS
+check 3 adult seed 6 PASS (15 versions = floor)
+check 4 adult seed 6 PASS (delete keeps 34826, impute keeps 34826, cells written 0, parsable 0)
+check 2(hash) adult seed 7 PASS
+check 3 adult seed 7 PASS (15 versions = floor)
+check 4 adult seed 7 PASS (delete keeps 34812, impute keeps 34812, cells written 0, parsable 0)
+check 2(hash) adult seed 8 PASS
+check 3 adult seed 8 PASS (15 versions = floor)
+check 4 adult seed 8 PASS (delete keeps 34824, impute keeps 34824, cells written 0, parsable 0)
+check 2(hash) adult seed 9 PASS
+check 3 adult seed 9 PASS (15 versions = floor)
+check 4 adult seed 9 PASS (delete keeps 34806, impute keeps 34806, cells written 0, parsable 0)
+R62 adult PASS (rows kept under delete/impute, label errors left, flag statistics = addendum)

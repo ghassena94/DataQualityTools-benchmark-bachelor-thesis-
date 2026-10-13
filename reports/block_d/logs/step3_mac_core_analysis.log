@@ -1,0 +1,571 @@
+ Container rein-benchmark-rein-run-be526bcf5ca6 Creating 
+ Container rein-benchmark-rein-run-be526bcf5ca6 Created 
+Block D analysis (interim): runs reports/block_d/runs/2026-10-13_mac_core
+mean fill: datasets breast_cancer nasa; median fill: absent
+
+== references (a) published Table 3, (b) row F1, (c) model-visible F1; (d) mechanism per policy
+  breast_cancer GE-dirty                           (a) 0.554 (b) 0.7193 (c) 0.5622 (d) 0.401 / 0.986 / floor
+  breast_cancer GE-clean                           (a) 0.603 (b) 0.7476 (c) 0.5756 (d) 0.414 / 0.987 / floor
+  breast_cancer GE-hand                            (a) 0.803 (b) 0.8902 (c) 0.8077 (d) 0.677 / 1.0 / 138
+  breast_cancer HoloClean                          (a) 0.132 (b) 0.7865 (c) 0.1339 (d) 0.794 / degenerate / degenerate
+  breast_cancer Raha                               (a) 0.618 (b) 0.7721 (c) 0.6575 (d) 0.55 / 0.957 / 9
+  nasa          GE-dirty                           (a) 0.079 (b) 0.0788 (c) 0.0788 (d) 0.041 / 1.0 / floor
+  nasa          GE-clean                           (a) 0.689 (b) 0.6888 (c) 0.6888 (d) 0.525 / 1.0 / 2
+  nasa          GE-hand                            (a) 0.964 (b) 0.9639 (c) 0.9639 (d) 0.93 / 1.0 / 298
+  nasa          HoloClean                          (a) 0.159 (b) 0.6318 (c) 0.1589 (d) 0.761 / degenerate / -5441
+  nasa          Raha                               (a) 0.430 (b) 0.6544 (c) 0.4297 (d) 0.971 / degenerate / -1515
+  recomputed expected verdicts = addendum: 60/60
+  frozen (c61ee72) vs addendum expected verdicts differing: 0
+
+== mean S2 (oriented: F1 or -RMSE) +- sd over scored seeds; raw metric; degenerate seeds; fill mean
+  breast_cancer none    linear floor                                 0.9196 +- 0.0234   raw    0.9196 scored 10 deg  0
+  breast_cancer none    linear clean S4                              0.9379 +- 0.0230   raw    0.9379 scored 10 deg  0
+  breast_cancer gt      linear GE-dirty                              0.9183 +- 0.0226   raw    0.9183 scored 10 deg  0
+  breast_cancer gt      linear GE-clean                              0.9183 +- 0.0226   raw    0.9183 scored 10 deg  0
+  breast_cancer gt      linear GE-hand                               0.9405 +- 0.0216   raw    0.9405 scored 10 deg  0
+  breast_cancer gt      linear HoloClean                             0.9370 +- 0.0189   raw    0.9370 scored 10 deg  0
+  breast_cancer gt      linear Raha                                  0.9280 +- 0.0197   raw    0.9280 scored 10 deg  0
+  breast_cancer gt      linear perfect                               0.9379 +- 0.0230   raw    0.9379 scored 10 deg  0
+  breast_cancer gt      linear always_positive                       0.9379 +- 0.0230   raw    0.9379 scored 10 deg  0
+  breast_cancer delete  linear GE-dirty                              0.8974 +- 0.0332   raw    0.8974 scored 10 deg  0
+  breast_cancer delete  linear GE-clean                              0.8974 +- 0.0332   raw    0.8974 scored 10 deg  0
+  breast_cancer delete  linear GE-hand                               0.9267 +- 0.0288   raw    0.9267 scored 10 deg  0
+  breast_cancer delete  linear HoloClean                                  - +- -        raw         - scored  0 deg 10
+  breast_cancer delete  linear Raha                                  0.9197 +- 0.0257   raw    0.9197 scored 10 deg  0
+  breast_cancer delete  linear perfect                               0.9332 +- 0.0229   raw    0.9332 scored 10 deg  0
+  breast_cancer delete  linear always_positive                            - +- -        raw         - scored  0 deg 10
+  breast_cancer delete  linear control/ge_dirty_profiled             0.9111 +- 0.0299   raw    0.9111 scored 10 deg  0
+  breast_cancer delete  linear control/ge_clean_profiled             0.9146 +- 0.0246   raw    0.9146 scored 10 deg  0
+  breast_cancer delete  linear control/ge_hand_written               0.9078 +- 0.0304   raw    0.9078 scored 10 deg  0
+  breast_cancer delete  linear control/holoclean                          - +- -        raw         - scored  0 deg 10
+  breast_cancer delete  linear control/raha                          0.9058 +- 0.0204   raw    0.9058 scored 10 deg  0
+  breast_cancer impute  linear GE-dirty                              0.9196 +- 0.0234   raw    0.9196 scored 10 deg  0
+  breast_cancer impute  linear GE-clean                              0.9196 +- 0.0234   raw    0.9196 scored 10 deg  0
+  breast_cancer impute  linear GE-hand                               0.9432 +- 0.0204   raw    0.9432 scored 10 deg  0
+  breast_cancer impute  linear HoloClean                                  - +- -        raw         - scored  0 deg 10
+  breast_cancer impute  linear Raha                                  0.9283 +- 0.0185   raw    0.9283 scored 10 deg  0
+  breast_cancer impute  linear perfect                               0.9435 +- 0.0205   raw    0.9435 scored 10 deg  0
+  breast_cancer impute  linear always_positive                            - +- -        raw         - scored  0 deg 10
+  breast_cancer none    rf     floor                                 0.9414 +- 0.0178   raw    0.9414 scored 10 deg  0
+  breast_cancer none    rf     clean S4                              0.9431 +- 0.0158   raw    0.9431 scored 10 deg  0
+  breast_cancer gt      rf     GE-dirty                              0.9423 +- 0.0206   raw    0.9423 scored 10 deg  0
+  breast_cancer gt      rf     GE-clean                              0.9431 +- 0.0182   raw    0.9431 scored 10 deg  0
+  breast_cancer gt      rf     GE-hand                               0.9477 +- 0.0192   raw    0.9477 scored 10 deg  0
+  breast_cancer gt      rf     HoloClean                             0.9423 +- 0.0161   raw    0.9423 scored 10 deg  0
+  breast_cancer gt      rf     Raha                                  0.9446 +- 0.0238   raw    0.9446 scored 10 deg  0
+  breast_cancer gt      rf     perfect                               0.9431 +- 0.0158   raw    0.9431 scored 10 deg  0
+  breast_cancer gt      rf     always_positive                       0.9431 +- 0.0158   raw    0.9431 scored 10 deg  0
+  breast_cancer delete  rf     GE-dirty                              0.9343 +- 0.0262   raw    0.9343 scored 10 deg  0
+  breast_cancer delete  rf     GE-clean                              0.9360 +- 0.0256   raw    0.9360 scored 10 deg  0
+  breast_cancer delete  rf     GE-hand                               0.9319 +- 0.0332   raw    0.9319 scored 10 deg  0
+  breast_cancer delete  rf     HoloClean                                  - +- -        raw         - scored  0 deg 10
+  breast_cancer delete  rf     Raha                                  0.9383 +- 0.0207   raw    0.9383 scored 10 deg  0
+  breast_cancer delete  rf     perfect                               0.9286 +- 0.0194   raw    0.9286 scored 10 deg  0
+  breast_cancer delete  rf     always_positive                            - +- -        raw         - scored  0 deg 10
+  breast_cancer delete  rf     control/ge_dirty_profiled             0.9415 +- 0.0302   raw    0.9415 scored 10 deg  0
+  breast_cancer delete  rf     control/ge_clean_profiled             0.9421 +- 0.0177   raw    0.9421 scored 10 deg  0
+  breast_cancer delete  rf     control/ge_hand_written               0.9368 +- 0.0278   raw    0.9368 scored 10 deg  0
+  breast_cancer delete  rf     control/holoclean                          - +- -        raw         - scored  0 deg 10
+  breast_cancer delete  rf     control/raha                          0.9367 +- 0.0187   raw    0.9367 scored 10 deg  0
+  breast_cancer impute  rf     GE-dirty                              0.9414 +- 0.0178   raw    0.9414 scored 10 deg  0
+  breast_cancer impute  rf     GE-clean                              0.9414 +- 0.0178   raw    0.9414 scored 10 deg  0
+  breast_cancer impute  rf     GE-hand                               0.9402 +- 0.0163   raw    0.9402 scored 10 deg  0
+  breast_cancer impute  rf     HoloClean                                  - +- -        raw         - scored  0 deg 10
+  breast_cancer impute  rf     Raha                                  0.9396 +- 0.0165   raw    0.9396 scored 10 deg  0
+  breast_cancer impute  rf     perfect                               0.9445 +- 0.0188   raw    0.9445 scored 10 deg  0
+  breast_cancer impute  rf     always_positive                            - +- -        raw         - scored  0 deg 10
+  breast_cancer none    xgb    floor                                 0.9384 +- 0.0232   raw    0.9384 scored 10 deg  0
+  breast_cancer none    xgb    clean S4                              0.9257 +- 0.0267   raw    0.9257 scored 10 deg  0
+  breast_cancer gt      xgb    GE-dirty                              0.9413 +- 0.0261   raw    0.9413 scored 10 deg  0
+  breast_cancer gt      xgb    GE-clean                              0.9394 +- 0.0244   raw    0.9394 scored 10 deg  0
+  breast_cancer gt      xgb    GE-hand                               0.9345 +- 0.0283   raw    0.9345 scored 10 deg  0
+  breast_cancer gt      xgb    HoloClean                             0.9289 +- 0.0207   raw    0.9289 scored 10 deg  0
+  breast_cancer gt      xgb    Raha                                  0.9353 +- 0.0190   raw    0.9353 scored 10 deg  0
+  breast_cancer gt      xgb    perfect                               0.9257 +- 0.0267   raw    0.9257 scored 10 deg  0
+  breast_cancer gt      xgb    always_positive                       0.9257 +- 0.0267   raw    0.9257 scored 10 deg  0
+  breast_cancer delete  xgb    GE-dirty                              0.9294 +- 0.0221   raw    0.9294 scored 10 deg  0
+  breast_cancer delete  xgb    GE-clean                              0.9359 +- 0.0289   raw    0.9359 scored 10 deg  0
+  breast_cancer delete  xgb    GE-hand                               0.9268 +- 0.0277   raw    0.9268 scored 10 deg  0
+  breast_cancer delete  xgb    HoloClean                                  - +- -        raw         - scored  0 deg 10
+  breast_cancer delete  xgb    Raha                                  0.9286 +- 0.0272   raw    0.9286 scored 10 deg  0
+  breast_cancer delete  xgb    perfect                               0.9268 +- 0.0262   raw    0.9268 scored 10 deg  0
+  breast_cancer delete  xgb    always_positive                            - +- -        raw         - scored  0 deg 10
+  breast_cancer delete  xgb    control/ge_dirty_profiled             0.9319 +- 0.0190   raw    0.9319 scored 10 deg  0
+  breast_cancer delete  xgb    control/ge_clean_profiled             0.9359 +- 0.0110   raw    0.9359 scored 10 deg  0
+  breast_cancer delete  xgb    control/ge_hand_written               0.9303 +- 0.0253   raw    0.9303 scored 10 deg  0
+  breast_cancer delete  xgb    control/holoclean                          - +- -        raw         - scored  0 deg 10
+  breast_cancer delete  xgb    control/raha                          0.9296 +- 0.0239   raw    0.9296 scored 10 deg  0
+  breast_cancer impute  xgb    GE-dirty                              0.9384 +- 0.0232   raw    0.9384 scored 10 deg  0
+  breast_cancer impute  xgb    GE-clean                              0.9384 +- 0.0232   raw    0.9384 scored 10 deg  0
+  breast_cancer impute  xgb    GE-hand                               0.9354 +- 0.0212   raw    0.9354 scored 10 deg  0
+  breast_cancer impute  xgb    HoloClean                                  - +- -        raw         - scored  0 deg 10
+  breast_cancer impute  xgb    Raha                                  0.9384 +- 0.0213   raw    0.9384 scored 10 deg  0
+  breast_cancer impute  xgb    perfect                               0.9335 +- 0.0211   raw    0.9335 scored 10 deg  0
+  breast_cancer impute  xgb    always_positive                            - +- -        raw         - scored  0 deg 10
+  nasa          none    linear floor                                -6.8894 +- 0.2259   raw    6.8894 scored 10 deg  0
+  nasa          none    linear clean S4                             -4.7993 +- 0.2359   raw    4.7993 scored 10 deg  0
+  nasa          gt      linear GE-dirty                             -6.8895 +- 0.2259   raw    6.8895 scored 10 deg  0
+  nasa          gt      linear GE-clean                             -6.8889 +- 0.2264   raw    6.8889 scored 10 deg  0
+  nasa          gt      linear GE-hand                              -4.8010 +- 0.2358   raw    4.8010 scored 10 deg  0
+  nasa          gt      linear HoloClean                            -6.1010 +- 0.2101   raw    6.1010 scored 10 deg  0
+  nasa          gt      linear Raha                                 -4.8001 +- 0.2347   raw    4.8001 scored 10 deg  0
+  nasa          gt      linear perfect                              -4.7993 +- 0.2359   raw    4.7993 scored 10 deg  0
+  nasa          gt      linear always_positive                      -4.7993 +- 0.2359   raw    4.7993 scored 10 deg  0
+  nasa          gt      linear raha_minus_format_only               -4.8001 +- 0.2347   raw    4.8001 scored 10 deg  0
+  nasa          delete  linear GE-dirty                             -6.8894 +- 0.2260   raw    6.8894 scored 10 deg  0
+  nasa          delete  linear GE-clean                             -6.8912 +- 0.2295   raw    6.8912 scored 10 deg  0
+  nasa          delete  linear GE-hand                              -4.8174 +- 0.2261   raw    4.8174 scored 10 deg  0
+  nasa          delete  linear HoloClean                                  - +- -        raw         - scored  0 deg 10
+  nasa          delete  linear Raha                                       - +- -        raw         - scored  0 deg 10
+  nasa          delete  linear perfect                              -4.8062 +- 0.2218   raw    4.8062 scored 10 deg  0
+  nasa          delete  linear always_positive                            - +- -        raw         - scored  0 deg 10
+  nasa          delete  linear raha_minus_format_only               -4.8041 +- 0.2221   raw    4.8041 scored 10 deg  0
+  nasa          delete  linear control/ge_dirty_profiled            -6.8887 +- 0.2268   raw    6.8887 scored 10 deg  0
+  nasa          delete  linear control/ge_clean_profiled            -6.8910 +- 0.2243   raw    6.8910 scored 10 deg  0
+  nasa          delete  linear control/ge_hand_written              -6.8903 +- 0.2238   raw    6.8903 scored 10 deg  0
+  nasa          delete  linear control/holoclean                          - +- -        raw         - scored  0 deg 10
+  nasa          delete  linear control/raha                               - +- -        raw         - scored  0 deg 10
+  nasa          impute  linear GE-dirty                             -6.8894 +- 0.2259   raw    6.8894 scored 10 deg  0
+  nasa          impute  linear GE-clean                             -6.8889 +- 0.2264   raw    6.8889 scored 10 deg  0
+  nasa          impute  linear GE-hand                              -4.8346 +- 0.2372   raw    4.8346 scored 10 deg  0
+  nasa          impute  linear HoloClean                            -5.3296 +- 0.2905   raw    5.3296 scored 10 deg  0
+  nasa          impute  linear Raha                                 -6.0932 +- 0.2248   raw    6.0932 scored 10 deg  0
+  nasa          impute  linear perfect                              -4.8284 +- 0.2391   raw    4.8284 scored 10 deg  0
+  nasa          impute  linear always_positive                            - +- -        raw         - scored  0 deg 10
+  nasa          impute  linear raha_minus_format_only               -4.8284 +- 0.2391   raw    4.8284 scored 10 deg  0
+  nasa          none    rf     floor                                -2.2598 +- 0.1584   raw    2.2598 scored 10 deg  0
+  nasa          none    rf     clean S4                             -1.7812 +- 0.0985   raw    1.7812 scored 10 deg  0
+  nasa          gt      rf     GE-dirty                             -2.2612 +- 0.1589   raw    2.2612 scored 10 deg  0
+  nasa          gt      rf     GE-clean                             -2.0512 +- 0.1457   raw    2.0512 scored 10 deg  0
+  nasa          gt      rf     GE-hand                              -1.8534 +- 0.0900   raw    1.8534 scored 10 deg  0
+  nasa          gt      rf     HoloClean                            -1.9518 +- 0.1292   raw    1.9518 scored 10 deg  0
+  nasa          gt      rf     Raha                                 -1.7842 +- 0.0984   raw    1.7842 scored 10 deg  0
+  nasa          gt      rf     perfect                              -1.7812 +- 0.0985   raw    1.7812 scored 10 deg  0
+  nasa          gt      rf     always_positive                      -1.7812 +- 0.0985   raw    1.7812 scored 10 deg  0
+  nasa          gt      rf     raha_minus_format_only               -1.7842 +- 0.0984   raw    1.7842 scored 10 deg  0
+  nasa          delete  rf     GE-dirty                             -2.2905 +- 0.1798   raw    2.2905 scored 10 deg  0
+  nasa          delete  rf     GE-clean                             -2.4264 +- 0.2080   raw    2.4264 scored 10 deg  0
+  nasa          delete  rf     GE-hand                              -2.4535 +- 0.2123   raw    2.4535 scored 10 deg  0
+  nasa          delete  rf     HoloClean                                  - +- -        raw         - scored  0 deg 10
+  nasa          delete  rf     Raha                                       - +- -        raw         - scored  0 deg 10
+  nasa          delete  rf     perfect                              -2.3431 +- 0.2055   raw    2.3431 scored 10 deg  0
+  nasa          delete  rf     always_positive                            - +- -        raw         - scored  0 deg 10
+  nasa          delete  rf     raha_minus_format_only               -2.3477 +- 0.1855   raw    2.3477 scored 10 deg  0
+  nasa          delete  rf     control/ge_dirty_profiled            -2.2809 +- 0.2195   raw    2.2809 scored 10 deg  0
+  nasa          delete  rf     control/ge_clean_profiled            -2.5887 +- 0.1692   raw    2.5887 scored 10 deg  0
+  nasa          delete  rf     control/ge_hand_written              -2.7857 +- 0.2102   raw    2.7857 scored 10 deg  0
+  nasa          delete  rf     control/holoclean                          - +- -        raw         - scored  0 deg 10
+  nasa          delete  rf     control/raha                               - +- -        raw         - scored  0 deg 10
+  nasa          impute  rf     GE-dirty                             -2.2598 +- 0.1584   raw    2.2598 scored 10 deg  0
+  nasa          impute  rf     GE-clean                             -2.2592 +- 0.1583   raw    2.2592 scored 10 deg  0
+  nasa          impute  rf     GE-hand                              -2.3080 +- 0.1358   raw    2.3080 scored 10 deg  0
+  nasa          impute  rf     HoloClean                            -3.7917 +- 0.1675   raw    3.7917 scored 10 deg  0
+  nasa          impute  rf     Raha                                 -6.5528 +- 0.2029   raw    6.5528 scored 10 deg  0
+  nasa          impute  rf     perfect                              -2.2618 +- 0.1468   raw    2.2618 scored 10 deg  0
+  nasa          impute  rf     always_positive                            - +- -        raw         - scored  0 deg 10
+  nasa          impute  rf     raha_minus_format_only               -2.2618 +- 0.1468   raw    2.2618 scored 10 deg  0
+  nasa          none    xgb    floor                                -2.1714 +- 0.1221   raw    2.1714 scored 10 deg  0
+  nasa          none    xgb    clean S4                             -1.6035 +- 0.1619   raw    1.6035 scored 10 deg  0
+  nasa          gt      xgb    GE-dirty                             -2.1660 +- 0.1679   raw    2.1660 scored 10 deg  0
+  nasa          gt      xgb    GE-clean                             -1.9401 +- 0.0999   raw    1.9401 scored 10 deg  0
+  nasa          gt      xgb    GE-hand                              -1.6643 +- 0.1315   raw    1.6643 scored 10 deg  0
+  nasa          gt      xgb    HoloClean                            -1.8171 +- 0.1232   raw    1.8171 scored 10 deg  0
+  nasa          gt      xgb    Raha                                 -1.6535 +- 0.1605   raw    1.6535 scored 10 deg  0
+  nasa          gt      xgb    perfect                              -1.6035 +- 0.1619   raw    1.6035 scored 10 deg  0
+  nasa          gt      xgb    always_positive                      -1.6035 +- 0.1619   raw    1.6035 scored 10 deg  0
+  nasa          gt      xgb    raha_minus_format_only               -1.6535 +- 0.1605   raw    1.6535 scored 10 deg  0
+  nasa          delete  xgb    GE-dirty                             -2.2060 +- 0.1859   raw    2.2060 scored 10 deg  0
+  nasa          delete  xgb    GE-clean                             -2.2197 +- 0.1427   raw    2.2197 scored 10 deg  0
+  nasa          delete  xgb    GE-hand                              -2.2085 +- 0.2044   raw    2.2085 scored 10 deg  0
+  nasa          delete  xgb    HoloClean                                  - +- -        raw         - scored  0 deg 10
+  nasa          delete  xgb    Raha                                       - +- -        raw         - scored  0 deg 10
+  nasa          delete  xgb    perfect                              -2.1678 +- 0.1524   raw    2.1678 scored 10 deg  0
+  nasa          delete  xgb    always_positive                            - +- -        raw         - scored  0 deg 10
+  nasa          delete  xgb    raha_minus_format_only               -2.1489 +- 0.1782   raw    2.1489 scored 10 deg  0
+  nasa          delete  xgb    control/ge_dirty_profiled            -2.1992 +- 0.1784   raw    2.1992 scored 10 deg  0
+  nasa          delete  xgb    control/ge_clean_profiled            -2.4013 +- 0.1429   raw    2.4013 scored 10 deg  0
+  nasa          delete  xgb    control/ge_hand_written              -2.6014 +- 0.1762   raw    2.6014 scored 10 deg  0
+  nasa          delete  xgb    control/holoclean                          - +- -        raw         - scored  0 deg 10
+  nasa          delete  xgb    control/raha                               - +- -        raw         - scored  0 deg 10
+  nasa          impute  xgb    GE-dirty                             -2.1714 +- 0.1221   raw    2.1714 scored 10 deg  0
+  nasa          impute  xgb    GE-clean                             -2.1801 +- 0.1484   raw    2.1801 scored 10 deg  0
+  nasa          impute  xgb    GE-hand                              -2.2111 +- 0.1263   raw    2.2111 scored 10 deg  0
+  nasa          impute  xgb    HoloClean                            -4.8365 +- 0.9889   raw    4.8365 scored 10 deg  0
+  nasa          impute  xgb    Raha                                 -6.9812 +- 0.2839   raw    6.9812 scored 10 deg  0
+  nasa          impute  xgb    perfect                              -2.0821 +- 0.1496   raw    2.0821 scored 10 deg  0
+  nasa          impute  xgb    always_positive                            - +- -        raw         - scored  0 deg 10
+  nasa          impute  xgb    raha_minus_format_only               -2.0821 +- 0.1496   raw    2.0821 scored 10 deg  0
+
+== pair verdicts (a > b means a better on S2); ranked-last / left-out; refs (a)(b)(c)(d); expected (c61ee72)
+  mean   breast_cancer gt      linear GE-dirty vs GE-clean                       tie  tie       n  0 p -       | (a)< (b)< (c)< (d)< | concordant
+  mean   breast_cancer gt      linear GE-dirty vs GE-hand                        <    <         n  9 p 0.0117  | (a)< (b)< (c)< (d)< | concordant
+  mean   breast_cancer gt      linear GE-dirty vs HoloClean                      tie  tie       n 10 p 0.0645  | (a)> (b)< (c)> (d)< | discordant
+  mean   breast_cancer gt      linear GE-dirty vs Raha                           tie  tie       n 10 p 0.3223  | (a)< (b)< (c)< (d)< | concordant
+  mean   breast_cancer gt      linear GE-clean vs GE-hand                        <    <         n  9 p 0.0117  | (a)< (b)< (c)< (d)< | concordant
+  mean   breast_cancer gt      linear GE-clean vs HoloClean                      tie  tie       n 10 p 0.0645  | (a)> (b)< (c)> (d)< | discordant
+  mean   breast_cancer gt      linear GE-clean vs Raha                           tie  tie       n 10 p 0.3223  | (a)< (b)< (c)< (d)< | concordant
+  mean   breast_cancer gt      linear GE-hand vs HoloClean                       tie  tie       n  8 p 0.5703  | (a)> (b)> (c)> (d)< | discordant
+  mean   breast_cancer gt      linear GE-hand vs Raha                            tie  tie       n  8 p 0.0781  | (a)> (b)> (c)> (d)> | concordant
+  mean   breast_cancer gt      linear HoloClean vs Raha                          >    >         n  7 p 0.0312  | (a)< (b)> (c)< (d)> | discordant
+  mean   breast_cancer delete  linear GE-dirty vs GE-clean                       tie  tie       n  0 p -       | (a)< (b)< (c)< (d)< | concordant
+  mean   breast_cancer delete  linear GE-dirty vs GE-hand                        <    <         n 10 p 0.0039  | (a)< (b)< (c)< (d)< | concordant
+  mean   breast_cancer delete  linear GE-dirty vs HoloClean                      >    out       n  0 p -       | (a)> (b)< (c)> (d)> | concordant
+  mean   breast_cancer delete  linear GE-dirty vs Raha                           <    <         n 10 p 0.0020  | (a)< (b)< (c)< (d)> | discordant
+  mean   breast_cancer delete  linear GE-clean vs GE-hand                        <    <         n 10 p 0.0039  | (a)< (b)< (c)< (d)< | concordant
+  mean   breast_cancer delete  linear GE-clean vs HoloClean                      >    out       n  0 p -       | (a)> (b)< (c)> (d)> | concordant
+  mean   breast_cancer delete  linear GE-clean vs Raha                           <    <         n 10 p 0.0020  | (a)< (b)< (c)< (d)> | discordant
+  mean   breast_cancer delete  linear GE-hand vs HoloClean                       >    out       n  0 p -       | (a)> (b)> (c)> (d)> | concordant
+  mean   breast_cancer delete  linear GE-hand vs Raha                            tie  tie       n  8 p 0.4609  | (a)> (b)> (c)> (d)> | concordant
+  mean   breast_cancer delete  linear HoloClean vs Raha                          <    out       n  0 p -       | (a)< (b)> (c)< (d)< | concordant
+  mean   breast_cancer impute  linear GE-dirty vs GE-clean                       tie  tie       n  0 p -       | (a)< (b)< (c)< (d)= | undetermined
+  mean   breast_cancer impute  linear GE-dirty vs GE-hand                        <    <         n  9 p 0.0078  | (a)< (b)< (c)< (d)= | undetermined
+  mean   breast_cancer impute  linear GE-dirty vs HoloClean                      >    out       n  0 p -       | (a)> (b)< (c)> (d)= | undetermined
+  mean   breast_cancer impute  linear GE-dirty vs Raha                           tie  tie       n 10 p 0.4316  | (a)< (b)< (c)< (d)= | undetermined
+  mean   breast_cancer impute  linear GE-clean vs GE-hand                        <    <         n  9 p 0.0078  | (a)< (b)< (c)< (d)= | undetermined
+  mean   breast_cancer impute  linear GE-clean vs HoloClean                      >    out       n  0 p -       | (a)> (b)< (c)> (d)= | undetermined
+  mean   breast_cancer impute  linear GE-clean vs Raha                           tie  tie       n 10 p 0.4316  | (a)< (b)< (c)< (d)= | undetermined
+  mean   breast_cancer impute  linear GE-hand vs HoloClean                       >    out       n  0 p -       | (a)> (b)> (c)> (d)> | concordant
+  mean   breast_cancer impute  linear GE-hand vs Raha                            >    >         n  7 p 0.0312  | (a)> (b)> (c)> (d)> | concordant
+  mean   breast_cancer impute  linear HoloClean vs Raha                          <    out       n  0 p -       | (a)< (b)> (c)< (d)< | concordant
+  mean   breast_cancer gt      rf     GE-dirty vs GE-clean                       tie  tie       n  3 p -       | (a)< (b)< (c)< (d)< | concordant
+  mean   breast_cancer gt      rf     GE-dirty vs GE-hand                        tie  tie       n  5 p -       | (a)< (b)< (c)< (d)< | concordant
+  mean   breast_cancer gt      rf     GE-dirty vs HoloClean                      tie  tie       n  6 p 0.5625  | (a)> (b)< (c)> (d)< | discordant
+  mean   breast_cancer gt      rf     GE-dirty vs Raha                           tie  tie       n  4 p -       | (a)< (b)< (c)< (d)< | concordant
+  mean   breast_cancer gt      rf     GE-clean vs GE-hand                        tie  tie       n  5 p -       | (a)< (b)< (c)< (d)< | concordant
+  mean   breast_cancer gt      rf     GE-clean vs HoloClean                      tie  tie       n  7 p 0.6875  | (a)> (b)< (c)> (d)< | discordant
+  mean   breast_cancer gt      rf     GE-clean vs Raha                           tie  tie       n  5 p -       | (a)< (b)< (c)< (d)< | concordant
+  mean   breast_cancer gt      rf     GE-hand vs HoloClean                       tie  tie       n  7 p 0.2188  | (a)> (b)> (c)> (d)< | discordant
+  mean   breast_cancer gt      rf     GE-hand vs Raha                            tie  tie       n  4 p -       | (a)> (b)> (c)> (d)> | concordant
+  mean   breast_cancer gt      rf     HoloClean vs Raha                          tie  tie       n  7 p 0.3750  | (a)< (b)> (c)< (d)> | discordant
+  mean   breast_cancer delete  rf     GE-dirty vs GE-clean                       tie  tie       n  8 p 0.9141  | (a)< (b)< (c)< (d)< | concordant
+  mean   breast_cancer delete  rf     GE-dirty vs GE-hand                        tie  tie       n  8 p 1.0000  | (a)< (b)< (c)< (d)< | concordant
+  mean   breast_cancer delete  rf     GE-dirty vs HoloClean                      >    out       n  0 p -       | (a)> (b)< (c)> (d)> | concordant
+  mean   breast_cancer delete  rf     GE-dirty vs Raha                           tie  tie       n  9 p 0.4258  | (a)< (b)< (c)< (d)> | discordant
+  mean   breast_cancer delete  rf     GE-clean vs GE-hand                        tie  tie       n  8 p 0.7422  | (a)< (b)< (c)< (d)< | concordant
+  mean   breast_cancer delete  rf     GE-clean vs HoloClean                      >    out       n  0 p -       | (a)> (b)< (c)> (d)> | concordant
+  mean   breast_cancer delete  rf     GE-clean vs Raha                           tie  tie       n  8 p 0.9688  | (a)< (b)< (c)< (d)> | discordant
+  mean   breast_cancer delete  rf     GE-hand vs HoloClean                       >    out       n  0 p -       | (a)> (b)> (c)> (d)> | concordant
+  mean   breast_cancer delete  rf     GE-hand vs Raha                            tie  tie       n  7 p 0.5781  | (a)> (b)> (c)> (d)> | concordant
+  mean   breast_cancer delete  rf     HoloClean vs Raha                          <    out       n  0 p -       | (a)< (b)> (c)< (d)< | concordant
+  mean   breast_cancer impute  rf     GE-dirty vs GE-clean                       tie  tie       n  0 p -       | (a)< (b)< (c)< (d)= | undetermined
+  mean   breast_cancer impute  rf     GE-dirty vs GE-hand                        tie  tie       n  7 p 0.9375  | (a)< (b)< (c)< (d)= | undetermined
+  mean   breast_cancer impute  rf     GE-dirty vs HoloClean                      >    out       n  0 p -       | (a)> (b)< (c)> (d)= | undetermined
+  mean   breast_cancer impute  rf     GE-dirty vs Raha                           tie  tie       n  6 p 0.8438  | (a)< (b)< (c)< (d)= | undetermined
+  mean   breast_cancer impute  rf     GE-clean vs GE-hand                        tie  tie       n  7 p 0.9375  | (a)< (b)< (c)< (d)= | undetermined
+  mean   breast_cancer impute  rf     GE-clean vs HoloClean                      >    out       n  0 p -       | (a)> (b)< (c)> (d)= | undetermined
+  mean   breast_cancer impute  rf     GE-clean vs Raha                           tie  tie       n  6 p 0.8438  | (a)< (b)< (c)< (d)= | undetermined
+  mean   breast_cancer impute  rf     GE-hand vs HoloClean                       >    out       n  0 p -       | (a)> (b)> (c)> (d)> | concordant
+  mean   breast_cancer impute  rf     GE-hand vs Raha                            tie  tie       n  5 p -       | (a)> (b)> (c)> (d)> | concordant
+  mean   breast_cancer impute  rf     HoloClean vs Raha                          <    out       n  0 p -       | (a)< (b)> (c)< (d)< | concordant
+  mean   breast_cancer gt      xgb    GE-dirty vs GE-clean                       tie  tie       n  5 p -       | (a)< (b)< (c)< (d)< | concordant
+  mean   breast_cancer gt      xgb    GE-dirty vs GE-hand                        tie  tie       n  6 p 0.0625  | (a)< (b)< (c)< (d)< | concordant
+  mean   breast_cancer gt      xgb    GE-dirty vs HoloClean                      >    >         n  8 p 0.0391  | (a)> (b)< (c)> (d)< | discordant
+  mean   breast_cancer gt      xgb    GE-dirty vs Raha                           tie  tie       n  8 p 0.1875  | (a)< (b)< (c)< (d)< | concordant
+  mean   breast_cancer gt      xgb    GE-clean vs GE-hand                        tie  tie       n  5 p -       | (a)< (b)< (c)< (d)< | concordant
+  mean   breast_cancer gt      xgb    GE-clean vs HoloClean                      tie  tie       n 10 p 0.0605  | (a)> (b)< (c)> (d)< | discordant
+  mean   breast_cancer gt      xgb    GE-clean vs Raha                           tie  tie       n  6 p 0.4375  | (a)< (b)< (c)< (d)< | concordant
+  mean   breast_cancer gt      xgb    GE-hand vs HoloClean                       tie  tie       n 10 p 0.3750  | (a)> (b)> (c)> (d)< | discordant
+  mean   breast_cancer gt      xgb    GE-hand vs Raha                            tie  tie       n  6 p 1.0000  | (a)> (b)> (c)> (d)> | concordant
+  mean   breast_cancer gt      xgb    HoloClean vs Raha                          tie  tie       n  9 p 0.3594  | (a)< (b)> (c)< (d)> | discordant
+  mean   breast_cancer delete  xgb    GE-dirty vs GE-clean                       tie  tie       n  9 p 0.0977  | (a)< (b)< (c)< (d)< | concordant
+  mean   breast_cancer delete  xgb    GE-dirty vs GE-hand                        tie  tie       n 10 p 0.7695  | (a)< (b)< (c)< (d)< | concordant
+  mean   breast_cancer delete  xgb    GE-dirty vs HoloClean                      >    out       n  0 p -       | (a)> (b)< (c)> (d)> | concordant
+  mean   breast_cancer delete  xgb    GE-dirty vs Raha                           tie  tie       n  9 p 0.6523  | (a)< (b)< (c)< (d)> | discordant
+  mean   breast_cancer delete  xgb    GE-clean vs GE-hand                        tie  tie       n 10 p 0.3359  | (a)< (b)< (c)< (d)< | concordant
+  mean   breast_cancer delete  xgb    GE-clean vs HoloClean                      >    out       n  0 p -       | (a)> (b)< (c)> (d)> | concordant
+  mean   breast_cancer delete  xgb    GE-clean vs Raha                           tie  tie       n  9 p 0.3008  | (a)< (b)< (c)< (d)> | discordant
+  mean   breast_cancer delete  xgb    GE-hand vs HoloClean                       >    out       n  0 p -       | (a)> (b)> (c)> (d)> | concordant
+  mean   breast_cancer delete  xgb    GE-hand vs Raha                            tie  tie       n 10 p 0.9219  | (a)> (b)> (c)> (d)> | concordant
+  mean   breast_cancer delete  xgb    HoloClean vs Raha                          <    out       n  0 p -       | (a)< (b)> (c)< (d)< | concordant
+  mean   breast_cancer impute  xgb    GE-dirty vs GE-clean                       tie  tie       n  0 p -       | (a)< (b)< (c)< (d)= | undetermined
+  mean   breast_cancer impute  xgb    GE-dirty vs GE-hand                        tie  tie       n  9 p 0.6758  | (a)< (b)< (c)< (d)= | undetermined
+  mean   breast_cancer impute  xgb    GE-dirty vs HoloClean                      >    out       n  0 p -       | (a)> (b)< (c)> (d)= | undetermined
+  mean   breast_cancer impute  xgb    GE-dirty vs Raha                           tie  tie       n  7 p 0.9375  | (a)< (b)< (c)< (d)= | undetermined
+  mean   breast_cancer impute  xgb    GE-clean vs GE-hand                        tie  tie       n  9 p 0.6758  | (a)< (b)< (c)< (d)= | undetermined
+  mean   breast_cancer impute  xgb    GE-clean vs HoloClean                      >    out       n  0 p -       | (a)> (b)< (c)> (d)= | undetermined
+  mean   breast_cancer impute  xgb    GE-clean vs Raha                           tie  tie       n  7 p 0.9375  | (a)< (b)< (c)< (d)= | undetermined
+  mean   breast_cancer impute  xgb    GE-hand vs HoloClean                       >    out       n  0 p -       | (a)> (b)> (c)> (d)> | concordant
+  mean   breast_cancer impute  xgb    GE-hand vs Raha                            tie  tie       n  8 p 0.5469  | (a)> (b)> (c)> (d)> | concordant
+  mean   breast_cancer impute  xgb    HoloClean vs Raha                          <    out       n  0 p -       | (a)< (b)> (c)< (d)< | concordant
+  mean   nasa          gt      linear GE-dirty vs GE-clean                       tie  tie       n 10 p 0.8457  | (a)< (b)< (c)< (d)< | concordant
+  mean   nasa          gt      linear GE-dirty vs GE-hand                        <    <         n 10 p 0.0020  | (a)< (b)< (c)< (d)< | concordant
+  mean   nasa          gt      linear GE-dirty vs HoloClean                      <    <         n 10 p 0.0020  | (a)< (b)< (c)< (d)< | concordant
+  mean   nasa          gt      linear GE-dirty vs Raha                           <    <         n 10 p 0.0020  | (a)< (b)< (c)< (d)< | concordant
+  mean   nasa          gt      linear GE-clean vs GE-hand                        <    <         n 10 p 0.0020  | (a)< (b)< (c)< (d)< | concordant
+  mean   nasa          gt      linear GE-clean vs HoloClean                      <    <         n 10 p 0.0020  | (a)> (b)> (c)> (d)< | discordant
+  mean   nasa          gt      linear GE-clean vs Raha                           <    <         n 10 p 0.0020  | (a)> (b)> (c)> (d)< | discordant
+  mean   nasa          gt      linear GE-hand vs HoloClean                       >    >         n 10 p 0.0020  | (a)> (b)> (c)> (d)> | concordant
+  mean   nasa          gt      linear GE-hand vs Raha                            tie  tie       n 10 p 1.0000  | (a)> (b)> (c)> (d)< | discordant
+  mean   nasa          gt      linear HoloClean vs Raha                          <    <         n 10 p 0.0020  | (a)< (b)< (c)< (d)< | concordant
+  mean   nasa          delete  linear GE-dirty vs GE-clean                       tie  tie       n 10 p 0.2324  | (a)< (b)< (c)< (d)= | undetermined
+  mean   nasa          delete  linear GE-dirty vs GE-hand                        <    <         n 10 p 0.0020  | (a)< (b)< (c)< (d)= | undetermined
+  mean   nasa          delete  linear GE-dirty vs HoloClean                      >    out       n  0 p -       | (a)< (b)< (c)< (d)> | discordant
+  mean   nasa          delete  linear GE-dirty vs Raha                           >    out       n  0 p -       | (a)< (b)< (c)< (d)> | discordant
+  mean   nasa          delete  linear GE-clean vs GE-hand                        <    <         n 10 p 0.0020  | (a)< (b)< (c)< (d)= | undetermined
+  mean   nasa          delete  linear GE-clean vs HoloClean                      >    out       n  0 p -       | (a)> (b)> (c)> (d)> | concordant
+  mean   nasa          delete  linear GE-clean vs Raha                           >    out       n  0 p -       | (a)> (b)> (c)> (d)> | concordant
+  mean   nasa          delete  linear GE-hand vs HoloClean                       >    out       n  0 p -       | (a)> (b)> (c)> (d)> | concordant
+  mean   nasa          delete  linear GE-hand vs Raha                            >    out       n  0 p -       | (a)> (b)> (c)> (d)> | concordant
+  mean   nasa          delete  linear HoloClean vs Raha                          tie  out       n  0 p -       | (a)< (b)< (c)< (d)= | undetermined
+  mean   nasa          impute  linear GE-dirty vs GE-clean                       tie  tie       n  9 p 0.8203  | (a)< (b)< (c)< (d)= | undetermined
+  mean   nasa          impute  linear GE-dirty vs GE-hand                        <    <         n 10 p 0.0020  | (a)< (b)< (c)< (d)= | undetermined
+  mean   nasa          impute  linear GE-dirty vs HoloClean                      <    <         n 10 p 0.0020  | (a)< (b)< (c)< (d)= | undetermined
+  mean   nasa          impute  linear GE-dirty vs Raha                           <    <         n 10 p 0.0020  | (a)< (b)< (c)< (d)= | undetermined
+  mean   nasa          impute  linear GE-clean vs GE-hand                        <    <         n 10 p 0.0020  | (a)< (b)< (c)< (d)< | concordant
+  mean   nasa          impute  linear GE-clean vs HoloClean                      <    <         n 10 p 0.0020  | (a)> (b)> (c)> (d)> | concordant
+  mean   nasa          impute  linear GE-clean vs Raha                           <    <         n 10 p 0.0020  | (a)> (b)> (c)> (d)> | concordant
+  mean   nasa          impute  linear GE-hand vs HoloClean                       >    >         n 10 p 0.0020  | (a)> (b)> (c)> (d)> | concordant
+  mean   nasa          impute  linear GE-hand vs Raha                            >    >         n 10 p 0.0020  | (a)> (b)> (c)> (d)> | concordant
+  mean   nasa          impute  linear HoloClean vs Raha                          >    >         n 10 p 0.0020  | (a)< (b)< (c)< (d)< | concordant
+  mean   nasa          gt      rf     GE-dirty vs GE-clean                       <    <         n 10 p 0.0020  | (a)< (b)< (c)< (d)< | concordant
+  mean   nasa          gt      rf     GE-dirty vs GE-hand                        <    <         n 10 p 0.0020  | (a)< (b)< (c)< (d)< | concordant
+  mean   nasa          gt      rf     GE-dirty vs HoloClean                      <    <         n 10 p 0.0020  | (a)< (b)< (c)< (d)< | concordant
+  mean   nasa          gt      rf     GE-dirty vs Raha                           <    <         n 10 p 0.0020  | (a)< (b)< (c)< (d)< | concordant
+  mean   nasa          gt      rf     GE-clean vs GE-hand                        <    <         n 10 p 0.0020  | (a)< (b)< (c)< (d)< | concordant
+  mean   nasa          gt      rf     GE-clean vs HoloClean                      <    <         n 10 p 0.0137  | (a)> (b)> (c)> (d)< | discordant
+  mean   nasa          gt      rf     GE-clean vs Raha                           <    <         n 10 p 0.0020  | (a)> (b)> (c)> (d)< | discordant
+  mean   nasa          gt      rf     GE-hand vs HoloClean                       >    >         n 10 p 0.0098  | (a)> (b)> (c)> (d)> | concordant
+  mean   nasa          gt      rf     GE-hand vs Raha                            <    <         n 10 p 0.0020  | (a)> (b)> (c)> (d)< | discordant
+  mean   nasa          gt      rf     HoloClean vs Raha                          <    <         n 10 p 0.0020  | (a)< (b)< (c)< (d)< | concordant
+  mean   nasa          delete  rf     GE-dirty vs GE-clean                       >    >         n 10 p 0.0020  | (a)< (b)< (c)< (d)= | undetermined
+  mean   nasa          delete  rf     GE-dirty vs GE-hand                        >    >         n 10 p 0.0020  | (a)< (b)< (c)< (d)= | undetermined
+  mean   nasa          delete  rf     GE-dirty vs HoloClean                      >    out       n  0 p -       | (a)< (b)< (c)< (d)> | discordant
+  mean   nasa          delete  rf     GE-dirty vs Raha                           >    out       n  0 p -       | (a)< (b)< (c)< (d)> | discordant
+  mean   nasa          delete  rf     GE-clean vs GE-hand                        tie  tie       n 10 p 0.3750  | (a)< (b)< (c)< (d)= | undetermined
+  mean   nasa          delete  rf     GE-clean vs HoloClean                      >    out       n  0 p -       | (a)> (b)> (c)> (d)> | concordant
+  mean   nasa          delete  rf     GE-clean vs Raha                           >    out       n  0 p -       | (a)> (b)> (c)> (d)> | concordant
+  mean   nasa          delete  rf     GE-hand vs HoloClean                       >    out       n  0 p -       | (a)> (b)> (c)> (d)> | concordant
+  mean   nasa          delete  rf     GE-hand vs Raha                            >    out       n  0 p -       | (a)> (b)> (c)> (d)> | concordant
+  mean   nasa          delete  rf     HoloClean vs Raha                          tie  out       n  0 p -       | (a)< (b)< (c)< (d)= | undetermined
+  mean   nasa          impute  rf     GE-dirty vs GE-clean                       tie  tie       n  9 p 1.0000  | (a)< (b)< (c)< (d)= | undetermined
+  mean   nasa          impute  rf     GE-dirty vs GE-hand                        tie  tie       n 10 p 0.4922  | (a)< (b)< (c)< (d)= | undetermined
+  mean   nasa          impute  rf     GE-dirty vs HoloClean                      >    >         n 10 p 0.0020  | (a)< (b)< (c)< (d)= | undetermined
+  mean   nasa          impute  rf     GE-dirty vs Raha                           >    >         n 10 p 0.0020  | (a)< (b)< (c)< (d)= | undetermined
+  mean   nasa          impute  rf     GE-clean vs GE-hand                        tie  tie       n 10 p 0.4922  | (a)< (b)< (c)< (d)< | concordant
+  mean   nasa          impute  rf     GE-clean vs HoloClean                      >    >         n 10 p 0.0020  | (a)> (b)> (c)> (d)> | concordant
+  mean   nasa          impute  rf     GE-clean vs Raha                           >    >         n 10 p 0.0020  | (a)> (b)> (c)> (d)> | concordant
+  mean   nasa          impute  rf     GE-hand vs HoloClean                       >    >         n 10 p 0.0020  | (a)> (b)> (c)> (d)> | concordant
+  mean   nasa          impute  rf     GE-hand vs Raha                            >    >         n 10 p 0.0020  | (a)> (b)> (c)> (d)> | concordant
+  mean   nasa          impute  rf     HoloClean vs Raha                          >    >         n 10 p 0.0020  | (a)< (b)< (c)< (d)< | concordant
+  mean   nasa          gt      xgb    GE-dirty vs GE-clean                       <    <         n 10 p 0.0039  | (a)< (b)< (c)< (d)< | concordant
+  mean   nasa          gt      xgb    GE-dirty vs GE-hand                        <    <         n 10 p 0.0020  | (a)< (b)< (c)< (d)< | concordant
+  mean   nasa          gt      xgb    GE-dirty vs HoloClean                      <    <         n 10 p 0.0020  | (a)< (b)< (c)< (d)< | concordant
+  mean   nasa          gt      xgb    GE-dirty vs Raha                           <    <         n 10 p 0.0020  | (a)< (b)< (c)< (d)< | concordant
+  mean   nasa          gt      xgb    GE-clean vs GE-hand                        <    <         n 10 p 0.0020  | (a)< (b)< (c)< (d)< | concordant
+  mean   nasa          gt      xgb    GE-clean vs HoloClean                      <    <         n 10 p 0.0137  | (a)> (b)> (c)> (d)< | discordant
+  mean   nasa          gt      xgb    GE-clean vs Raha                           <    <         n 10 p 0.0059  | (a)> (b)> (c)> (d)< | discordant
+  mean   nasa          gt      xgb    GE-hand vs HoloClean                       >    >         n 10 p 0.0059  | (a)> (b)> (c)> (d)> | concordant
+  mean   nasa          gt      xgb    GE-hand vs Raha                            tie  tie       n 10 p 0.8457  | (a)> (b)> (c)> (d)< | discordant
+  mean   nasa          gt      xgb    HoloClean vs Raha                          <    <         n 10 p 0.0273  | (a)< (b)< (c)< (d)< | concordant
+  mean   nasa          delete  xgb    GE-dirty vs GE-clean                       tie  tie       n 10 p 0.7695  | (a)< (b)< (c)< (d)= | undetermined
+  mean   nasa          delete  xgb    GE-dirty vs GE-hand                        tie  tie       n 10 p 0.8457  | (a)< (b)< (c)< (d)= | undetermined
+  mean   nasa          delete  xgb    GE-dirty vs HoloClean                      >    out       n  0 p -       | (a)< (b)< (c)< (d)> | discordant
+  mean   nasa          delete  xgb    GE-dirty vs Raha                           >    out       n  0 p -       | (a)< (b)< (c)< (d)> | discordant
+  mean   nasa          delete  xgb    GE-clean vs GE-hand                        tie  tie       n 10 p 1.0000  | (a)< (b)< (c)< (d)= | undetermined
+  mean   nasa          delete  xgb    GE-clean vs HoloClean                      >    out       n  0 p -       | (a)> (b)> (c)> (d)> | concordant
+  mean   nasa          delete  xgb    GE-clean vs Raha                           >    out       n  0 p -       | (a)> (b)> (c)> (d)> | concordant
+  mean   nasa          delete  xgb    GE-hand vs HoloClean                       >    out       n  0 p -       | (a)> (b)> (c)> (d)> | concordant
+  mean   nasa          delete  xgb    GE-hand vs Raha                            >    out       n  0 p -       | (a)> (b)> (c)> (d)> | concordant
+  mean   nasa          delete  xgb    HoloClean vs Raha                          tie  out       n  0 p -       | (a)< (b)< (c)< (d)= | undetermined
+  mean   nasa          impute  xgb    GE-dirty vs GE-clean                       tie  tie       n  9 p 0.9102  | (a)< (b)< (c)< (d)= | undetermined
+  mean   nasa          impute  xgb    GE-dirty vs GE-hand                        tie  tie       n 10 p 0.9219  | (a)< (b)< (c)< (d)= | undetermined
+  mean   nasa          impute  xgb    GE-dirty vs HoloClean                      >    >         n 10 p 0.0020  | (a)< (b)< (c)< (d)= | undetermined
+  mean   nasa          impute  xgb    GE-dirty vs Raha                           >    >         n 10 p 0.0020  | (a)< (b)< (c)< (d)= | undetermined
+  mean   nasa          impute  xgb    GE-clean vs GE-hand                        tie  tie       n 10 p 1.0000  | (a)< (b)< (c)< (d)< | concordant
+  mean   nasa          impute  xgb    GE-clean vs HoloClean                      >    >         n 10 p 0.0020  | (a)> (b)> (c)> (d)> | concordant
+  mean   nasa          impute  xgb    GE-clean vs Raha                           >    >         n 10 p 0.0020  | (a)> (b)> (c)> (d)> | concordant
+  mean   nasa          impute  xgb    GE-hand vs HoloClean                       >    >         n 10 p 0.0020  | (a)> (b)> (c)> (d)> | concordant
+  mean   nasa          impute  xgb    GE-hand vs Raha                            >    >         n 10 p 0.0020  | (a)> (b)> (c)> (d)> | concordant
+  mean   nasa          impute  xgb    HoloClean vs Raha                          >    >         n 10 p 0.0039  | (a)< (b)< (c)< (d)< | concordant
+
+== concordance, fill mean (interim): C/D/T, share of all pairs, share of decided pairs, permutation p
+  gt      ref (a) ranked_last  C  23 D   8 T  29 reftie   0 | all 0.383 decided 0.742 | perm p 0.129 holm p 0.152 keep H0 [PRIMARY]
+  delete  ref (a) ranked_last  C  30 D   8 T  22 reftie   0 | all 0.500 decided 0.789 | perm p 0.067 holm p 0.152 keep H0 [PRIMARY]
+  impute  ref (a) ranked_last  C  29 D   9 T  22 reftie   0 | all 0.483 decided 0.763 | perm p 0.051 holm p 0.152 keep H0 [PRIMARY]
+  gt      ref (b) ranked_last  C  23 D   8 T  29 reftie   0 | all 0.383 decided 0.742 | perm p 0.129 holm p -  [descriptive]
+  delete  ref (b) ranked_last  C  21 D  17 T  22 reftie   0 | all 0.350 decided 0.553 | perm p 0.420 holm p -  [descriptive]
+  impute  ref (b) ranked_last  C  20 D  18 T  22 reftie   0 | all 0.333 decided 0.526 | perm p 0.468 holm p -  [descriptive]
+  gt      ref (c) ranked_last  C  23 D   8 T  29 reftie   0 | all 0.383 decided 0.742 | perm p 0.129 holm p -  [descriptive]
+  delete  ref (c) ranked_last  C  30 D   8 T  22 reftie   0 | all 0.500 decided 0.789 | perm p 0.067 holm p -  [descriptive]
+  impute  ref (c) ranked_last  C  29 D   9 T  22 reftie   0 | all 0.483 decided 0.763 | perm p 0.051 holm p -  [descriptive]
+  gt      ref (d) ranked_last  C  30 D   1 T  29 reftie   0 | all 0.500 decided 0.968 | perm p - holm p -  [descriptive]
+  delete  ref (d) ranked_last  C  32 D   2 T  14 reftie  12 | all 0.667 decided 0.941 | perm p - holm p -  [descriptive]
+  impute  ref (d) ranked_last  C  18 D   5 T   4 reftie  33 | all 0.667 decided 0.783 | perm p - holm p -  [descriptive]
+  gt      ref (a) left_out     C  23 D   8 T  29 reftie   0 | all 0.383 decided 0.742 | perm p 0.129 holm p -  [descriptive]
+  delete  ref (a) left_out     C   6 D   2 T  19 reftie   0 | all 0.222 decided 0.750 | perm p 0.167 holm p -  [descriptive]
+  impute  ref (a) left_out     C  17 D   9 T  22 reftie   0 | all 0.354 decided 0.654 | perm p 0.208 holm p -  [descriptive]
+  gt      ref (b) left_out     C  23 D   8 T  29 reftie   0 | all 0.383 decided 0.742 | perm p 0.129 holm p -  [descriptive]
+  delete  ref (b) left_out     C   6 D   2 T  19 reftie   0 | all 0.222 decided 0.750 | perm p 0.167 holm p -  [descriptive]
+  impute  ref (b) left_out     C  17 D   9 T  22 reftie   0 | all 0.354 decided 0.654 | perm p 0.208 holm p -  [descriptive]
+  gt      ref (c) left_out     C  23 D   8 T  29 reftie   0 | all 0.383 decided 0.742 | perm p 0.129 holm p -  [descriptive]
+  delete  ref (c) left_out     C   6 D   2 T  19 reftie   0 | all 0.222 decided 0.750 | perm p 0.167 holm p -  [descriptive]
+  impute  ref (c) left_out     C  17 D   9 T  22 reftie   0 | all 0.354 decided 0.654 | perm p 0.208 holm p -  [descriptive]
+  gt      ref (d) left_out     C  30 D   1 T  29 reftie   0 | all 0.500 decided 0.968 | perm p - holm p -  [descriptive]
+  delete  ref (d) left_out     C   2 D   2 T  14 reftie   9 | all 0.111 decided 0.500 | perm p - holm p -  [descriptive]
+  impute  ref (d) left_out     C  12 D   5 T   4 reftie  27 | all 0.571 decided 0.706 | perm p - holm p -  [descriptive]
+  pairs joined with the frozen expected file: 60 (87 for four datasets)
+
+== discordant pairs against (a), ranked last, fill mean
+  breast_cancer gt      linear HoloClean vs Raha -> observed >, (a) <
+  nasa          gt      linear GE-clean vs HoloClean -> observed <, (a) >
+  nasa          gt      linear GE-clean vs Raha -> observed <, (a) >
+  nasa          delete  linear GE-dirty vs HoloClean -> observed >, (a) <
+  nasa          delete  linear GE-dirty vs Raha -> observed >, (a) <
+  nasa          impute  linear GE-clean vs HoloClean -> observed <, (a) >
+  nasa          impute  linear GE-clean vs Raha -> observed <, (a) >
+  nasa          impute  linear HoloClean vs Raha -> observed >, (a) <
+  nasa          gt      rf     GE-clean vs HoloClean -> observed <, (a) >
+  nasa          gt      rf     GE-clean vs Raha -> observed <, (a) >
+  nasa          gt      rf     GE-hand vs Raha -> observed <, (a) >
+  nasa          delete  rf     GE-dirty vs GE-clean -> observed >, (a) <
+  nasa          delete  rf     GE-dirty vs GE-hand -> observed >, (a) <
+  nasa          delete  rf     GE-dirty vs HoloClean -> observed >, (a) <
+  nasa          delete  rf     GE-dirty vs Raha -> observed >, (a) <
+  nasa          impute  rf     GE-dirty vs HoloClean -> observed >, (a) <
+  nasa          impute  rf     GE-dirty vs Raha -> observed >, (a) <
+  nasa          impute  rf     HoloClean vs Raha -> observed >, (a) <
+  nasa          gt      xgb    GE-clean vs HoloClean -> observed <, (a) >
+  nasa          gt      xgb    GE-clean vs Raha -> observed <, (a) >
+  nasa          delete  xgb    GE-dirty vs HoloClean -> observed >, (a) <
+  nasa          delete  xgb    GE-dirty vs Raha -> observed >, (a) <
+  nasa          impute  xgb    GE-dirty vs HoloClean -> observed >, (a) <
+  nasa          impute  xgb    GE-dirty vs Raha -> observed >, (a) <
+  nasa          impute  xgb    HoloClean vs Raha -> observed >, (a) <
+
+== random-deletion controls: delete(c) vs control(c) by the pair rule (descriptive)
+  mean   breast_cancer linear GE-dirty                           k 167-183      tie
+  mean   breast_cancer linear GE-clean                           k 169-187      detector worse
+  mean   breast_cancer linear GE-hand                            k 237-252      tie
+  mean   breast_cancer linear HoloClean                          k 559-559      n/a
+  mean   breast_cancer linear Raha                               k 210-228      detector better
+  mean   breast_cancer rf     GE-dirty                           k 167-183      tie
+  mean   breast_cancer rf     GE-clean                           k 169-187      tie
+  mean   breast_cancer rf     GE-hand                            k 237-252      tie
+  mean   breast_cancer rf     HoloClean                          k 559-559      n/a
+  mean   breast_cancer rf     Raha                               k 210-228      tie
+  mean   breast_cancer xgb    GE-dirty                           k 167-183      tie
+  mean   breast_cancer xgb    GE-clean                           k 169-187      tie
+  mean   breast_cancer xgb    GE-hand                            k 237-252      tie
+  mean   breast_cancer xgb    HoloClean                          k 559-559      n/a
+  mean   breast_cancer xgb    Raha                               k 210-228      tie
+  mean   nasa          linear GE-dirty                           k 19-28        tie
+  mean   nasa          linear GE-clean                           k 302-318      tie
+  mean   nasa          linear GE-hand                            k 530-555      detector better
+  mean   nasa          linear HoloClean                          k 1168-1176    n/a
+  mean   nasa          linear Raha                               k 1202-1202    n/a
+  mean   nasa          rf     GE-dirty                           k 19-28        tie
+  mean   nasa          rf     GE-clean                           k 302-318      detector better
+  mean   nasa          rf     GE-hand                            k 530-555      detector better
+  mean   nasa          rf     HoloClean                          k 1168-1176    n/a
+  mean   nasa          rf     Raha                               k 1202-1202    n/a
+  mean   nasa          xgb    GE-dirty                           k 19-28        tie
+  mean   nasa          xgb    GE-clean                           k 302-318      detector better
+  mean   nasa          xgb    GE-hand                            k 530-555      detector better
+  mean   nasa          xgb    HoloClean                          k 1168-1176    n/a
+  mean   nasa          xgb    Raha                               k 1202-1202    n/a
+  caveat: a tie can mean the deleted errors are harmless to the model; read it with the ground-truth repair result
+  caveat: the control does not preserve the class balance of the deleted rows (bc, adult)
+
+== share of gap closed (mean S2 - mean floor) / (mean S4 - mean floor), where S4 beats the floor by the pair rule
+  mean   breast_cancer gt      linear GE-dirty                           -0.067
+  mean   breast_cancer gt      linear GE-clean                           -0.067
+  mean   breast_cancer gt      linear GE-hand                            1.145
+  mean   breast_cancer gt      linear HoloClean                          0.952
+  mean   breast_cancer gt      linear Raha                               0.460
+  mean   breast_cancer gt      linear perfect                            1.000
+  mean   breast_cancer delete  linear GE-dirty                           -1.212
+  mean   breast_cancer delete  linear GE-clean                           -1.212
+  mean   breast_cancer delete  linear GE-hand                            0.392
+  mean   breast_cancer delete  linear HoloClean                          -
+  mean   breast_cancer delete  linear Raha                               0.011
+  mean   breast_cancer delete  linear perfect                            0.743
+  mean   breast_cancer impute  linear GE-dirty                           0.000
+  mean   breast_cancer impute  linear GE-clean                           0.000
+  mean   breast_cancer impute  linear GE-hand                            1.292
+  mean   breast_cancer impute  linear HoloClean                          -
+  mean   breast_cancer impute  linear Raha                               0.480
+  mean   breast_cancer impute  linear perfect                            1.311
+  mean   nasa          gt      linear GE-dirty                           -0.000
+  mean   nasa          gt      linear GE-clean                           0.000
+  mean   nasa          gt      linear GE-hand                            0.999
+  mean   nasa          gt      linear HoloClean                          0.377
+  mean   nasa          gt      linear Raha                               1.000
+  mean   nasa          gt      linear perfect                            1.000
+  mean   nasa          delete  linear GE-dirty                           0.000
+  mean   nasa          delete  linear GE-clean                           -0.001
+  mean   nasa          delete  linear GE-hand                            0.991
+  mean   nasa          delete  linear HoloClean                          -
+  mean   nasa          delete  linear Raha                               -
+  mean   nasa          delete  linear perfect                            0.997
+  mean   nasa          impute  linear GE-dirty                           0.000
+  mean   nasa          impute  linear GE-clean                           0.000
+  mean   nasa          impute  linear GE-hand                            0.983
+  mean   nasa          impute  linear HoloClean                          0.746
+  mean   nasa          impute  linear Raha                               0.381
+  mean   nasa          impute  linear perfect                            0.986
+  mean   nasa          gt      rf     GE-dirty                           -0.003
+  mean   nasa          gt      rf     GE-clean                           0.436
+  mean   nasa          gt      rf     GE-hand                            0.849
+  mean   nasa          gt      rf     HoloClean                          0.644
+  mean   nasa          gt      rf     Raha                               0.994
+  mean   nasa          gt      rf     perfect                            1.000
+  mean   nasa          delete  rf     GE-dirty                           -0.064
+  mean   nasa          delete  rf     GE-clean                           -0.348
+  mean   nasa          delete  rf     GE-hand                            -0.405
+  mean   nasa          delete  rf     HoloClean                          -
+  mean   nasa          delete  rf     Raha                               -
+  mean   nasa          delete  rf     perfect                            -0.174
+  mean   nasa          impute  rf     GE-dirty                           0.000
+  mean   nasa          impute  rf     GE-clean                           0.001
+  mean   nasa          impute  rf     GE-hand                            -0.101
+  mean   nasa          impute  rf     HoloClean                          -3.201
+  mean   nasa          impute  rf     Raha                               -8.970
+  mean   nasa          impute  rf     perfect                            -0.004
+  mean   nasa          gt      xgb    GE-dirty                           0.009
+  mean   nasa          gt      xgb    GE-clean                           0.407
+  mean   nasa          gt      xgb    GE-hand                            0.893
+  mean   nasa          gt      xgb    HoloClean                          0.624
+  mean   nasa          gt      xgb    Raha                               0.912
+  mean   nasa          gt      xgb    perfect                            1.000
+  mean   nasa          delete  xgb    GE-dirty                           -0.061
+  mean   nasa          delete  xgb    GE-clean                           -0.085
+  mean   nasa          delete  xgb    GE-hand                            -0.065
+  mean   nasa          delete  xgb    HoloClean                          -
+  mean   nasa          delete  xgb    Raha                               -
+  mean   nasa          delete  xgb    perfect                            0.006
+  mean   nasa          impute  xgb    GE-dirty                           0.000
+  mean   nasa          impute  xgb    GE-clean                           -0.015
+  mean   nasa          impute  xgb    GE-hand                            -0.070
+  mean   nasa          impute  xgb    HoloClean                          -4.693
+  mean   nasa          impute  xgb    Raha                               -8.470
+  mean   nasa          impute  xgb    perfect                            0.157
+
+== D6 diagnostic (nasa raha_minus_format_only, never ranked or counted): mean S2 beside Raha and perfect
+  mean   gt      linear D6 -4.8001 Raha -4.8001 perfect -4.7993 | D6 vs Raha tie (p -)
+  mean   delete  linear D6 -4.8041 Raha - perfect -4.8062 | D6 vs Raha > (p -)
+  mean   impute  linear D6 -4.8284 Raha -6.0932 perfect -4.8284 | D6 vs Raha > (p 0.0020)
+  mean   gt      rf     D6 -1.7842 Raha -1.7842 perfect -1.7812 | D6 vs Raha tie (p -)
+  mean   delete  rf     D6 -2.3477 Raha - perfect -2.3431 | D6 vs Raha > (p -)
+  mean   impute  rf     D6 -2.2618 Raha -6.5528 perfect -2.2618 | D6 vs Raha > (p 0.0020)
+  mean   gt      xgb    D6 -1.6535 Raha -1.6535 perfect -1.6035 | D6 vs Raha tie (p -)
+  mean   delete  xgb    D6 -2.1489 Raha - perfect -2.1678 | D6 vs Raha > (p -)
+  mean   impute  xgb    D6 -2.0821 Raha -6.9812 perfect -2.0821 | D6 vs Raha > (p 0.0020)
+
+== plan §9 prediction scorecard (ranked last, reference (a), mean fill, datasets present)
+  1 HOLDS    GT 0.742 < delete 0.789 and < impute 0.763
+  2 HOLDS    delete 0.789 impute 0.763 (>= 0.70 each)
+  3 HOLDS    against (d): gt 0.968, delete 0.941, impute 0.783
+  4 HOLDS    18 of 33 undetermined impute cases tie
+  5 HOLDS    tie share clf 0.611 reg 0.200; bc RF+XGB ties 0.717
+  6 REFUTED  gt GE-hand top in 3/3; gt Raha top in 3/3; impute GE-hand top in 3/3; impute Raha top in 0/3; impute GE-hand > Raha in 3/3; RF perfect/impute vs floor: tie
+  7 REFUTED  beats its control: nasa GE-dirty 0/3, nasa GE-clean 2/3, nasa GE-hand 3/3
+  8 n/a      bike not present
+  prediction 1, the expected discordant GT pairs, observed per model (linear/rf/xgb):
+    breast_cancer  GE-dirty vs HoloClean                      ref (a) GE-dirty > HoloClean                     observed tie/tie/>
+    breast_cancer  GE-clean vs HoloClean                      ref (a) GE-clean > HoloClean                     observed tie/tie/tie
+    breast_cancer  GE-hand vs HoloClean                       ref (a) GE-hand > HoloClean                      observed tie/tie/tie
+    breast_cancer  HoloClean vs Raha                          ref (a) Raha > HoloClean                         observed >/tie/tie
+    nasa           GE-clean vs HoloClean                      ref (a) GE-clean > HoloClean                     observed </</<
+    nasa           GE-clean vs Raha                           ref (a) GE-clean > Raha                          observed </</<
+    nasa           GE-hand vs Raha                            ref (a) GE-hand > Raha                           observed tie/</tie
+DONE analysis

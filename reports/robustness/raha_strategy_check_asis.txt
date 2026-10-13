@@ -1,0 +1,6 @@
+== nasa_o1_raha
+  frequency: bestF1=1.00 ['OD', ['gaussian', '1.0']] flagged len>=15 unflagged len<=7
+  angle: bestF1=1.00 ['OD', ['gaussian', '1.0']] flagged len>=15 unflagged len<=14
+  chord_length: bestF1=1.00 ['OD', ['histogram', '0.5', '0.5']] flagged len>=15 unflagged len<=6
+  velocity: bestF1=1.00 ['OD', ['histogram', '0.5', '0.7']] flagged len>=15 unflagged len<=4
+  thickness: bestF1=1.00 ['OD', ['gaussian', '1.0']] flagged len>=18 unflagged len<=11

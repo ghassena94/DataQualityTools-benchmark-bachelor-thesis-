@@ -1,0 +1,24 @@
+== nasa_o1c_raha
+  frequency: bestF1=0.50 ['OD', ['histogram', '0.7', '0.1']] flagged len>=4 unflagged len<=6
+  angle: bestF1=0.53 ['OD', ['gaussian', '1.0']] flagged len>=4 unflagged len<=3
+  chord_length: bestF1=0.49 ['PVD', ['chord_length', '1']] flagged len>=6 unflagged len<=7
+  velocity: bestF1=0.56 ['PVD', ['velocity', '4']] flagged len>=3 unflagged len<=5
+  thickness: bestF1=0.46 ['OD', ['histogram', '0.9', '0.7']] flagged len>=7 unflagged len<=None
+== nasa_e2c_d4_raha
+  frequency: bestF1=0.60 ['PVD', ['frequency', '7']] flagged len>=4 unflagged len<=8
+  angle: bestF1=0.67 ['OD', ['histogram', '0.7', '0.1']] flagged len>=4 unflagged len<=4
+  chord_length: bestF1=0.56 ['PVD', ['chord_length', '7']] flagged len>=6 unflagged len<=7
+  velocity: bestF1=0.59 ['OD', ['histogram', '0.7', '0.1']] flagged len>=3 unflagged len<=4
+  thickness: bestF1=0.32 ['PVD', ['thickness', '-']] flagged len>=10 unflagged len<=11
+== nasa_o5c_raha
+  frequency: bestF1=0.63 ['OD', ['histogram', '0.5', '0.1']] flagged len>=4 unflagged len<=7
+  angle: bestF1=0.72 ['OD', ['histogram', '0.3', '0.5']] flagged len>=4 unflagged len<=3
+  chord_length: bestF1=0.58 ['OD', ['gaussian', '2.0']] flagged len>=7 unflagged len<=6
+  velocity: bestF1=0.70 ['OD', ['histogram', '0.5', '0.1']] flagged len>=3 unflagged len<=4
+  thickness: bestF1=0.59 ['OD', ['histogram', '0.5', '0.1']] flagged len>=7 unflagged len<=10
+== nasa_o10c_raha
+  frequency: bestF1=0.66 ['OD', ['histogram', '0.5', '0.3']] flagged len>=5 unflagged len<=6
+  angle: bestF1=0.74 ['OD', ['histogram', '0.3', '0.5']] flagged len>=4 unflagged len<=3
+  chord_length: bestF1=0.63 ['PVD', ['chord_length', '-']] flagged len>=7 unflagged len<=6
+  velocity: bestF1=0.88 ['OD', ['histogram', '0.3', '0.5']] flagged len>=3 unflagged len<=4
+  thickness: bestF1=0.73 ['OD', ['histogram', '0.5', '0.3']] flagged len>=7 unflagged len<=10

@@ -1,0 +1,34 @@
+clean gt values: {'stand': 40164, 'sit': 29171, 'null': 665}
+  clean stand rows  40164  changed in dirty  1185 (3.0 %)  dirty values of changed: {'': 1185}
+  clean sit   rows  29171  changed in dirty   902 (3.1 %)  dirty values of changed: {'': 902}
+  clean null  rows    665  changed in dirty   665 (100.0 %)  dirty values of changed: {'nan': 640, '': 25}
+'nan' strings anywhere in dirty.csv: 640  of which in gt on clean-null rows: 640
+'null' strings anywhere in dirty.csv: 0
+blank rate on stand/sit labels 0.0301 -> expected blanks among 665 null rows 20.0, observed 25, binomial p = 0.255
+
+REIN reads clean.csv with defaults -> gt = ['stand', nan, 'sit']
+after .astype(str) before the error generator -> gt = ['stand', nan, 'sit']
+written dirty.csv: x,gt | 1.0,stand | 2.0, | 3.0,sit | 
+benchmark comparison: differ('nan','null') = True   differ('', 'null') = True
+
+artifact cells in actual_errors.csv: 665  share of gt errors: 24.2 %
+            version  errors  dirty_rows    eps    rho  F1base_cell  F1base_row  rhohat  rho_minus_rhohat  eps_d_over_rho
+published (Table 2)   51845       39181 0.1481 0.5597       0.2580      0.7177  0.5514            0.0083            1.32
+   without artifact   51180       38891 0.1462 0.5556       0.2551      0.7143  0.5464            0.0092            1.32
+
+GE on full har (published GT vs GT without artifact):
+  dirty_profiled  detections  10502  artifact cells flagged  25   F1 0.3369 (TP 10502) -> 0.3397 (TP 10477)
+  clean_profiled  detections  11142  artifact cells flagged 665   F1 0.3538 (TP 11142) -> 0.3362 (TP 10477)
+  hand_written    detections  22400  artifact cells flagged 665   F1 0.6034 (TP 22400) -> 0.5908 (TP 21735)
+  stored greatExpectations/detections.csv: 22400 rows (14 Sep run, tier unknown)
+
+cells counted as errors today although BOTH sides are a missing token:
+  adult             0
+  beers          1005  {('', 'N/A'): 1005}
+  bike              0
+  breast_cancer     1  {('?', ''): 1}
+  har             665  {('null', 'nan'): 640, ('null', ''): 25}
+  mercedes          0
+  nasa              0
+  smartfactory      0
+  soilmoisture      0

@@ -1,0 +1,124 @@
+/private/tmp/claude-503/-Users-ghassen-aicha-caronsale-de-Desktop-BA-rein-benchmark/32983ad7-d979-40ea-a9e4-4217ca518e50/scratchpad/gt_flags/bc_experiments.py:33: UserWarning: This pattern is interpreted as a regular expression, and has match groups. To actually get the groups, use str.extract.
+  bad = ~s.str.contains(kw['regex'], regex=True)
+/private/tmp/claude-503/-Users-ghassen-aicha-caronsale-de-Desktop-BA-rein-benchmark/32983ad7-d979-40ea-a9e4-4217ca518e50/scratchpad/gt_flags/bc_experiments.py:33: UserWarning: This pattern is interpreted as a regular expression, and has match groups. To actually get the groups, use str.extract.
+  bad = ~s.str.contains(kw['regex'], regex=True)
+/private/tmp/claude-503/-Users-ghassen-aicha-caronsale-de-Desktop-BA-rein-benchmark/32983ad7-d979-40ea-a9e4-4217ca518e50/scratchpad/gt_flags/bc_experiments.py:33: UserWarning: This pattern is interpreted as a regular expression, and has match groups. To actually get the groups, use str.extract.
+  bad = ~s.str.contains(kw['regex'], regex=True)
+/private/tmp/claude-503/-Users-ghassen-aicha-caronsale-de-Desktop-BA-rein-benchmark/32983ad7-d979-40ea-a9e4-4217ca518e50/scratchpad/gt_flags/bc_experiments.py:33: UserWarning: This pattern is interpreted as a regular expression, and has match groups. To actually get the groups, use str.extract.
+  bad = ~s.str.contains(kw['regex'], regex=True)
+/private/tmp/claude-503/-Users-ghassen-aicha-caronsale-de-Desktop-BA-rein-benchmark/32983ad7-d979-40ea-a9e4-4217ca518e50/scratchpad/gt_flags/bc_experiments.py:33: UserWarning: This pattern is interpreted as a regular expression, and has match groups. To actually get the groups, use str.extract.
+  bad = ~s.str.contains(kw['regex'], regex=True)
+/private/tmp/claude-503/-Users-ghassen-aicha-caronsale-de-Desktop-BA-rein-benchmark/32983ad7-d979-40ea-a9e4-4217ca518e50/scratchpad/gt_flags/bc_experiments.py:33: UserWarning: This pattern is interpreted as a regular expression, and has match groups. To actually get the groups, use str.extract.
+  bad = ~s.str.contains(kw['regex'], regex=True)
+/private/tmp/claude-503/-Users-ghassen-aicha-caronsale-de-Desktop-BA-rein-benchmark/32983ad7-d979-40ea-a9e4-4217ca518e50/scratchpad/gt_flags/bc_experiments.py:33: UserWarning: This pattern is interpreted as a regular expression, and has match groups. To actually get the groups, use str.extract.
+  bad = ~s.str.contains(kw['regex'], regex=True)
+/private/tmp/claude-503/-Users-ghassen-aicha-caronsale-de-Desktop-BA-rein-benchmark/32983ad7-d979-40ea-a9e4-4217ca518e50/scratchpad/gt_flags/bc_experiments.py:33: UserWarning: This pattern is interpreted as a regular expression, and has match groups. To actually get the groups, use str.extract.
+  bad = ~s.str.contains(kw['regex'], regex=True)
+/private/tmp/claude-503/-Users-ghassen-aicha-caronsale-de-Desktop-BA-rein-benchmark/32983ad7-d979-40ea-a9e4-4217ca518e50/scratchpad/gt_flags/bc_experiments.py:33: UserWarning: This pattern is interpreted as a regular expression, and has match groups. To actually get the groups, use str.extract.
+  bad = ~s.str.contains(kw['regex'], regex=True)
+/private/tmp/claude-503/-Users-ghassen-aicha-caronsale-de-Desktop-BA-rein-benchmark/32983ad7-d979-40ea-a9e4-4217ca518e50/scratchpad/gt_flags/bc_experiments.py:33: UserWarning: This pattern is interpreted as a regular expression, and has match groups. To actually get the groups, use str.extract.
+  bad = ~s.str.contains(kw['regex'], regex=True)
+/private/tmp/claude-503/-Users-ghassen-aicha-caronsale-de-Desktop-BA-rein-benchmark/32983ad7-d979-40ea-a9e4-4217ca518e50/scratchpad/gt_flags/bc_experiments.py:33: UserWarning: This pattern is interpreted as a regular expression, and has match groups. To actually get the groups, use str.extract.
+  bad = ~s.str.contains(kw['regex'], regex=True)
+/private/tmp/claude-503/-Users-ghassen-aicha-caronsale-de-Desktop-BA-rein-benchmark/32983ad7-d979-40ea-a9e4-4217ca518e50/scratchpad/gt_flags/bc_experiments.py:33: UserWarning: This pattern is interpreted as a regular expression, and has match groups. To actually get the groups, use str.extract.
+  bad = ~s.str.contains(kw['regex'], regex=True)
+/private/tmp/claude-503/-Users-ghassen-aicha-caronsale-de-Desktop-BA-rein-benchmark/32983ad7-d979-40ea-a9e4-4217ca518e50/scratchpad/gt_flags/bc_experiments.py:33: UserWarning: This pattern is interpreted as a regular expression, and has match groups. To actually get the groups, use str.extract.
+  bad = ~s.str.contains(kw['regex'], regex=True)
+/private/tmp/claude-503/-Users-ghassen-aicha-caronsale-de-Desktop-BA-rein-benchmark/32983ad7-d979-40ea-a9e4-4217ca518e50/scratchpad/gt_flags/bc_experiments.py:33: UserWarning: This pattern is interpreted as a regular expression, and has match groups. To actually get the groups, use str.extract.
+  bad = ~s.str.contains(kw['regex'], regex=True)
+/private/tmp/claude-503/-Users-ghassen-aicha-caronsale-de-Desktop-BA-rein-benchmark/32983ad7-d979-40ea-a9e4-4217ca518e50/scratchpad/gt_flags/bc_experiments.py:33: UserWarning: This pattern is interpreted as a regular expression, and has match groups. To actually get the groups, use str.extract.
+  bad = ~s.str.contains(kw['regex'], regex=True)
+/private/tmp/claude-503/-Users-ghassen-aicha-caronsale-de-Desktop-BA-rein-benchmark/32983ad7-d979-40ea-a9e4-4217ca518e50/scratchpad/gt_flags/bc_experiments.py:33: UserWarning: This pattern is interpreted as a regular expression, and has match groups. To actually get the groups, use str.extract.
+  bad = ~s.str.contains(kw['regex'], regex=True)
+/private/tmp/claude-503/-Users-ghassen-aicha-caronsale-de-Desktop-BA-rein-benchmark/32983ad7-d979-40ea-a9e4-4217ca518e50/scratchpad/gt_flags/bc_experiments.py:33: UserWarning: This pattern is interpreted as a regular expression, and has match groups. To actually get the groups, use str.extract.
+  bad = ~s.str.contains(kw['regex'], regex=True)
+/private/tmp/claude-503/-Users-ghassen-aicha-caronsale-de-Desktop-BA-rein-benchmark/32983ad7-d979-40ea-a9e4-4217ca518e50/scratchpad/gt_flags/bc_experiments.py:33: UserWarning: This pattern is interpreted as a regular expression, and has match groups. To actually get the groups, use str.extract.
+  bad = ~s.str.contains(kw['regex'], regex=True)
+/private/tmp/claude-503/-Users-ghassen-aicha-caronsale-de-Desktop-BA-rein-benchmark/32983ad7-d979-40ea-a9e4-4217ca518e50/scratchpad/gt_flags/bc_experiments.py:33: UserWarning: This pattern is interpreted as a regular expression, and has match groups. To actually get the groups, use str.extract.
+  bad = ~s.str.contains(kw['regex'], regex=True)
+/private/tmp/claude-503/-Users-ghassen-aicha-caronsale-de-Desktop-BA-rein-benchmark/32983ad7-d979-40ea-a9e4-4217ca518e50/scratchpad/gt_flags/bc_experiments.py:33: UserWarning: This pattern is interpreted as a regular expression, and has match groups. To actually get the groups, use str.extract.
+  bad = ~s.str.contains(kw['regex'], regex=True)
+/private/tmp/claude-503/-Users-ghassen-aicha-caronsale-de-Desktop-BA-rein-benchmark/32983ad7-d979-40ea-a9e4-4217ca518e50/scratchpad/gt_flags/bc_experiments.py:33: UserWarning: This pattern is interpreted as a regular expression, and has match groups. To actually get the groups, use str.extract.
+  bad = ~s.str.contains(kw['regex'], regex=True)
+/private/tmp/claude-503/-Users-ghassen-aicha-caronsale-de-Desktop-BA-rein-benchmark/32983ad7-d979-40ea-a9e4-4217ca518e50/scratchpad/gt_flags/bc_experiments.py:33: UserWarning: This pattern is interpreted as a regular expression, and has match groups. To actually get the groups, use str.extract.
+  bad = ~s.str.contains(kw['regex'], regex=True)
+/private/tmp/claude-503/-Users-ghassen-aicha-caronsale-de-Desktop-BA-rein-benchmark/32983ad7-d979-40ea-a9e4-4217ca518e50/scratchpad/gt_flags/bc_experiments.py:33: UserWarning: This pattern is interpreted as a regular expression, and has match groups. To actually get the groups, use str.extract.
+  bad = ~s.str.contains(kw['regex'], regex=True)
+/private/tmp/claude-503/-Users-ghassen-aicha-caronsale-de-Desktop-BA-rein-benchmark/32983ad7-d979-40ea-a9e4-4217ca518e50/scratchpad/gt_flags/bc_experiments.py:33: UserWarning: This pattern is interpreted as a regular expression, and has match groups. To actually get the groups, use str.extract.
+  bad = ~s.str.contains(kw['regex'], regex=True)
+/private/tmp/claude-503/-Users-ghassen-aicha-caronsale-de-Desktop-BA-rein-benchmark/32983ad7-d979-40ea-a9e4-4217ca518e50/scratchpad/gt_flags/bc_experiments.py:33: UserWarning: This pattern is interpreted as a regular expression, and has match groups. To actually get the groups, use str.extract.
+  bad = ~s.str.contains(kw['regex'], regex=True)
+/private/tmp/claude-503/-Users-ghassen-aicha-caronsale-de-Desktop-BA-rein-benchmark/32983ad7-d979-40ea-a9e4-4217ca518e50/scratchpad/gt_flags/bc_experiments.py:33: UserWarning: This pattern is interpreted as a regular expression, and has match groups. To actually get the groups, use str.extract.
+  bad = ~s.str.contains(kw['regex'], regex=True)
+/private/tmp/claude-503/-Users-ghassen-aicha-caronsale-de-Desktop-BA-rein-benchmark/32983ad7-d979-40ea-a9e4-4217ca518e50/scratchpad/gt_flags/bc_experiments.py:33: UserWarning: This pattern is interpreted as a regular expression, and has match groups. To actually get the groups, use str.extract.
+  bad = ~s.str.contains(kw['regex'], regex=True)
+shape (699, 12) errors 631 eps 0.0752
+errors per column: {'Unnamed: 0': 47, 'Sample code number': 60, 'Clump Thickness': 73, 'Uniformity of Cell Size': 53, 'Uniformity of Cell Shape': 55, 'Marginal Adhesion': 51, 'Single Epithelial Cell Size': 61, 'Bare Nuclei': 50, 'Bland Chromatin': 61, 'Normal Nucleoli': 63, 'Mitoses': 42, 'class': 15}
+
+== dirty_profiled {'det': 260, 'TP': 247, 'FP': 13, 'P': 0.95, 'R': 0.391, 'F1': 0.554, 'FG1': 0.935}
+   FP by column: {'Bare Nuclei': 13}
+   FP by rule: {'not_be_in_set': 13}
+   FP dirty values: {'?': 13}
+
+== clean_profiled {'det': 291, 'TP': 278, 'FP': 13, 'P': 0.955, 'R': 0.441, 'F1': 0.603, 'FG1': 0.946}
+   FP by column: {'Bare Nuclei': 13}
+   FP by rule: {'not_be_in_set': 13}
+   FP dirty values: {'?': 13}
+
+== hand_written {'det': 460, 'TP': 438, 'FP': 22, 'P': 0.952, 'R': 0.694, 'F1': 0.803, 'FG1': 0.98}
+   FP by column: {'Unnamed: 0': 22}
+   FP by rule: {'be_unique': 22}
+   FP dirty values: {'2': 1, '20': 1, '21': 1, '45': 1, '102': 1}
+
+## ? cells: clean has 16
+UCI file rows with ? in Bare Nuclei: 16
+  row  23  id 1057013  clean '?' dirty '?'   in GT: False  flagged dp/cp/hw: Y/Y/-
+  row  40  id 1096800  clean '?' dirty '1'   in GT: True   flagged dp/cp/hw: -/-/-
+  row 139  id 1183246  clean '?' dirty '?'   in GT: False  flagged dp/cp/hw: Y/Y/-
+  row 145  id 1184840  clean '?' dirty '?'   in GT: False  flagged dp/cp/hw: Y/Y/-
+  row 158  id 1193683  clean '?' dirty '?'   in GT: False  flagged dp/cp/hw: Y/Y/-
+  row 164  id 1197510  clean '?' dirty '?'   in GT: False  flagged dp/cp/hw: Y/Y/-
+  row 235  id 1241232  clean '?' dirty '??'  in GT: True   flagged dp/cp/hw: -/Y/Y
+  row 249  id 169356   clean '?' dirty '?'   in GT: False  flagged dp/cp/hw: Y/Y/-
+  row 275  id 432809   clean '?' dirty ''    in GT: True   flagged dp/cp/hw: Y/Y/Y
+  row 292  id 563649   clean '?' dirty '?'   in GT: False  flagged dp/cp/hw: Y/Y/-
+  row 294  id 606140   clean '?' dirty '?'   in GT: False  flagged dp/cp/hw: Y/Y/-
+  row 297  id 61634    clean '?' dirty '?'   in GT: False  flagged dp/cp/hw: Y/Y/-
+  row 315  id 704168   clean '?' dirty '?'   in GT: False  flagged dp/cp/hw: Y/Y/-
+  row 321  id 733639   clean '?' dirty '?'   in GT: False  flagged dp/cp/hw: Y/Y/-
+  row 411  id 1238464  clean '?' dirty '?'   in GT: False  flagged dp/cp/hw: Y/Y/-
+  row 617  id 1057067  clean '?' dirty '?'   in GT: False  flagged dp/cp/hw: Y/Y/-
+UCI ids with ?: True
+
+## hand-written FPs in Unnamed: 0
+  row   2 index 2    (clean, untouched)  <-> row 414: clean index 414 , dirty 2   , injected error: True
+  row  20 index 20   (clean, untouched)  <-> row 272: clean index 272 , dirty 20  , injected error: True
+  row  21 index 21   (clean, untouched)  <-> row 682: clean index 682 , dirty 21  , injected error: True
+  row  45 index 45   (clean, untouched)  <-> row  54: clean index 54  , dirty 45  , injected error: True
+  row 102 index 102  (clean, untouched)  <-> row 663: clean index 663 , dirty 102 , injected error: True
+  FPs explained by an injected twin: 22 of 22
+
+## errors in Unnamed: 0 47 {'value of another row': 23, 'blank': 19, 'not digits': 5} found by {'dirty_profiled': 19, 'clean_profiled': 24, 'hand_written': 46}
+   e.g. row 232: clean '232' -> dirty '434'
+   e.g. row 183: clean '183' -> dirty ''
+   e.g. row 425: clean '425' -> dirty '\x9b425'
+
+## errors in Sample code number 60 {'not digits': 19, 'blank': 18, 'value of another row': 17, 'new number': 6} found by {'dirty_profiled': 18, 'clean_profiled': 37, 'hand_written': 37}
+   e.g. row 80: clean '1137156' -> dirty ''
+   e.g. row 592: clean '1298484' -> dirty '129848Ŵ4'
+   e.g. row 448: clean '1182404' -> dirty ''
+
+## sensitivity (pub = Table 3; noid = without row index + patient ID; q = 13 source ? counted as errors)
+        config  pub_det  pub_TP  pub_FP  pub_P  pub_F1  pub_FG1  noid_TP  noid_FP  noid_P  noid_R  noid_F1  noid_FG1  q_TP  q_FP   q_P  q_F1
+dirty_profiled      260     247      13  0.950   0.554    0.935      210       13   0.942   0.401    0.562     0.937   260     0 1.000 0.575
+clean_profiled      291     278      13  0.955   0.603    0.946      217       13   0.943   0.414    0.576     0.940   291     0 1.000 0.622
+  hand_written      460     438      22  0.952   0.803    0.980      355        0   1.000   0.677    0.808     0.981   438    22 0.952 0.793
+     HoloClean     5691     416    5275  0.073   0.132    0.463      416     5275   0.073   0.794    0.134     0.476   416  5275 0.073 0.131
+eps published 0.0752  eps without id columns 0.075
+dirty_profiled TP in id cols 37 TP in attribute cols 210
+clean_profiled TP in id cols 61 TP in attribute cols 217
+hand_written TP in id cols 83 TP in attribute cols 355
+clean_profiled adds 31 TPs; by column {'Sample code number': 19, 'Unnamed: 0': 5, 'Bare Nuclei': 4, 'Clump Thickness': 1, 'Normal Nucleoli': 1, 'Marginal Adhesion': 1}
+hand_written misses 193 {'legal value (swap)': 169, 'id col: other number': 24}
+all errors by kind {'blank': 210, 'legal value (swap)': 169, 'other number': 138, 'id col: other number': 46, 'id col: blank': 37, 'id col: not a number': 24, 'not a number': 7}
+UCI columns 11 clean columns 12 first clean col values == row number: True

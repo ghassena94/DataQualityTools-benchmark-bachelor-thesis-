@@ -1,0 +1,26 @@
+
+breast_cancer/linear: mean-level pair-order flips  model seed (def rs0 vs rs1): 0/6  search seed (own_s0 vs own_s1): 0/6  default vs own_s0: 1/6
+   significant pairs (exact, zeros dropped): default 4/6, default_r1 4/6, own_s0 4/6, own_s1 4/6, gt 4/6
+   tune gain own_s0 by version: {'no_detection': -0.0036, 'perfect': -0.0009, 'GE_hand_written': 0.001, 'Raha': -0.0021}
+
+breast_cancer/RF: mean-level pair-order flips  model seed (def rs0 vs rs1): 2/6  search seed (own_s0 vs own_s1): 1/6  default vs own_s0: 3/6
+   significant pairs (exact, zeros dropped): default 0/6, default_r1 0/6, own_s0 0/6, own_s1 0/6, gt 0/6
+   tune gain own_s0 by version: {'no_detection': 0.0038, 'perfect': 0.003, 'GE_hand_written': 0.008, 'Raha': 0.0036}
+
+breast_cancer/XGB: mean-level pair-order flips  model seed (def rs0 vs rs1): 0/6  search seed (own_s0 vs own_s1): 1/6  default vs own_s0: 2/6
+   significant pairs (exact, zeros dropped): default 0/6, default_r1 0/6, own_s0 0/6, own_s1 0/6, gt 0/6
+   tune gain own_s0 by version: {'no_detection': 0.0051, 'perfect': 0.0053, 'GE_hand_written': 0.0124, 'Raha': 0.0043}
+
+nasa/linear: mean-level pair-order flips  model seed (def rs0 vs rs1): 0/10  search seed (own_s0 vs own_s1): 0/10  default vs own_s0: 0/10
+   significant pairs (exact, zeros dropped): default 10/10, default_r1 10/10, own_s0 10/10, own_s1 10/10, gt 10/10
+   tune gain own_s0 by version: {'no_detection': -0.0, 'perfect': -0.002, 'GE_hand_written': -0.0023, 'Raha': -0.0007, 'HoloClean': -0.0084}
+
+nasa/RF: mean-level pair-order flips  model seed (def rs0 vs rs1): 1/10  search seed (own_s0 vs own_s1): 0/10  default vs own_s0: 1/10
+   significant pairs (exact, zeros dropped): default 8/10, default_r1 8/10, own_s0 8/10, own_s1 8/10, gt 8/10
+   tune gain own_s0 by version: {'no_detection': -0.208, 'perfect': -0.1504, 'GE_hand_written': -0.1661, 'Raha': 0.4741, 'HoloClean': -0.3657}
+
+nasa/XGB: mean-level pair-order flips  model seed (def rs0 vs rs1): 0/10  search seed (own_s0 vs own_s1): 1/10  default vs own_s0: 0/10
+   verdict differs ('no_detection', 'GE_hand_written') default:tie(n=10,p=0.9219) | default_r1:tie(n=10,p=0.9219) | own_s0:tie(n=10,p=0.1934) | own_s1:tie(n=10,p=0.0645) | gt:>(n=10,p=0.0371)
+   verdict differs ('perfect', 'GE_hand_written') default:>(n=10,p=0.0059) | default_r1:>(n=10,p=0.0059) | own_s0:>(n=10,p=0.0059) | own_s1:tie(n=10,p=0.5566) | gt:tie(n=10,p=0.5566)
+   significant pairs (exact, zeros dropped): default 8/10, default_r1 8/10, own_s0 8/10, own_s1 7/10, gt 8/10
+   tune gain own_s0 by version: {'no_detection': 0.0965, 'perfect': 0.0404, 'GE_hand_written': 0.0448, 'Raha': 0.721, 'HoloClean': 0.3032}

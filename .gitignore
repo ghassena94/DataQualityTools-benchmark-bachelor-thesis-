@@ -171,3 +171,4 @@ KNOWN_ISSUES.md
 !/reports/block_d/**/*.json
 !/reports/block_d_final_plan_2026-10-09/**/*.log
 !/reports/block_d_final_plan_2026-10-09/**/*.json
+/reports/block_d/runs/*/inputs/

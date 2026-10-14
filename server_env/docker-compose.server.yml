@@ -1,0 +1,104 @@
+# Server compose file for the 1 TB machine (server plan 2026-10-13, P0 step 5).
+#
+# Use it from the repo root, always with a project name:
+#   export REIN_CPUSET=0-9 REIN_MEM=40000000000          # cores and memory limit in bytes
+#   docker compose -f server_env/docker-compose.server.yml -p reint config --quiet
+#
+# Relative paths: compose resolves every relative path in this file against the
+# project directory, which is the folder of the first -f file, i.e. server_env/.
+# That is why the repo root is written as "..". Never pass --project-directory.
+#
+# Differences from the Mac's docker-compose.yml (everything else is the same):
+#   rein: image only (no build:), never pulled; cpuset and memory limit from
+#         REIN_CPUSET / REIN_MEM (bytes, no swap); PYTHONPATH loads
+#         server_env/sitecustomize.py (os.cpu_count() = REIN_WORKERS, so Raha's
+#         Pool() starts 10 workers as on the 10-CPU Mac VM); OpenBLAS/OMP/MKL
+#         threads 10 (the Mac VM default); PYTHONHASHSEED=random (= unset, as on
+#         the Mac); REIN_IMAGE_ID; no .pyc files; a read-only git config.
+#   db:   no published port; same cpuset as rein. Its volume is per project
+#         (compose prefixes named volumes with the -p name).
+# Block D, V4 and P6 bypass the db and the waiting entrypoint with
+#   run --rm -T --no-deps --entrypoint python3 -e OMP_NUM_THREADS=1 ... rein <script>
+# Since 14 Oct Block D itself runs on the Mac (Block D plan §16), so V4 is informational here.
+# Without -p, the project is named after this file's folder (server_env) in every copy: always pass -p.
+
+services:
+
+  db:
+    image: postgres:14-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: reinuser
+      POSTGRES_PASSWORD: abcd1234
+      POSTGRES_DB: rein
+    # no ports: the database is reachable only from this project's own network
+    cpuset: "${REIN_CPUSET:?export REIN_CPUSET, e.g. 0-9}"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      # Creates the extra "holo" database for HoloClean on first startup
+      - ../init-db.sql:/docker-entrypoint-initdb.d/init-db.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U reinuser -d rein"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+
+  rein:
+    # The image built on the Mac and moved by docker save / docker load
+    # (Id sha256:8ccf6a40cb8a4a351a85952bdb5ec9563ae25551b63059c5a081770a01d4a760 with the containerd image
+    # store, sha256:19912b857c9b98fe21c59281ecec3304045d8b8597c670b5c56700d05b39eb92 with overlay2; amd64).
+    # No build: and pull_policy never, so compose never rebuilds or downloads it.
+    image: rein-benchmark-rein:latest
+    pull_policy: never
+    platform: linux/amd64
+    depends_on:
+      db:
+        condition: service_healthy
+    cpuset: "${REIN_CPUSET:?export REIN_CPUSET, e.g. 0-9}"
+    # bytes; memswap_limit = mem_limit means the container gets no swap
+    mem_limit: "${REIN_MEM:?export REIN_MEM in bytes, e.g. 40000000000}"
+    memswap_limit: "${REIN_MEM:?export REIN_MEM in bytes, e.g. 40000000000}"
+    environment:
+      PGHOST: db
+      PGPORT: "5432"
+      PGUSER: reinuser
+      PGPASSWORD: abcd1234
+      PGDATABASE: rein
+      DB_URL: "postgresql://reinuser:abcd1234@db:5432/rein"
+      # HoloClean (cleaners/holoclean/holoclean.py) reads its own DB_HOST env var
+      # and otherwise defaults to "localhost".
+      DB_HOST: db
+      # server_env/sitecustomize.py: os.cpu_count() returns REIN_WORKERS
+      PYTHONPATH: /rein/server_env
+      REIN_WORKERS: "10"
+      # The Mac VM had 10 CPUs, so OpenBLAS/OpenMP ran 10 threads there.
+      # Block D and V4 override these with -e ...=1.
+      OMP_NUM_THREADS: "10"
+      OPENBLAS_NUM_THREADS: "10"
+      MKL_NUM_THREADS: "10"
+      # "random" is Python's default (the Mac compose left it unset); Block D passes -e PYTHONHASHSEED=0
+      PYTHONHASHSEED: random
+      # Recorded by scripts/blockd_driver.py; calib.sh exports it from docker image inspect
+      REIN_IMAGE_ID: "${REIN_IMAGE_ID:-}"
+      # The container runs as root: without this, every import would leave
+      # root-owned __pycache__ folders in your copy of the repo.
+      PYTHONDONTWRITEBYTECODE: "1"
+    volumes:
+      # The repo (the folder above server_env/) as /rein, as on the Mac.
+      - ..:/rein
+      # The FAHES .so compiled inside the image, protected in a named volume (as on the Mac).
+      - fahes_compiled:/rein/cleaners/FAHES/src
+      # The code always looks for datasets/ (hardcoded in datasets_dictionary.py).
+      - ../rein-datasets:/rein/datasets
+      # git inside the container (root) refuses a repo owned by your user
+      # ("dubious ownership"); this file marks /rein as safe, so
+      # blockd_driver.py can record git HEAD and git status as on the Mac.
+      - ./gitconfig:/etc/gitconfig:ro
+    working_dir: /rein
+    stdin_open: true
+    tty: true
+    command: bash
+
+volumes:
+  postgres_data:
+  fahes_compiled:

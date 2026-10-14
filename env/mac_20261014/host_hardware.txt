@@ -1,0 +1,4 @@
+cpu Apple M4
+hw.ncpu 10
+hw.memsize_bytes 34359738368
+macOS 26.5.2

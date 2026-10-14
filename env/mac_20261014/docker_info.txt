@@ -1,0 +1,11 @@
+NCPU 10
+MemTotal_bytes 33600925696
+ServerVersion 29.2.0
+OperatingSystem Docker Desktop
+OSType linux
+Architecture aarch64
+KernelVersion 6.12.67-linuxkit
+CgroupVersion 2
+CgroupDriver cgroupfs
+StorageDriver overlayfs
+MemTotal_GB 33.6 (decimal)

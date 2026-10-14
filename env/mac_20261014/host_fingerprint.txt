@@ -1,0 +1,17 @@
+host_fingerprint x86_64:d408e58a3b90
+rule platform.machine() + ':' + sha256(','.join(sorted true numpy __cpu_features__ keys))[:12]
+machine x86_64
+platform Linux-6.12.67-linuxkit-x86_64-with-glibc2.29
+version numpy 1.21.2
+version pandas 1.3.3
+version python 3.8.10
+version scipy 1.7.1
+version sklearn 0.24.2
+version threadpoolctl 3.1.0
+version xgboost 1.3.3
+variable MKL_NUM_THREADS=1
+variable OMP_NUM_THREADS=1
+variable OPENBLAS_CORETYPE=None
+variable OPENBLAS_NUM_THREADS=1
+variable PYTHONHASHSEED=0
+variable REIN_IMAGE_ID=sha256:8ccf6a40cb8a4a351a85952bdb5ec9563ae25551b63059c5a081770a01d4a760

@@ -1,0 +1,6 @@
+# Mounted read-only as /etc/gitconfig in the rein container (docker-compose.server.yml).
+# On the server the container runs as root while the repo belongs to your user, and git
+# (2.25.1-1ubuntu3.14 in the image) then refuses it as "dubious ownership". This marks the
+# bind-mounted repo as safe, so scripts/blockd_driver.py can read git HEAD and git status.
+[safe]
+	directory = /rein

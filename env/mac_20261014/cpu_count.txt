@@ -1,0 +1,2 @@
+os.cpu_count() 10
+len(os.sched_getaffinity(0)) 10

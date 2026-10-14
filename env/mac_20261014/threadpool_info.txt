@@ -1,0 +1,38 @@
+[
+ {
+  "architecture": "Nehalem",
+  "filepath": "/opt/venv/lib/python3.8/site-packages/numpy.libs/libopenblasp-r0-2d23e62b.3.17.so",
+  "internal_api": "openblas",
+  "num_threads": 1,
+  "prefix": "libopenblas",
+  "threading_layer": "pthreads",
+  "user_api": "blas",
+  "version": "0.3.17"
+ },
+ {
+  "filepath": "/opt/venv/lib/python3.8/site-packages/scikit_learn.libs/libgomp-f7e03b3e.so.1.0.0",
+  "internal_api": "openmp",
+  "num_threads": 1,
+  "prefix": "libgomp",
+  "user_api": "openmp",
+  "version": null
+ },
+ {
+  "architecture": "Atom",
+  "filepath": "/opt/venv/lib/python3.8/site-packages/scipy.libs/libopenblasp-r0-085ca80a.3.9.so",
+  "internal_api": "openblas",
+  "num_threads": 1,
+  "prefix": "libopenblas",
+  "threading_layer": "pthreads",
+  "user_api": "blas",
+  "version": "0.3.9"
+ },
+ {
+  "filepath": "/usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0",
+  "internal_api": "openmp",
+  "num_threads": 1,
+  "prefix": "libgomp",
+  "user_api": "openmp",
+  "version": null
+ }
+]

@@ -1,0 +1,1132 @@
+{
+ "args": {
+  "check": false,
+  "data_root": "/rein/datasets",
+  "datasets": [
+   "breast_cancer",
+   "nasa"
+  ],
+  "dry_run": false,
+  "fill": "median",
+  "flags_dir": "reports/block_d/flags",
+  "jobs": 1,
+  "out": "reports/block_d/runs/2026-10-14_mac_core_median",
+  "policies": [
+   "gt",
+   "delete",
+   "impute"
+  ],
+  "seeds": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9
+  ]
+ },
+ "argv": [
+  "scripts/blockd_driver.py",
+  "--flags_dir",
+  "reports/block_d/flags",
+  "--datasets",
+  "breast_cancer",
+  "nasa",
+  "--fill",
+  "median",
+  "--out",
+  "reports/block_d/runs/2026-10-14_mac_core_median"
+ ],
+ "convergence_warnings": {
+  "breast_cancer": {
+   "linear": 0,
+   "rf": 0,
+   "xgb": 0
+  },
+  "nasa": {
+   "linear": 0,
+   "rf": 0,
+   "xgb": 0
+  }
+ },
+ "d6": {
+  "nasa": {
+   "detections": 710,
+   "excl_col_flags": 0,
+   "feature_tp_parsable": 349,
+   "flagged_label_cells": 0,
+   "format_only_fp": 0,
+   "format_only_not_equal": 0,
+   "fp": 0,
+   "model_flags": 710,
+   "parsable_fp": 0,
+   "parsable_tp": 349,
+   "rows_touched_without_format_only": 710,
+   "tp": 710
+  }
+ },
+ "datasets": [
+  "breast_cancer",
+  "nasa"
+ ],
+ "degenerate": {
+  "breast_cancer": {
+   "always_positive/delete": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "always_positive/impute": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "control/holoclean": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "holoclean/delete": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "holoclean/impute": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "nasa": {
+   "always_positive/delete": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "always_positive/impute": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "control/holoclean": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "control/raha": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "holoclean/delete": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "raha/delete": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  }
+ },
+ "digest": {
+  "breast_cancer": "9d99db2b4670c30cea3a1a52ac4e584b33dbfd2649b2c6743d0d45aaec4cd705",
+  "nasa": "bee41e0aa2c9a9e77189b5d719b5f849e6038fcf5b4ba22ce67c15388c2039ca"
+ },
+ "environment": {
+  "cpu_count_unreliable": 10,
+  "cpu_features": {
+   "ASIMD": false,
+   "ASIMDDP": false,
+   "ASIMDFHM": false,
+   "ASIMDHP": false,
+   "AVX": true,
+   "AVX2": true,
+   "AVX5124FMAPS": false,
+   "AVX5124VNNIW": false,
+   "AVX512BITALG": false,
+   "AVX512BW": false,
+   "AVX512CD": false,
+   "AVX512DQ": false,
+   "AVX512ER": false,
+   "AVX512F": false,
+   "AVX512IFMA": false,
+   "AVX512PF": false,
+   "AVX512VBMI": false,
+   "AVX512VBMI2": false,
+   "AVX512VL": false,
+   "AVX512VNNI": false,
+   "AVX512VPOPCNTDQ": false,
+   "AVX512_CLX": false,
+   "AVX512_CNL": false,
+   "AVX512_ICL": false,
+   "AVX512_KNL": false,
+   "AVX512_KNM": false,
+   "AVX512_SKX": false,
+   "F16C": true,
+   "FMA3": true,
+   "FMA4": false,
+   "FPHP": false,
+   "MMX": true,
+   "NEON": false,
+   "NEON_FP16": false,
+   "NEON_VFPV4": false,
+   "POPCNT": true,
+   "SSE": true,
+   "SSE2": true,
+   "SSE3": true,
+   "SSE41": true,
+   "SSE42": true,
+   "SSSE3": true,
+   "VSX": false,
+   "VSX2": false,
+   "VSX3": false,
+   "XOP": false
+  },
+  "frozen_verdicts_vs_c61ee72": "unchanged",
+  "git_head": "91810755bd26e5aeb3e6023f40b34ebd77dc27a2",
+  "git_status": "M cleaners/FAHES/src/DV_Detector.o\n M cleaners/FAHES/src/OD.o\n M cleaners/FAHES/src/Patterns.o\n M cleaners/FAHES/src/Profiler.o\n M cleaners/FAHES/src/RandDMVD.o\n M cleaners/FAHES/src/Table.o\n M cleaners/FAHES/src/common.o\n M cleaners/FAHES/src/csv_reader.o\n M cleaners/FAHES/src/density_estimator.o\n M cleaners/FAHES/src/main.o\n?? env/\n?? reports/block_d/logs/step4_mac_check.log\n?? reports/block_d/logs/step5_mac_core.log\n?? reports/block_d/logs/step5_mac_core_median.log\n?? reports/block_d/runs/2026-10-14_mac_check/\n?? reports/block_d/runs/2026-10-14_mac_core/\n?? scripts/make_env_manifest.sh\n?? server_env/",
+  "host_fingerprint": "x86_64:d408e58a3b90",
+  "hostname": "8acc00613b9a",
+  "machine": "x86_64",
+  "platform": "Linux-6.12.67-linuxkit-x86_64-with-glibc2.29",
+  "sched_affinity": 10,
+  "threadpool_info": [
+   {
+    "architecture": "Nehalem",
+    "filepath": "/opt/venv/lib/python3.8/site-packages/numpy.libs/libopenblasp-r0-2d23e62b.3.17.so",
+    "internal_api": "openblas",
+    "num_threads": 1,
+    "prefix": "libopenblas",
+    "threading_layer": "pthreads",
+    "user_api": "blas",
+    "version": "0.3.17"
+   },
+   {
+    "filepath": "/opt/venv/lib/python3.8/site-packages/scikit_learn.libs/libgomp-f7e03b3e.so.1.0.0",
+    "internal_api": "openmp",
+    "num_threads": 1,
+    "prefix": "libgomp",
+    "user_api": "openmp",
+    "version": null
+   },
+   {
+    "architecture": "Atom",
+    "filepath": "/opt/venv/lib/python3.8/site-packages/scipy.libs/libopenblasp-r0-085ca80a.3.9.so",
+    "internal_api": "openblas",
+    "num_threads": 1,
+    "prefix": "libopenblas",
+    "threading_layer": "pthreads",
+    "user_api": "blas",
+    "version": "0.3.9"
+   },
+   {
+    "filepath": "/usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0",
+    "internal_api": "openmp",
+    "num_threads": 1,
+    "prefix": "libgomp",
+    "user_api": "openmp",
+    "version": null
+   }
+  ],
+  "variables": {
+   "MKL_NUM_THREADS": "1",
+   "OMP_NUM_THREADS": "1",
+   "OPENBLAS_CORETYPE": null,
+   "OPENBLAS_NUM_THREADS": "1",
+   "PYTHONHASHSEED": "0",
+   "REIN_IMAGE_ID": "sha256:8ccf6a40cb8a4a351a85952bdb5ec9563ae25551b63059c5a081770a01d4a760"
+  },
+  "versions": {
+   "numpy": "1.21.2",
+   "pandas": "1.3.3",
+   "python": "3.8.10",
+   "scipy": "1.7.1",
+   "sklearn": "0.24.2",
+   "threadpoolctl": "3.1.0",
+   "xgboost": "1.3.3"
+  }
+ },
+ "expected_verdict_files": {
+  "/rein/reports/block_d_final_plan_2026-10-09/checks/addendum_raha_run1/expected_pair_verdicts_raha_run1.csv": "f60a500ca9b52eb6e37abcbaac6924728d225c300847292fdd38dc4e1bce9c61",
+  "/rein/reports/block_d_final_plan_2026-10-09/checks/expected_pair_verdicts.csv": "3fd71d6d40f33a4f7df45ab1e705fdd5a7fd151c9e9fb7d86ab2623269d03046"
+ },
+ "fill": "median",
+ "flag_counts": {
+  "breast_cancer": {
+   "ge_clean_profiled": {
+    "expected": [
+     278,
+     13,
+     291
+    ],
+    "recomputed": [
+     278,
+     13,
+     291
+    ],
+    "replay": "identical",
+    "sha12": "bffcbf74979f"
+   },
+   "ge_dirty_profiled": {
+    "expected": [
+     247,
+     13,
+     260
+    ],
+    "recomputed": [
+     247,
+     13,
+     260
+    ],
+    "replay": "identical",
+    "sha12": "7b96ddbea83d"
+   },
+   "ge_hand_written": {
+    "expected": [
+     438,
+     22,
+     460
+    ],
+    "recomputed": [
+     438,
+     22,
+     460
+    ],
+    "replay": "identical",
+    "sha12": "213594caf181"
+   },
+   "holoclean": {
+    "expected": [
+     416,
+     5275,
+     5691
+    ],
+    "recomputed": [
+     416,
+     5275,
+     5691
+    ],
+    "replay": "identical",
+    "sha12": "719c0ca84d39"
+   },
+   "raha": {
+    "expected": [
+     317,
+     78,
+     395
+    ],
+    "recomputed": [
+     317,
+     78,
+     395
+    ],
+    "replay": "n/a",
+    "sha12": "ac4b1fd1dec2"
+   }
+  },
+  "nasa": {
+   "ge_clean_profiled": {
+    "expected": [
+     384,
+     0,
+     384
+    ],
+    "recomputed": [
+     384,
+     0,
+     384
+    ],
+    "replay": "identical",
+    "sha12": "4912fae7463e"
+   },
+   "ge_dirty_profiled": {
+    "expected": [
+     30,
+     0,
+     30
+    ],
+    "recomputed": [
+     30,
+     0,
+     30
+    ],
+    "replay": "identical",
+    "sha12": "1c30a8d700b8"
+   },
+   "ge_hand_written": {
+    "expected": [
+     680,
+     0,
+     680
+    ],
+    "recomputed": [
+     680,
+     0,
+     680
+    ],
+    "replay": "identical",
+    "sha12": "dbcf7887aed3"
+   },
+   "holoclean": {
+    "expected": [
+     556,
+     5709,
+     6265
+    ],
+    "recomputed": [
+     556,
+     5709,
+     6265
+    ],
+    "replay": "identical",
+    "sha12": "cff7bf4626ab"
+   },
+   "raha": {
+    "expected": [
+     710,
+     1864,
+     2574
+    ],
+    "recomputed": [
+     710,
+     1864,
+     2574
+    ],
+    "replay": "n/a",
+    "sha12": "3e726a768ea0"
+   }
+  }
+ },
+ "flag_stats": {
+  "breast_cancer": {
+   "always_positive": {
+    "detections": 8388,
+    "excl_col_flags": 1398,
+    "feature_tp_parsable": 292,
+    "flagged_label_cells": 699,
+    "format_only_fp": 0,
+    "format_only_not_equal": 0,
+    "fp": 7757,
+    "model_flags": 6990,
+    "parsable_fp": 5769,
+    "parsable_tp": 292,
+    "rows_touched_without_format_only": 699,
+    "tp": 631
+   },
+   "ge_clean_profiled": {
+    "detections": 291,
+    "excl_col_flags": 61,
+    "feature_tp_parsable": 0,
+    "flagged_label_cells": 0,
+    "format_only_fp": 0,
+    "format_only_not_equal": 0,
+    "fp": 13,
+    "model_flags": 230,
+    "parsable_fp": 0,
+    "parsable_tp": 0,
+    "rows_touched_without_format_only": 223,
+    "tp": 278
+   },
+   "ge_dirty_profiled": {
+    "detections": 260,
+    "excl_col_flags": 37,
+    "feature_tp_parsable": 0,
+    "flagged_label_cells": 0,
+    "format_only_fp": 0,
+    "format_only_not_equal": 0,
+    "fp": 13,
+    "model_flags": 223,
+    "parsable_fp": 0,
+    "parsable_tp": 0,
+    "rows_touched_without_format_only": 219,
+    "tp": 247
+   },
+   "ge_hand_written": {
+    "detections": 460,
+    "excl_col_flags": 105,
+    "feature_tp_parsable": 138,
+    "flagged_label_cells": 0,
+    "format_only_fp": 0,
+    "format_only_not_equal": 0,
+    "fp": 22,
+    "model_flags": 355,
+    "parsable_fp": 0,
+    "parsable_tp": 138,
+    "rows_touched_without_format_only": 308,
+    "tp": 438
+   },
+   "holoclean": {
+    "detections": 5691,
+    "excl_col_flags": 0,
+    "feature_tp_parsable": 237,
+    "flagged_label_cells": 699,
+    "format_only_fp": 0,
+    "format_only_not_equal": 0,
+    "fp": 5275,
+    "model_flags": 5691,
+    "parsable_fp": 4591,
+    "parsable_tp": 237,
+    "rows_touched_without_format_only": 699,
+    "tp": 416
+   },
+   "perfect": {
+    "detections": 631,
+    "excl_col_flags": 107,
+    "feature_tp_parsable": 292,
+    "flagged_label_cells": 15,
+    "format_only_fp": 0,
+    "format_only_not_equal": 0,
+    "fp": 0,
+    "model_flags": 524,
+    "parsable_fp": 0,
+    "parsable_tp": 292,
+    "rows_touched_without_format_only": 399,
+    "tp": 631
+   },
+   "raha": {
+    "detections": 395,
+    "excl_col_flags": 43,
+    "feature_tp_parsable": 73,
+    "flagged_label_cells": 0,
+    "format_only_fp": 0,
+    "format_only_not_equal": 0,
+    "fp": 78,
+    "model_flags": 352,
+    "parsable_fp": 64,
+    "parsable_tp": 73,
+    "rows_touched_without_format_only": 276,
+    "tp": 317
+   }
+  },
+  "nasa": {
+   "always_positive": {
+    "detections": 9018,
+    "excl_col_flags": 0,
+    "feature_tp_parsable": 349,
+    "flagged_label_cells": 1503,
+    "format_only_fp": 1866,
+    "format_only_not_equal": 0,
+    "fp": 8287,
+    "model_flags": 9018,
+    "parsable_fp": 6784,
+    "parsable_tp": 349,
+    "rows_touched_without_format_only": 1503,
+    "tp": 731
+   },
+   "ge_clean_profiled": {
+    "detections": 384,
+    "excl_col_flags": 0,
+    "feature_tp_parsable": 2,
+    "flagged_label_cells": 0,
+    "format_only_fp": 0,
+    "format_only_not_equal": 0,
+    "fp": 0,
+    "model_flags": 384,
+    "parsable_fp": 0,
+    "parsable_tp": 2,
+    "rows_touched_without_format_only": 384,
+    "tp": 384
+   },
+   "ge_dirty_profiled": {
+    "detections": 30,
+    "excl_col_flags": 0,
+    "feature_tp_parsable": 0,
+    "flagged_label_cells": 0,
+    "format_only_fp": 0,
+    "format_only_not_equal": 0,
+    "fp": 0,
+    "model_flags": 30,
+    "parsable_fp": 0,
+    "parsable_tp": 0,
+    "rows_touched_without_format_only": 30,
+    "tp": 30
+   },
+   "ge_hand_written": {
+    "detections": 680,
+    "excl_col_flags": 0,
+    "feature_tp_parsable": 298,
+    "flagged_label_cells": 0,
+    "format_only_fp": 0,
+    "format_only_not_equal": 0,
+    "fp": 0,
+    "model_flags": 680,
+    "parsable_fp": 0,
+    "parsable_tp": 298,
+    "rows_touched_without_format_only": 680,
+    "tp": 680
+   },
+   "holoclean": {
+    "detections": 6265,
+    "excl_col_flags": 0,
+    "feature_tp_parsable": 268,
+    "flagged_label_cells": 934,
+    "format_only_fp": 500,
+    "format_only_not_equal": 0,
+    "fp": 5709,
+    "model_flags": 6265,
+    "parsable_fp": 4775,
+    "parsable_tp": 268,
+    "rows_touched_without_format_only": 1466,
+    "tp": 556
+   },
+   "perfect": {
+    "detections": 731,
+    "excl_col_flags": 0,
+    "feature_tp_parsable": 349,
+    "flagged_label_cells": 0,
+    "format_only_fp": 0,
+    "format_only_not_equal": 0,
+    "fp": 0,
+    "model_flags": 731,
+    "parsable_fp": 0,
+    "parsable_tp": 349,
+    "rows_touched_without_format_only": 731,
+    "tp": 731
+   },
+   "raha": {
+    "detections": 2574,
+    "excl_col_flags": 0,
+    "feature_tp_parsable": 349,
+    "flagged_label_cells": 0,
+    "format_only_fp": 1864,
+    "format_only_not_equal": 0,
+    "fp": 1864,
+    "model_flags": 2574,
+    "parsable_fp": 1864,
+    "parsable_tp": 349,
+    "rows_touched_without_format_only": 710,
+    "tp": 710
+   },
+   "raha_minus_format_only": {
+    "detections": 710,
+    "excl_col_flags": 0,
+    "feature_tp_parsable": 349,
+    "flagged_label_cells": 0,
+    "format_only_fp": 0,
+    "format_only_not_equal": 0,
+    "fp": 0,
+    "model_flags": 710,
+    "parsable_fp": 0,
+    "parsable_tp": 349,
+    "rows_touched_without_format_only": 710,
+    "tp": 710
+   }
+  }
+ },
+ "hashed_inputs": {
+  "/rein/datasets/breast_cancer/constraints/breast_cancer_dcs.txt": "90a2fb1bf913eed1bf712d3255513771da5ea3a554b32a7bb21fb8b545959e78",
+  "/rein/datasets/nasa/constraints/nasa_dcs.txt": "681a1de4c1069d2639ad117f11f7aa533c5112aa09f056202f5116573143c17f",
+  "/rein/rein/auxiliaries/expectations_dictionary_local.py": "5705a516db3a16c1ca91c8b92549a1d242b9d45972811dc747a5c5da1e34fb05",
+  "/rein/rein/auxiliaries/expectations_profiler.py": "dfb3c44f8984e2ca099cbaebcfe1c3339dd7ce9b1c13ed5a0f4d4c0552bd535a",
+  "/rein/reports/block_d_final_plan_2026-10-09/checks/addendum_raha_run1/expected_pair_verdicts_raha_run1.csv": "f60a500ca9b52eb6e37abcbaac6924728d225c300847292fdd38dc4e1bce9c61",
+  "/rein/reports/block_d_final_plan_2026-10-09/checks/addendum_raha_run1/measure_fixes.json": "3879a92f28710a0dfa3ebc8df91e7ff1c26220a2d4a8f0652e5a019003a2b790",
+  "/rein/reports/block_d_final_plan_2026-10-09/checks/expected_pair_verdicts.csv": "3fd71d6d40f33a4f7df45ab1e705fdd5a7fd151c9e9fb7d86ab2623269d03046",
+  "/rein/reports/block_d_final_plan_2026-10-09/checks/measure_fixes.py": "7c6669cf3b8a3f056e79451edc032037087d2490210e6fcd2bfa373f96ef6587"
+ },
+ "inputs": {
+  "inputs/MANIFEST.csv": "d63b24d4e3137073527a12c38ae259529baeed8f9d9674c1457954801831db40",
+  "inputs/breast_cancer/actual_errors.csv": "751cde22810a7f1bdad66e694c2489e92db0050a56730c14864d38d0943e77b3",
+  "inputs/breast_cancer/clean.csv": "a4feaca55f067fef9f0002c1bdbe607b122dbf54407c8ac10b2697f646c65d37",
+  "inputs/breast_cancer/dirty.csv": "9b9541535649dc7e220a328ca3b434d524c931753a9c36509c21420f0b8fe524",
+  "inputs/breast_cancer/ge_clean_profiled.csv": "bffcbf74979f0aeaff1e923edc10acf47285fd21eb689537a36245ed062a04b6",
+  "inputs/breast_cancer/ge_dirty_profiled.csv": "7b96ddbea83d828ce85a5e42368ef6c7542c8e173a7843f16258166994ab7c0f",
+  "inputs/breast_cancer/ge_hand_written.csv": "213594caf181021792880cadeddadc031c47a52d6c9f73b00dd76ebb112494d8",
+  "inputs/breast_cancer/holoclean.csv": "719c0ca84d39772eb1c7ad2262e9462a367a886284aa284546b3fb60c83cda8b",
+  "inputs/breast_cancer/raha.csv": "ac4b1fd1dec297c2dea6bbc9100dcc5271e4b9fc13580d591d778a2ba148f81e",
+  "inputs/nasa/actual_errors.csv": "52bb170889fcbaff9c23799a868fc0df595d77259a21148b18927210a3e7c93b",
+  "inputs/nasa/clean.csv": "e0fbc276d7fe2a7bea2701da6086e55a03e864e382e46b71ca3515e384059ae6",
+  "inputs/nasa/dirty.csv": "4ec1fe7d142c55577dc593f1bb29b64c42917b99083b8ae01b90248c2837fcdc",
+  "inputs/nasa/ge_clean_profiled.csv": "4912fae7463e8983a138cd10f98947d7be0f33fd6bbfea2f1161f082fe003ea9",
+  "inputs/nasa/ge_dirty_profiled.csv": "1c30a8d700b89dbd1ef5a7048f0dd919f886bb4fe2a11fe2aaa9c634e701a61a",
+  "inputs/nasa/ge_hand_written.csv": "dbcf7887aed326d4e83c6130a7bb55b29180497cfa44e62b4d8fccecbc310d81",
+  "inputs/nasa/holoclean.csv": "cff7bf4626abe99bdd84ff37992dc0125430bdf3a7a7adcc60b019520e08e273",
+  "inputs/nasa/raha.csv": "3e726a768ea0493451d946ec79294f5eb7e6c2ebed9f1a276659145ffb45fd7a"
+ },
+ "items": {
+  "breast_cancer": [
+   [
+    "GE-dirty",
+    [
+     "ge_dirty_profiled"
+    ]
+   ],
+   [
+    "GE-clean",
+    [
+     "ge_clean_profiled"
+    ]
+   ],
+   [
+    "GE-hand",
+    [
+     "ge_hand_written"
+    ]
+   ],
+   [
+    "HoloClean",
+    [
+     "holoclean"
+    ]
+   ],
+   [
+    "Raha",
+    [
+     "raha"
+    ]
+   ]
+  ],
+  "nasa": [
+   [
+    "GE-dirty",
+    [
+     "ge_dirty_profiled"
+    ]
+   ],
+   [
+    "GE-clean",
+    [
+     "ge_clean_profiled"
+    ]
+   ],
+   [
+    "GE-hand",
+    [
+     "ge_hand_written"
+    ]
+   ],
+   [
+    "HoloClean",
+    [
+     "holoclean"
+    ]
+   ],
+   [
+    "Raha",
+    [
+     "raha"
+    ]
+   ]
+  ]
+ },
+ "mode": "full",
+ "policies": [
+  "gt",
+  "delete",
+  "impute"
+ ],
+ "reuse": {
+  "breast_cancer seed 0": {
+   "bae15f1939c8f129542c67ebf7eb267e572ca591900289c719037265dcf5234a": [
+    "clean",
+    "perfect/gt",
+    "always_positive/gt"
+   ],
+   "cb54b02e7dade2e7c456630c6eb07c0211037cc693b3f5764cb372246fbba6e7": [
+    "floor",
+    "ge_dirty_profiled/impute",
+    "ge_clean_profiled/impute"
+   ]
+  },
+  "breast_cancer seed 1": {
+   "9365cb7a252904517cfe0465b1ee02f6c41e8fb731949a0b72cb438839bd3b8c": [
+    "floor",
+    "ge_dirty_profiled/impute",
+    "ge_clean_profiled/impute"
+   ],
+   "d750c82746a5391697b7e1b5c801eda37c61e2923fb333984f883f919ee1b765": [
+    "clean",
+    "perfect/gt",
+    "always_positive/gt"
+   ]
+  },
+  "breast_cancer seed 2": {
+   "58a638b3d48b25014ac69fb3b2b6181f74dd8d03803be0920f13e580745015be": [
+    "clean",
+    "perfect/gt",
+    "always_positive/gt"
+   ],
+   "b7ddcc2de6cfd86200752bb86030e05ceca386b7a66dffd39bd13cb70a9c98e5": [
+    "floor",
+    "ge_dirty_profiled/impute",
+    "ge_clean_profiled/impute"
+   ]
+  },
+  "breast_cancer seed 3": {
+   "142f1dd8f310ce6eefa642d0770e5a50b971232340af670be15ec02b348f0771": [
+    "floor",
+    "ge_dirty_profiled/impute",
+    "ge_clean_profiled/impute"
+   ],
+   "a7229c84fdbbef07d201fb8eb8da0cfcc8ced9320628415216dd63caef5f2e3b": [
+    "clean",
+    "perfect/gt",
+    "always_positive/gt"
+   ]
+  },
+  "breast_cancer seed 4": {
+   "23e0069ea91d0fdce97142f8ea6a33a68fdf3e325cb0c2dbae5a3c37f684afbe": [
+    "clean",
+    "perfect/gt",
+    "always_positive/gt"
+   ],
+   "d86f1969335468c0d2f77a57868c52493df617fa17c6a8f7b33f74c9a6b25730": [
+    "floor",
+    "ge_dirty_profiled/impute",
+    "ge_clean_profiled/impute"
+   ]
+  },
+  "breast_cancer seed 5": {
+   "01c8025cf4daf4f982d17567665e89ed508d96405e2d5723320f412148bf0eee": [
+    "floor",
+    "ge_dirty_profiled/impute",
+    "ge_clean_profiled/impute"
+   ],
+   "9b600b4215c78e5f6fbe9878bde5b59594037eeb225a9202e68ea696db5f496e": [
+    "clean",
+    "perfect/gt",
+    "always_positive/gt"
+   ]
+  },
+  "breast_cancer seed 6": {
+   "6b2abbd832d566816b9e3c143c450458c3d823576a060774164e09e1ebacee0b": [
+    "clean",
+    "perfect/gt",
+    "always_positive/gt"
+   ],
+   "9159182b3b5c3ede4cf12d62599b6482332ecfdfeae3c3f34a7dec36c3250a2e": [
+    "floor",
+    "ge_dirty_profiled/impute",
+    "ge_clean_profiled/impute"
+   ]
+  },
+  "breast_cancer seed 7": {
+   "5152ca1a733ce54631c760b15cfb8219f7a76761b441434707ab076946222c36": [
+    "floor",
+    "ge_dirty_profiled/impute",
+    "ge_clean_profiled/impute"
+   ],
+   "7456649c9cdfb54f53a2ca98443ca36ecfba6d344d60e32fa772eaeba7a020c9": [
+    "clean",
+    "perfect/gt",
+    "always_positive/gt"
+   ]
+  },
+  "breast_cancer seed 8": {
+   "92a7e509092bba63ff25734cb9f793ef9482463070575d57ee846cef5769a85d": [
+    "floor",
+    "ge_dirty_profiled/impute",
+    "ge_clean_profiled/impute"
+   ],
+   "eb3d996ba95a8df56f8542390eb16637dc220b8bf224a9f48e0ef4fe89b07e7a": [
+    "clean",
+    "perfect/gt",
+    "always_positive/gt"
+   ]
+  },
+  "breast_cancer seed 9": {
+   "0a0288c2d455569d2d09f2ca047545176ba5af80e14bd4c4750f1ef770eba6c1": [
+    "floor",
+    "ge_dirty_profiled/impute",
+    "ge_clean_profiled/impute"
+   ],
+   "8d0bfe5c21a5f0af1603ee2017b25e717e76f3ebb70296b71603c97158a1ae7e": [
+    "clean",
+    "perfect/gt",
+    "always_positive/gt"
+   ]
+  },
+  "nasa seed 0": {
+   "4ce5f4a6895790adf81cbf2e67effd7d14708478f250a1d642bae57ee24f229e": [
+    "raha/gt",
+    "raha_minus_format_only/gt"
+   ],
+   "696ea68de4e4c5dca9330a3220bb04ad55d208f6c51d7a4f6fc4ab94b9cb3954": [
+    "floor",
+    "ge_dirty_profiled/impute"
+   ],
+   "833d4495f8ae3866447a9431ae955bd359046bed0472c1a7ab4dfc6bb2095787": [
+    "clean",
+    "perfect/gt",
+    "always_positive/gt"
+   ],
+   "cdcf89b7730ccc4840238863c0f241d96f23ef3a0d920eab21b985073314b1e9": [
+    "perfect/impute",
+    "raha_minus_format_only/impute"
+   ]
+  },
+  "nasa seed 1": {
+   "01d89f2f56788642aede56c9a1d925c6e658d37150cc9aa0fdd84d2a60035df7": [
+    "perfect/impute",
+    "raha_minus_format_only/impute"
+   ],
+   "2038b44b24e6f0b956aab1d8fde7191fe633de4069cc1052d606bf8b8fd8e6d5": [
+    "clean",
+    "perfect/gt",
+    "always_positive/gt"
+   ],
+   "6175e1c04babda275ae135916cbb77ccc1143df4c3e6d1bf19436888712e7f30": [
+    "floor",
+    "ge_dirty_profiled/impute"
+   ],
+   "89bdcaa08a71694a9864874b194a353744b5283b905464c7c7d9e83eb84b549c": [
+    "raha/gt",
+    "raha_minus_format_only/gt"
+   ]
+  },
+  "nasa seed 2": {
+   "a6829e71331e5c7d8ddbe8bbd4abfa51366a66fa082f28213d2df11a208d3631": [
+    "perfect/impute",
+    "raha_minus_format_only/impute"
+   ],
+   "c2407d4c7eb3a553f6311fa78e2cf00572156135b4342d28fb0fdf0ad1f06c72": [
+    "floor",
+    "ge_dirty_profiled/impute"
+   ],
+   "c3a1ff225464df32c18b25a14047817f8d7012b945b8ea37c29f38210acd168f": [
+    "raha/gt",
+    "raha_minus_format_only/gt"
+   ],
+   "c7225ca5719f9001b155c1e6ffccf2d16c87fbbac2ae1e7f90b75c903bdca1ed": [
+    "clean",
+    "perfect/gt",
+    "always_positive/gt"
+   ]
+  },
+  "nasa seed 3": {
+   "1480da437ae381156badbf830c473b62856892b67403047d990e418b0b9422b7": [
+    "clean",
+    "perfect/gt",
+    "always_positive/gt"
+   ],
+   "3ba1728bd8ade3cd4768cd6855f58e842caccef5c1f9402029743b6fccb30052": [
+    "floor",
+    "ge_dirty_profiled/impute"
+   ],
+   "88f2486b61c81ba7c1dfc6c9340e6c3d481cfee92cf607ee6486ead107d978a6": [
+    "perfect/impute",
+    "raha_minus_format_only/impute"
+   ],
+   "972a76f940e10acae6b46473e9efe0a57be3fb6e3965c5869c657e4b00e0126d": [
+    "raha/gt",
+    "raha_minus_format_only/gt"
+   ]
+  },
+  "nasa seed 4": {
+   "2bc6a19614c5fd29f3c4571bfa7a38988bccdb417cb8f694ed8066dfc85bf511": [
+    "clean",
+    "perfect/gt",
+    "always_positive/gt"
+   ],
+   "9377c09cdbb4f63ba7aa8e167cdfdb188fb2e61d04e76122a3394cd28195896a": [
+    "raha/gt",
+    "raha_minus_format_only/gt"
+   ],
+   "df1f4435d9441a6f9401062309dfe059e1686c68ac53a07a69ea506c94bee0ba": [
+    "perfect/impute",
+    "raha_minus_format_only/impute"
+   ],
+   "fd76d18031b62de79aa52485c2c89ef899f0f3287e873545d0ecdab3c8e5bdd4": [
+    "floor",
+    "ge_dirty_profiled/impute",
+    "ge_clean_profiled/impute"
+   ]
+  },
+  "nasa seed 5": {
+   "78944f152550822545ba344e82656efa4e0109a1e63f717ce13839ff8c470447": [
+    "clean",
+    "perfect/gt",
+    "always_positive/gt"
+   ],
+   "8e0909144da20d6f3003b138b20bce76854e58eaf519e5998e7853a50d625db0": [
+    "perfect/impute",
+    "raha_minus_format_only/impute"
+   ],
+   "b755804cc318112e9229bde28a6904e5276ae1c3b275420dd5e0785b387466ed": [
+    "floor",
+    "ge_dirty_profiled/impute"
+   ],
+   "d3a5e25ca8e50f91830ec815bb903d591a13488af07e7dd90739e02bb372498a": [
+    "raha/gt",
+    "raha_minus_format_only/gt"
+   ]
+  },
+  "nasa seed 6": {
+   "22013bb61cd28928a28a9bf0d2457b3b6cb01cdfef4d6140a56bc176a6dc8b92": [
+    "raha/gt",
+    "raha_minus_format_only/gt"
+   ],
+   "3995e50a5c92aa1e621276a64ff7aed47f04ae2260888120f1c4e2e3f41f6573": [
+    "perfect/impute",
+    "raha_minus_format_only/impute"
+   ],
+   "8ce3f6574fa1ec72fe5f774d4b3e75a50bd8640e43a8ac658422f9b9bf02ce47": [
+    "floor",
+    "ge_dirty_profiled/impute"
+   ],
+   "f154b22cfc9cf2ff2fcc0925f791ad57cd3866cba40665b07c17f9b3edda2bc5": [
+    "clean",
+    "perfect/gt",
+    "always_positive/gt"
+   ]
+  },
+  "nasa seed 7": {
+   "15d2f346e3dea237d3591c5d174c838974e4ffcfd312b7dbe3c949c051bd5c94": [
+    "perfect/impute",
+    "raha_minus_format_only/impute"
+   ],
+   "80e5ff7380e8a7c9ef3da4099cb86825b6b39a62f39294aab33e494893962a19": [
+    "raha/gt",
+    "raha_minus_format_only/gt"
+   ],
+   "a683c68f9feb77082fd909a629679e66e22c60947a216af18eda2ef427d90994": [
+    "clean",
+    "perfect/gt",
+    "always_positive/gt"
+   ],
+   "fda8216cb9d117e4bc0dae3daae257c3681f718e7f68113005beb07702ab886c": [
+    "floor",
+    "ge_dirty_profiled/impute"
+   ]
+  },
+  "nasa seed 8": {
+   "1dfd892ad45dc07703ecbc57ad941ac217034e000cbd5b83239d4b0f54d45a34": [
+    "clean",
+    "perfect/gt",
+    "always_positive/gt"
+   ],
+   "33b0c48028c9c8c17b522fe62947f69b5fbfe3d2db5c5e9fe5b5cbdf28ed327a": [
+    "raha/gt",
+    "raha_minus_format_only/gt"
+   ],
+   "5db4c050d327728221315617dd513c8a13121fe4078aaf5a237d85b56ceb3193": [
+    "floor",
+    "ge_dirty_profiled/impute"
+   ],
+   "c906cab44175d993c739246c3c200b7d984aeb4bd6761034248e5c100baacd8b": [
+    "perfect/impute",
+    "raha_minus_format_only/impute"
+   ]
+  },
+  "nasa seed 9": {
+   "4abea5ef649324f38b4bd3d0b48102b21dc56e7c89de92f691d03a04b5193046": [
+    "floor",
+    "ge_dirty_profiled/impute"
+   ],
+   "998c7a5474251c1bc944c13fce78ee64017405df23f47d0738e0b931e5a1379f": [
+    "raha/gt",
+    "raha_minus_format_only/gt"
+   ],
+   "d4cfe82afa097a9c86aa13ea3202649e510cd717ac5c66e73e1719025b442033": [
+    "clean",
+    "perfect/gt",
+    "always_positive/gt"
+   ],
+   "e83cd579b0a9c0fef573340e60831cc8bc17ecdfa1ce38cf1e2549732ea59720": [
+    "perfect/impute",
+    "raha_minus_format_only/impute"
+   ]
+  }
+ },
+ "seeds": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9
+ ],
+ "started": "2026-10-14T07:43:49.400620Z",
+ "status": "ok",
+ "wall_s": {
+  "breast_cancer": 20.126476526260376,
+  "nasa": 40.72620868682861,
+  "total": 61.162670373916626
+ }
+}

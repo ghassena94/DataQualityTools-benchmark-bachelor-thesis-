@@ -1,0 +1,523 @@
+fill,dataset,policy,model,pair,verdict_ranked_last,verdict_left_out,n,T2,p,mean_d,hash_rule,reason,ref_a,ref_b,ref_c,ref_d,class_a,class_b,class_c,class_d,expected
+mean,breast_cancer,gt,linear,GE-dirty vs GE-clean,tie,tie,0,,,0.0,0,n <= 5,<,<,<,<,T,T,T,T,concordant
+mean,breast_cancer,gt,linear,GE-dirty vs GE-hand,<,<,9,-82,0.01171875,-0.022189230241348157,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+mean,breast_cancer,gt,linear,GE-dirty vs HoloClean,tie,tie,10,-74,0.064453125,-0.018658256389106474,0,sign-flip,>,<,>,<,T,T,T,T,discordant
+mean,breast_cancer,gt,linear,GE-dirty vs Raha,tie,tie,10,-42,0.322265625,-0.009660048680809908,0,sign-flip,<,<,<,<,T,T,T,T,concordant
+mean,breast_cancer,gt,linear,GE-clean vs GE-hand,<,<,9,-82,0.01171875,-0.022189230241348157,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+mean,breast_cancer,gt,linear,GE-clean vs HoloClean,tie,tie,10,-74,0.064453125,-0.018658256389106474,0,sign-flip,>,<,>,<,T,T,T,T,discordant
+mean,breast_cancer,gt,linear,GE-clean vs Raha,tie,tie,10,-42,0.322265625,-0.009660048680809908,0,sign-flip,<,<,<,<,T,T,T,T,concordant
+mean,breast_cancer,gt,linear,GE-hand vs HoloClean,tie,tie,8,18,0.5703125,0.003530973852241681,0,sign-flip,>,>,>,<,T,T,T,T,discordant
+mean,breast_cancer,gt,linear,GE-hand vs Raha,tie,tie,8,52,0.078125,0.01252918156053825,0,sign-flip,>,>,>,>,T,T,T,T,concordant
+mean,breast_cancer,gt,linear,HoloClean vs Raha,>,>,7,52,0.03125,0.008998207708296568,0,sign-flip,<,>,<,>,D,C,D,C,discordant
+mean,breast_cancer,delete,linear,GE-dirty vs GE-clean,tie,tie,0,,,0.0,0,n <= 5,<,<,<,<,T,T,T,T,concordant
+mean,breast_cancer,delete,linear,GE-dirty vs GE-hand,<,<,10,-106,0.00390625,-0.029349972417478932,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+mean,breast_cancer,delete,linear,GE-dirty vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,<,>,>,C,D,C,C,concordant
+mean,breast_cancer,delete,linear,GE-dirty vs Raha,<,<,10,-110,0.001953125,-0.022371489473133322,0,sign-flip,<,<,<,>,C,C,C,D,discordant
+mean,breast_cancer,delete,linear,GE-clean vs GE-hand,<,<,10,-106,0.00390625,-0.029349972417478932,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+mean,breast_cancer,delete,linear,GE-clean vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,<,>,>,C,D,C,C,concordant
+mean,breast_cancer,delete,linear,GE-clean vs Raha,<,<,10,-110,0.001953125,-0.022371489473133322,0,sign-flip,<,<,<,>,C,C,C,D,discordant
+mean,breast_cancer,delete,linear,GE-hand vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,>,>,>,C,C,C,C,concordant
+mean,breast_cancer,delete,linear,GE-hand vs Raha,tie,tie,8,24,0.4609375,0.00697848294434561,0,sign-flip,>,>,>,>,T,T,T,T,concordant
+mean,breast_cancer,delete,linear,HoloClean vs Raha,<,left out,0,,,,0,degenerate ranked last,<,>,<,<,C,D,C,C,concordant
+mean,breast_cancer,impute,linear,GE-dirty vs GE-clean,tie,tie,0,,,,1,same train_hash,<,<,<,=,T,T,T,reftie,undetermined
+mean,breast_cancer,impute,linear,GE-dirty vs GE-hand,<,<,9,-86,0.0078125,-0.023649233271505376,0,sign-flip,<,<,<,=,C,C,C,reftie,undetermined
+mean,breast_cancer,impute,linear,GE-dirty vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,<,>,=,C,D,C,reftie,undetermined
+mean,breast_cancer,impute,linear,GE-dirty vs Raha,tie,tie,10,-34,0.431640625,-0.008777465364750603,0,sign-flip,<,<,<,=,T,T,T,reftie,undetermined
+mean,breast_cancer,impute,linear,GE-clean vs GE-hand,<,<,9,-86,0.0078125,-0.023649233271505376,0,sign-flip,<,<,<,=,C,C,C,reftie,undetermined
+mean,breast_cancer,impute,linear,GE-clean vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,<,>,=,C,D,C,reftie,undetermined
+mean,breast_cancer,impute,linear,GE-clean vs Raha,tie,tie,10,-34,0.431640625,-0.008777465364750603,0,sign-flip,<,<,<,=,T,T,T,reftie,undetermined
+mean,breast_cancer,impute,linear,GE-hand vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,>,>,>,C,C,C,C,concordant
+mean,breast_cancer,impute,linear,GE-hand vs Raha,>,>,7,52,0.03125,0.014871767906754773,0,sign-flip,>,>,>,>,C,C,C,C,concordant
+mean,breast_cancer,impute,linear,HoloClean vs Raha,<,left out,0,,,,0,degenerate ranked last,<,>,<,<,C,D,C,C,concordant
+mean,breast_cancer,gt,rf,GE-dirty vs GE-clean,tie,tie,3,,,-0.0008623219359596313,0,n <= 5,<,<,<,<,T,T,T,T,concordant
+mean,breast_cancer,gt,rf,GE-dirty vs GE-hand,tie,tie,5,,,-0.005465300797656514,0,n <= 5,<,<,<,<,T,T,T,T,concordant
+mean,breast_cancer,gt,rf,GE-dirty vs HoloClean,tie,tie,6,14,0.5625,-6.093959994224463e-06,0,sign-flip,>,<,>,<,T,T,T,T,discordant
+mean,breast_cancer,gt,rf,GE-dirty vs Raha,tie,tie,4,,,-0.00235294007704836,0,n <= 5,<,<,<,<,T,T,T,T,concordant
+mean,breast_cancer,gt,rf,GE-clean vs GE-hand,tie,tie,5,,,-0.004602978861696883,0,n <= 5,<,<,<,<,T,T,T,T,concordant
+mean,breast_cancer,gt,rf,GE-clean vs HoloClean,tie,tie,7,12,0.6875,0.0008562279759654068,0,sign-flip,>,<,>,<,T,T,T,T,discordant
+mean,breast_cancer,gt,rf,GE-clean vs Raha,tie,tie,5,,,-0.0014906181410887288,0,n <= 5,<,<,<,<,T,T,T,T,concordant
+mean,breast_cancer,gt,rf,GE-hand vs HoloClean,tie,tie,7,32,0.21875,0.00545920683766229,0,sign-flip,>,>,>,<,T,T,T,T,discordant
+mean,breast_cancer,gt,rf,GE-hand vs Raha,tie,tie,4,,,0.0031123607206081537,0,n <= 5,>,>,>,>,T,T,T,T,concordant
+mean,breast_cancer,gt,rf,HoloClean vs Raha,tie,tie,7,-24,0.375,-0.0023468461170541356,0,sign-flip,<,>,<,>,T,T,T,T,discordant
+mean,breast_cancer,delete,rf,GE-dirty vs GE-clean,tie,tie,8,-4,0.9140625,-0.0016487946458040637,0,sign-flip,<,<,<,<,T,T,T,T,concordant
+mean,breast_cancer,delete,rf,GE-dirty vs GE-hand,tie,tie,8,0,1.0,0.002471844233450127,0,sign-flip,<,<,<,<,T,T,T,T,concordant
+mean,breast_cancer,delete,rf,GE-dirty vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,<,>,>,C,D,C,C,concordant
+mean,breast_cancer,delete,rf,GE-dirty vs Raha,tie,tie,9,-30,0.42578125,-0.003924542268488196,0,sign-flip,<,<,<,>,T,T,T,T,discordant
+mean,breast_cancer,delete,rf,GE-clean vs GE-hand,tie,tie,8,12,0.7421875,0.0041206388792541905,0,sign-flip,<,<,<,<,T,T,T,T,concordant
+mean,breast_cancer,delete,rf,GE-clean vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,<,>,>,C,D,C,C,concordant
+mean,breast_cancer,delete,rf,GE-clean vs Raha,tie,tie,8,-2,0.96875,-0.0022757476226841324,0,sign-flip,<,<,<,>,T,T,T,T,discordant
+mean,breast_cancer,delete,rf,GE-hand vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,>,>,>,C,C,C,C,concordant
+mean,breast_cancer,delete,rf,GE-hand vs Raha,tie,tie,7,-16,0.578125,-0.006396386501938323,0,sign-flip,>,>,>,>,T,T,T,T,concordant
+mean,breast_cancer,delete,rf,HoloClean vs Raha,<,left out,0,,,,0,degenerate ranked last,<,>,<,<,C,D,C,C,concordant
+mean,breast_cancer,impute,rf,GE-dirty vs GE-clean,tie,tie,0,,,,1,same train_hash,<,<,<,=,T,T,T,reftie,undetermined
+mean,breast_cancer,impute,rf,GE-dirty vs GE-hand,tie,tie,7,4,0.9375,0.0012495124746199292,0,sign-flip,<,<,<,=,T,T,T,reftie,undetermined
+mean,breast_cancer,impute,rf,GE-dirty vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,<,>,=,C,D,C,reftie,undetermined
+mean,breast_cancer,impute,rf,GE-dirty vs Raha,tie,tie,6,6,0.84375,0.0017817641006963036,0,sign-flip,<,<,<,=,T,T,T,reftie,undetermined
+mean,breast_cancer,impute,rf,GE-clean vs GE-hand,tie,tie,7,4,0.9375,0.0012495124746199292,0,sign-flip,<,<,<,=,T,T,T,reftie,undetermined
+mean,breast_cancer,impute,rf,GE-clean vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,<,>,=,C,D,C,reftie,undetermined
+mean,breast_cancer,impute,rf,GE-clean vs Raha,tie,tie,6,6,0.84375,0.0017817641006963036,0,sign-flip,<,<,<,=,T,T,T,reftie,undetermined
+mean,breast_cancer,impute,rf,GE-hand vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,>,>,>,C,C,C,C,concordant
+mean,breast_cancer,impute,rf,GE-hand vs Raha,tie,tie,5,,,0.0005322516260763743,0,n <= 5,>,>,>,>,T,T,T,T,concordant
+mean,breast_cancer,impute,rf,HoloClean vs Raha,<,left out,0,,,,0,degenerate ranked last,<,>,<,<,C,D,C,C,concordant
+mean,breast_cancer,gt,xgb,GE-dirty vs GE-clean,tie,tie,5,,,0.0018168431143394614,0,n <= 5,<,<,<,<,T,T,T,T,concordant
+mean,breast_cancer,gt,xgb,GE-dirty vs GE-hand,tie,tie,6,38,0.0625,0.006807817448465458,0,sign-flip,<,<,<,<,T,T,T,T,concordant
+mean,breast_cancer,gt,xgb,GE-dirty vs HoloClean,>,>,8,60,0.0390625,0.01238126557098177,0,sign-flip,>,<,>,<,C,D,C,D,discordant
+mean,breast_cancer,gt,xgb,GE-dirty vs Raha,tie,tie,8,40,0.1875,0.005967560566021934,0,sign-flip,<,<,<,<,T,T,T,T,concordant
+mean,breast_cancer,gt,xgb,GE-clean vs GE-hand,tie,tie,5,,,0.004990974334125997,0,n <= 5,<,<,<,<,T,T,T,T,concordant
+mean,breast_cancer,gt,xgb,GE-clean vs HoloClean,tie,tie,10,74,0.060546875,0.010564422456642308,0,sign-flip,>,<,>,<,T,T,T,T,discordant
+mean,breast_cancer,gt,xgb,GE-clean vs Raha,tie,tie,6,18,0.4375,0.004150717451682473,0,sign-flip,<,<,<,<,T,T,T,T,concordant
+mean,breast_cancer,gt,xgb,GE-hand vs HoloClean,tie,tie,10,38,0.375,0.005573448122516311,0,sign-flip,>,>,>,<,T,T,T,T,discordant
+mean,breast_cancer,gt,xgb,GE-hand vs Raha,tie,tie,6,2,1.0,-0.0008402568824435241,0,sign-flip,>,>,>,>,T,T,T,T,concordant
+mean,breast_cancer,gt,xgb,HoloClean vs Raha,tie,tie,9,-34,0.359375,-0.006413705004959835,0,sign-flip,<,>,<,>,T,T,T,T,discordant
+mean,breast_cancer,delete,xgb,GE-dirty vs GE-clean,tie,tie,9,-58,0.09765625,-0.006488105554443247,0,sign-flip,<,<,<,<,T,T,T,T,concordant
+mean,breast_cancer,delete,xgb,GE-dirty vs GE-hand,tie,tie,10,14,0.76953125,0.0025689384711244045,0,sign-flip,<,<,<,<,T,T,T,T,concordant
+mean,breast_cancer,delete,xgb,GE-dirty vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,<,>,>,C,D,C,C,concordant
+mean,breast_cancer,delete,xgb,GE-dirty vs Raha,tie,tie,9,18,0.65234375,0.0008594805013425799,0,sign-flip,<,<,<,>,T,T,T,T,discordant
+mean,breast_cancer,delete,xgb,GE-clean vs GE-hand,tie,tie,10,40,0.3359375,0.00905704402556765,0,sign-flip,<,<,<,<,T,T,T,T,concordant
+mean,breast_cancer,delete,xgb,GE-clean vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,<,>,>,C,D,C,C,concordant
+mean,breast_cancer,delete,xgb,GE-clean vs Raha,tie,tie,9,38,0.30078125,0.007347586055785826,0,sign-flip,<,<,<,>,T,T,T,T,discordant
+mean,breast_cancer,delete,xgb,GE-hand vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,>,>,>,C,C,C,C,concordant
+mean,breast_cancer,delete,xgb,GE-hand vs Raha,tie,tie,10,-6,0.921875,-0.0017094579697818247,0,sign-flip,>,>,>,>,T,T,T,T,concordant
+mean,breast_cancer,delete,xgb,HoloClean vs Raha,<,left out,0,,,,0,degenerate ranked last,<,>,<,<,C,D,C,C,concordant
+mean,breast_cancer,impute,xgb,GE-dirty vs GE-clean,tie,tie,0,,,,1,same train_hash,<,<,<,=,T,T,T,reftie,undetermined
+mean,breast_cancer,impute,xgb,GE-dirty vs GE-hand,tie,tie,9,16,0.67578125,0.003027641608253151,0,sign-flip,<,<,<,=,T,T,T,reftie,undetermined
+mean,breast_cancer,impute,xgb,GE-dirty vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,<,>,=,C,D,C,reftie,undetermined
+mean,breast_cancer,impute,xgb,GE-dirty vs Raha,tie,tie,7,-4,0.9375,2.2183308944001557e-05,0,sign-flip,<,<,<,=,T,T,T,reftie,undetermined
+mean,breast_cancer,impute,xgb,GE-clean vs GE-hand,tie,tie,9,16,0.67578125,0.003027641608253151,0,sign-flip,<,<,<,=,T,T,T,reftie,undetermined
+mean,breast_cancer,impute,xgb,GE-clean vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,<,>,=,C,D,C,reftie,undetermined
+mean,breast_cancer,impute,xgb,GE-clean vs Raha,tie,tie,7,-4,0.9375,2.2183308944001557e-05,0,sign-flip,<,<,<,=,T,T,T,reftie,undetermined
+mean,breast_cancer,impute,xgb,GE-hand vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,>,>,>,C,C,C,C,concordant
+mean,breast_cancer,impute,xgb,GE-hand vs Raha,tie,tie,8,-20,0.546875,-0.0030054582993091494,0,sign-flip,>,>,>,>,T,T,T,T,concordant
+mean,breast_cancer,impute,xgb,HoloClean vs Raha,<,left out,0,,,,0,degenerate ranked last,<,>,<,<,C,D,C,C,concordant
+mean,nasa,gt,linear,GE-dirty vs GE-clean,tie,tie,10,-10,0.845703125,-0.0005309217210969664,0,sign-flip,<,<,<,<,T,T,T,T,concordant
+mean,nasa,gt,linear,GE-dirty vs GE-hand,<,<,10,-110,0.001953125,-2.088493699612631,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+mean,nasa,gt,linear,GE-dirty vs HoloClean,<,<,10,-110,0.001953125,-0.7884880837548259,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+mean,nasa,gt,linear,GE-dirty vs Raha,<,<,10,-110,0.001953125,-2.089359077662904,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+mean,nasa,gt,linear,GE-clean vs GE-hand,<,<,10,-110,0.001953125,-2.087962777891534,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+mean,nasa,gt,linear,GE-clean vs HoloClean,<,<,10,-110,0.001953125,-0.7879571620337289,0,sign-flip,>,>,>,<,D,D,D,C,discordant
+mean,nasa,gt,linear,GE-clean vs Raha,<,<,10,-110,0.001953125,-2.088828155941807,0,sign-flip,>,>,>,<,D,D,D,C,discordant
+mean,nasa,gt,linear,GE-hand vs HoloClean,>,>,10,110,0.001953125,1.3000056158578048,0,sign-flip,>,>,>,>,C,C,C,C,concordant
+mean,nasa,gt,linear,GE-hand vs Raha,tie,tie,10,2,1.0,-0.0008653780502731578,0,sign-flip,>,>,>,<,T,T,T,T,discordant
+mean,nasa,gt,linear,HoloClean vs Raha,<,<,10,-110,0.001953125,-1.3008709939080778,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+mean,nasa,delete,linear,GE-dirty vs GE-clean,tie,tie,10,50,0.232421875,0.0017198897037758343,0,sign-flip,<,<,<,=,T,T,T,reftie,undetermined
+mean,nasa,delete,linear,GE-dirty vs GE-hand,<,<,10,-110,0.001953125,-2.072053625608252,0,sign-flip,<,<,<,=,C,C,C,reftie,undetermined
+mean,nasa,delete,linear,GE-dirty vs HoloClean,>,left out,0,,,,0,degenerate ranked last,<,<,<,>,D,D,D,C,discordant
+mean,nasa,delete,linear,GE-dirty vs Raha,>,left out,0,,,,0,degenerate ranked last,<,<,<,>,D,D,D,C,discordant
+mean,nasa,delete,linear,GE-clean vs GE-hand,<,<,10,-110,0.001953125,-2.073773515312028,0,sign-flip,<,<,<,=,C,C,C,reftie,undetermined
+mean,nasa,delete,linear,GE-clean vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,>,>,>,C,C,C,C,concordant
+mean,nasa,delete,linear,GE-clean vs Raha,>,left out,0,,,,0,degenerate ranked last,>,>,>,>,C,C,C,C,concordant
+mean,nasa,delete,linear,GE-hand vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,>,>,>,C,C,C,C,concordant
+mean,nasa,delete,linear,GE-hand vs Raha,>,left out,0,,,,0,degenerate ranked last,>,>,>,>,C,C,C,C,concordant
+mean,nasa,delete,linear,HoloClean vs Raha,tie,left out,0,,,,0,both degenerate,<,<,<,=,T,T,T,reftie,undetermined
+mean,nasa,impute,linear,GE-dirty vs GE-clean,tie,tie,9,-10,0.8203125,-0.0005847825335780321,0,sign-flip,<,<,<,=,T,T,T,reftie,undetermined
+mean,nasa,impute,linear,GE-dirty vs GE-hand,<,<,10,-110,0.001953125,-2.0548129838631484,0,sign-flip,<,<,<,=,C,C,C,reftie,undetermined
+mean,nasa,impute,linear,GE-dirty vs HoloClean,<,<,10,-110,0.001953125,-1.559848845343554,0,sign-flip,<,<,<,=,C,C,C,reftie,undetermined
+mean,nasa,impute,linear,GE-dirty vs Raha,<,<,10,-110,0.001953125,-0.796227178014246,0,sign-flip,<,<,<,=,C,C,C,reftie,undetermined
+mean,nasa,impute,linear,GE-clean vs GE-hand,<,<,10,-110,0.001953125,-2.0542282013295705,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+mean,nasa,impute,linear,GE-clean vs HoloClean,<,<,10,-110,0.001953125,-1.5592640628099759,0,sign-flip,>,>,>,>,D,D,D,D,concordant
+mean,nasa,impute,linear,GE-clean vs Raha,<,<,10,-110,0.001953125,-0.795642395480668,0,sign-flip,>,>,>,>,D,D,D,D,concordant
+mean,nasa,impute,linear,GE-hand vs HoloClean,>,>,10,110,0.001953125,0.4949641385195944,0,sign-flip,>,>,>,>,C,C,C,C,concordant
+mean,nasa,impute,linear,GE-hand vs Raha,>,>,10,110,0.001953125,1.2585858058489028,0,sign-flip,>,>,>,>,C,C,C,C,concordant
+mean,nasa,impute,linear,HoloClean vs Raha,>,>,10,110,0.001953125,0.763621667329308,0,sign-flip,<,<,<,<,D,D,D,D,concordant
+mean,nasa,gt,rf,GE-dirty vs GE-clean,<,<,10,-110,0.001953125,-0.2100831554541836,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+mean,nasa,gt,rf,GE-dirty vs GE-hand,<,<,10,-110,0.001953125,-0.40786552218439437,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+mean,nasa,gt,rf,GE-dirty vs HoloClean,<,<,10,-110,0.001953125,-0.30947449043514375,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+mean,nasa,gt,rf,GE-dirty vs Raha,<,<,10,-110,0.001953125,-0.4770547659859865,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+mean,nasa,gt,rf,GE-clean vs GE-hand,<,<,10,-110,0.001953125,-0.19778236673021082,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+mean,nasa,gt,rf,GE-clean vs HoloClean,<,<,10,-94,0.013671875,-0.0993913349809602,0,sign-flip,>,>,>,<,D,D,D,C,discordant
+mean,nasa,gt,rf,GE-clean vs Raha,<,<,10,-110,0.001953125,-0.26697161053180285,0,sign-flip,>,>,>,<,D,D,D,C,discordant
+mean,nasa,gt,rf,GE-hand vs HoloClean,>,>,10,98,0.009765625,0.09839103174925061,0,sign-flip,>,>,>,>,C,C,C,C,concordant
+mean,nasa,gt,rf,GE-hand vs Raha,<,<,10,-110,0.001953125,-0.06918924380159201,0,sign-flip,>,>,>,<,D,D,D,C,discordant
+mean,nasa,gt,rf,HoloClean vs Raha,<,<,10,-110,0.001953125,-0.16758027555084262,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+mean,nasa,delete,rf,GE-dirty vs GE-clean,>,>,10,110,0.001953125,0.13586305493704307,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+mean,nasa,delete,rf,GE-dirty vs GE-hand,>,>,10,110,0.001953125,0.16295467541227696,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+mean,nasa,delete,rf,GE-dirty vs HoloClean,>,left out,0,,,,0,degenerate ranked last,<,<,<,>,D,D,D,C,discordant
+mean,nasa,delete,rf,GE-dirty vs Raha,>,left out,0,,,,0,degenerate ranked last,<,<,<,>,D,D,D,C,discordant
+mean,nasa,delete,rf,GE-clean vs GE-hand,tie,tie,10,38,0.375,0.02709162047523388,0,sign-flip,<,<,<,=,T,T,T,reftie,undetermined
+mean,nasa,delete,rf,GE-clean vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,>,>,>,C,C,C,C,concordant
+mean,nasa,delete,rf,GE-clean vs Raha,>,left out,0,,,,0,degenerate ranked last,>,>,>,>,C,C,C,C,concordant
+mean,nasa,delete,rf,GE-hand vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,>,>,>,C,C,C,C,concordant
+mean,nasa,delete,rf,GE-hand vs Raha,>,left out,0,,,,0,degenerate ranked last,>,>,>,>,C,C,C,C,concordant
+mean,nasa,delete,rf,HoloClean vs Raha,tie,left out,0,,,,0,both degenerate,<,<,<,=,T,T,T,reftie,undetermined
+mean,nasa,impute,rf,GE-dirty vs GE-clean,tie,tie,9,-2,1.0,-0.0005652958572206046,0,sign-flip,<,<,<,=,T,T,T,reftie,undetermined
+mean,nasa,impute,rf,GE-dirty vs GE-hand,tie,tie,10,30,0.4921875,0.04824929941539868,0,sign-flip,<,<,<,=,T,T,T,reftie,undetermined
+mean,nasa,impute,rf,GE-dirty vs HoloClean,>,>,10,110,0.001953125,1.5318840959699997,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+mean,nasa,impute,rf,GE-dirty vs Raha,>,>,10,110,0.001953125,4.29297438222865,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+mean,nasa,impute,rf,GE-clean vs GE-hand,tie,tie,10,30,0.4921875,0.04881459527261929,0,sign-flip,<,<,<,<,T,T,T,T,concordant
+mean,nasa,impute,rf,GE-clean vs HoloClean,>,>,10,110,0.001953125,1.5324493918272202,0,sign-flip,>,>,>,>,C,C,C,C,concordant
+mean,nasa,impute,rf,GE-clean vs Raha,>,>,10,110,0.001953125,4.293539678085869,0,sign-flip,>,>,>,>,C,C,C,C,concordant
+mean,nasa,impute,rf,GE-hand vs HoloClean,>,>,10,110,0.001953125,1.4836347965546008,0,sign-flip,>,>,>,>,C,C,C,C,concordant
+mean,nasa,impute,rf,GE-hand vs Raha,>,>,10,110,0.001953125,4.2447250828132495,0,sign-flip,>,>,>,>,C,C,C,C,concordant
+mean,nasa,impute,rf,HoloClean vs Raha,>,>,10,110,0.001953125,2.761090286258649,0,sign-flip,<,<,<,<,D,D,D,D,concordant
+mean,nasa,gt,xgb,GE-dirty vs GE-clean,<,<,10,-106,0.00390625,-0.22593099452394352,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+mean,nasa,gt,xgb,GE-dirty vs GE-hand,<,<,10,-110,0.001953125,-0.5017374250018116,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+mean,nasa,gt,xgb,GE-dirty vs HoloClean,<,<,10,-110,0.001953125,-0.3488920988707136,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+mean,nasa,gt,xgb,GE-dirty vs Raha,<,<,10,-110,0.001953125,-0.5124841623881234,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+mean,nasa,gt,xgb,GE-clean vs GE-hand,<,<,10,-110,0.001953125,-0.2758064304778681,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+mean,nasa,gt,xgb,GE-clean vs HoloClean,<,<,10,-94,0.013671875,-0.1229611043467701,0,sign-flip,>,>,>,<,D,D,D,C,discordant
+mean,nasa,gt,xgb,GE-clean vs Raha,<,<,10,-102,0.005859375,-0.28655316786417995,0,sign-flip,>,>,>,<,D,D,D,C,discordant
+mean,nasa,gt,xgb,GE-hand vs HoloClean,>,>,10,102,0.005859375,0.15284532613109802,0,sign-flip,>,>,>,>,C,C,C,C,concordant
+mean,nasa,gt,xgb,GE-hand vs Raha,tie,tie,10,-10,0.845703125,-0.010746737386311845,0,sign-flip,>,>,>,<,T,T,T,T,discordant
+mean,nasa,gt,xgb,HoloClean vs Raha,<,<,10,-86,0.02734375,-0.16359206351740987,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+mean,nasa,delete,xgb,GE-dirty vs GE-clean,tie,tie,10,14,0.76953125,0.013671357436050146,0,sign-flip,<,<,<,=,T,T,T,reftie,undetermined
+mean,nasa,delete,xgb,GE-dirty vs GE-hand,tie,tie,10,-10,0.845703125,0.0025366132003321606,0,sign-flip,<,<,<,=,T,T,T,reftie,undetermined
+mean,nasa,delete,xgb,GE-dirty vs HoloClean,>,left out,0,,,,0,degenerate ranked last,<,<,<,>,D,D,D,C,discordant
+mean,nasa,delete,xgb,GE-dirty vs Raha,>,left out,0,,,,0,degenerate ranked last,<,<,<,>,D,D,D,C,discordant
+mean,nasa,delete,xgb,GE-clean vs GE-hand,tie,tie,10,-2,1.0,-0.011134744235717985,0,sign-flip,<,<,<,=,T,T,T,reftie,undetermined
+mean,nasa,delete,xgb,GE-clean vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,>,>,>,C,C,C,C,concordant
+mean,nasa,delete,xgb,GE-clean vs Raha,>,left out,0,,,,0,degenerate ranked last,>,>,>,>,C,C,C,C,concordant
+mean,nasa,delete,xgb,GE-hand vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,>,>,>,C,C,C,C,concordant
+mean,nasa,delete,xgb,GE-hand vs Raha,>,left out,0,,,,0,degenerate ranked last,>,>,>,>,C,C,C,C,concordant
+mean,nasa,delete,xgb,HoloClean vs Raha,tie,left out,0,,,,0,both degenerate,<,<,<,=,T,T,T,reftie,undetermined
+mean,nasa,impute,xgb,GE-dirty vs GE-clean,tie,tie,9,6,0.91015625,0.008757908786849544,0,sign-flip,<,<,<,=,T,T,T,reftie,undetermined
+mean,nasa,impute,xgb,GE-dirty vs GE-hand,tie,tie,10,-6,0.921875,0.039743799973725305,0,sign-flip,<,<,<,=,T,T,T,reftie,undetermined
+mean,nasa,impute,xgb,GE-dirty vs HoloClean,>,>,10,110,0.001953125,2.665169156492431,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+mean,nasa,impute,xgb,GE-dirty vs Raha,>,>,10,110,0.001953125,4.809820304709722,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+mean,nasa,impute,xgb,GE-clean vs GE-hand,tie,tie,10,-2,1.0,0.03098589118687576,0,sign-flip,<,<,<,<,T,T,T,T,concordant
+mean,nasa,impute,xgb,GE-clean vs HoloClean,>,>,10,110,0.001953125,2.6564112477055817,0,sign-flip,>,>,>,>,C,C,C,C,concordant
+mean,nasa,impute,xgb,GE-clean vs Raha,>,>,10,110,0.001953125,4.801062395922871,0,sign-flip,>,>,>,>,C,C,C,C,concordant
+mean,nasa,impute,xgb,GE-hand vs HoloClean,>,>,10,110,0.001953125,2.625425356518706,0,sign-flip,>,>,>,>,C,C,C,C,concordant
+mean,nasa,impute,xgb,GE-hand vs Raha,>,>,10,110,0.001953125,4.770076504735995,0,sign-flip,>,>,>,>,C,C,C,C,concordant
+mean,nasa,impute,xgb,HoloClean vs Raha,>,>,10,106,0.00390625,2.1446511482172896,0,sign-flip,<,<,<,<,D,D,D,D,concordant
+mean,bike,gt,linear,GE-dirty=GE-clean vs GE-hand,<,<,10,-110,0.001953125,-6.077433319174989,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+mean,bike,gt,linear,GE-dirty=GE-clean vs HoloClean,<,<,10,-110,0.001953125,-3.306867386721811,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+mean,bike,gt,linear,GE-dirty=GE-clean vs Raha,<,<,10,-110,0.001953125,-6.058021043721925,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+mean,bike,gt,linear,GE-hand vs HoloClean,>,>,10,110,0.001953125,2.770565932453178,0,sign-flip,>,<,>,<,C,D,C,D,discordant
+mean,bike,gt,linear,GE-hand vs Raha,tie,tie,10,18,0.6953125,0.0194122754530639,0,sign-flip,>,<,<,<,T,T,T,T,discordant
+mean,bike,gt,linear,HoloClean vs Raha,<,<,10,-110,0.001953125,-2.7511536570001143,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+mean,bike,delete,linear,GE-dirty=GE-clean vs GE-hand,<,<,10,-110,0.001953125,-4.412018464645806,0,sign-flip,<,<,<,=,C,C,C,reftie,undetermined
+mean,bike,delete,linear,GE-dirty=GE-clean vs HoloClean,>,left out,0,,,,0,degenerate ranked last,<,<,<,=,D,D,D,reftie,undetermined
+mean,bike,delete,linear,GE-dirty=GE-clean vs Raha,>,>,10,110,0.001953125,5.528403742750305,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+mean,bike,delete,linear,GE-hand vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,<,>,>,C,D,C,C,concordant
+mean,bike,delete,linear,GE-hand vs Raha,>,>,10,110,0.001953125,9.94042220739611,0,sign-flip,>,<,<,>,C,D,D,C,concordant
+mean,bike,delete,linear,HoloClean vs Raha,<,left out,0,,,,0,degenerate ranked last,<,<,<,<,C,C,C,C,concordant
+mean,bike,impute,linear,GE-dirty=GE-clean vs GE-hand,<,<,10,-110,0.001953125,-5.3133421199971504,0,sign-flip,<,<,<,=,C,C,C,reftie,undetermined
+mean,bike,impute,linear,GE-dirty=GE-clean vs HoloClean,>,left out,0,,,,0,degenerate ranked last,<,<,<,=,D,D,D,reftie,undetermined
+mean,bike,impute,linear,GE-dirty=GE-clean vs Raha,<,<,10,-110,0.001953125,-5.54665698144012,0,sign-flip,<,<,<,=,C,C,C,reftie,undetermined
+mean,bike,impute,linear,GE-hand vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,<,>,>,C,D,C,C,concordant
+mean,bike,impute,linear,GE-hand vs Raha,<,<,10,-94,0.013671875,-0.2333148614429689,0,sign-flip,>,<,<,<,D,C,C,C,discordant
+mean,bike,impute,linear,HoloClean vs Raha,<,left out,0,,,,0,degenerate ranked last,<,<,<,<,C,C,C,C,concordant
+mean,bike,gt,rf,GE-dirty=GE-clean vs GE-hand,<,<,10,-110,0.001953125,-28.792875074668974,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+mean,bike,gt,rf,GE-dirty=GE-clean vs HoloClean,<,<,10,-110,0.001953125,-29.895506387697047,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+mean,bike,gt,rf,GE-dirty=GE-clean vs Raha,<,<,10,-110,0.001953125,-29.351383578597904,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+mean,bike,gt,rf,GE-hand vs HoloClean,<,<,10,-110,0.001953125,-1.1026313130280727,0,sign-flip,>,<,>,<,D,C,D,C,discordant
+mean,bike,gt,rf,GE-hand vs Raha,<,<,10,-110,0.001953125,-0.5585085039289339,0,sign-flip,>,<,<,<,D,C,C,C,discordant
+mean,bike,gt,rf,HoloClean vs Raha,>,>,10,78,0.048828125,0.5441228090991388,0,sign-flip,<,<,<,<,D,D,D,D,concordant
+mean,bike,delete,rf,GE-dirty=GE-clean vs GE-hand,>,>,10,110,0.001953125,24.10325859285517,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+mean,bike,delete,rf,GE-dirty=GE-clean vs HoloClean,>,left out,0,,,,0,degenerate ranked last,<,<,<,=,D,D,D,reftie,undetermined
+mean,bike,delete,rf,GE-dirty=GE-clean vs Raha,>,>,10,110,0.001953125,28.65572194254372,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+mean,bike,delete,rf,GE-hand vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,<,>,>,C,D,C,C,concordant
+mean,bike,delete,rf,GE-hand vs Raha,>,>,10,110,0.001953125,4.552463349688556,0,sign-flip,>,<,<,>,C,D,D,C,concordant
+mean,bike,delete,rf,HoloClean vs Raha,<,left out,0,,,,0,degenerate ranked last,<,<,<,<,C,C,C,C,concordant
+mean,bike,impute,rf,GE-dirty=GE-clean vs GE-hand,<,<,10,-102,0.005859375,-3.8388190831743088,0,sign-flip,<,<,<,=,C,C,C,reftie,undetermined
+mean,bike,impute,rf,GE-dirty=GE-clean vs HoloClean,>,left out,0,,,,0,degenerate ranked last,<,<,<,=,D,D,D,reftie,undetermined
+mean,bike,impute,rf,GE-dirty=GE-clean vs Raha,tie,tie,10,-18,0.6953125,-0.304435453156745,0,sign-flip,<,<,<,=,T,T,T,reftie,undetermined
+mean,bike,impute,rf,GE-hand vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,<,>,>,C,D,C,C,concordant
+mean,bike,impute,rf,GE-hand vs Raha,>,>,10,110,0.001953125,3.534383630017564,0,sign-flip,>,<,<,<,C,D,D,D,discordant
+mean,bike,impute,rf,HoloClean vs Raha,<,left out,0,,,,0,degenerate ranked last,<,<,<,<,C,C,C,C,concordant
+mean,bike,gt,xgb,GE-dirty=GE-clean vs GE-hand,<,<,10,-110,0.001953125,-26.489565448774123,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+mean,bike,gt,xgb,GE-dirty=GE-clean vs HoloClean,<,<,10,-110,0.001953125,-26.661754444985398,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+mean,bike,gt,xgb,GE-dirty=GE-clean vs Raha,<,<,10,-110,0.001953125,-28.44783897460177,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+mean,bike,gt,xgb,GE-hand vs HoloClean,tie,tie,10,-26,0.556640625,-0.1721889962112769,0,sign-flip,>,<,>,<,T,T,T,T,discordant
+mean,bike,gt,xgb,GE-hand vs Raha,<,<,10,-110,0.001953125,-1.9582735258276422,0,sign-flip,>,<,<,<,D,C,C,C,discordant
+mean,bike,gt,xgb,HoloClean vs Raha,<,<,10,-110,0.001953125,-1.7860845296163652,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+mean,bike,delete,xgb,GE-dirty=GE-clean vs GE-hand,>,>,10,110,0.001953125,27.410644867248532,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+mean,bike,delete,xgb,GE-dirty=GE-clean vs HoloClean,>,left out,0,,,,0,degenerate ranked last,<,<,<,=,D,D,D,reftie,undetermined
+mean,bike,delete,xgb,GE-dirty=GE-clean vs Raha,>,>,10,110,0.001953125,30.496495321622604,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+mean,bike,delete,xgb,GE-hand vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,<,>,>,C,D,C,C,concordant
+mean,bike,delete,xgb,GE-hand vs Raha,>,>,10,106,0.00390625,3.085850454374068,0,sign-flip,>,<,<,>,C,D,D,C,concordant
+mean,bike,delete,xgb,HoloClean vs Raha,<,left out,0,,,,0,degenerate ranked last,<,<,<,<,C,C,C,C,concordant
+mean,bike,impute,xgb,GE-dirty=GE-clean vs GE-hand,tie,tie,10,18,0.6953125,0.09256847112803968,0,sign-flip,<,<,<,=,T,T,T,reftie,undetermined
+mean,bike,impute,xgb,GE-dirty=GE-clean vs HoloClean,>,left out,0,,,,0,degenerate ranked last,<,<,<,=,D,D,D,reftie,undetermined
+mean,bike,impute,xgb,GE-dirty=GE-clean vs Raha,>,>,10,102,0.005859375,3.944396686683396,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+mean,bike,impute,xgb,GE-hand vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,<,>,>,C,D,C,C,concordant
+mean,bike,impute,xgb,GE-hand vs Raha,>,>,10,102,0.005859375,3.8518282155553565,0,sign-flip,>,<,<,<,C,D,D,D,discordant
+mean,bike,impute,xgb,HoloClean vs Raha,<,left out,0,,,,0,degenerate ranked last,<,<,<,<,C,C,C,C,concordant
+mean,adult,gt,linear,GE-dirty=GE-clean=GE-hand vs HoloClean,>,>,10,110,0.001953125,0.007669438017707397,0,sign-flip,<,<,<,<,D,D,D,D,concordant
+mean,adult,gt,linear,GE-dirty=GE-clean=GE-hand vs Raha,>,>,10,102,0.005859375,0.0033975063269538032,0,sign-flip,<,<,<,<,D,D,D,D,concordant
+mean,adult,gt,linear,HoloClean vs Raha,<,<,10,-110,0.001953125,-0.004271931690753595,0,sign-flip,<,<,<,>,C,C,C,D,discordant
+mean,adult,delete,linear,GE-dirty=GE-clean=GE-hand vs HoloClean,>,left out,0,,,,0,degenerate ranked last,<,<,<,=,D,D,D,reftie,undetermined
+mean,adult,delete,linear,GE-dirty=GE-clean=GE-hand vs Raha,>,>,10,110,0.001953125,0.14430028444183987,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+mean,adult,delete,linear,HoloClean vs Raha,<,left out,0,,,,0,degenerate ranked last,<,<,<,<,C,C,C,C,concordant
+mean,adult,impute,linear,GE-dirty=GE-clean=GE-hand vs HoloClean,>,>,10,110,0.001953125,0.32798040177290877,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+mean,adult,impute,linear,GE-dirty=GE-clean=GE-hand vs Raha,>,>,10,110,0.001953125,0.14430028444183987,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+mean,adult,impute,linear,HoloClean vs Raha,<,<,10,-110,0.001953125,-0.18368011733106893,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+mean,adult,gt,rf,GE-dirty=GE-clean=GE-hand vs HoloClean,tie,tie,10,62,0.130859375,0.002889858804662837,0,sign-flip,<,<,<,<,T,T,T,T,concordant
+mean,adult,gt,rf,GE-dirty=GE-clean=GE-hand vs Raha,tie,tie,10,42,0.322265625,0.0011258041717186029,0,sign-flip,<,<,<,<,T,T,T,T,concordant
+mean,adult,gt,rf,HoloClean vs Raha,tie,tie,10,-34,0.431640625,-0.001764054632944234,0,sign-flip,<,<,<,>,T,T,T,T,discordant
+mean,adult,delete,rf,GE-dirty=GE-clean=GE-hand vs HoloClean,>,left out,0,,,,0,degenerate ranked last,<,<,<,=,D,D,D,reftie,undetermined
+mean,adult,delete,rf,GE-dirty=GE-clean=GE-hand vs Raha,>,>,10,110,0.001953125,0.0814406308479761,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+mean,adult,delete,rf,HoloClean vs Raha,<,left out,0,,,,0,degenerate ranked last,<,<,<,<,C,C,C,C,concordant
+mean,adult,impute,rf,GE-dirty=GE-clean=GE-hand vs HoloClean,>,>,10,110,0.001953125,0.3314926432335671,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+mean,adult,impute,rf,GE-dirty=GE-clean=GE-hand vs Raha,>,>,10,110,0.001953125,0.0814406308479761,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+mean,adult,impute,rf,HoloClean vs Raha,<,<,10,-110,0.001953125,-0.25005201238559094,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+mean,adult,gt,xgb,GE-dirty=GE-clean=GE-hand vs HoloClean,>,>,10,94,0.013671875,0.004605993880901105,0,sign-flip,<,<,<,<,D,D,D,D,concordant
+mean,adult,gt,xgb,GE-dirty=GE-clean=GE-hand vs Raha,>,>,10,82,0.037109375,0.0036207859514331255,0,sign-flip,<,<,<,<,D,D,D,D,concordant
+mean,adult,gt,xgb,HoloClean vs Raha,tie,tie,10,-18,0.6953125,-0.0009852079294679795,0,sign-flip,<,<,<,>,T,T,T,T,discordant
+mean,adult,delete,xgb,GE-dirty=GE-clean=GE-hand vs HoloClean,>,left out,0,,,,0,degenerate ranked last,<,<,<,=,D,D,D,reftie,undetermined
+mean,adult,delete,xgb,GE-dirty=GE-clean=GE-hand vs Raha,>,>,10,110,0.001953125,0.1031914140200717,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+mean,adult,delete,xgb,HoloClean vs Raha,<,left out,0,,,,0,degenerate ranked last,<,<,<,<,C,C,C,C,concordant
+mean,adult,impute,xgb,GE-dirty=GE-clean=GE-hand vs HoloClean,>,>,10,110,0.001953125,0.33429091257064336,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+mean,adult,impute,xgb,GE-dirty=GE-clean=GE-hand vs Raha,>,>,10,110,0.001953125,0.1031914140200717,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+mean,adult,impute,xgb,HoloClean vs Raha,<,<,10,-110,0.001953125,-0.23109949855057157,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+median,breast_cancer,gt,linear,GE-dirty vs GE-clean,tie,tie,1,,,-0.001008771929824559,0,n <= 5,<,<,<,<,T,T,T,T,concordant
+median,breast_cancer,gt,linear,GE-dirty vs GE-hand,<,<,9,-82,0.01171875,-0.02321741624705117,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+median,breast_cancer,gt,linear,GE-dirty vs HoloClean,tie,tie,10,-66,0.10546875,-0.017429253029643998,0,sign-flip,>,<,>,<,T,T,T,T,discordant
+median,breast_cancer,gt,linear,GE-dirty vs Raha,tie,tie,10,-38,0.375,-0.006271194518368184,0,sign-flip,<,<,<,<,T,T,T,T,concordant
+median,breast_cancer,gt,linear,GE-clean vs GE-hand,<,<,9,-78,0.01953125,-0.022208644317226613,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+median,breast_cancer,gt,linear,GE-clean vs HoloClean,tie,tie,10,-66,0.10546875,-0.016420481099819438,0,sign-flip,>,<,>,<,T,T,T,T,discordant
+median,breast_cancer,gt,linear,GE-clean vs Raha,tie,tie,10,-34,0.431640625,-0.0052624225885436245,0,sign-flip,<,<,<,<,T,T,T,T,concordant
+median,breast_cancer,gt,linear,GE-hand vs HoloClean,tie,tie,7,28,0.28125,0.005788163217407172,0,sign-flip,>,>,>,<,T,T,T,T,discordant
+median,breast_cancer,gt,linear,GE-hand vs Raha,>,>,7,56,0.015625,0.016946221728682986,0,sign-flip,>,>,>,>,C,C,C,C,concordant
+median,breast_cancer,gt,linear,HoloClean vs Raha,>,>,7,52,0.03125,0.011158058511275815,0,sign-flip,<,>,<,>,D,C,D,C,discordant
+median,breast_cancer,delete,linear,GE-dirty vs GE-clean,tie,tie,0,,,0.0,0,n <= 5,<,<,<,<,T,T,T,T,concordant
+median,breast_cancer,delete,linear,GE-dirty vs GE-hand,<,<,10,-110,0.001953125,-0.03267132487205395,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+median,breast_cancer,delete,linear,GE-dirty vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,<,>,>,C,D,C,C,concordant
+median,breast_cancer,delete,linear,GE-dirty vs Raha,<,<,10,-102,0.005859375,-0.021233173321930587,0,sign-flip,<,<,<,>,C,C,C,D,discordant
+median,breast_cancer,delete,linear,GE-clean vs GE-hand,<,<,10,-110,0.001953125,-0.03267132487205395,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+median,breast_cancer,delete,linear,GE-clean vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,<,>,>,C,D,C,C,concordant
+median,breast_cancer,delete,linear,GE-clean vs Raha,<,<,10,-102,0.005859375,-0.021233173321930587,0,sign-flip,<,<,<,>,C,C,C,D,discordant
+median,breast_cancer,delete,linear,GE-hand vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,>,>,>,C,C,C,C,concordant
+median,breast_cancer,delete,linear,GE-hand vs Raha,tie,tie,9,42,0.25,0.011438151550123366,0,sign-flip,>,>,>,>,T,T,T,T,concordant
+median,breast_cancer,delete,linear,HoloClean vs Raha,<,left out,0,,,,0,degenerate ranked last,<,>,<,<,C,D,C,C,concordant
+median,breast_cancer,impute,linear,GE-dirty vs GE-clean,tie,tie,0,,,,1,same train_hash,<,<,<,=,T,T,T,reftie,undetermined
+median,breast_cancer,impute,linear,GE-dirty vs GE-hand,<,<,10,-98,0.0078125,-0.024848875930619775,0,sign-flip,<,<,<,=,C,C,C,reftie,undetermined
+median,breast_cancer,impute,linear,GE-dirty vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,<,>,=,C,D,C,reftie,undetermined
+median,breast_cancer,impute,linear,GE-dirty vs Raha,tie,tie,10,-50,0.232421875,-0.01118391101110049,0,sign-flip,<,<,<,=,T,T,T,reftie,undetermined
+median,breast_cancer,impute,linear,GE-clean vs GE-hand,<,<,10,-98,0.0078125,-0.024848875930619775,0,sign-flip,<,<,<,=,C,C,C,reftie,undetermined
+median,breast_cancer,impute,linear,GE-clean vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,<,>,=,C,D,C,reftie,undetermined
+median,breast_cancer,impute,linear,GE-clean vs Raha,tie,tie,10,-50,0.232421875,-0.01118391101110049,0,sign-flip,<,<,<,=,T,T,T,reftie,undetermined
+median,breast_cancer,impute,linear,GE-hand vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,>,>,>,C,C,C,C,concordant
+median,breast_cancer,impute,linear,GE-hand vs Raha,tie,tie,10,70,0.083984375,0.013664964919519285,0,sign-flip,>,>,>,>,T,T,T,T,concordant
+median,breast_cancer,impute,linear,HoloClean vs Raha,<,left out,0,,,,0,degenerate ranked last,<,>,<,<,C,D,C,C,concordant
+median,breast_cancer,gt,rf,GE-dirty vs GE-clean,tie,tie,6,18,0.4375,0.002408590297790647,0,sign-flip,<,<,<,<,T,T,T,T,concordant
+median,breast_cancer,gt,rf,GE-dirty vs GE-hand,tie,tie,5,,,-0.0028586364978117063,0,n <= 5,<,<,<,<,T,T,T,T,concordant
+median,breast_cancer,gt,rf,GE-dirty vs HoloClean,tie,tie,8,0,1.0,-0.0017981955676025895,0,sign-flip,>,<,>,<,T,T,T,T,discordant
+median,breast_cancer,gt,rf,GE-dirty vs Raha,tie,tie,7,8,0.8125,0.001015028419700459,0,sign-flip,<,<,<,<,T,T,T,T,concordant
+median,breast_cancer,gt,rf,GE-clean vs GE-hand,tie,tie,3,,,-0.005267226795602353,0,n <= 5,<,<,<,<,T,T,T,T,concordant
+median,breast_cancer,gt,rf,GE-clean vs HoloClean,tie,tie,8,-16,0.640625,-0.0042067858653932364,0,sign-flip,>,<,>,<,T,T,T,T,discordant
+median,breast_cancer,gt,rf,GE-clean vs Raha,tie,tie,4,,,-0.0013935618780901882,0,n <= 5,<,<,<,<,T,T,T,T,concordant
+median,breast_cancer,gt,rf,GE-hand vs HoloClean,tie,tie,7,12,0.6875,0.0010604409302091167,0,sign-flip,>,>,>,<,T,T,T,T,discordant
+median,breast_cancer,gt,rf,GE-hand vs Raha,tie,tie,4,,,0.003873664917512165,0,n <= 5,>,>,>,>,T,T,T,T,concordant
+median,breast_cancer,gt,rf,HoloClean vs Raha,tie,tie,8,12,0.7421875,0.0028132239873030485,0,sign-flip,<,>,<,>,T,T,T,T,discordant
+median,breast_cancer,delete,rf,GE-dirty vs GE-clean,tie,tie,7,8,0.8125,0.0006321177191419114,0,sign-flip,<,<,<,<,T,T,T,T,concordant
+median,breast_cancer,delete,rf,GE-dirty vs GE-hand,tie,tie,8,18,0.5625,0.002454886063198658,0,sign-flip,<,<,<,<,T,T,T,T,concordant
+median,breast_cancer,delete,rf,GE-dirty vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,<,>,>,C,D,C,C,concordant
+median,breast_cancer,delete,rf,GE-dirty vs Raha,tie,tie,6,22,0.3125,0.002675473733559153,0,sign-flip,<,<,<,>,T,T,T,T,discordant
+median,breast_cancer,delete,rf,GE-clean vs GE-hand,tie,tie,8,8,0.84375,0.0018227683440567466,0,sign-flip,<,<,<,<,T,T,T,T,concordant
+median,breast_cancer,delete,rf,GE-clean vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,<,>,>,C,D,C,C,concordant
+median,breast_cancer,delete,rf,GE-clean vs Raha,tie,tie,7,8,0.8125,0.0020433560144172414,0,sign-flip,<,<,<,>,T,T,T,T,discordant
+median,breast_cancer,delete,rf,GE-hand vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,>,>,>,C,C,C,C,concordant
+median,breast_cancer,delete,rf,GE-hand vs Raha,tie,tie,7,4,0.9375,0.00022058767036049477,0,sign-flip,>,>,>,>,T,T,T,T,concordant
+median,breast_cancer,delete,rf,HoloClean vs Raha,<,left out,0,,,,0,degenerate ranked last,<,>,<,<,C,D,C,C,concordant
+median,breast_cancer,impute,rf,GE-dirty vs GE-clean,tie,tie,0,,,,1,same train_hash,<,<,<,=,T,T,T,reftie,undetermined
+median,breast_cancer,impute,rf,GE-dirty vs GE-hand,tie,tie,2,,,0.0027951164048443445,0,n <= 5,<,<,<,=,T,T,T,reftie,undetermined
+median,breast_cancer,impute,rf,GE-dirty vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,<,>,=,C,D,C,reftie,undetermined
+median,breast_cancer,impute,rf,GE-dirty vs Raha,tie,tie,4,,,0.002022819494624006,0,n <= 5,<,<,<,=,T,T,T,reftie,undetermined
+median,breast_cancer,impute,rf,GE-clean vs GE-hand,tie,tie,2,,,0.0027951164048443445,0,n <= 5,<,<,<,=,T,T,T,reftie,undetermined
+median,breast_cancer,impute,rf,GE-clean vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,<,>,=,C,D,C,reftie,undetermined
+median,breast_cancer,impute,rf,GE-clean vs Raha,tie,tie,4,,,0.002022819494624006,0,n <= 5,<,<,<,=,T,T,T,reftie,undetermined
+median,breast_cancer,impute,rf,GE-hand vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,>,>,>,C,C,C,C,concordant
+median,breast_cancer,impute,rf,GE-hand vs Raha,tie,tie,4,,,-0.0007722969102203381,0,n <= 5,>,>,>,>,T,T,T,T,concordant
+median,breast_cancer,impute,rf,HoloClean vs Raha,<,left out,0,,,,0,degenerate ranked last,<,>,<,<,C,D,C,C,concordant
+median,breast_cancer,gt,xgb,GE-dirty vs GE-clean,>,>,7,56,0.015625,0.003995219627108903,0,sign-flip,<,<,<,<,D,D,D,D,concordant
+median,breast_cancer,gt,xgb,GE-dirty vs GE-hand,tie,tie,7,22,0.40625,0.002545192626058712,0,sign-flip,<,<,<,<,T,T,T,T,concordant
+median,breast_cancer,gt,xgb,GE-dirty vs HoloClean,tie,tie,8,52,0.078125,0.013455618290070304,0,sign-flip,>,<,>,<,T,T,T,T,discordant
+median,breast_cancer,gt,xgb,GE-dirty vs Raha,tie,tie,6,22,0.3125,0.002518072187975573,0,sign-flip,<,<,<,<,T,T,T,T,concordant
+median,breast_cancer,gt,xgb,GE-clean vs GE-hand,tie,tie,7,-16,0.546875,-0.0014500270010501914,0,sign-flip,<,<,<,<,T,T,T,T,concordant
+median,breast_cancer,gt,xgb,GE-clean vs HoloClean,tie,tie,10,46,0.275390625,0.0094603986629614,0,sign-flip,>,<,>,<,T,T,T,T,discordant
+median,breast_cancer,gt,xgb,GE-clean vs Raha,tie,tie,8,-20,0.5234375,-0.0014771474391333307,0,sign-flip,<,<,<,<,T,T,T,T,concordant
+median,breast_cancer,gt,xgb,GE-hand vs HoloClean,tie,tie,9,50,0.15625,0.010910425664011592,0,sign-flip,>,>,>,<,T,T,T,T,discordant
+median,breast_cancer,gt,xgb,GE-hand vs Raha,tie,tie,8,-20,0.546875,-2.7120438083139133e-05,0,sign-flip,>,>,>,>,T,T,T,T,concordant
+median,breast_cancer,gt,xgb,HoloClean vs Raha,tie,tie,8,-38,0.203125,-0.010937546102094731,0,sign-flip,<,>,<,>,T,T,T,T,discordant
+median,breast_cancer,delete,xgb,GE-dirty vs GE-clean,tie,tie,7,-36,0.15625,-0.00812600838635662,0,sign-flip,<,<,<,<,T,T,T,T,concordant
+median,breast_cancer,delete,xgb,GE-dirty vs GE-hand,tie,tie,9,30,0.42578125,0.006234735478966846,0,sign-flip,<,<,<,<,T,T,T,T,concordant
+median,breast_cancer,delete,xgb,GE-dirty vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,<,>,>,C,D,C,C,concordant
+median,breast_cancer,delete,xgb,GE-dirty vs Raha,tie,tie,9,2,1.0,0.0006320783888748793,0,sign-flip,<,<,<,>,T,T,T,T,discordant
+median,breast_cancer,delete,xgb,GE-clean vs GE-hand,>,>,9,70,0.0390625,0.014360743865323466,0,sign-flip,<,<,<,<,D,D,D,D,concordant
+median,breast_cancer,delete,xgb,GE-clean vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,<,>,>,C,D,C,C,concordant
+median,breast_cancer,delete,xgb,GE-clean vs Raha,tie,tie,8,28,0.3515625,0.008758086775231499,0,sign-flip,<,<,<,>,T,T,T,T,discordant
+median,breast_cancer,delete,xgb,GE-hand vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,>,>,>,C,C,C,C,concordant
+median,breast_cancer,delete,xgb,GE-hand vs Raha,tie,tie,8,-36,0.25,-0.005602657090091967,0,sign-flip,>,>,>,>,T,T,T,T,concordant
+median,breast_cancer,delete,xgb,HoloClean vs Raha,<,left out,0,,,,0,degenerate ranked last,<,>,<,<,C,D,C,C,concordant
+median,breast_cancer,impute,xgb,GE-dirty vs GE-clean,tie,tie,0,,,,1,same train_hash,<,<,<,=,T,T,T,reftie,undetermined
+median,breast_cancer,impute,xgb,GE-dirty vs GE-hand,>,>,10,82,0.037109375,0.014893049098009304,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+median,breast_cancer,impute,xgb,GE-dirty vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,<,>,=,C,D,C,reftie,undetermined
+median,breast_cancer,impute,xgb,GE-dirty vs Raha,tie,tie,8,28,0.3828125,0.004693768923886699,0,sign-flip,<,<,<,=,T,T,T,reftie,undetermined
+median,breast_cancer,impute,xgb,GE-clean vs GE-hand,>,>,10,82,0.037109375,0.014893049098009304,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+median,breast_cancer,impute,xgb,GE-clean vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,<,>,=,C,D,C,reftie,undetermined
+median,breast_cancer,impute,xgb,GE-clean vs Raha,tie,tie,8,28,0.3828125,0.004693768923886699,0,sign-flip,<,<,<,=,T,T,T,reftie,undetermined
+median,breast_cancer,impute,xgb,GE-hand vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,>,>,>,C,C,C,C,concordant
+median,breast_cancer,impute,xgb,GE-hand vs Raha,tie,tie,10,-62,0.130859375,-0.010199280174122605,0,sign-flip,>,>,>,>,T,T,T,T,concordant
+median,breast_cancer,impute,xgb,HoloClean vs Raha,<,left out,0,,,,0,degenerate ranked last,<,>,<,<,C,D,C,C,concordant
+median,nasa,gt,linear,GE-dirty vs GE-clean,tie,tie,10,-6,0.921875,-0.0005628406541347885,0,sign-flip,<,<,<,<,T,T,T,T,concordant
+median,nasa,gt,linear,GE-dirty vs GE-hand,<,<,10,-110,0.001953125,-2.0885256185456686,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+median,nasa,gt,linear,GE-dirty vs HoloClean,<,<,10,-110,0.001953125,-0.7885089905971051,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+median,nasa,gt,linear,GE-dirty vs Raha,<,<,10,-110,0.001953125,-2.0882550917774627,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+median,nasa,gt,linear,GE-clean vs GE-hand,<,<,10,-110,0.001953125,-2.087962777891534,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+median,nasa,gt,linear,GE-clean vs HoloClean,<,<,10,-110,0.001953125,-0.7879461499429703,0,sign-flip,>,>,>,<,D,D,D,C,discordant
+median,nasa,gt,linear,GE-clean vs Raha,<,<,10,-110,0.001953125,-2.087692251123328,0,sign-flip,>,>,>,<,D,D,D,C,discordant
+median,nasa,gt,linear,GE-hand vs HoloClean,>,>,10,110,0.001953125,1.3000166279485632,0,sign-flip,>,>,>,>,C,C,C,C,concordant
+median,nasa,gt,linear,GE-hand vs Raha,tie,tie,10,38,0.375,0.00027052676820602526,0,sign-flip,>,>,>,<,T,T,T,T,discordant
+median,nasa,gt,linear,HoloClean vs Raha,<,<,10,-110,0.001953125,-1.2997461011803575,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+median,nasa,delete,linear,GE-dirty vs GE-clean,tie,tie,10,50,0.232421875,0.0016881935287079487,0,sign-flip,<,<,<,=,T,T,T,reftie,undetermined
+median,nasa,delete,linear,GE-dirty vs GE-hand,<,<,10,-110,0.001953125,-2.0720853217833204,0,sign-flip,<,<,<,=,C,C,C,reftie,undetermined
+median,nasa,delete,linear,GE-dirty vs HoloClean,>,left out,0,,,,0,degenerate ranked last,<,<,<,>,D,D,D,C,discordant
+median,nasa,delete,linear,GE-dirty vs Raha,>,left out,0,,,,0,degenerate ranked last,<,<,<,>,D,D,D,C,discordant
+median,nasa,delete,linear,GE-clean vs GE-hand,<,<,10,-110,0.001953125,-2.073773515312028,0,sign-flip,<,<,<,=,C,C,C,reftie,undetermined
+median,nasa,delete,linear,GE-clean vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,>,>,>,C,C,C,C,concordant
+median,nasa,delete,linear,GE-clean vs Raha,>,left out,0,,,,0,degenerate ranked last,>,>,>,>,C,C,C,C,concordant
+median,nasa,delete,linear,GE-hand vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,>,>,>,C,C,C,C,concordant
+median,nasa,delete,linear,GE-hand vs Raha,>,left out,0,,,,0,degenerate ranked last,>,>,>,>,C,C,C,C,concordant
+median,nasa,delete,linear,HoloClean vs Raha,tie,left out,0,,,,0,both degenerate,<,<,<,=,T,T,T,reftie,undetermined
+median,nasa,impute,linear,GE-dirty vs GE-clean,tie,tie,9,-10,0.8203125,-0.0005623960492037838,0,sign-flip,<,<,<,=,T,T,T,reftie,undetermined
+median,nasa,impute,linear,GE-dirty vs GE-hand,<,<,10,-110,0.001953125,-2.0407466027455063,0,sign-flip,<,<,<,=,C,C,C,reftie,undetermined
+median,nasa,impute,linear,GE-dirty vs HoloClean,<,<,10,-110,0.001953125,-1.5471481759720813,0,sign-flip,<,<,<,=,C,C,C,reftie,undetermined
+median,nasa,impute,linear,GE-dirty vs Raha,<,<,10,-110,0.001953125,-0.7982359932306256,0,sign-flip,<,<,<,=,C,C,C,reftie,undetermined
+median,nasa,impute,linear,GE-clean vs GE-hand,<,<,10,-110,0.001953125,-2.040184206696302,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+median,nasa,impute,linear,GE-clean vs HoloClean,<,<,10,-110,0.001953125,-1.5465857799228775,0,sign-flip,>,>,>,>,D,D,D,D,concordant
+median,nasa,impute,linear,GE-clean vs Raha,<,<,10,-110,0.001953125,-0.7976735971814217,0,sign-flip,>,>,>,>,D,D,D,D,concordant
+median,nasa,impute,linear,GE-hand vs HoloClean,>,>,10,110,0.001953125,0.4935984267734249,0,sign-flip,>,>,>,>,C,C,C,C,concordant
+median,nasa,impute,linear,GE-hand vs Raha,>,>,10,110,0.001953125,1.2425106095148806,0,sign-flip,>,>,>,>,C,C,C,C,concordant
+median,nasa,impute,linear,HoloClean vs Raha,>,>,10,110,0.001953125,0.7489121827414558,0,sign-flip,<,<,<,<,D,D,D,D,concordant
+median,nasa,gt,rf,GE-dirty vs GE-clean,<,<,10,-110,0.001953125,-0.34251340793789664,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+median,nasa,gt,rf,GE-dirty vs GE-hand,<,<,10,-110,0.001953125,-0.5402957746681075,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+median,nasa,gt,rf,GE-dirty vs HoloClean,<,<,10,-110,0.001953125,-0.2915040967212252,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+median,nasa,gt,rf,GE-dirty vs Raha,<,<,10,-110,0.001953125,-0.6090773933222312,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+median,nasa,gt,rf,GE-clean vs GE-hand,<,<,10,-110,0.001953125,-0.19778236673021082,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+median,nasa,gt,rf,GE-clean vs HoloClean,tie,tie,10,70,0.083984375,0.051009311216671384,0,sign-flip,>,>,>,<,T,T,T,T,discordant
+median,nasa,gt,rf,GE-clean vs Raha,<,<,10,-110,0.001953125,-0.2665639853843346,0,sign-flip,>,>,>,<,D,D,D,C,discordant
+median,nasa,gt,rf,GE-hand vs HoloClean,>,>,10,110,0.001953125,0.24879167794688223,0,sign-flip,>,>,>,>,C,C,C,C,concordant
+median,nasa,gt,rf,GE-hand vs Raha,<,<,10,-110,0.001953125,-0.0687816186541238,0,sign-flip,>,>,>,<,D,D,D,C,discordant
+median,nasa,gt,rf,HoloClean vs Raha,<,<,10,-110,0.001953125,-0.31757329660100597,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+median,nasa,delete,rf,GE-dirty vs GE-clean,tie,tie,10,38,0.375,0.006865721404437508,0,sign-flip,<,<,<,=,T,T,T,reftie,undetermined
+median,nasa,delete,rf,GE-dirty vs GE-hand,tie,tie,10,50,0.232421875,0.033957341879671386,0,sign-flip,<,<,<,=,T,T,T,reftie,undetermined
+median,nasa,delete,rf,GE-dirty vs HoloClean,>,left out,0,,,,0,degenerate ranked last,<,<,<,>,D,D,D,C,discordant
+median,nasa,delete,rf,GE-dirty vs Raha,>,left out,0,,,,0,degenerate ranked last,<,<,<,>,D,D,D,C,discordant
+median,nasa,delete,rf,GE-clean vs GE-hand,tie,tie,10,38,0.375,0.02709162047523388,0,sign-flip,<,<,<,=,T,T,T,reftie,undetermined
+median,nasa,delete,rf,GE-clean vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,>,>,>,C,C,C,C,concordant
+median,nasa,delete,rf,GE-clean vs Raha,>,left out,0,,,,0,degenerate ranked last,>,>,>,>,C,C,C,C,concordant
+median,nasa,delete,rf,GE-hand vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,>,>,>,C,C,C,C,concordant
+median,nasa,delete,rf,GE-hand vs Raha,>,left out,0,,,,0,degenerate ranked last,>,>,>,>,C,C,C,C,concordant
+median,nasa,delete,rf,HoloClean vs Raha,tie,left out,0,,,,0,both degenerate,<,<,<,=,T,T,T,reftie,undetermined
+median,nasa,impute,rf,GE-dirty vs GE-clean,tie,tie,9,2,1.0,0.0006623618262601827,0,sign-flip,<,<,<,=,T,T,T,reftie,undetermined
+median,nasa,impute,rf,GE-dirty vs GE-hand,>,>,10,86,0.02734375,0.10508465166782757,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+median,nasa,impute,rf,GE-dirty vs HoloClean,>,>,10,110,0.001953125,1.337033242754342,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+median,nasa,impute,rf,GE-dirty vs Raha,>,>,10,110,0.001953125,4.102767982638305,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+median,nasa,impute,rf,GE-clean vs GE-hand,>,>,10,86,0.02734375,0.10442228984156739,0,sign-flip,<,<,<,<,D,D,D,D,concordant
+median,nasa,impute,rf,GE-clean vs HoloClean,>,>,10,110,0.001953125,1.3363708809280817,0,sign-flip,>,>,>,>,C,C,C,C,concordant
+median,nasa,impute,rf,GE-clean vs Raha,>,>,10,110,0.001953125,4.102105620812045,0,sign-flip,>,>,>,>,C,C,C,C,concordant
+median,nasa,impute,rf,GE-hand vs HoloClean,>,>,10,110,0.001953125,1.2319485910865147,0,sign-flip,>,>,>,>,C,C,C,C,concordant
+median,nasa,impute,rf,GE-hand vs Raha,>,>,10,110,0.001953125,3.997683330970477,0,sign-flip,>,>,>,>,C,C,C,C,concordant
+median,nasa,impute,rf,HoloClean vs Raha,>,>,10,110,0.001953125,2.765734739883963,0,sign-flip,<,<,<,<,D,D,D,D,concordant
+median,nasa,gt,xgb,GE-dirty vs GE-clean,<,<,10,-110,0.001953125,-0.3744230199047038,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+median,nasa,gt,xgb,GE-dirty vs GE-hand,<,<,10,-110,0.001953125,-0.6502294503825718,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+median,nasa,gt,xgb,GE-dirty vs HoloClean,<,<,10,-110,0.001953125,-0.3192173506585225,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+median,nasa,gt,xgb,GE-dirty vs Raha,<,<,10,-110,0.001953125,-0.6870425643794517,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+median,nasa,gt,xgb,GE-clean vs GE-hand,<,<,10,-110,0.001953125,-0.2758064304778681,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+median,nasa,gt,xgb,GE-clean vs HoloClean,tie,tie,10,34,0.431640625,0.05520566924618129,0,sign-flip,>,>,>,<,T,T,T,T,discordant
+median,nasa,gt,xgb,GE-clean vs Raha,<,<,10,-110,0.001953125,-0.3126195444747479,0,sign-flip,>,>,>,<,D,D,D,C,discordant
+median,nasa,gt,xgb,GE-hand vs HoloClean,>,>,10,110,0.001953125,0.33101209972404944,0,sign-flip,>,>,>,>,C,C,C,C,concordant
+median,nasa,gt,xgb,GE-hand vs Raha,tie,tie,10,-50,0.232421875,-0.0368131139968797,0,sign-flip,>,>,>,<,T,T,T,T,discordant
+median,nasa,gt,xgb,HoloClean vs Raha,<,<,10,-110,0.001953125,-0.36782521372092913,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+median,nasa,delete,xgb,GE-dirty vs GE-clean,<,<,10,-78,0.048828125,-0.12922771281477685,0,sign-flip,<,<,<,=,C,C,C,reftie,undetermined
+median,nasa,delete,xgb,GE-dirty vs GE-hand,<,<,10,-86,0.02734375,-0.14036245705049483,0,sign-flip,<,<,<,=,C,C,C,reftie,undetermined
+median,nasa,delete,xgb,GE-dirty vs HoloClean,>,left out,0,,,,0,degenerate ranked last,<,<,<,>,D,D,D,C,discordant
+median,nasa,delete,xgb,GE-dirty vs Raha,>,left out,0,,,,0,degenerate ranked last,<,<,<,>,D,D,D,C,discordant
+median,nasa,delete,xgb,GE-clean vs GE-hand,tie,tie,10,-2,1.0,-0.011134744235717985,0,sign-flip,<,<,<,=,T,T,T,reftie,undetermined
+median,nasa,delete,xgb,GE-clean vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,>,>,>,C,C,C,C,concordant
+median,nasa,delete,xgb,GE-clean vs Raha,>,left out,0,,,,0,degenerate ranked last,>,>,>,>,C,C,C,C,concordant
+median,nasa,delete,xgb,GE-hand vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,>,>,>,C,C,C,C,concordant
+median,nasa,delete,xgb,GE-hand vs Raha,>,left out,0,,,,0,degenerate ranked last,>,>,>,>,C,C,C,C,concordant
+median,nasa,delete,xgb,HoloClean vs Raha,tie,left out,0,,,,0,both degenerate,<,<,<,=,T,T,T,reftie,undetermined
+median,nasa,impute,xgb,GE-dirty vs GE-clean,tie,tie,9,-10,0.8203125,-0.005831265212236781,0,sign-flip,<,<,<,=,T,T,T,reftie,undetermined
+median,nasa,impute,xgb,GE-dirty vs GE-hand,tie,tie,10,66,0.10546875,0.08546907704167503,0,sign-flip,<,<,<,=,T,T,T,reftie,undetermined
+median,nasa,impute,xgb,GE-dirty vs HoloClean,>,>,10,110,0.001953125,2.3108065553427632,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+median,nasa,impute,xgb,GE-dirty vs Raha,>,>,10,110,0.001953125,4.796676504235627,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+median,nasa,impute,xgb,GE-clean vs GE-hand,tie,tie,10,74,0.064453125,0.09130034225391181,0,sign-flip,<,<,<,<,T,T,T,T,concordant
+median,nasa,impute,xgb,GE-clean vs HoloClean,>,>,10,110,0.001953125,2.316637820555,0,sign-flip,>,>,>,>,C,C,C,C,concordant
+median,nasa,impute,xgb,GE-clean vs Raha,>,>,10,110,0.001953125,4.802507769447864,0,sign-flip,>,>,>,>,C,C,C,C,concordant
+median,nasa,impute,xgb,GE-hand vs HoloClean,>,>,10,110,0.001953125,2.225337478301088,0,sign-flip,>,>,>,>,C,C,C,C,concordant
+median,nasa,impute,xgb,GE-hand vs Raha,>,>,10,110,0.001953125,4.711207427193952,0,sign-flip,>,>,>,>,C,C,C,C,concordant
+median,nasa,impute,xgb,HoloClean vs Raha,>,>,10,106,0.00390625,2.485869948892864,0,sign-flip,<,<,<,<,D,D,D,D,concordant
+median,bike,gt,linear,GE-dirty=GE-clean vs GE-hand,<,<,10,-110,0.001953125,-6.077433319174989,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+median,bike,gt,linear,GE-dirty=GE-clean vs HoloClean,<,<,10,-110,0.001953125,-3.306867386721811,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+median,bike,gt,linear,GE-dirty=GE-clean vs Raha,<,<,10,-110,0.001953125,-6.058021043721925,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+median,bike,gt,linear,GE-hand vs HoloClean,>,>,10,110,0.001953125,2.770565932453178,0,sign-flip,>,<,>,<,C,D,C,D,discordant
+median,bike,gt,linear,GE-hand vs Raha,tie,tie,10,18,0.6953125,0.0194122754530639,0,sign-flip,>,<,<,<,T,T,T,T,discordant
+median,bike,gt,linear,HoloClean vs Raha,<,<,10,-110,0.001953125,-2.7511536570001143,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+median,bike,delete,linear,GE-dirty=GE-clean vs GE-hand,<,<,10,-110,0.001953125,-4.412018464645806,0,sign-flip,<,<,<,=,C,C,C,reftie,undetermined
+median,bike,delete,linear,GE-dirty=GE-clean vs HoloClean,>,left out,0,,,,0,degenerate ranked last,<,<,<,=,D,D,D,reftie,undetermined
+median,bike,delete,linear,GE-dirty=GE-clean vs Raha,>,>,10,110,0.001953125,5.528403742750305,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+median,bike,delete,linear,GE-hand vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,<,>,>,C,D,C,C,concordant
+median,bike,delete,linear,GE-hand vs Raha,>,>,10,110,0.001953125,9.94042220739611,0,sign-flip,>,<,<,>,C,D,D,C,concordant
+median,bike,delete,linear,HoloClean vs Raha,<,left out,0,,,,0,degenerate ranked last,<,<,<,<,C,C,C,C,concordant
+median,bike,impute,linear,GE-dirty=GE-clean vs GE-hand,<,<,10,-110,0.001953125,-5.150216767589259,0,sign-flip,<,<,<,=,C,C,C,reftie,undetermined
+median,bike,impute,linear,GE-dirty=GE-clean vs HoloClean,>,left out,0,,,,0,degenerate ranked last,<,<,<,=,D,D,D,reftie,undetermined
+median,bike,impute,linear,GE-dirty=GE-clean vs Raha,<,<,10,-110,0.001953125,-5.439522978688342,0,sign-flip,<,<,<,=,C,C,C,reftie,undetermined
+median,bike,impute,linear,GE-hand vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,<,>,>,C,D,C,C,concordant
+median,bike,impute,linear,GE-hand vs Raha,<,<,10,-106,0.00390625,-0.2893062110990826,0,sign-flip,>,<,<,<,D,C,C,C,discordant
+median,bike,impute,linear,HoloClean vs Raha,<,left out,0,,,,0,degenerate ranked last,<,<,<,<,C,C,C,C,concordant
+median,bike,gt,rf,GE-dirty=GE-clean vs GE-hand,<,<,10,-110,0.001953125,-28.792875074668974,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+median,bike,gt,rf,GE-dirty=GE-clean vs HoloClean,<,<,10,-110,0.001953125,-29.895506387697047,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+median,bike,gt,rf,GE-dirty=GE-clean vs Raha,<,<,10,-110,0.001953125,-29.351383578597904,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+median,bike,gt,rf,GE-hand vs HoloClean,<,<,10,-110,0.001953125,-1.1026313130280727,0,sign-flip,>,<,>,<,D,C,D,C,discordant
+median,bike,gt,rf,GE-hand vs Raha,<,<,10,-110,0.001953125,-0.5585085039289339,0,sign-flip,>,<,<,<,D,C,C,C,discordant
+median,bike,gt,rf,HoloClean vs Raha,>,>,10,78,0.048828125,0.5441228090991388,0,sign-flip,<,<,<,<,D,D,D,D,concordant
+median,bike,delete,rf,GE-dirty=GE-clean vs GE-hand,>,>,10,110,0.001953125,24.10325859285517,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+median,bike,delete,rf,GE-dirty=GE-clean vs HoloClean,>,left out,0,,,,0,degenerate ranked last,<,<,<,=,D,D,D,reftie,undetermined
+median,bike,delete,rf,GE-dirty=GE-clean vs Raha,>,>,10,110,0.001953125,28.65572194254372,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+median,bike,delete,rf,GE-hand vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,<,>,>,C,D,C,C,concordant
+median,bike,delete,rf,GE-hand vs Raha,>,>,10,110,0.001953125,4.552463349688556,0,sign-flip,>,<,<,>,C,D,D,C,concordant
+median,bike,delete,rf,HoloClean vs Raha,<,left out,0,,,,0,degenerate ranked last,<,<,<,<,C,C,C,C,concordant
+median,bike,impute,rf,GE-dirty=GE-clean vs GE-hand,<,<,10,-110,0.001953125,-15.6326416217581,0,sign-flip,<,<,<,=,C,C,C,reftie,undetermined
+median,bike,impute,rf,GE-dirty=GE-clean vs HoloClean,>,left out,0,,,,0,degenerate ranked last,<,<,<,=,D,D,D,reftie,undetermined
+median,bike,impute,rf,GE-dirty=GE-clean vs Raha,<,<,10,-110,0.001953125,-16.05810456620152,0,sign-flip,<,<,<,=,C,C,C,reftie,undetermined
+median,bike,impute,rf,GE-hand vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,<,>,>,C,D,C,C,concordant
+median,bike,impute,rf,GE-hand vs Raha,tie,tie,10,-26,0.556640625,-0.4254629444434279,0,sign-flip,>,<,<,<,T,T,T,T,discordant
+median,bike,impute,rf,HoloClean vs Raha,<,left out,0,,,,0,degenerate ranked last,<,<,<,<,C,C,C,C,concordant
+median,bike,gt,xgb,GE-dirty=GE-clean vs GE-hand,<,<,10,-110,0.001953125,-26.489565448774123,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+median,bike,gt,xgb,GE-dirty=GE-clean vs HoloClean,<,<,10,-110,0.001953125,-26.661754444985398,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+median,bike,gt,xgb,GE-dirty=GE-clean vs Raha,<,<,10,-110,0.001953125,-28.44783897460177,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+median,bike,gt,xgb,GE-hand vs HoloClean,tie,tie,10,-26,0.556640625,-0.1721889962112769,0,sign-flip,>,<,>,<,T,T,T,T,discordant
+median,bike,gt,xgb,GE-hand vs Raha,<,<,10,-110,0.001953125,-1.9582735258276422,0,sign-flip,>,<,<,<,D,C,C,C,discordant
+median,bike,gt,xgb,HoloClean vs Raha,<,<,10,-110,0.001953125,-1.7860845296163652,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+median,bike,delete,xgb,GE-dirty=GE-clean vs GE-hand,>,>,10,110,0.001953125,27.410644867248532,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+median,bike,delete,xgb,GE-dirty=GE-clean vs HoloClean,>,left out,0,,,,0,degenerate ranked last,<,<,<,=,D,D,D,reftie,undetermined
+median,bike,delete,xgb,GE-dirty=GE-clean vs Raha,>,>,10,110,0.001953125,30.496495321622604,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+median,bike,delete,xgb,GE-hand vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,<,>,>,C,D,C,C,concordant
+median,bike,delete,xgb,GE-hand vs Raha,>,>,10,106,0.00390625,3.085850454374068,0,sign-flip,>,<,<,>,C,D,D,C,concordant
+median,bike,delete,xgb,HoloClean vs Raha,<,left out,0,,,,0,degenerate ranked last,<,<,<,<,C,C,C,C,concordant
+median,bike,impute,xgb,GE-dirty=GE-clean vs GE-hand,<,<,10,-102,0.005859375,-11.005936186693638,0,sign-flip,<,<,<,=,C,C,C,reftie,undetermined
+median,bike,impute,xgb,GE-dirty=GE-clean vs HoloClean,>,left out,0,,,,0,degenerate ranked last,<,<,<,=,D,D,D,reftie,undetermined
+median,bike,impute,xgb,GE-dirty=GE-clean vs Raha,<,<,10,-110,0.001953125,-10.410732474480138,0,sign-flip,<,<,<,=,C,C,C,reftie,undetermined
+median,bike,impute,xgb,GE-hand vs HoloClean,>,left out,0,,,,0,degenerate ranked last,>,<,>,>,C,D,C,C,concordant
+median,bike,impute,xgb,GE-hand vs Raha,tie,tie,10,38,0.375,0.595203712213501,0,sign-flip,>,<,<,<,T,T,T,T,discordant
+median,bike,impute,xgb,HoloClean vs Raha,<,left out,0,,,,0,degenerate ranked last,<,<,<,<,C,C,C,C,concordant
+median,adult,gt,linear,GE-dirty=GE-clean=GE-hand vs HoloClean,>,>,10,110,0.001953125,0.007669438017707397,0,sign-flip,<,<,<,<,D,D,D,D,concordant
+median,adult,gt,linear,GE-dirty=GE-clean=GE-hand vs Raha,>,>,10,102,0.005859375,0.0033975063269538032,0,sign-flip,<,<,<,<,D,D,D,D,concordant
+median,adult,gt,linear,HoloClean vs Raha,<,<,10,-110,0.001953125,-0.004271931690753595,0,sign-flip,<,<,<,>,C,C,C,D,discordant
+median,adult,delete,linear,GE-dirty=GE-clean=GE-hand vs HoloClean,>,left out,0,,,,0,degenerate ranked last,<,<,<,=,D,D,D,reftie,undetermined
+median,adult,delete,linear,GE-dirty=GE-clean=GE-hand vs Raha,>,>,10,110,0.001953125,0.14430028444183987,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+median,adult,delete,linear,HoloClean vs Raha,<,left out,0,,,,0,degenerate ranked last,<,<,<,<,C,C,C,C,concordant
+median,adult,impute,linear,GE-dirty=GE-clean=GE-hand vs HoloClean,>,>,10,110,0.001953125,0.3266754630972052,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+median,adult,impute,linear,GE-dirty=GE-clean=GE-hand vs Raha,>,>,10,110,0.001953125,0.14430028444183987,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+median,adult,impute,linear,HoloClean vs Raha,<,<,10,-110,0.001953125,-0.18237517865536532,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+median,adult,gt,rf,GE-dirty=GE-clean=GE-hand vs HoloClean,tie,tie,10,62,0.130859375,0.002889858804662837,0,sign-flip,<,<,<,<,T,T,T,T,concordant
+median,adult,gt,rf,GE-dirty=GE-clean=GE-hand vs Raha,tie,tie,10,42,0.322265625,0.0011258041717186029,0,sign-flip,<,<,<,<,T,T,T,T,concordant
+median,adult,gt,rf,HoloClean vs Raha,tie,tie,10,-34,0.431640625,-0.001764054632944234,0,sign-flip,<,<,<,>,T,T,T,T,discordant
+median,adult,delete,rf,GE-dirty=GE-clean=GE-hand vs HoloClean,>,left out,0,,,,0,degenerate ranked last,<,<,<,=,D,D,D,reftie,undetermined
+median,adult,delete,rf,GE-dirty=GE-clean=GE-hand vs Raha,>,>,10,110,0.001953125,0.0814406308479761,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+median,adult,delete,rf,HoloClean vs Raha,<,left out,0,,,,0,degenerate ranked last,<,<,<,<,C,C,C,C,concordant
+median,adult,impute,rf,GE-dirty=GE-clean=GE-hand vs HoloClean,>,>,10,110,0.001953125,0.3301655711797672,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+median,adult,impute,rf,GE-dirty=GE-clean=GE-hand vs Raha,>,>,10,110,0.001953125,0.0814406308479761,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+median,adult,impute,rf,HoloClean vs Raha,<,<,10,-110,0.001953125,-0.2487249403317911,0,sign-flip,<,<,<,<,C,C,C,C,concordant
+median,adult,gt,xgb,GE-dirty=GE-clean=GE-hand vs HoloClean,>,>,10,94,0.013671875,0.004605993880901105,0,sign-flip,<,<,<,<,D,D,D,D,concordant
+median,adult,gt,xgb,GE-dirty=GE-clean=GE-hand vs Raha,>,>,10,82,0.037109375,0.0036207859514331255,0,sign-flip,<,<,<,<,D,D,D,D,concordant
+median,adult,gt,xgb,HoloClean vs Raha,tie,tie,10,-18,0.6953125,-0.0009852079294679795,0,sign-flip,<,<,<,>,T,T,T,T,discordant
+median,adult,delete,xgb,GE-dirty=GE-clean=GE-hand vs HoloClean,>,left out,0,,,,0,degenerate ranked last,<,<,<,=,D,D,D,reftie,undetermined
+median,adult,delete,xgb,GE-dirty=GE-clean=GE-hand vs Raha,>,>,10,110,0.001953125,0.1031914140200717,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+median,adult,delete,xgb,HoloClean vs Raha,<,left out,0,,,,0,degenerate ranked last,<,<,<,<,C,C,C,C,concordant
+median,adult,impute,xgb,GE-dirty=GE-clean=GE-hand vs HoloClean,>,>,10,110,0.001953125,0.33290456989517114,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+median,adult,impute,xgb,GE-dirty=GE-clean=GE-hand vs Raha,>,>,10,110,0.001953125,0.1031914140200717,0,sign-flip,<,<,<,=,D,D,D,reftie,undetermined
+median,adult,impute,xgb,HoloClean vs Raha,<,<,10,-110,0.001953125,-0.2297131558750994,0,sign-flip,<,<,<,<,C,C,C,C,concordant

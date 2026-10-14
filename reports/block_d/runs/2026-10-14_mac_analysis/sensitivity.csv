@@ -1,0 +1,37 @@
+dataset,policy,model,changed_ranked_last,changed_pairs_ranked_last,changed_left_out,changed_pairs_left_out,CDT_mean,CDT_median
+breast_cancer,gt,linear,1,GE-hand vs Raha,1,GE-hand vs Raha,2/1/7,3/1/6
+breast_cancer,gt,rf,0,,0,,0/0/10,0/0/10
+breast_cancer,gt,xgb,2,GE-dirty vs GE-clean; GE-dirty vs HoloClean,2,GE-dirty vs GE-clean; GE-dirty vs HoloClean,1/0/9,0/1/9
+breast_cancer,delete,linear,0,,0,,8/0/2,8/0/2
+breast_cancer,delete,rf,0,,0,,4/0/6,4/0/6
+breast_cancer,delete,xgb,1,GE-clean vs GE-hand,1,GE-clean vs GE-hand,4/0/6,4/1/5
+breast_cancer,impute,linear,1,GE-hand vs Raha,1,GE-hand vs Raha,7/0/3,6/0/4
+breast_cancer,impute,rf,0,,0,,4/0/6,4/0/6
+breast_cancer,impute,xgb,2,GE-dirty vs GE-hand; GE-clean vs GE-hand,2,GE-dirty vs GE-hand; GE-clean vs GE-hand,4/0/6,4/2/4
+nasa,gt,linear,0,,0,,6/2/2,6/2/2
+nasa,gt,rf,1,GE-clean vs HoloClean,1,GE-clean vs HoloClean,7/3/0,7/2/1
+nasa,gt,xgb,1,GE-clean vs HoloClean,1,GE-clean vs HoloClean,7/2/1,7/1/2
+nasa,delete,linear,0,,0,,6/2/2,6/2/2
+nasa,delete,rf,2,GE-dirty vs GE-clean; GE-dirty vs GE-hand,2,GE-dirty vs GE-clean; GE-dirty vs GE-hand,4/4/2,4/2/4
+nasa,delete,xgb,2,GE-dirty vs GE-clean; GE-dirty vs GE-hand,2,GE-dirty vs GE-clean; GE-dirty vs GE-hand,4/2/4,6/2/2
+nasa,impute,linear,0,,0,,6/3/1,6/3/1
+nasa,impute,rf,2,GE-dirty vs GE-hand; GE-clean vs GE-hand,2,GE-dirty vs GE-hand; GE-clean vs GE-hand,4/3/3,4/5/1
+nasa,impute,xgb,0,,0,,4/3/3,4/3/3
+bike,gt,linear,0,,0,,5/0/1,5/0/1
+bike,gt,rf,0,,0,,3/3/0,3/3/0
+bike,gt,xgb,0,,0,,4/1/1,4/1/1
+bike,delete,linear,0,,0,,4/2/0,4/2/0
+bike,delete,rf,0,,0,,3/3/0,3/3/0
+bike,delete,xgb,0,,0,,3/3/0,3/3/0
+bike,impute,linear,0,,0,,4/2/0,4/2/0
+bike,impute,rf,2,GE-dirty=GE-clean vs Raha; GE-hand vs Raha,2,GE-dirty=GE-clean vs Raha; GE-hand vs Raha,4/1/1,4/1/1
+bike,impute,xgb,3,GE-dirty=GE-clean vs GE-hand; GE-dirty=GE-clean vs Raha; GE-hand vs Raha,3,GE-dirty=GE-clean vs GE-hand; GE-dirty=GE-clean vs Raha; GE-hand vs Raha,3/2/1,4/1/1
+adult,gt,linear,0,,0,,1/2/0,1/2/0
+adult,gt,rf,0,,0,,0/0/3,0/0/3
+adult,gt,xgb,0,,0,,0/2/1,0/2/1
+adult,delete,linear,0,,0,,1/2/0,1/2/0
+adult,delete,rf,0,,0,,1/2/0,1/2/0
+adult,delete,xgb,0,,0,,1/2/0,1/2/0
+adult,impute,linear,0,,0,,1/2/0,1/2/0
+adult,impute,rf,0,,0,,1/2/0,1/2/0
+adult,impute,xgb,0,,0,,1/2/0,1/2/0

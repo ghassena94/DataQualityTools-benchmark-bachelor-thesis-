@@ -1,0 +1,103 @@
+fill,dataset,model,item,configuration,k,verdict,p,n
+mean,breast_cancer,linear,GE-dirty,ge_dirty_profiled,167-183,tie,0.46875,7
+mean,breast_cancer,linear,GE-clean,ge_clean_profiled,169-187,detector worse,0.03125,6
+mean,breast_cancer,linear,GE-hand,ge_hand_written,237-252,tie,0.064453125,10
+mean,breast_cancer,linear,HoloClean,holoclean,559-559,n/a,,
+mean,breast_cancer,linear,Raha,raha,210-228,detector better,0.048828125,10
+mean,breast_cancer,rf,GE-dirty,ge_dirty_profiled,167-183,tie,0.125,9
+mean,breast_cancer,rf,GE-clean,ge_clean_profiled,169-187,tie,0.42578125,9
+mean,breast_cancer,rf,GE-hand,ge_hand_written,237-252,tie,0.6953125,10
+mean,breast_cancer,rf,HoloClean,holoclean,559-559,n/a,,
+mean,breast_cancer,rf,Raha,raha,210-228,tie,0.58984375,9
+mean,breast_cancer,xgb,GE-dirty,ge_dirty_profiled,167-183,tie,0.76953125,10
+mean,breast_cancer,xgb,GE-clean,ge_clean_profiled,169-187,tie,0.7421875,8
+mean,breast_cancer,xgb,GE-hand,ge_hand_written,237-252,tie,0.734375,9
+mean,breast_cancer,xgb,HoloClean,holoclean,559-559,n/a,,
+mean,breast_cancer,xgb,Raha,raha,210-228,tie,0.91015625,9
+mean,nasa,linear,GE-dirty,ge_dirty_profiled,19-28,tie,0.625,10
+mean,nasa,linear,GE-clean,ge_clean_profiled,302-318,tie,0.556640625,10
+mean,nasa,linear,GE-hand,ge_hand_written,530-555,detector better,0.001953125,10
+mean,nasa,linear,HoloClean,holoclean,1168-1176,n/a,,
+mean,nasa,linear,Raha,raha,1202-1202,n/a,,
+mean,nasa,rf,GE-dirty,ge_dirty_profiled,19-28,tie,0.375,10
+mean,nasa,rf,GE-clean,ge_clean_profiled,302-318,detector better,0.02734375,10
+mean,nasa,rf,GE-hand,ge_hand_written,530-555,detector better,0.001953125,10
+mean,nasa,rf,HoloClean,holoclean,1168-1176,n/a,,
+mean,nasa,rf,Raha,raha,1202-1202,n/a,,
+mean,nasa,xgb,GE-dirty,ge_dirty_profiled,19-28,tie,0.6953125,10
+mean,nasa,xgb,GE-clean,ge_clean_profiled,302-318,detector better,0.009765625,10
+mean,nasa,xgb,GE-hand,ge_hand_written,530-555,detector better,0.001953125,10
+mean,nasa,xgb,HoloClean,holoclean,1168-1176,n/a,,
+mean,nasa,xgb,Raha,raha,1202-1202,n/a,,
+mean,bike,linear,GE-dirty=GE-clean,ge_dirty_profiled,0-0,n/a,,
+mean,bike,linear,GE-hand,ge_hand_written,10254-10329,detector better,0.001953125,10
+mean,bike,linear,HoloClean,holoclean,13903-13903,n/a,,
+mean,bike,linear,Raha,raha,12797-12852,detector worse,0.001953125,10
+mean,bike,rf,GE-dirty=GE-clean,ge_dirty_profiled,0-0,n/a,,
+mean,bike,rf,GE-hand,ge_hand_written,10254-10329,detector worse,0.001953125,10
+mean,bike,rf,HoloClean,holoclean,13903-13903,n/a,,
+mean,bike,rf,Raha,raha,12797-12852,detector worse,0.001953125,10
+mean,bike,xgb,GE-dirty=GE-clean,ge_dirty_profiled,0-0,n/a,,
+mean,bike,xgb,GE-hand,ge_hand_written,10254-10329,detector worse,0.001953125,10
+mean,bike,xgb,HoloClean,holoclean,13903-13903,n/a,,
+mean,bike,xgb,Raha,raha,12797-12852,detector worse,0.001953125,10
+mean,adult,linear,GE-dirty=GE-clean=GE-hand,ge_dirty_profiled,0-0,n/a,,
+mean,adult,linear,HoloClean,holoclean,36177-36177,n/a,,
+mean,adult,linear,Raha,raha,4722-4794,detector worse,0.001953125,10
+mean,adult,rf,GE-dirty=GE-clean=GE-hand,ge_dirty_profiled,0-0,n/a,,
+mean,adult,rf,HoloClean,holoclean,36177-36177,n/a,,
+mean,adult,rf,Raha,raha,4722-4794,detector worse,0.001953125,10
+mean,adult,xgb,GE-dirty=GE-clean=GE-hand,ge_dirty_profiled,0-0,n/a,,
+mean,adult,xgb,HoloClean,holoclean,36177-36177,n/a,,
+mean,adult,xgb,Raha,raha,4722-4794,detector worse,0.001953125,10
+median,breast_cancer,linear,GE-dirty,ge_dirty_profiled,167-183,detector worse,0.046875,7
+median,breast_cancer,linear,GE-clean,ge_clean_profiled,169-187,detector worse,0.03125,6
+median,breast_cancer,linear,GE-hand,ge_hand_written,237-252,detector better,0.037109375,10
+median,breast_cancer,linear,HoloClean,holoclean,559-559,n/a,,
+median,breast_cancer,linear,Raha,raha,210-228,tie,0.193359375,10
+median,breast_cancer,rf,GE-dirty,ge_dirty_profiled,167-183,tie,0.12890625,9
+median,breast_cancer,rf,GE-clean,ge_clean_profiled,169-187,tie,0.42578125,9
+median,breast_cancer,rf,GE-hand,ge_hand_written,237-252,tie,0.16015625,10
+median,breast_cancer,rf,HoloClean,holoclean,559-559,n/a,,
+median,breast_cancer,rf,Raha,raha,210-228,tie,0.734375,9
+median,breast_cancer,xgb,GE-dirty,ge_dirty_profiled,167-183,tie,0.296875,7
+median,breast_cancer,xgb,GE-clean,ge_clean_profiled,169-187,tie,0.6953125,10
+median,breast_cancer,xgb,GE-hand,ge_hand_written,237-252,tie,0.275390625,10
+median,breast_cancer,xgb,HoloClean,holoclean,559-559,n/a,,
+median,breast_cancer,xgb,Raha,raha,210-228,tie,0.8203125,9
+median,nasa,linear,GE-dirty,ge_dirty_profiled,19-28,tie,0.625,10
+median,nasa,linear,GE-clean,ge_clean_profiled,302-318,tie,0.556640625,10
+median,nasa,linear,GE-hand,ge_hand_written,530-555,detector better,0.001953125,10
+median,nasa,linear,HoloClean,holoclean,1168-1176,n/a,,
+median,nasa,linear,Raha,raha,1202-1202,n/a,,
+median,nasa,rf,GE-dirty,ge_dirty_profiled,19-28,tie,0.275390625,10
+median,nasa,rf,GE-clean,ge_clean_profiled,302-318,detector better,0.00390625,10
+median,nasa,rf,GE-hand,ge_hand_written,530-555,detector better,0.001953125,10
+median,nasa,rf,HoloClean,holoclean,1168-1176,n/a,,
+median,nasa,rf,Raha,raha,1202-1202,n/a,,
+median,nasa,xgb,GE-dirty,ge_dirty_profiled,19-28,tie,0.431640625,10
+median,nasa,xgb,GE-clean,ge_clean_profiled,302-318,detector better,0.001953125,10
+median,nasa,xgb,GE-hand,ge_hand_written,530-555,detector better,0.001953125,10
+median,nasa,xgb,HoloClean,holoclean,1168-1176,n/a,,
+median,nasa,xgb,Raha,raha,1202-1202,n/a,,
+median,bike,linear,GE-dirty=GE-clean,ge_dirty_profiled,0-0,n/a,,
+median,bike,linear,GE-hand,ge_hand_written,10254-10329,detector better,0.001953125,10
+median,bike,linear,HoloClean,holoclean,13903-13903,n/a,,
+median,bike,linear,Raha,raha,12797-12852,detector worse,0.001953125,10
+median,bike,rf,GE-dirty=GE-clean,ge_dirty_profiled,0-0,n/a,,
+median,bike,rf,GE-hand,ge_hand_written,10254-10329,detector worse,0.001953125,10
+median,bike,rf,HoloClean,holoclean,13903-13903,n/a,,
+median,bike,rf,Raha,raha,12797-12852,detector worse,0.001953125,10
+median,bike,xgb,GE-dirty=GE-clean,ge_dirty_profiled,0-0,n/a,,
+median,bike,xgb,GE-hand,ge_hand_written,10254-10329,detector worse,0.001953125,10
+median,bike,xgb,HoloClean,holoclean,13903-13903,n/a,,
+median,bike,xgb,Raha,raha,12797-12852,detector worse,0.001953125,10
+median,adult,linear,GE-dirty=GE-clean=GE-hand,ge_dirty_profiled,0-0,n/a,,
+median,adult,linear,HoloClean,holoclean,36177-36177,n/a,,
+median,adult,linear,Raha,raha,4722-4794,detector worse,0.001953125,10
+median,adult,rf,GE-dirty=GE-clean=GE-hand,ge_dirty_profiled,0-0,n/a,,
+median,adult,rf,HoloClean,holoclean,36177-36177,n/a,,
+median,adult,rf,Raha,raha,4722-4794,detector worse,0.001953125,10
+median,adult,xgb,GE-dirty=GE-clean=GE-hand,ge_dirty_profiled,0-0,n/a,,
+median,adult,xgb,HoloClean,holoclean,36177-36177,n/a,,
+median,adult,xgb,Raha,raha,4722-4794,detector worse,0.001953125,10

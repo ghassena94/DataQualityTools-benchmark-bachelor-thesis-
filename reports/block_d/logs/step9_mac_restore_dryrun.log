@@ -1,0 +1,8 @@
+== backup intact?
+yes
+== inputs unchanged?
+yes
+== Raha cache files that differ from the snapshot: 4
+== other live files that differ from the snapshot:
+   none
+dry run: nothing changed

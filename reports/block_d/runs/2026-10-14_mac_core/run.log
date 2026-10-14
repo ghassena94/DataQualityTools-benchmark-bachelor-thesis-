@@ -1,0 +1,334 @@
+Block D driver, mode full, fill mean, datasets breast_cancer nasa, seeds 0-9, policies gt delete impute
+prepared breast_cancer (0.1 s)
+prepared nasa (0.1 s)
+  breast_cancer seed 0 dry_run (0.0 s)
+  breast_cancer seed 1 dry_run (0.0 s)
+  breast_cancer seed 2 dry_run (0.0 s)
+  breast_cancer seed 3 dry_run (0.0 s)
+  breast_cancer seed 4 dry_run (0.0 s)
+  breast_cancer seed 5 dry_run (0.0 s)
+  breast_cancer seed 6 dry_run (0.0 s)
+  breast_cancer seed 7 dry_run (0.0 s)
+  breast_cancer seed 8 dry_run (0.0 s)
+  breast_cancer seed 9 dry_run (0.0 s)
+  nasa seed 0 dry_run (0.0 s)
+  nasa seed 1 dry_run (0.0 s)
+  nasa seed 2 dry_run (0.0 s)
+  nasa seed 3 dry_run (0.0 s)
+  nasa seed 4 dry_run (0.0 s)
+  nasa seed 5 dry_run (0.0 s)
+  nasa seed 6 dry_run (0.0 s)
+  nasa seed 7 dry_run (0.0 s)
+  nasa seed 8 dry_run (0.1 s)
+  nasa seed 9 dry_run (0.0 s)
+  20 tasks (dry_run) in 0.8 s
+
+====================================================================================================
+breast_cancer
+====================================================================================================
+[1] schema
+  n 699  n_train 559  n_test 140
+  label class (classification; '4' -> 1, '2' -> 0)
+  numeric (9): Clump Thickness, Uniformity of Cell Size, Uniformity of Cell Shape, Marginal Adhesion, Single Epithelial Cell Size, Bare Nuclei, Bland Chromatin, Normal Nucleoli, Mitoses
+  categorical (0): -
+  excluded (2): Unnamed: 0, Sample code number
+  featurized width (floor, seed 0): 9
+[2] flag sets (det/TP/FP all columns; the rest model columns; label = flagged label cells)
+  set                          det     TP      FP   model   excl   fmtFP  neq rows-fmt  label    pTP    pFP  sha256       check 1
+  ge_dirty_profiled            260    247      13     223     37       0    0      219      0      0      0  7b96ddbea83d PASS (replay identical)
+  ge_clean_profiled            291    278      13     230     61       0    0      223      0      0      0  bffcbf74979f PASS (replay identical)
+  ge_hand_written              460    438      22     355    105       0    0      308      0    138      0  213594caf181 PASS (replay identical)
+  holoclean                   5691    416    5275    5691      0       0    0      699    699    237   4591  719c0ca84d39 PASS (replay identical)
+  raha                         395    317      78     352     43       0    0      276      0     73     64  ac4b1fd1dec2 PASS (replay n/a)
+  perfect                      631    631       0     524    107       0    0      399     15    292      0  -            -
+  always_positive             8388    631    7757    6990   1398       0    0      699    699    292   5769  -            -
+[3] items and pairs: 5 items, 10 pairs
+  GE-dirty                           ge_dirty_profiled
+  GE-clean                           ge_clean_profiled
+  GE-hand                            ge_hand_written
+  HoloClean                          holoclean
+  Raha                               raha
+[4] versions: training rows kept min-max over seeds 0-9; D = degenerate on all seeds, D(k/n) on some;
+    = floor: identical to the floor before rounding on every seed; ~ floor: same rounded hash on every seed
+  set                     gt                        delete                    impute                    
+  ge_dirty_profiled       559-559                   376-392                   559-559 ~ floor           
+  ge_clean_profiled       559-559                   372-390                   559-559 = floor           
+  ge_hand_written         559-559                   307-322                   559-559                   
+  holoclean               559-559                   0-0 D                     0-0 D                     
+  raha                    559-559                   331-349                   559-559                   
+  perfect                 559-559                   234-250                   544-549                   
+  always_positive         559-559                   0-0 D                     0-0 D                     
+  random controls (k = rows the delete version removes):
+    control/ge_dirty_profiled    k 167-183        376-392
+    control/ge_clean_profiled    k 169-187        372-390
+    control/ge_hand_written      k 237-252        307-322
+    control/holoclean            k 559-559        0-0 D
+    control/raha                 k 210-228        331-349
+[5] items left after removing degenerate items
+  delete  4 of 5: GE-dirty, GE-clean, GE-hand, Raha
+  impute  4 of 5: GE-dirty, GE-clean, GE-hand, Raha
+[6] degenerate versions
+  holoclean/delete                   10/10 seeds
+  always_positive/delete             10/10 seeds
+  holoclean/impute                   10/10 seeds
+  always_positive/impute             10/10 seeds
+  control/holoclean                  10/10 seeds
+  expected list (R53): match
+[7] Raha (frozen run 1): TP/FP/det 317/78/395; format-only FPs 0; label flags 0; rows kept gt 559-559; delete 331-349; impute 559-559
+    references: (a) 0.618 (b) 0.7721 (c) 0.6575
+[8] references (item: (a) published / recomputed, (b) row F1, (c) model-visible cell F1)
+  GE-dirty                           (a) 0.554 / 0.5544  (b) 0.7193  (c) 0.5622
+  GE-clean                           (a) 0.603 / 0.6030  (b) 0.7476  (c) 0.5756
+  GE-hand                            (a) 0.803 / 0.8029  (b) 0.8902  (c) 0.8077
+  HoloClean                          (a) 0.132 / 0.1316  (b) 0.7865  (c) 0.1339
+  Raha                               (a) 0.618 / 0.6179  (b) 0.7721  (c) 0.6575
+  order (a) GE-hand(0.803) > Raha(0.618) > GE-clean(0.603) > GE-dirty(0.554) > HoloClean(0.132)
+  order (b) GE-hand(0.890) > HoloClean(0.786) > Raha(0.772) > GE-clean(0.748) > GE-dirty(0.719)
+  order (c) GE-hand(0.808) > Raha(0.658) > GE-clean(0.576) > GE-dirty(0.562) > HoloClean(0.134)
+[9] expected verdicts: mechanism (d) per item and policy, verdict per pair against (a)
+  GE-dirty                           gt 0.401      delete 0.986        impute floor
+  GE-clean                           gt 0.414      delete 0.987        impute floor
+  GE-hand                            gt 0.677      delete 1.0          impute 138
+  HoloClean                          gt 0.794      delete degenerate   impute degenerate
+  Raha                               gt 0.55       delete 0.957        impute 9
+  gt     GE-dirty vs GE-clean                          GE-clean > GE-dirty                                  0.401       0.414  concordant
+  gt     GE-dirty vs GE-hand                           GE-hand > GE-dirty                                   0.401       0.677  concordant
+  gt     GE-dirty vs HoloClean                         GE-dirty > HoloClean                                 0.401       0.794  discordant
+  gt     GE-dirty vs Raha                              Raha > GE-dirty                                      0.401        0.55  concordant
+  gt     GE-clean vs GE-hand                           GE-hand > GE-clean                                   0.414       0.677  concordant
+  gt     GE-clean vs HoloClean                         GE-clean > HoloClean                                 0.414       0.794  discordant
+  gt     GE-clean vs Raha                              Raha > GE-clean                                      0.414        0.55  concordant
+  gt     GE-hand vs HoloClean                          GE-hand > HoloClean                                  0.677       0.794  discordant
+  gt     GE-hand vs Raha                               GE-hand > Raha                                       0.677        0.55  concordant
+  gt     HoloClean vs Raha                             Raha > HoloClean                                     0.794        0.55  discordant
+  delete GE-dirty vs GE-clean                          GE-clean > GE-dirty                                  0.986       0.987  concordant
+  delete GE-dirty vs GE-hand                           GE-hand > GE-dirty                                   0.986         1.0  concordant
+  delete GE-dirty vs HoloClean                         GE-dirty > HoloClean                                 0.986  degenerate  concordant
+  delete GE-dirty vs Raha                              Raha > GE-dirty                                      0.986       0.957  discordant
+  delete GE-clean vs GE-hand                           GE-hand > GE-clean                                   0.987         1.0  concordant
+  delete GE-clean vs HoloClean                         GE-clean > HoloClean                                 0.987  degenerate  concordant
+  delete GE-clean vs Raha                              Raha > GE-clean                                      0.987       0.957  discordant
+  delete GE-hand vs HoloClean                          GE-hand > HoloClean                                    1.0  degenerate  concordant
+  delete GE-hand vs Raha                               GE-hand > Raha                                         1.0       0.957  concordant
+  delete HoloClean vs Raha                             Raha > HoloClean                                degenerate       0.957  concordant
+  impute GE-dirty vs GE-clean                          GE-clean > GE-dirty                                  floor       floor  undetermined
+  impute GE-dirty vs GE-hand                           GE-hand > GE-dirty                                   floor         138  undetermined
+  impute GE-dirty vs HoloClean                         GE-dirty > HoloClean                                 floor  degenerate  undetermined
+  impute GE-dirty vs Raha                              Raha > GE-dirty                                      floor           9  undetermined
+  impute GE-clean vs GE-hand                           GE-hand > GE-clean                                   floor         138  undetermined
+  impute GE-clean vs HoloClean                         GE-clean > HoloClean                                 floor  degenerate  undetermined
+  impute GE-clean vs Raha                              Raha > GE-clean                                      floor           9  undetermined
+  impute GE-hand vs HoloClean                          GE-hand > HoloClean                                    138  degenerate  concordant
+  impute GE-hand vs Raha                               GE-hand > Raha                                         138           9  concordant
+  impute HoloClean vs Raha                             Raha > HoloClean                                degenerate           9  concordant
+  addendum match: 30/30
+  verdicts differing from c61ee72 file: 0
+  gt      C/D/U 6/4/0
+  delete  C/D/U 8/2/0
+  impute  C/D/U 3/0/7
+[10] checks
+  check 1 breast_cancer PASS (MANIFEST, sha256, Table 3, no duplicate or outside cell, replay identity)
+  check 2(hash) breast_cancer seed 0 PASS
+  check 3 breast_cancer seed 0 PASS (3 versions = floor)
+  check 4 breast_cancer seed 0 PASS (delete keeps 250, impute keeps 548, cells written 399, parsable 234)
+  check 2(hash) breast_cancer seed 1 PASS
+  check 3 breast_cancer seed 1 PASS (3 versions = floor)
+  check 4 breast_cancer seed 1 PASS (delete keeps 236, impute keeps 549, cells written 417, parsable 234)
+  check 2(hash) breast_cancer seed 2 PASS
+  check 3 breast_cancer seed 2 PASS (3 versions = floor)
+  check 4 breast_cancer seed 2 PASS (delete keeps 234, impute keeps 548, cells written 413, parsable 239)
+  check 2(hash) breast_cancer seed 3 PASS
+  check 3 breast_cancer seed 3 PASS (3 versions = floor)
+  check 4 breast_cancer seed 3 PASS (delete keeps 247, impute keeps 548, cells written 396, parsable 229)
+  check 2(hash) breast_cancer seed 4 PASS
+  check 3 breast_cancer seed 4 PASS (3 versions = floor)
+  check 4 breast_cancer seed 4 PASS (delete keeps 242, impute keeps 544, cells written 401, parsable 228)
+  check 2(hash) breast_cancer seed 5 PASS
+  check 3 breast_cancer seed 5 PASS (3 versions = floor)
+  check 4 breast_cancer seed 5 PASS (delete keeps 248, impute keeps 548, cells written 394, parsable 227)
+  check 2(hash) breast_cancer seed 6 PASS
+  check 3 breast_cancer seed 6 PASS (3 versions = floor)
+  check 4 breast_cancer seed 6 PASS (delete keeps 238, impute keeps 549, cells written 412, parsable 235)
+  check 2(hash) breast_cancer seed 7 PASS
+  check 3 breast_cancer seed 7 PASS (3 versions = floor)
+  check 4 breast_cancer seed 7 PASS (delete keeps 239, impute keeps 546, cells written 404, parsable 231)
+  check 2(hash) breast_cancer seed 8 PASS
+  check 3 breast_cancer seed 8 PASS (3 versions = floor)
+  check 4 breast_cancer seed 8 PASS (delete keeps 244, impute keeps 548, cells written 399, parsable 227)
+  check 2(hash) breast_cancer seed 9 PASS
+  check 3 breast_cancer seed 9 PASS (3 versions = floor)
+  check 4 breast_cancer seed 9 PASS (delete keeps 242, impute keeps 547, cells written 401, parsable 227)
+  R62 breast_cancer PASS (rows kept under delete/impute, label errors left, flag statistics = addendum)
+[11] train_hash digest breast_cancer 45b2cb80a8ab4791b1af87c8686c6cfdaf32ba96c8564be3af317efbe5c13328
+
+====================================================================================================
+nasa
+====================================================================================================
+[1] schema
+  n 1503  n_train 1202  n_test 301
+  label sound_pressure_level (regression)
+  numeric (5): frequency, angle, chord_length, velocity, thickness
+  categorical (0): -
+  excluded (0): -
+  featurized width (floor, seed 0): 5
+[2] flag sets (det/TP/FP all columns; the rest model columns; label = flagged label cells)
+  set                          det     TP      FP   model   excl   fmtFP  neq rows-fmt  label    pTP    pFP  sha256       check 1
+  ge_dirty_profiled             30     30       0      30      0       0    0       30      0      0      0  1c30a8d700b8 PASS (replay identical)
+  ge_clean_profiled            384    384       0     384      0       0    0      384      0      2      0  4912fae7463e PASS (replay identical)
+  ge_hand_written              680    680       0     680      0       0    0      680      0    298      0  dbcf7887aed3 PASS (replay identical)
+  holoclean                   6265    556    5709    6265      0     500    0     1466    934    268   4775  cff7bf4626ab PASS (replay identical)
+  raha                        2574    710    1864    2574      0    1864    0      710      0    349   1864  3e726a768ea0 PASS (replay n/a)
+  perfect                      731    731       0     731      0       0    0      731      0    349      0  -            -
+  always_positive             9018    731    8287    9018      0    1866    0     1503   1503    349   6784  -            -
+  raha_minus_format_only       710    710       0     710      0       0    0      710      0    349      0  -            -
+[3] items and pairs: 5 items, 10 pairs
+  GE-dirty                           ge_dirty_profiled
+  GE-clean                           ge_clean_profiled
+  GE-hand                            ge_hand_written
+  HoloClean                          holoclean
+  Raha                               raha
+[4] versions: training rows kept min-max over seeds 0-9; D = degenerate on all seeds, D(k/n) on some;
+    = floor: identical to the floor before rounding on every seed; ~ floor: same rounded hash on every seed
+  set                     gt                        delete                    impute                    
+  ge_dirty_profiled       1202-1202                 1174-1183                 1202-1202 ~ floor         
+  ge_clean_profiled       1202-1202                 884-900                   1202-1202                 
+  ge_hand_written         1202-1202                 647-672                   1202-1202                 
+  holoclean               1202-1202                 26-34 D                   444-465                   
+  raha                    1202-1202                 0-0 D                     1202-1202                 
+  perfect                 1202-1202                 605-631                   1202-1202                 
+  always_positive         1202-1202                 0-0 D                     0-0 D                     
+  raha_minus_format_only  1202-1202                 624-649                   1202-1202                 
+  random controls (k = rows the delete version removes):
+    control/ge_dirty_profiled    k 19-28          1174-1183
+    control/ge_clean_profiled    k 302-318        884-900
+    control/ge_hand_written      k 530-555        647-672
+    control/holoclean            k 1168-1176      26-34 D
+    control/raha                 k 1202-1202      0-0 D
+[5] items left after removing degenerate items
+  delete  3 of 5: GE-dirty, GE-clean, GE-hand
+  impute  5 of 5: GE-dirty, GE-clean, GE-hand, HoloClean, Raha
+[6] degenerate versions
+  holoclean/delete                   10/10 seeds
+  raha/delete                        10/10 seeds
+  always_positive/delete             10/10 seeds
+  always_positive/impute             10/10 seeds
+  control/holoclean                  10/10 seeds
+  control/raha                       10/10 seeds
+  expected list (R53): match
+[7] Raha (frozen run 1): TP/FP/det 710/1864/2574; format-only FPs 1864; label flags 0; rows kept gt 1202-1202; delete 0-0 D; impute 1202-1202
+    references: (a) 0.430 (b) 0.6544 (c) 0.4297
+[8] references (item: (a) published / recomputed, (b) row F1, (c) model-visible cell F1)
+  GE-dirty                           (a) 0.079 / 0.0788  (b) 0.0788  (c) 0.0788
+  GE-clean                           (a) 0.689 / 0.6888  (b) 0.6888  (c) 0.6888
+  GE-hand                            (a) 0.964 / 0.9639  (b) 0.9639  (c) 0.9639
+  HoloClean                          (a) 0.159 / 0.1589  (b) 0.6318  (c) 0.1589
+  Raha                               (a) 0.430 / 0.4297  (b) 0.6544  (c) 0.4297
+  order (a) GE-hand(0.964) > GE-clean(0.689) > Raha(0.430) > HoloClean(0.159) > GE-dirty(0.079)
+  order (b) GE-hand(0.964) > GE-clean(0.689) > Raha(0.654) > HoloClean(0.632) > GE-dirty(0.079)
+  order (c) GE-hand(0.964) > GE-clean(0.689) > Raha(0.430) > HoloClean(0.159) > GE-dirty(0.079)
+[9] expected verdicts: mechanism (d) per item and policy, verdict per pair against (a)
+  GE-dirty                           gt 0.041      delete 1.0          impute floor
+  GE-clean                           gt 0.525      delete 1.0          impute 2
+  GE-hand                            gt 0.93       delete 1.0          impute 298
+  HoloClean                          gt 0.761      delete degenerate   impute -5441
+  Raha                               gt 0.971      delete degenerate   impute -1515
+  gt     GE-dirty vs GE-clean                          GE-clean > GE-dirty                                  0.041       0.525  concordant
+  gt     GE-dirty vs GE-hand                           GE-hand > GE-dirty                                   0.041        0.93  concordant
+  gt     GE-dirty vs HoloClean                         HoloClean > GE-dirty                                 0.041       0.761  concordant
+  gt     GE-dirty vs Raha                              Raha > GE-dirty                                      0.041       0.971  concordant
+  gt     GE-clean vs GE-hand                           GE-hand > GE-clean                                   0.525        0.93  concordant
+  gt     GE-clean vs HoloClean                         GE-clean > HoloClean                                 0.525       0.761  discordant
+  gt     GE-clean vs Raha                              GE-clean > Raha                                      0.525       0.971  discordant
+  gt     GE-hand vs HoloClean                          GE-hand > HoloClean                                   0.93       0.761  concordant
+  gt     GE-hand vs Raha                               GE-hand > Raha                                        0.93       0.971  discordant
+  gt     HoloClean vs Raha                             Raha > HoloClean                                     0.761       0.971  concordant
+  delete GE-dirty vs GE-clean                          GE-clean > GE-dirty                                    1.0         1.0  undetermined
+  delete GE-dirty vs GE-hand                           GE-hand > GE-dirty                                     1.0         1.0  undetermined
+  delete GE-dirty vs HoloClean                         HoloClean > GE-dirty                                   1.0  degenerate  discordant
+  delete GE-dirty vs Raha                              Raha > GE-dirty                                        1.0  degenerate  discordant
+  delete GE-clean vs GE-hand                           GE-hand > GE-clean                                     1.0         1.0  undetermined
+  delete GE-clean vs HoloClean                         GE-clean > HoloClean                                   1.0  degenerate  concordant
+  delete GE-clean vs Raha                              GE-clean > Raha                                        1.0  degenerate  concordant
+  delete GE-hand vs HoloClean                          GE-hand > HoloClean                                    1.0  degenerate  concordant
+  delete GE-hand vs Raha                               GE-hand > Raha                                         1.0  degenerate  concordant
+  delete HoloClean vs Raha                             Raha > HoloClean                                degenerate  degenerate  undetermined
+  impute GE-dirty vs GE-clean                          GE-clean > GE-dirty                                  floor           2  undetermined
+  impute GE-dirty vs GE-hand                           GE-hand > GE-dirty                                   floor         298  undetermined
+  impute GE-dirty vs HoloClean                         HoloClean > GE-dirty                                 floor       -5441  undetermined
+  impute GE-dirty vs Raha                              Raha > GE-dirty                                      floor       -1515  undetermined
+  impute GE-clean vs GE-hand                           GE-hand > GE-clean                                       2         298  concordant
+  impute GE-clean vs HoloClean                         GE-clean > HoloClean                                     2       -5441  concordant
+  impute GE-clean vs Raha                              GE-clean > Raha                                          2       -1515  concordant
+  impute GE-hand vs HoloClean                          GE-hand > HoloClean                                    298       -5441  concordant
+  impute GE-hand vs Raha                               GE-hand > Raha                                         298       -1515  concordant
+  impute HoloClean vs Raha                             Raha > HoloClean                                     -5441       -1515  concordant
+  addendum match: 30/30
+  verdicts differing from c61ee72 file: 0
+  gt      C/D/U 7/3/0
+  delete  C/D/U 4/2/4
+  impute  C/D/U 6/0/4
+[10] checks
+  check 1 nasa PASS (MANIFEST, sha256, Table 3, no duplicate or outside cell, replay identity)
+  D6 nasa PASS (raha_minus_format_only = Raha minus 1864 format-only FPs: TP 710 FP 0, not perfect)
+  check 2(hash) nasa seed 0 PASS
+  check 3 nasa seed 0 PASS (3 versions = floor)
+  check 4 nasa seed 0 PASS (delete keeps 630, impute keeps 1202, cells written 572, parsable 266)
+  check 2(hash) nasa seed 1 PASS
+  check 3 nasa seed 1 PASS (3 versions = floor)
+  check 4 nasa seed 1 PASS (delete keeps 615, impute keeps 1202, cells written 587, parsable 281)
+  check 2(hash) nasa seed 2 PASS
+  check 3 nasa seed 2 PASS (3 versions = floor)
+  check 4 nasa seed 2 PASS (delete keeps 608, impute keeps 1202, cells written 594, parsable 286)
+  check 2(hash) nasa seed 3 PASS
+  check 3 nasa seed 3 PASS (3 versions = floor)
+  check 4 nasa seed 3 PASS (delete keeps 614, impute keeps 1202, cells written 588, parsable 272)
+  check 2(hash) nasa seed 4 PASS
+  check 3 nasa seed 4 PASS (3 versions = floor)
+  check 4 nasa seed 4 PASS (delete keeps 622, impute keeps 1202, cells written 580, parsable 273)
+  check 2(hash) nasa seed 5 PASS
+  check 3 nasa seed 5 PASS (3 versions = floor)
+  check 4 nasa seed 5 PASS (delete keeps 616, impute keeps 1202, cells written 586, parsable 278)
+  check 2(hash) nasa seed 6 PASS
+  check 3 nasa seed 6 PASS (3 versions = floor)
+  check 4 nasa seed 6 PASS (delete keeps 631, impute keeps 1202, cells written 571, parsable 271)
+  check 2(hash) nasa seed 7 PASS
+  check 3 nasa seed 7 PASS (3 versions = floor)
+  check 4 nasa seed 7 PASS (delete keeps 620, impute keeps 1202, cells written 582, parsable 271)
+  check 2(hash) nasa seed 8 PASS
+  check 3 nasa seed 8 PASS (3 versions = floor)
+  check 4 nasa seed 8 PASS (delete keeps 625, impute keeps 1202, cells written 577, parsable 273)
+  check 2(hash) nasa seed 9 PASS
+  check 3 nasa seed 9 PASS (3 versions = floor)
+  check 4 nasa seed 9 PASS (delete keeps 605, impute keeps 1202, cells written 597, parsable 287)
+  R62 nasa PASS (rows kept under delete/impute, label errors left, flag statistics = addendum)
+[11] train_hash digest nasa 52e4c5790fa806bb48b03d3605aaed670d026be12473334f40b86bd715873b27
+
+====================================================================================================
+pooled expected verdicts over breast_cancer nasa (C/D/U; plan §9 for four datasets: GT 19/10/0, delete 16/4/9, impute 12/1/16)
+  gt      C 13 D 7 U 0 of 20 -> concordant among determined 0.65, of all pairs 0.65
+  delete  C 12 D 4 U 4 of 20 -> concordant among determined 0.75, of all pairs 0.60
+  impute  C 9 D 0 U 11 of 20 -> concordant among determined 1.00, of all pairs 0.45
+  addendum match: 60/60
+  breast_cancer seed 0 full (1.9 s)
+  breast_cancer seed 1 full (1.8 s)
+  breast_cancer seed 2 full (1.9 s)
+  breast_cancer seed 3 full (2.5 s)
+  breast_cancer seed 4 full (2.1 s)
+  breast_cancer seed 5 full (1.9 s)
+  breast_cancer seed 6 full (1.9 s)
+  breast_cancer seed 7 full (2.0 s)
+  breast_cancer seed 8 full (1.9 s)
+  breast_cancer seed 9 full (1.9 s)
+  nasa seed 0 full (3.8 s)
+  nasa seed 1 full (3.9 s)
+  nasa seed 2 full (3.9 s)
+  nasa seed 3 full (4.2 s)
+  nasa seed 4 full (3.8 s)
+  nasa seed 5 full (3.9 s)
+  nasa seed 6 full (3.9 s)
+  nasa seed 7 full (4.0 s)
+  nasa seed 8 full (4.0 s)
+  nasa seed 9 full (4.1 s)
+  20 tasks (full) in 59.5 s
+results.csv: 4590 rows
+DONE full 2 datasets, 10 seeds, 61 s

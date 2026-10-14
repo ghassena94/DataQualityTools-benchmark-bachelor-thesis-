@@ -1,0 +1,9 @@
+prediction,result,measured
+1,REFUTED,GT 0.692 < delete 0.662 and < impute 0.683
+2,REFUTED,delete 0.662 impute 0.683 (>= 0.70 each)
+3,HOLDS,"against (d): gt 0.846, delete 0.957, impute 0.800"
+4,REFUTED,20 of 48 undetermined impute cases tie
+5,HOLDS,tie share clf 0.504 reg 0.153; bc RF+XGB ties 0.717
+6,REFUTED,gt GE-hand top in 3/3; gt Raha top in 3/3; impute GE-hand top in 3/3; impute Raha top in 0/3; impute GE-hand > Raha in 3/3; RF perfect/impute vs floor: tie
+7,REFUTED,"beats its control: nasa GE-dirty 0/3, nasa GE-clean 2/3, nasa GE-hand 3/3, bike GE-hand 1/3, bike Raha 0/3"
+8,REFUTED,"bike GE-hand vs Raha discordant (a) and concordant (c): gt 2/3, impute 1/3"

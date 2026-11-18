@@ -744,7 +744,6 @@ class Detectors:
         return detection_dictionary , evaluation_dict
 
     def raha(self, dirtydf, dataset, configs):
-        start_time = time.time()
         dataset_name = dataset
 
         # dict to process raha steps internally
@@ -756,7 +755,22 @@ class Detectors:
                 os.path.join(os.path.dirname(__file__), os.pardir, "datasets", dataset_name, "clean.csv"))
         }
 
-        # detect errors and get detection dictionary
+        # Raha's simulated user labels cells by comparing dirty.csv and clean.csv itself,
+        # by position and as text (raha/dataset.py, get_dataframes_difference), so it misses
+        # the column-order and number-format fixes of Database.get_actual_errors. 
+        # Give Raha a clean file that differs from dirty.csv only in the cells REIN counts as errors.
+        raw_dirty = pd.read_csv(internal_dataset_dict["path"], dtype=str, keep_default_na=False)
+        raw_clean = pd.read_csv(internal_dataset_dict["clean_path"], dtype=str, keep_default_na=False)
+        raw_clean = raw_clean[list(raw_dirty.columns)]
+        raha_clean = raw_dirty.copy()
+        for (i, j) in self.actual_errors:
+            raha_clean.iat[i, j] = raw_clean.iat[i, j]
+        internal_dataset_dict["clean_path"] = os.path.join(
+            os.path.dirname(internal_dataset_dict["path"]), "clean_for_raha.csv")
+        raha_clean.to_csv(internal_dataset_dict["clean_path"], index=False)
+
+        # detect errors and get detection dictionary (preparing the file above is not detection time)
+        start_time = time.time()
         app = Raha_Detection()
         detection_dictionary = app.run(internal_dataset_dict)
         logging.info("------ received detection dictionary -------")
